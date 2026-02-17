@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sb-dockerfile-gen-multilingual"
+version = "0.1.0"
+description = "Dockerfile generator for SWE-bench Multilingual (C, Go, Java, JavaScript, PHP, Ruby, Rust benchmarks)"
+requires-python = ">=3.10"
+dependencies = [
+    "unidiff",
+]
+
+[project.scripts]
+sb-dockerfile-gen-multilingual = "sb_dockerfile_gen:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
