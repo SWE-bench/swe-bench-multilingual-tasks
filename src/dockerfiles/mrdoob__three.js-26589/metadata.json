@@ -1,0 +1,27 @@
+{
+  "instance_id": "mrdoob__three.js-26589",
+  "repo": "mrdoob/three.js",
+  "version": "26589",
+  "log_parser": "parse_log_tap",
+  "eval_type": "pass_and_fail",
+  "FAIL_TO_PASS": [
+    "Objects > Line > copy/material",
+    "Objects > Mesh > copy/material",
+    "Objects > Points > copy/material"
+  ],
+  "PASS_TO_PASS": [
+    "Objects > Line > Extending",
+    "Objects > Line > Instancing",
+    "Objects > Line > type",
+    "Objects > Line > isLine",
+    "Objects > Mesh > Extending",
+    "Objects > Mesh > Instancing",
+    "Objects > Mesh > type",
+    "Objects > Mesh > isMesh",
+    "Objects > Mesh > raycast/range",
+    "Objects > Points > Extending",
+    "Objects > Points > Instancing",
+    "Objects > Points > type",
+    "Objects > Points > isPoints"
+  ]
+}

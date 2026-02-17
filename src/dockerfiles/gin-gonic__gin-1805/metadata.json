@@ -1,0 +1,25 @@
+{
+  "instance_id": "gin-gonic__gin-1805",
+  "repo": "gin-gonic/gin",
+  "version": "1805",
+  "log_parser": "parse_log_gotest",
+  "eval_type": "pass_and_fail",
+  "FAIL_TO_PASS": [
+    "TestMiddlewareCalledOnceByRouterStaticFSNotFound"
+  ],
+  "PASS_TO_PASS": [
+    "TestCreateDefaultRouter",
+    "TestRouterGroupBasic",
+    "TestRouterGroupBasicHandle",
+    "TestRouterGroupInvalidStatic",
+    "TestRouterGroupInvalidStaticFile",
+    "TestRouterGroupTooManyHandlers",
+    "TestRouterGroupBadMethod",
+    "TestRouterGroupPipeline",
+    "TestRouterMethod",
+    "TestRouterGroupRouteOK",
+    "TestRouterNotFound",
+    "TestRouterStaticFSNotFound",
+    "TestRouterStaticFSFileNotFound"
+  ]
+}

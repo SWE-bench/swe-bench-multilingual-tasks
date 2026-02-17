@@ -1,0 +1,30 @@
+{
+  "instance_id": "laravel__framework-52451",
+  "repo": "laravel/framework",
+  "version": "52451",
+  "log_parser": "parse_log_phpunit",
+  "eval_type": "pass_and_fail",
+  "FAIL_TO_PASS": [
+    "Validation Validator > Custom validation is appended to messages"
+  ],
+  "PASS_TO_PASS": [
+    "Validation Validator > Custom replacers are called",
+    "Validation Validator > Class based custom replacers",
+    "Validation Validator > Displayable attributes are replaced in custom replacers",
+    "Validation Validator > Custom validation lines are respected",
+    "Validation Validator > Custom validation lines for size rules",
+    "Validation Validator > Custom validation lines are respected with asterisks",
+    "Validation Validator > Custom exception",
+    "Validation Validator > Custom exception must extend validation exception",
+    "Validation Validator > Validation dot custom dot anything can be translated",
+    "Validation Validator > Validate email with custom class check",
+    "Validation Validator > Custom validators",
+    "Validation Validator > Class based custom validators",
+    "Validation Validator > Class based custom validators using conventional method",
+    "Validation Validator > Custom implicit validators",
+    "Validation Validator > Custom dependent validators",
+    "Validation Validator > Custom validation object",
+    "Validation Validator > Custom validation object with dot keys is correctly passed value",
+    "Validation Validator > Implicit custom validation objects"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "instance_id": "redis__redis-9733",
+  "repo": "redis/redis",
+  "version": "9733",
+  "log_parser": "parse_log_redis",
+  "eval_type": "pass_and_fail",
+  "FAIL_TO_PASS": [
+    "COMMAND GETKEYS EVAL without keys"
+  ],
+  "PASS_TO_PASS": [
+    "TTL, TYPE and EXISTS do not alter the last access time of a key",
+    "TOUCH alters the last access time of a key",
+    "TOUCH returns the number of existing keys specified",
+    "command stats for GEOADD",
+    "command stats for EXPIRE",
+    "command stats for BRPOP",
+    "command stats for MULTI",
+    "command stats for scripts",
+    "COMMAND GETKEYS GET",
+    "COMMAND GETKEYS MEMORY USAGE",
+    "COMMAND GETKEYS XGROUP",
+    "COMMAND GETKEYS EVAL with keys",
+    "COMMAND LIST FILTERBY ACLCAT",
+    "COMMAND LIST FILTERBY PATTERN"
+  ]
+}

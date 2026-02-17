@@ -1,0 +1,34 @@
+{
+  "instance_id": "tokio-rs__tokio-4867",
+  "repo": "tokio-rs/tokio",
+  "version": "4867",
+  "log_parser": "parse_log_cargo",
+  "eval_type": "pass_and_fail",
+  "FAIL_TO_PASS": [
+    "resubscribe_to_closed_channel"
+  ],
+  "PASS_TO_PASS": [
+    "drop_rx_while_values_remain",
+    "dropping_sender_does_not_overwrite",
+    "change_tasks",
+    "lagging_receiver_recovers_after_wrap_closed_1",
+    "lagging_receiver_recovers_after_wrap_closed_2",
+    "dropping_tx_notifies_rx",
+    "lagging_receiver_recovers_after_wrap_open",
+    "receiver_len_with_lagged",
+    "resubscribe_lagged",
+    "panic_in_clone",
+    "resubscribe_points_to_tail",
+    "lagging_rx",
+    "send_recv_bounded",
+    "send_slow_rx",
+    "send_two_recv",
+    "send_try_recv_bounded",
+    "single_capacity_recvs",
+    "send_two_recv_bounded",
+    "single_capacity_recvs_after_drop_1",
+    "single_capacity_recvs_after_drop_2",
+    "unconsumed_messages_are_dropped",
+    "send_no_rx"
+  ]
+}

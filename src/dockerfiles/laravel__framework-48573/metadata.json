@@ -1,0 +1,35 @@
+{
+  "instance_id": "laravel__framework-48573",
+  "repo": "laravel/framework",
+  "version": "48573",
+  "log_parser": "parse_log_phpunit",
+  "eval_type": "pass_and_fail",
+  "FAIL_TO_PASS": [
+    "Cache Array Store > Cache ttl"
+  ],
+  "PASS_TO_PASS": [
+    "Cache Array Store > Items can be set and retrieved",
+    "Cache Array Store > Multiple items can be set and retrieved",
+    "Cache Array Store > Items can expire",
+    "Cache Array Store > Store item forever properly stores in array",
+    "Cache Array Store > Values can be incremented",
+    "Cache Array Store > Values get casted by increment or decrement",
+    "Cache Array Store > Increment non numeric values",
+    "Cache Array Store > Non existing keys can be incremented",
+    "Cache Array Store > Expired keys are incremented like non existing keys",
+    "Cache Array Store > Values can be decremented",
+    "Cache Array Store > Items can be removed",
+    "Cache Array Store > Items can be flushed",
+    "Cache Array Store > Cache key",
+    "Cache Array Store > Cannot acquire lock twice",
+    "Cache Array Store > Can acquire lock again after expiry",
+    "Cache Array Store > Lock expiration lower boundary",
+    "Cache Array Store > Lock with no expiration never expires",
+    "Cache Array Store > Can acquire lock after release",
+    "Cache Array Store > Another owner cannot release lock",
+    "Cache Array Store > Another owner can force release a lock",
+    "Cache Array Store > Values are not stored by reference",
+    "Cache Array Store > Values are stored by reference if serialization is disabled",
+    "Cache Array Store > Releasing lock after already force released by another owner fails"
+  ]
+}

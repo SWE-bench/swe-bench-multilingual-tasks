@@ -1,0 +1,15 @@
+{
+  "instance_id": "projectlombok__lombok-3571",
+  "repo": "projectlombok/lombok",
+  "version": "3571",
+  "log_parser": "parse_log_ant",
+  "eval_type": "pass_and_fail",
+  "FAIL_TO_PASS": [
+    "javac-BuilderOnNestedRecord.java(lombok.transform.TestWithDelombok)",
+    "javac-WithOnNestedRecord.java(lombok.transform.TestWithDelombok)"
+  ],
+  "PASS_TO_PASS": [
+    "javac-WithOnRecord.java(lombok.transform.TestWithDelombok)",
+    "javac-BuilderSimpleOnRecord.java(lombok.transform.TestWithDelombok)"
+  ]
+}

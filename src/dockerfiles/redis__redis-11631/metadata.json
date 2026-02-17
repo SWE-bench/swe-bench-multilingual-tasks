@@ -1,0 +1,24 @@
+{
+  "instance_id": "redis__redis-11631",
+  "repo": "redis/redis",
+  "version": "11631",
+  "log_parser": "parse_log_redis",
+  "eval_type": "pass_and_fail",
+  "FAIL_TO_PASS": [
+    "GEOSEARCH with small distance"
+  ],
+  "PASS_TO_PASS": [
+    "GEOSEARCH FROMLONLAT and FROMMEMBER cannot exist at the same time",
+    "GEOSEARCH FROMLONLAT and FROMMEMBER one must exist",
+    "GEOSEARCH BYRADIUS and BYBOX cannot exist at the same time",
+    "GEOSEARCH BYRADIUS and BYBOX one must exist",
+    "GEOSEARCH with STOREDIST option",
+    "GEOSEARCH vs GEORADIUS",
+    "GEOSEARCH non square, long and narrow",
+    "GEOSEARCH corner point test",
+    "GEOSEARCH the box spans -180\u00b0 or 180\u00b0",
+    "GEOSEARCH fuzzy test - byradius",
+    "GEOSEARCH fuzzy test - bybox",
+    "GEOSEARCH box edges fuzzy test"
+  ]
+}

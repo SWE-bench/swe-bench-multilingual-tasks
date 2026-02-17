@@ -1,0 +1,20 @@
+{
+  "instance_id": "apache__lucene-13494",
+  "repo": "apache/lucene",
+  "version": "13494",
+  "log_parser": "parse_log_gradle_custom",
+  "eval_type": "pass_and_fail",
+  "FAIL_TO_PASS": [
+    "TestStringValueFacetCounts > testEmptyMatchset"
+  ],
+  "PASS_TO_PASS": [
+    "TestStringValueFacetCounts > testStaleState",
+    "TestStringValueFacetCounts > testRandom",
+    "TestStringValueFacetCounts > testSparseMultiSegmentCase",
+    "TestStringValueFacetCounts > testBasicSingleValued",
+    "TestStringValueFacetCounts > testBasicMultiValued",
+    "TestStringValueFacetCounts > testMissingSegment",
+    "TestStringValueFacetCounts > testBasicSingleValuedUsingSortedDoc",
+    "TestStringValueFacetCounts > testCountAll"
+  ]
+}

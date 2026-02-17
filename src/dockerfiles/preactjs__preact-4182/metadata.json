@@ -1,0 +1,17 @@
+{
+  "instance_id": "preactjs__preact-4182",
+  "repo": "preactjs/preact",
+  "version": "4182",
+  "log_parser": "parse_log_karma",
+  "eval_type": "pass_and_fail",
+  "FAIL_TO_PASS": [
+    "errorBoundary > should not duplicate in lists where an item throws and the parent catches and returns a differing type"
+  ],
+  "PASS_TO_PASS": [
+    "errorBoundary > catches errors",
+    "errorBoundary > calls the errorBoundary callback",
+    "errorBoundary > returns error",
+    "errorBoundary > does not leave a stale closure",
+    "errorBoundary > does not invoke old effects when a cleanup callback throws an error and is handled"
+  ]
+}

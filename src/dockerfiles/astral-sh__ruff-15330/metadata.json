@@ -1,0 +1,24 @@
+{
+  "instance_id": "astral-sh__ruff-15330",
+  "repo": "astral-sh/ruff",
+  "version": "15330",
+  "log_parser": "parse_log_cargo",
+  "eval_type": "pass_and_fail",
+  "FAIL_TO_PASS": [
+    "rules::eradicate::tests::rules::rule_commentedoutcode_path_new_era001_py_expects"
+  ],
+  "PASS_TO_PASS": [
+    "rules::eradicate::detection::tests::comment_contains_code_with_sentences",
+    "rules::eradicate::detection::tests::comment_contains_code_with_default_allowlist",
+    "rules::eradicate::detection::tests::comment_contains_todo",
+    "rules::eradicate::rules::commented_out_code::tests::script_comment",
+    "rules::eradicate::rules::commented_out_code::tests::script_comment_end_precedence",
+    "rules::eradicate::detection::tests::comment_contains_code_with_print",
+    "rules::eradicate::detection::tests::comment_contains_code_with_return",
+    "rules::eradicate::detection::tests::comment_contains_code_with_encoding",
+    "rules::eradicate::detection::tests::comment_contains_code_with_multiline",
+    "rules::eradicate::detection::tests::comment_contains_language_injection",
+    "rules::eradicate::detection::tests::comment_contains_code_basic",
+    "rules::eradicate::detection::tests::comment_contains_code_single_line"
+  ]
+}

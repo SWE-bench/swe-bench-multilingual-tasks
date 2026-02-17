@@ -1,0 +1,11 @@
+{
+  "instance_id": "axios__axios-6539",
+  "repo": "axios/axios",
+  "version": "6539",
+  "log_parser": "parse_log_tap",
+  "eval_type": "pass_and_fail",
+  "FAIL_TO_PASS": [
+    "Server-Side Request Forgery (SSRF) should not fetch bad server"
+  ],
+  "PASS_TO_PASS": []
+}

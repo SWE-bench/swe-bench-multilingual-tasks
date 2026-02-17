@@ -1,0 +1,31 @@
+{
+  "instance_id": "laravel__framework-52680",
+  "repo": "laravel/framework",
+  "version": "52680",
+  "log_parser": "parse_log_phpunit",
+  "eval_type": "pass_and_fail",
+  "FAIL_TO_PASS": [
+    "Database Eloquent Inverse Relation > Only hydrates inverse relation on models"
+  ],
+  "PASS_TO_PASS": [
+    "Database Eloquent Inverse Relation > Builder callback is not applied when inverse relation is not set",
+    "Database Eloquent Inverse Relation > Builder callback is not set if inverse relation is empty string",
+    "Database Eloquent Inverse Relation > Builder callback is not set if inverse relationship does not exist",
+    "Database Eloquent Inverse Relation > Without inverse method removes inverse relation",
+    "Database Eloquent Inverse Relation > Builder callback is applied when inverse relation is set",
+    "Database Eloquent Inverse Relation > Builder callback applies inverse relation to all models in result",
+    "Database Eloquent Inverse Relation > Inverse relation is not set if inverse relation is unset",
+    "Database Eloquent Inverse Relation > Provides possible inverse relation based on foreign key",
+    "Database Eloquent Inverse Relation > Provides possible recursive relations if related is the same class as parent",
+    "Database Eloquent Inverse Relation > Guesses inverse relation based on parent with data set #0",
+    "Database Eloquent Inverse Relation > Guesses inverse relation based on parent with data set #1",
+    "Database Eloquent Inverse Relation > Guesses inverse relation based on parent with data set #2",
+    "Database Eloquent Inverse Relation > Guesses possible inverse relation based on foreign key",
+    "Database Eloquent Inverse Relation > Guesses recursive inverse relations if related is same class as parent",
+    "Database Eloquent Inverse Relation > Sets guessed inverse relation based on parent with data set #0",
+    "Database Eloquent Inverse Relation > Sets guessed inverse relation based on parent with data set #1",
+    "Database Eloquent Inverse Relation > Sets guessed inverse relation based on parent with data set #2",
+    "Database Eloquent Inverse Relation > Sets recursive inverse relations if related is same class as parent",
+    "Database Eloquent Inverse Relation > Sets guessed inverse relation based on foreign key"
+  ]
+}

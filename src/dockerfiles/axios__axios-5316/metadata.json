@@ -1,0 +1,14 @@
+{
+  "instance_id": "axios__axios-5316",
+  "repo": "axios/axios",
+  "version": "5316",
+  "log_parser": "parse_log_tap",
+  "eval_type": "pass_and_fail",
+  "FAIL_TO_PASS": [
+    "supports http with nodejs FormData SpecCompliant FormData should allow passing FormData"
+  ],
+  "PASS_TO_PASS": [
+    "supports http with nodejs FormData form-data instance (https://www.npmjs.com/package/form-data) should allow passing FormData",
+    "supports http with nodejs FormData toFormData helper should properly serialize nested objects for parsing with multer.js (express.js)"
+  ]
+}

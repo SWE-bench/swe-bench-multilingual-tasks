@@ -1,0 +1,13 @@
+{
+  "instance_id": "preactjs__preact-3763",
+  "repo": "preactjs/preact",
+  "version": "3763",
+  "log_parser": "parse_log_karma",
+  "eval_type": "pass_and_fail",
+  "FAIL_TO_PASS": [
+    "Lifecycle methods > #componentDidMount > supports multiple setState callbacks"
+  ],
+  "PASS_TO_PASS": [
+    "Lifecycle methods > #componentDidMount > is invoked after refs are set"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "instance_id": "projectlombok__lombok-3479",
+  "repo": "projectlombok/lombok",
+  "version": "3479",
+  "log_parser": "parse_log_ant",
+  "eval_type": "pass_and_fail",
+  "FAIL_TO_PASS": [
+    "javac-ExtensionMethodOnRecord.java(lombok.transform.TestWithDelombok)"
+  ],
+  "PASS_TO_PASS": [
+    "javac-ExtensionMethodPlain.java(lombok.transform.TestWithDelombok)",
+    "javac-ExtensionMethodGeneric.java(lombok.transform.TestWithDelombok)"
+  ]
+}

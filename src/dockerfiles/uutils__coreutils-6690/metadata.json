@@ -1,0 +1,19 @@
+{
+  "instance_id": "uutils__coreutils-6690",
+  "repo": "uutils/coreutils",
+  "version": "6690",
+  "log_parser": "parse_log_cargo",
+  "eval_type": "pass_and_fail",
+  "FAIL_TO_PASS": [
+    "test_cp::test_cp_no_file"
+  ],
+  "PASS_TO_PASS": [
+    "test_cp::test_cp_multiple_files_target_is_file",
+    "test_cp::test_cp_same_file",
+    "test_cp::test_cp_multiple_files_with_nonexistent_file",
+    "test_cp::test_cp_cp",
+    "test_cp::test_cp_single_file",
+    "test_cp::test_cp_multiple_files",
+    "test_cp::test_cp_multiple_files_with_empty_file_name"
+  ]
+}

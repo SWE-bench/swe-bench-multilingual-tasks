@@ -1,0 +1,11 @@
+{
+  "instance_id": "apache__lucene-13301",
+  "repo": "apache/lucene",
+  "version": "13301",
+  "log_parser": "parse_log_gradle_custom",
+  "eval_type": "pass_and_fail",
+  "FAIL_TO_PASS": [
+    "org.apache.lucene.geo.TestXYPoint > testEqualsAndHashCode"
+  ],
+  "PASS_TO_PASS": []
+}

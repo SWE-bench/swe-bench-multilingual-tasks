@@ -1,0 +1,20 @@
+{
+  "instance_id": "laravel__framework-51890",
+  "repo": "laravel/framework",
+  "version": "51890",
+  "log_parser": "parse_log_phpunit",
+  "eval_type": "pass_and_fail",
+  "FAIL_TO_PASS": [
+    "Validation Validator > Translated attributes can be missing"
+  ],
+  "PASS_TO_PASS": [
+    "Validation Validator > Empty existing attributes are validated",
+    "Validation Validator > Nested attributes are replaced in dimensions",
+    "Validation Validator > Attribute names are replaced",
+    "Validation Validator > Attribute names are replaced in arrays",
+    "Validation Validator > Inline attribute names are replaced in arrays from nested rules",
+    "Validation Validator > Translated attribute names are replaced in arrays from nested rules",
+    "Validation Validator > Displayable attributes are replaced in custom replacers",
+    "Validation Validator > Get leading explicit attribute path"
+  ]
+}

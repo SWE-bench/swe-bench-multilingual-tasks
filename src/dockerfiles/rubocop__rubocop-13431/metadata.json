@@ -1,0 +1,19 @@
+{
+  "instance_id": "rubocop__rubocop-13431",
+  "repo": "rubocop/rubocop",
+  "version": "13431",
+  "log_parser": "parse_log_rspec_transformed_json",
+  "eval_type": "pass_and_fail",
+  "FAIL_TO_PASS": [
+    "registers an offense for methods with empty lines and arguments spanning multiple lines",
+    "registers an offense for methods with empty lines, empty arguments spanning multiple lines"
+  ],
+  "PASS_TO_PASS": [
+    "accepts method body starting with a line with spaces",
+    "is not fooled by single line methods",
+    "registers an offense for class method body ending with a blank",
+    "registers an offense for class method body starting with a blank",
+    "registers an offense for method body ending with a blank",
+    "registers an offense for method body starting with a blank"
+  ]
+}

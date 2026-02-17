@@ -1,0 +1,28 @@
+{
+  "instance_id": "gin-gonic__gin-3820",
+  "repo": "gin-gonic/gin",
+  "version": "3820",
+  "log_parser": "parse_log_gotest",
+  "eval_type": "pass_and_fail",
+  "FAIL_TO_PASS": [
+    "TestMappingBaseTypes"
+  ],
+  "PASS_TO_PASS": [
+    "TestMappingDefault",
+    "TestMappingSkipField",
+    "TestMappingIgnoreField",
+    "TestMappingUnexportedField",
+    "TestMappingPrivateField",
+    "TestMappingUnknownFieldType",
+    "TestMappingURI",
+    "TestMappingForm",
+    "TestMappingTime",
+    "TestMappingTimeDuration",
+    "TestMappingSlice",
+    "TestMappingArray",
+    "TestMappingStructField",
+    "TestMappingPtrField",
+    "TestMappingMapField",
+    "TestMappingIgnoredCircularRef"
+  ]
+}

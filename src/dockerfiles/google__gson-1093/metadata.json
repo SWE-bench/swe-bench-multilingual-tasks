@@ -1,0 +1,16 @@
+{
+  "instance_id": "google__gson-1093",
+  "repo": "google/gson",
+  "version": "1093",
+  "log_parser": "parse_log_maven",
+  "eval_type": "pass_and_fail",
+  "FAIL_TO_PASS": [
+    "com.google.gson.stream.JsonWriterTest#testNonFiniteDoublesWhenLenient"
+  ],
+  "PASS_TO_PASS": [
+    "com.google.gson.stream.JsonWriterTest#testNonFiniteBoxedDoublesWhenLenient",
+    "com.google.gson.stream.JsonWriterTest#testNonFiniteDoubles",
+    "com.google.gson.stream.JsonWriterTest#testNonFiniteBoxedDoubles",
+    "com.google.gson.stream.JsonWriterTest#testDoubles"
+  ]
+}

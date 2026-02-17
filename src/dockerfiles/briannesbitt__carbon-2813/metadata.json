@@ -1,0 +1,15 @@
+{
+  "instance_id": "briannesbitt__carbon-2813",
+  "repo": "briannesbitt/carbon",
+  "version": "2813",
+  "log_parser": "parse_log_phpunit",
+  "eval_type": "pass_and_fail",
+  "FAIL_TO_PASS": [
+    "Factory > Psr clock"
+  ],
+  "PASS_TO_PASS": [
+    "Factory > Factory",
+    "Factory > Factory modification",
+    "Factory > Factory timezone"
+  ]
+}

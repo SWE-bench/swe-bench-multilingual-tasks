@@ -1,0 +1,19 @@
+{
+  "instance_id": "vuejs__core-11870",
+  "repo": "vuejs/core",
+  "version": "11870",
+  "log_parser": "parse_log_vitest",
+  "eval_type": "pass_and_fail",
+  "FAIL_TO_PASS": [
+    "packages/runtime-core/__tests__/helpers/renderList.spec.ts > renderList > should render items in a reactive array correctly"
+  ],
+  "PASS_TO_PASS": [
+    "packages/runtime-core/__tests__/helpers/renderList.spec.ts > renderList > should render items in an array",
+    "packages/runtime-core/__tests__/helpers/renderList.spec.ts > renderList > should render characters of a string",
+    "packages/runtime-core/__tests__/helpers/renderList.spec.ts > renderList > should render integers 1 through N when given a number N",
+    "packages/runtime-core/__tests__/helpers/renderList.spec.ts > renderList > should warn when given a non-integer N",
+    "packages/runtime-core/__tests__/helpers/renderList.spec.ts > renderList > should render properties in an object",
+    "packages/runtime-core/__tests__/helpers/renderList.spec.ts > renderList > should render an item for entry in an iterable",
+    "packages/runtime-core/__tests__/helpers/renderList.spec.ts > renderList > should return empty array when source is undefined"
+  ]
+}

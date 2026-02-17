@@ -1,0 +1,25 @@
+{
+  "instance_id": "micropython__micropython-15898",
+  "repo": "micropython/micropython",
+  "version": "15898",
+  "log_parser": "parse_log_micropython_test",
+  "eval_type": "pass_and_fail",
+  "FAIL_TO_PASS": [
+    "basics/string_format_intbig.py"
+  ],
+  "PASS_TO_PASS": [
+    "basics/string_format.py",
+    "float/string_format.py",
+    "float/string_format2.py",
+    "basics/string_format2.py",
+    "basics/string_format_cp310.py",
+    "float/string_format_fp30.py",
+    "basics/string_format_error.py",
+    "float/string_format_modulo.py",
+    "float/string_format_modulo2.py",
+    "basics/string_format_modulo.py",
+    "basics/string_format_modulo_int.py",
+    "float/string_format_modulo2_intbig.py",
+    "float/string_format_modulo3.py"
+  ]
+}

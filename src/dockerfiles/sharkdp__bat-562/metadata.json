@@ -1,0 +1,13 @@
+{
+  "instance_id": "sharkdp__bat-562",
+  "repo": "sharkdp/bat",
+  "version": "562",
+  "log_parser": "parse_log_cargo",
+  "eval_type": "pass_and_fail",
+  "FAIL_TO_PASS": [
+    "does_not_print_unwanted_file_named_cache"
+  ],
+  "PASS_TO_PASS": [
+    "can_print_file_named_cache"
+  ]
+}

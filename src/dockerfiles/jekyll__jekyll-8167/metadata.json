@@ -1,0 +1,31 @@
+{
+  "instance_id": "jekyll__jekyll-8167",
+  "repo": "jekyll/jekyll",
+  "version": "8167",
+  "log_parser": "parse_log_jekyll",
+  "eval_type": "pass_and_fail",
+  "FAIL_TO_PASS": [
+    "TestUtils#test_: The `Utils.slugify` method should not replace Unicode 'Mark', 'Letter', or 'Number: Decimal Digit' category characters"
+  ],
+  "PASS_TO_PASS": [
+    "TestUtils#test_: The `Utils.slugify` method should not change behaviour if mode is nil",
+    "TestUtils#test_: The `Utils.slugify` method should ignore hyphens",
+    "TestUtils#test_: The `Utils.slugify` method should Keep all uppercase letters if cased is true",
+    "TestUtils#test_: The `Utils.slugify` method should trim leading and trailing whitespace",
+    "TestUtils#test_: The `Utils.slugify` method should replace everything else but ASCII characters",
+    "TestUtils#test_: The `Utils.slugify` method should replace punctuation in any scripts by hyphens",
+    "TestUtils#test_: The `Utils.slugify` method should not replace period and underscore if mode is pretty",
+    "TestUtils#test_: The `Utils.slugify` method should only replace whitespace if mode is raw",
+    "TestUtils#test_: The `Utils.slugify` method should map accented latin characters to ASCII characters",
+    "TestUtils#test_: The `Utils.slugify` method should not modify the original string",
+    "TestUtils#test_: The `Utils.slugify` method should combine adjacent hyphens and spaces",
+    "TestUtils#test_: The `Utils.slugify` method should replace consecutive whitespace with a single hyphen",
+    "TestUtils#test_: The `Utils.slugify` method should not change behaviour if mode is default",
+    "TestUtils#test_: The `Utils.slugify` method should replace whitespace with hyphens",
+    "TestUtils#test_: The `Utils.slugify` method should return the given string if mode is none",
+    "TestUtils#test_: The `Utils.slugify` method should replace underscores with hyphens",
+    "TestUtils#test_: The `Utils.slugify` method should drop trailing punctuation",
+    "TestUtils#test_: The `Utils.slugify` method should records a warning in the log if the returned slug is empty",
+    "TestUtils#test_: The `Utils.slugify` method should return nil if passed nil"
+  ]
+}

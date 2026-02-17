@@ -1,0 +1,14 @@
+{
+  "instance_id": "fluent__fluentd-4655",
+  "repo": "fluent/fluentd",
+  "version": "4655",
+  "log_parser": "parse_log_ruby_unit",
+  "eval_type": "pass_and_fail",
+  "FAIL_TO_PASS": [
+    "test_add_tag_prefix"
+  ],
+  "PASS_TO_PASS": [
+    "test_add_query_params",
+    "test_add_remote_addr_given_multi_x_forwarded_for"
+  ]
+}

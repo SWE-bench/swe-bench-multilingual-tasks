@@ -1,0 +1,28 @@
+{
+  "instance_id": "hashicorp__terraform-34814",
+  "repo": "hashicorp/terraform",
+  "version": "34814",
+  "log_parser": "parse_log_gotest",
+  "eval_type": "pass_and_fail",
+  "FAIL_TO_PASS": [
+    "TestProvisionerTimeout"
+  ],
+  "PASS_TO_PASS": [
+    "TestResourceProvider_Validate_good",
+    "TestResourceProvider_Validate_bad",
+    "TestResourceProvider_generateScript",
+    "TestResourceProvider_generateScriptEmptyInline",
+    "TestResourceProvider_CollectScripts_inline",
+    "TestResourceProvider_CollectScripts_script",
+    "TestResourceProvider_CollectScripts_scripts",
+    "TestResourceProvider_CollectScripts_scriptsEmpty",
+    "TestResourceProvisioner_StopClose",
+    "TestResourceProvisioner_connectionRequired",
+    "TestResourceProvisioner_nullsInOptionals",
+    "TestResourceProvisioner_nullsInOptionals/0",
+    "TestResourceProvisioner_nullsInOptionals/1",
+    "TestResourceProvisioner_nullsInOptionals/2",
+    "TestResourceProvisioner_nullsInOptionals/3",
+    "TestResourceProvisioner_nullsInOptionals/4"
+  ]
+}

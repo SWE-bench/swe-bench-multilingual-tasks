@@ -1,0 +1,21 @@
+{
+  "instance_id": "google__gson-2158",
+  "repo": "google/gson",
+  "version": "2158",
+  "log_parser": "parse_log_maven",
+  "eval_type": "pass_and_fail",
+  "FAIL_TO_PASS": [
+    "com.google.gson.functional.PrimitiveTest#testByteSerialization",
+    "com.google.gson.functional.PrimitiveTest#testShortSerialization",
+    "com.google.gson.functional.PrimitiveTest#testIntSerialization",
+    "com.google.gson.functional.PrimitiveTest#testLongSerialization",
+    "com.google.gson.functional.PrimitiveTest#testFloatSerialization",
+    "com.google.gson.functional.PrimitiveTest#testDoubleSerialization"
+  ],
+  "PASS_TO_PASS": [
+    "com.google.gson.functional.PrimitiveTest#testPrimitiveIntegerAutoboxedSerialization",
+    "com.google.gson.functional.PrimitiveTest#testPrimitiveIntegerAutoboxedInASingleElementArraySerialization",
+    "com.google.gson.functional.PrimitiveTest#testReallyLongValuesSerialization",
+    "com.google.gson.functional.PrimitiveTest#testPrimitiveLongAutoboxedSerialization"
+  ]
+}

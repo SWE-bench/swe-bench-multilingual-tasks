@@ -1,0 +1,23 @@
+{
+  "instance_id": "facebook__docusaurus-10309",
+  "repo": "facebook/docusaurus",
+  "version": "10309",
+  "log_parser": "parse_log_jest",
+  "eval_type": "pass_and_fail",
+  "FAIL_TO_PASS": [
+    "getActiveDocContext",
+    "getActiveVersion for regular docs versions",
+    "getActiveVersion is not sensitive to version order",
+    "getActiveVersion is not sensitive to isLast attribute"
+  ],
+  "PASS_TO_PASS": [
+    "getActivePlugin",
+    "getLatestVersion",
+    "getDocVersionSuggestions",
+    "getActiveVersion matches first version when same paths",
+    "getActiveVersion without trailing slash",
+    "getActiveVersion with trailing slash",
+    "getActiveVersion - docs only without trailing slash",
+    "getActiveVersion - docs only with trailing slash"
+  ]
+}

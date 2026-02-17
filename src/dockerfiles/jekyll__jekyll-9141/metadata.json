@@ -1,0 +1,16 @@
+{
+  "instance_id": "jekyll__jekyll-9141",
+  "repo": "jekyll/jekyll",
+  "version": "9141",
+  "log_parser": "parse_log_jekyll",
+  "eval_type": "pass_and_fail",
+  "FAIL_TO_PASS": [
+    "TestSite#test_: static files in a collection should not be revisited in `Site#each_site_file`"
+  ],
+  "PASS_TO_PASS": [
+    "TestSite#test_: creating sites should write static files if not modified but missing in destination",
+    "TestSite#test_: creating sites should write only modified static files",
+    "TestSite#test_: creating sites should expose list of static files to site payload",
+    "TestSite#test_: static files in a collection should be exposed via site instance"
+  ]
+}

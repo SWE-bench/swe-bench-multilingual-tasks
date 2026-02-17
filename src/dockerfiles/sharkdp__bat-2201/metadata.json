@@ -1,0 +1,29 @@
+{
+  "instance_id": "sharkdp__bat-2201",
+  "repo": "sharkdp/bat",
+  "version": "2201",
+  "log_parser": "parse_log_cargo",
+  "eval_type": "pass_and_fail",
+  "FAIL_TO_PASS": [
+    "disable_pager_if_disable_paging_flag_comes_after_paging"
+  ],
+  "PASS_TO_PASS": [
+    "no_paging_short_arg",
+    "alias_pager_disable_long_overrides_short",
+    "no_pager_arg",
+    "alias_pager_disable",
+    "env_var_bat_pager_value_bat",
+    "env_var_pager_value_bat",
+    "no_paging_arg",
+    "pager_disable",
+    "pager_basic",
+    "pager_failed_to_parse",
+    "pager_more",
+    "pager_overwrite",
+    "pager_value_bat",
+    "pager_most_from_bat_pager_env_var",
+    "pager_most_from_pager_arg",
+    "pager_most_from_pager_env_var",
+    "pager_most_with_arg"
+  ]
+}

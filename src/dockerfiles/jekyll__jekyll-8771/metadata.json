@@ -1,0 +1,13 @@
+{
+  "instance_id": "jekyll__jekyll-8771",
+  "repo": "jekyll/jekyll",
+  "version": "8771",
+  "log_parser": "parse_log_jekyll",
+  "eval_type": "pass_and_fail",
+  "FAIL_TO_PASS": [
+    "features/incremental_rebuild.feature:70  Scenario: Rebuild when a data file is changed"
+  ],
+  "PASS_TO_PASS": [
+    "features/incremental_rebuild.feature:27  Scenario: Rebuild when content is changed"
+  ]
+}

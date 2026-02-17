@@ -1,0 +1,16 @@
+{
+  "instance_id": "redis__redis-11510",
+  "repo": "redis/redis",
+  "version": "11510",
+  "log_parser": "parse_log_redis",
+  "eval_type": "pass_and_fail",
+  "FAIL_TO_PASS": [
+    "MONITOR can log commands issued by functions"
+  ],
+  "PASS_TO_PASS": [
+    "MONITOR can log executed commands",
+    "MONITOR can log commands issued by the scripting engine",
+    "MONITOR supports redacting command arguments",
+    "MONITOR correctly handles multi-exec cases"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "instance_id": "nushell__nushell-12950",
+  "repo": "nushell/nushell",
+  "version": "12950",
+  "log_parser": "parse_log_cargo",
+  "eval_type": "pass_and_fail",
+  "FAIL_TO_PASS": [
+    "shell::pipeline::commands::external::pass_dot_as_external_arguments"
+  ],
+  "PASS_TO_PASS": [
+    "shell::pipeline::commands::external::correctly_escape_external_arguments"
+  ]
+}

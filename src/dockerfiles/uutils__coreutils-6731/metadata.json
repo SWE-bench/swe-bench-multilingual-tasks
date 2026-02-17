@@ -1,0 +1,21 @@
+{
+  "instance_id": "uutils__coreutils-6731",
+  "repo": "uutils/coreutils",
+  "version": "6731",
+  "log_parser": "parse_log_cargo",
+  "eval_type": "pass_and_fail",
+  "FAIL_TO_PASS": [
+    "test_tr::test_trailing_backslash"
+  ],
+  "PASS_TO_PASS": [
+    "test_env::tests_split_iterator::split_trailing_backslash",
+    "test_tr::test_interpret_backslash_at_eol_literally",
+    "test_tr::test_interpret_backslash_escapes",
+    "test_echo::test_escape_backslash",
+    "test_paste::test_delimiter_list_ending_with_escaped_backslash",
+    "test_tr::test_interpret_unrecognized_backslash_escape_as_character",
+    "test_tr::test_unescaped_backslash_warning_false_positive",
+    "test_paste::test_delimiter_list_ending_with_unescaped_backslash",
+    "test_hashsum::test_check_no_backslash_no_space"
+  ]
+}

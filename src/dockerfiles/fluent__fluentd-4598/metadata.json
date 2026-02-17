@@ -1,0 +1,13 @@
+{
+  "instance_id": "fluent__fluentd-4598",
+  "repo": "fluent/fluentd",
+  "version": "4598",
+  "log_parser": "parse_log_ruby_unit",
+  "eval_type": "pass_and_fail",
+  "FAIL_TO_PASS": [
+    "mount frozen path"
+  ],
+  "PASS_TO_PASS": [
+    "mount given path"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "instance_id": "prometheus__prometheus-10720",
+  "repo": "prometheus/prometheus",
+  "version": "10720",
+  "log_parser": "parse_log_gotest",
+  "eval_type": "pass_and_fail",
+  "FAIL_TO_PASS": [
+    "TestEvaluations",
+    "TestEvaluations/testdata/functions.test"
+  ],
+  "PASS_TO_PASS": [
+    "TestEvaluations/testdata/aggregators.test",
+    "TestEvaluations/testdata/at_modifier.test",
+    "TestEvaluations/testdata/collision.test",
+    "TestEvaluations/testdata/histograms.test",
+    "TestEvaluations/testdata/literals.test",
+    "TestEvaluations/testdata/operators.test",
+    "TestEvaluations/testdata/selectors.test",
+    "TestEvaluations/testdata/staleness.test",
+    "TestEvaluations/testdata/subquery.test",
+    "TestEvaluations/testdata/trig_functions.test"
+  ]
+}

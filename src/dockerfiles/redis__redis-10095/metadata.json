@@ -1,0 +1,24 @@
+{
+  "instance_id": "redis__redis-10095",
+  "repo": "redis/redis",
+  "version": "10095",
+  "log_parser": "parse_log_redis",
+  "eval_type": "pass_and_fail",
+  "FAIL_TO_PASS": [
+    "LPOP/RPOP with <count> against non existing key in RESP2"
+  ],
+  "PASS_TO_PASS": [
+    "RPOP/LPOP with the optional count argument",
+    "LPOP/RPOP with the count 0 returns an empty array in RESP3",
+    "LPOP/RPOP against non existing key in RESP3",
+    "LPOP/RPOP with <count> against non existing key in RESP3",
+    "LPOP/RPOP with the count 0 returns an empty array in RESP2",
+    "LPOP/RPOP against non existing key in RESP2",
+    "MULTI/EXEC is isolated from the point of view of BLPOP",
+    "Basic LPOP/RPOP/LMPOP - linkedlist",
+    "Basic LPOP/RPOP/LMPOP - ziplist",
+    "LPOP/RPOP/LMPOP against empty list",
+    "LPOP/RPOP/LMPOP NON-BLOCK or BLOCK against non list value",
+    "Mass RPOP/LPOP - quicklist"
+  ]
+}

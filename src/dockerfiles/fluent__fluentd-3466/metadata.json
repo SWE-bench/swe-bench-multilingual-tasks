@@ -1,0 +1,11 @@
+{
+  "instance_id": "fluent__fluentd-3466",
+  "repo": "fluent/fluentd",
+  "version": "3466",
+  "log_parser": "parse_log_ruby_unit",
+  "eval_type": "pass_and_fail",
+  "FAIL_TO_PASS": [
+    "test_should_replace_target_info"
+  ],
+  "PASS_TO_PASS": []
+}

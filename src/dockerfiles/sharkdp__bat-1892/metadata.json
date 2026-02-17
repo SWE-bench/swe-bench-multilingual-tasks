@@ -1,0 +1,11 @@
+{
+  "instance_id": "sharkdp__bat-1892",
+  "repo": "sharkdp/bat",
+  "version": "1892",
+  "log_parser": "parse_log_cargo",
+  "eval_type": "pass_and_fail",
+  "FAIL_TO_PASS": [
+    "ignored_suffix_arg"
+  ],
+  "PASS_TO_PASS": []
+}

@@ -1,0 +1,11 @@
+{
+  "instance_id": "caddyserver__caddy-5995",
+  "repo": "caddyserver/caddy",
+  "version": "5995",
+  "log_parser": "parse_log_gotest",
+  "eval_type": "pass_and_fail",
+  "FAIL_TO_PASS": [
+    "TestUriReplace"
+  ],
+  "PASS_TO_PASS": []
+}

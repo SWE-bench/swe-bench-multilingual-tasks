@@ -1,0 +1,34 @@
+{
+  "instance_id": "php-cs-fixer__php-cs-fixer-8331",
+  "repo": "php-cs-fixer/php-cs-fixer",
+  "version": "8331",
+  "log_parser": "parse_log_phpunit",
+  "eval_type": "pass_and_fail",
+  "FAIL_TO_PASS": [
+    "Nullable Type Declaration Fixer > Fix with data set \"multiline function declaration\""
+  ],
+  "PASS_TO_PASS": [
+    "Nullable Type Declaration Fixer > Not defining constructor",
+    "Nullable Type Declaration Fixer > Is risky",
+    "Nullable Type Declaration Fixer > Fixer definitions",
+    "Nullable Type Declaration Fixer > Fixers are final",
+    "Nullable Type Declaration Fixer > Deprecated fixers have correct summary",
+    "Nullable Type Declaration Fixer > Deprecated fixers do not have deprecated successor",
+    "Nullable Type Declaration Fixer > Fixer use insert slices when only insertions are performed",
+    "Nullable Type Declaration Fixer > Fixer configuration definitions",
+    "Nullable Type Declaration Fixer > Proper method naming",
+    "Nullable Type Declaration Fixer > Fix with data set \"scalar with null\"",
+    "Nullable Type Declaration Fixer > Fix with data set \"class with null\"",
+    "Nullable Type Declaration Fixer > Fix with data set \"static null\"",
+    "Nullable Type Declaration Fixer > Fix with data set \"multiple parameters\"",
+    "Nullable Type Declaration Fixer > Fix with data set \"class properties\"",
+    "Nullable Type Declaration Fixer > Fix with data set \"skips more than two atomic types\"",
+    "Nullable Type Declaration Fixer > Fix with data set \"skips already fixed\"",
+    "Nullable Type Declaration Fixer > Fix with data set \"space after ?\"",
+    "Nullable Type Declaration Fixer > Fix with data set \"no space before ?\"",
+    "Nullable Type Declaration Fixer > Fix with data set \"readonly property\"",
+    "Nullable Type Declaration Fixer > Fix with data set \"readonly property with union syntax expected\"",
+    "Nullable Type Declaration Fixer > Fix with data set \"skips DNF types\"",
+    "Nullable Type Declaration Fixer > Fix with data set \"standalone null\""
+  ]
+}

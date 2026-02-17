@@ -1,0 +1,16 @@
+{
+  "instance_id": "fluent__fluentd-4030",
+  "repo": "fluent/fluentd",
+  "version": "4030",
+  "log_parser": "parse_log_ruby_unit",
+  "eval_type": "pass_and_fail",
+  "FAIL_TO_PASS": [
+    "raises no error when another thread closes a socket"
+  ],
+  "PASS_TO_PASS": [
+    "returns chunk_id, node, sock and result status[chunk_id is matched]",
+    "returns chunk_id, node, sock and result status[chunk_id is empty]",
+    "returns nil if raise an error",
+    "when ack is expired"
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "instance_id": "immutable-js__immutable-js-2006",
+  "repo": "immutable-js/immutable-js",
+  "version": "2006",
+  "log_parser": "parse_log_immutable_js",
+  "eval_type": "pass_and_fail",
+  "FAIL_TO_PASS": [
+    "sliced sequence works even on filtered sequence"
+  ],
+  "PASS_TO_PASS": [
+    "fixed range",
+    "stepped range",
+    "open range",
+    "backwards range",
+    "empty range",
+    "includes first, excludes last",
+    "slices the same as array slices",
+    "slices range",
+    "empty slice of range",
+    "slices empty range",
+    "stepped range does not land on end",
+    "can be float",
+    "can be negative",
+    "can get from any index in O(1)",
+    "can find an index in O(1)",
+    "maps values",
+    "filters values",
+    "partitions values",
+    "reduces values",
+    "takes and skips values",
+    "can describe lazy operations",
+    "efficiently chains array methods"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "instance_id": "mrdoob__three.js-25687",
+  "repo": "mrdoob/three.js",
+  "version": "25687",
+  "log_parser": "parse_log_tap",
+  "eval_type": "pass_and_fail",
+  "FAIL_TO_PASS": [
+    "Core > Object3D > toJSON"
+  ],
+  "PASS_TO_PASS": [
+    "Core > Object3D > clone",
+    "Core > Object3D > copy"
+  ]
+}

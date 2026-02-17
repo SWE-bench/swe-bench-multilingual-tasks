@@ -1,0 +1,36 @@
+{
+  "instance_id": "fmtlib__fmt-3158",
+  "repo": "fmtlib/fmt",
+  "version": "3158",
+  "log_parser": "parse_log_googletest",
+  "eval_type": "pass_and_fail",
+  "FAIL_TO_PASS": [
+    "ranges_test.format_vector"
+  ],
+  "PASS_TO_PASS": [
+    "ranges_test.format_array",
+    "ranges_test.format_2d_array",
+    "ranges_test.format_array_of_literals",
+    "ranges_test.format_vector2",
+    "ranges_test.format_map",
+    "ranges_test.format_set",
+    "ranges_test.format_adl_begin_end",
+    "ranges_test.format_pair",
+    "ranges_test.format_tuple",
+    "ranges_test.format_struct",
+    "ranges_test.format_to",
+    "ranges_test.path_like",
+    "ranges_test.range",
+    "ranges_test.enum_range",
+    "ranges_test.unformattable_range",
+    "ranges_test.join_tuple",
+    "ranges_test.join_initializer_list",
+    "ranges_test.join_sentinel",
+    "ranges_test.join_range",
+    "ranges_test.is_printable",
+    "ranges_test.escape_string",
+    "ranges_test.range_of_range_of_mixed_const",
+    "ranges_test.vector_char",
+    "ranges_odr_test.format_vector"
+  ]
+}

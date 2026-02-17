@@ -1,0 +1,35 @@
+{
+  "instance_id": "apache__lucene-12022",
+  "repo": "apache/lucene",
+  "version": "12022",
+  "log_parser": "parse_log_gradle_custom",
+  "eval_type": "pass_and_fail",
+  "FAIL_TO_PASS": [
+    "org.apache.lucene.document.TestLatLonShape > testFlatPolygonDoesNotContainIntersectingLine"
+  ],
+  "PASS_TO_PASS": [
+    "org.apache.lucene.document.TestLatLonShape > testContainsWrappingBooleanQuery",
+    "org.apache.lucene.document.TestLatLonShape > testContainsGeometryCollectionIntersectsPolygon",
+    "org.apache.lucene.document.TestLatLonShape > testPointIndexAndQuery",
+    "org.apache.lucene.document.TestLatLonShape > testContainsGeometryCollectionIntersectsLine",
+    "org.apache.lucene.document.TestLatLonShape > testLargeVertexPolygon",
+    "org.apache.lucene.document.TestLatLonShape > testLUCENE8669",
+    "org.apache.lucene.document.TestLatLonShape > testLucene9239",
+    "org.apache.lucene.document.TestLatLonShape > testLUCENE8679",
+    "org.apache.lucene.document.TestLatLonShape > testTriangleTouchingEdges",
+    "org.apache.lucene.document.TestLatLonShape > testTriangleCrossingPolygonVertices",
+    "org.apache.lucene.document.TestLatLonShape > testIndexAndQuerySamePolygon",
+    "org.apache.lucene.document.TestLatLonShape > testContainsGeometryCollectionIntersectsPoint",
+    "org.apache.lucene.document.TestLatLonShape > testLineCrossingPolygonVertices",
+    "org.apache.lucene.document.TestLatLonShape > testContainsDateLine",
+    "org.apache.lucene.document.TestLatLonShape > testLineSharedLine",
+    "org.apache.lucene.document.TestLatLonShape > testWithinDateLine",
+    "org.apache.lucene.document.TestLatLonShape > testBasicIntersects",
+    "org.apache.lucene.document.TestLatLonShape > testLUCENE8736",
+    "org.apache.lucene.document.TestLatLonShape > testBasicContains",
+    "org.apache.lucene.document.TestLatLonShape > testLUCENE8454",
+    "org.apache.lucene.document.TestLatLonShape > testPointIndexAndDistanceQuery",
+    "org.apache.lucene.document.TestLatLonShape > testLUCENE9055",
+    "org.apache.lucene.document.TestLatLonShape > testPolygonWithHole"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "instance_id": "prometheus__prometheus-11859",
+  "repo": "prometheus/prometheus",
+  "version": "11859",
+  "log_parser": "parse_log_gotest",
+  "eval_type": "pass_and_fail",
+  "FAIL_TO_PASS": [
+    "TestSnapshotAheadOfWALError"
+  ],
+  "PASS_TO_PASS": [
+    "TestSnapshotError"
+  ]
+}

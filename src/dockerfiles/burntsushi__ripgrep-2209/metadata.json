@@ -1,0 +1,11 @@
+{
+  "instance_id": "burntsushi__ripgrep-2209",
+  "repo": "burntsushi/ripgrep",
+  "version": "2209",
+  "log_parser": "parse_log_cargo",
+  "eval_type": "pass_and_fail",
+  "FAIL_TO_PASS": [
+    "regression::r2208"
+  ],
+  "PASS_TO_PASS": []
+}

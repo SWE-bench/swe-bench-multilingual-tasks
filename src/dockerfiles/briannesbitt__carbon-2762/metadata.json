@@ -1,0 +1,17 @@
+{
+  "instance_id": "briannesbitt__carbon-2762",
+  "repo": "briannesbitt/carbon",
+  "version": "2762",
+  "log_parser": "parse_log_phpunit",
+  "eval_type": "pass_and_fail",
+  "FAIL_TO_PASS": [
+    "Rounding > With cascade factors",
+    "Rounding > Ceil"
+  ],
+  "PASS_TO_PASS": [
+    "Rounding > Throws exception for composite interval",
+    "Rounding > Floor",
+    "Rounding > Round",
+    "Rounding > Total after round"
+  ]
+}

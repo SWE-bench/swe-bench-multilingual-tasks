@@ -1,0 +1,11 @@
+{
+  "instance_id": "nushell__nushell-13831",
+  "repo": "nushell/nushell",
+  "version": "13831",
+  "log_parser": "parse_log_cargo",
+  "eval_type": "pass_and_fail",
+  "FAIL_TO_PASS": [
+    "commands::split_column::to_column"
+  ],
+  "PASS_TO_PASS": []
+}

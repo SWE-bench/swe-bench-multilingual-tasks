@@ -1,0 +1,16 @@
+{
+  "instance_id": "astral-sh__ruff-15309",
+  "repo": "astral-sh/ruff",
+  "version": "15309",
+  "log_parser": "parse_log_cargo",
+  "eval_type": "pass_and_fail",
+  "FAIL_TO_PASS": [
+    "rules::pyflakes::tests::rules::rule_stringdotformatextrapositionalarguments_path_new_f523_py_expects"
+  ],
+  "PASS_TO_PASS": [
+    "rules::pyflakes::tests::rules::rule_stringdotformatmixingautomatic_path_new_f525_py_expects",
+    "rules::pyflakes::tests::rules::rule_stringdotformatinvalidformat_path_new_f521_py_expects",
+    "rules::pyflakes::tests::rules::rule_stringdotformatmissingarguments_path_new_f524_py_expects",
+    "rules::pyflakes::tests::rules::rule_stringdotformatextranamedarguments_path_new_f522_py_expects"
+  ]
+}
