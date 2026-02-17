@@ -17,7 +17,7 @@ sb-dockerfile-gen-multilingual SWE-bench/SWE-bench_Multilingual --instance_ids s
 
 ## Output
 
-Generated Dockerfiles are written to `src/dockerfiles/<instance_id>/Dockerfile`.
+Generated Dockerfiles are written to `src/dockerfiles/<instance_id>.Dockerfile`.
 
 ## Install
 

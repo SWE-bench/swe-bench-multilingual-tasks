@@ -1,4 +1,3 @@
-import json
 from argparse import ArgumentParser
 from pathlib import Path
 
@@ -33,14 +32,8 @@ from sb_dockerfile_gen.rust import (
 from sb_dockerfile_gen.constants import (
     CONTAINER_ENV_NAME,
     CONTAINER_WORKDIR,
-    END_TEST_OUTPUT,
-    FAIL_ONLY_REPOS,
-    MAP_REPO_TO_PARSER_NAME,
-    START_TEST_OUTPUT,
 )
 from sb_dockerfile_gen.utils import (
-    generate_heredoc_delimiter,
-    get_modified_files,
     git_clone_timesafe,
     make_heredoc_run_command,
 )
@@ -120,69 +113,6 @@ def _get_dockerfile(instance) -> str:
     return monolithic_dockerfile
 
 
-# ── Eval script generation ─────────────────────────────────────────────
-
-
-def _get_eval_script(instance) -> str:
-    repo = instance["repo"]
-    version = instance.get("version")
-    base_commit = instance["base_commit"]
-    test_patch = instance["test_patch"]
-    specs = MAP_REPO_VERSION_TO_SPECS[repo][version]
-
-    repo_directory = CONTAINER_WORKDIR
-
-    test_files = get_modified_files(test_patch)
-    if test_files:
-        reset_tests_command = f"git checkout {base_commit} {' '.join(test_files)}"
-    else:
-        reset_tests_command = 'echo "No test files to reset"'
-
-    build_commands = []
-    if "build" in specs:
-        build_commands.extend(specs["build"])
-
-    delimiter = generate_heredoc_delimiter(test_patch)
-    apply_test_patch_command = (
-        f"git apply --verbose --reject - <<'{delimiter}'\n{test_patch}\n{delimiter}"
-    )
-
-    test_cmd = specs["test_cmd"]
-    test_commands = [test_cmd] if isinstance(test_cmd, str) else test_cmd
-
-    eval_commands = [
-        f"cd {repo_directory}",
-        f"git config --global --add safe.directory {repo_directory}",
-        f"cd {repo_directory}",
-        reset_tests_command,
-        apply_test_patch_command,
-        *build_commands,
-        f": '{START_TEST_OUTPUT}'",
-        *test_commands,
-        f": '{END_TEST_OUTPUT}'",
-        reset_tests_command,
-    ]
-
-    return "\n".join(["#!/bin/bash", "set -uxo pipefail"] + eval_commands) + "\n"
-
-
-# ── Metadata generation ────────────────────────────────────────────────
-
-
-def _get_metadata(instance) -> dict:
-    f2p = instance.get("FAIL_TO_PASS", "[]")
-    p2p = instance.get("PASS_TO_PASS", "[]")
-    return {
-        "instance_id": instance["instance_id"],
-        "repo": instance["repo"],
-        "version": instance.get("version"),
-        "log_parser": MAP_REPO_TO_PARSER_NAME[instance["repo"]],
-        "eval_type": "fail_only" if instance["repo"] in FAIL_ONLY_REPOS else "pass_and_fail",
-        "FAIL_TO_PASS": json.loads(f2p) if isinstance(f2p, str) else f2p,
-        "PASS_TO_PASS": json.loads(p2p) if isinstance(p2p, str) else p2p,
-    }
-
-
 # ── CLI ────────────────────────────────────────────────────────────────
 
 
@@ -222,27 +152,21 @@ def generate_instances(
     output_dir: str = "src/instances",
     instance_ids: list[str] | None = None,
 ):
-    """Generate Dockerfile, eval.sh, and metadata.json for each instance."""
+    """Generate Dockerfiles for each instance."""
     instances = load_instances(dataset_name_or_path, split, instance_ids)
     output_path = Path(output_dir)
     output_path.mkdir(parents=True, exist_ok=True)
 
     for instance in instances:
-        instance_dir = output_path / instance["instance_id"]
-        instance_dir.mkdir(parents=True, exist_ok=True)
+        dockerfile_path = output_path / f"{instance['instance_id']}.Dockerfile"
+        dockerfile_path.write_text(_get_dockerfile(instance))
 
-        (instance_dir / "Dockerfile").write_text(_get_dockerfile(instance))
-        (instance_dir / "eval.sh").write_text(_get_eval_script(instance))
-        (instance_dir / "metadata.json").write_text(
-            json.dumps(_get_metadata(instance), indent=2) + "\n"
-        )
-
-    print(f"Generated {len(instances)} instances in {output_path}")
+    print(f"Generated {len(instances)} Dockerfiles in {output_path}")
 
 
 def main():
     parser = ArgumentParser(
-        description="Generate Dockerfiles, eval scripts, and metadata for SWE-bench Multilingual benchmarks"
+        description="Generate Dockerfiles for SWE-bench Multilingual benchmarks"
     )
     parser.add_argument(
         "dataset",
