@@ -1,5 +1,5 @@
 
-FROM --platform=linux/amd64 rust:1.83
+FROM --platform=linux/amd64 rust:1.85
 
 ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=Etc/UTC
