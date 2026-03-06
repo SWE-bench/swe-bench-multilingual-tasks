@@ -170,6 +170,10 @@ def _get_eval_script(instance: dict) -> str:
     eval_commands += [
         reset_tests_command,
         apply_test_patch_command,
+    ]
+    if "build" in specs:
+        eval_commands.extend(specs["build"])
+    eval_commands += [
         f": '{START_TEST_OUTPUT}'",
         test_command,
         f": '{END_TEST_OUTPUT}'",

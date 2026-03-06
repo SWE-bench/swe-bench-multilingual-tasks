@@ -39,6 +39,7 @@ autoreconf -fi
 make clean
 touch src/parser.y src/lexer.l
 make -j$(nproc)
+git checkout -- src/lexer.c src/lexer.h src/parser.c src/parser.h
 EOF_1a561b9980b5
 
 
