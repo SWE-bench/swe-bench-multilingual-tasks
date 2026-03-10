@@ -169,9 +169,9 @@ def _get_eval_script(instance: dict) -> str:
     test_patch = instance["test_patch"]
     specs = MAP_REPO_VERSION_TO_SPECS[repo][version]
 
-    # Files modified by the test patch
-    test_files = re.findall(r"diff --git a/.* b/(.*)", test_patch)
-    reset_tests_command = f"git checkout {base_commit} {' '.join(test_files)}"
+    # Files modified by the test patch – use a/ side for reset so renames work
+    test_files_old = re.findall(r"diff --git a/(.*) b/.*", test_patch)
+    reset_tests_command = f"git checkout {base_commit} {' '.join(test_files_old)}"
 
     HEREDOC_DELIMITER = "EOF_114329324912"
     apply_test_patch_command = (
@@ -193,8 +193,6 @@ def _get_eval_script(instance: dict) -> str:
         "git status",
         "git show",
         f"git -c core.fileMode=false diff {base_commit}",
-    ]
-    eval_commands += [
         reset_tests_command,
         apply_test_patch_command,
     ]
@@ -202,7 +200,7 @@ def _get_eval_script(instance: dict) -> str:
         eval_commands.extend(specs["build"])
     eval_commands += [
         f": '{START_TEST_OUTPUT}'",
-        test_command,
+        f"({test_command}) | cat",
         f": '{END_TEST_OUTPUT}'",
         reset_tests_command,
     ]
