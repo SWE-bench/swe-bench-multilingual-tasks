@@ -58,6 +58,13 @@ MAP_REPO_VERSION_TO_SPECS = {
 
 # ── Dockerfile generation ──────────────────────────────────────────────
 
+_EOF_DELIMITER_RE = re.compile(r"\bEOF_[0-9a-f]{12}\b")
+
+
+def _strip_eof_delimiters(text: str) -> str:
+    """Normalize EOF heredoc delimiters so content-only changes can be detected."""
+    return _EOF_DELIMITER_RE.sub("EOF_PLACEHOLDER", text)
+
 
 def get_dockerfile_base(instance, docker_specs):
     if instance["repo"] in MAP_REPO_VERSION_TO_SPECS_C:
@@ -251,7 +258,12 @@ def generate_instances(
 
     for instance in instances:
         dockerfile_path = output_path / f"{instance['instance_id']}.Dockerfile"
-        dockerfile_path.write_text(_get_dockerfile(instance))
+        new_content = _get_dockerfile(instance)
+        if dockerfile_path.exists():
+            old_content = dockerfile_path.read_text()
+            if _strip_eof_delimiters(old_content) == _strip_eof_delimiters(new_content):
+                continue
+        dockerfile_path.write_text(new_content)
 
     print(f"Generated {len(instances)} Dockerfiles in {output_path}")
 

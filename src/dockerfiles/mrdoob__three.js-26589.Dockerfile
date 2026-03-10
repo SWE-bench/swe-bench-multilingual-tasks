@@ -38,7 +38,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_a6e5d4077c8e
+RUN <<EOF_7c8c0ad6abf1
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/mrdoob/three.js /testbed
@@ -56,7 +56,7 @@ COMMIT_COUNT=$(git log --oneline --all --since="$AFTER_TIMESTAMP" | wc -l)
 cd - || true
 cd /testbed
 npm install --ignore-scripts
-EOF_a6e5d4077c8e
+EOF_7c8c0ad6abf1
 
 
 WORKDIR /testbed

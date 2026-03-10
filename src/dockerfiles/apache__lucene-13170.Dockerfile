@@ -25,7 +25,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_113f433306b2
+RUN <<EOF_664333b4a75f
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/apache/lucene /testbed
@@ -83,7 +83,7 @@ testLogging {
   }
 }
 EOF
-EOF_113f433306b2
+EOF_664333b4a75f
 
 
 WORKDIR /testbed

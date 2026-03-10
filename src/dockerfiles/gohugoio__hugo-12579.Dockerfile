@@ -53,7 +53,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_f506d829d916
+RUN <<EOF_cae56c50d125
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/gohugoio/hugo /testbed
@@ -71,7 +71,7 @@ COMMIT_COUNT=$(git log --oneline --all --since="$AFTER_TIMESTAMP" | wc -l)
 cd - || true
 cd /testbed
 go test -c ./resources/page
-EOF_f506d829d916
+EOF_cae56c50d125
 
 
 WORKDIR /testbed

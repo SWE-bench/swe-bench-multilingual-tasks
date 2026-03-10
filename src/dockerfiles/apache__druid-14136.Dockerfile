@@ -25,7 +25,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_12bfcad009ab
+RUN <<EOF_fcb1529ac301
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/apache/druid /testbed
@@ -43,7 +43,7 @@ COMMIT_COUNT=$(git log --oneline --all --since="$AFTER_TIMESTAMP" | wc -l)
 cd - || true
 cd /testbed
 mvn clean install -B -pl processing -DskipTests -am
-EOF_12bfcad009ab
+EOF_fcb1529ac301
 
 
 WORKDIR /testbed

@@ -25,7 +25,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_76c5e41db3b4
+RUN <<EOF_3b7c299eb94b
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/google/gson /testbed
@@ -43,7 +43,7 @@ COMMIT_COUNT=$(git log --oneline --all --since="$AFTER_TIMESTAMP" | wc -l)
 cd - || true
 cd /testbed
 mvn clean install -B -pl gson -DskipTests -am
-EOF_76c5e41db3b4
+EOF_3b7c299eb94b
 
 
 WORKDIR /testbed

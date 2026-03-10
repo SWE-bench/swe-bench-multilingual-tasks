@@ -25,7 +25,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_37939b68ba88
+RUN <<EOF_903416136383
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/reactivex/rxjava /testbed
@@ -90,7 +90,7 @@ testLogging {
     }
 }
 EOF
-EOF_37939b68ba88
+EOF_903416136383
 
 
 WORKDIR /testbed

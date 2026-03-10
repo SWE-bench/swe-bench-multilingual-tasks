@@ -25,7 +25,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_6372749b5037
+RUN <<EOF_5a02dbb4de36
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/javaparser/javaparser /testbed
@@ -43,7 +43,7 @@ COMMIT_COUNT=$(git log --oneline --all --since="$AFTER_TIMESTAMP" | wc -l)
 cd - || true
 cd /testbed
 ./mvnw clean install -B -pl javaparser-symbol-solver-testing -DskipTests -am
-EOF_6372749b5037
+EOF_5a02dbb4de36
 
 
 WORKDIR /testbed

@@ -25,7 +25,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_08eb7c486017
+RUN <<EOF_c3cc9af9d91f
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/apache/druid /testbed
@@ -44,7 +44,7 @@ cd - || true
 cd /testbed
 sed -i 's/<resourceBundle>org.apache.apache.resources:apache-jar-resource-bundle:1.5-SNAPSHOT<\/resourceBundle>/<resourceBundle>org.apache.apache.resources:apache-jar-resource-bundle:1.5<\/resourceBundle>/' pom.xml
 mvn clean install -B -pl processing -DskipTests -am
-EOF_08eb7c486017
+EOF_c3cc9af9d91f
 
 
 WORKDIR /testbed

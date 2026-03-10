@@ -24,7 +24,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_7dcec8dfe7a2
+RUN <<EOF_e6aee937513e
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/phpoffice/phpspreadsheet /testbed
@@ -43,7 +43,7 @@ cd - || true
 cd /testbed
 composer update
 composer install
-EOF_7dcec8dfe7a2
+EOF_e6aee937513e
 
 
 WORKDIR /testbed

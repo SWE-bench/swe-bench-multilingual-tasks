@@ -24,7 +24,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_8e627907a927
+RUN <<EOF_cd7e6b9bbe43
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/briannesbitt/carbon /testbed
@@ -43,7 +43,7 @@ cd - || true
 cd /testbed
 composer update
 composer install
-EOF_8e627907a927
+EOF_cd7e6b9bbe43
 
 
 WORKDIR /testbed

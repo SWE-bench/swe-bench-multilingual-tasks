@@ -53,7 +53,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_d2f3639ef456
+RUN <<EOF_a763dcf2661e
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/caddyserver/caddy /testbed
@@ -71,7 +71,7 @@ COMMIT_COUNT=$(git log --oneline --all --since="$AFTER_TIMESTAMP" | wc -l)
 cd - || true
 cd /testbed
 go test -c ./caddyconfig/httpcaddyfile -run "Test.*Import"
-EOF_d2f3639ef456
+EOF_a763dcf2661e
 
 
 WORKDIR /testbed

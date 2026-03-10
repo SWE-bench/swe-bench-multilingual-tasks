@@ -38,7 +38,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_f7026d7e21a4
+RUN <<EOF_f0a76c18e7a6
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/vuejs/core /testbed
@@ -56,7 +56,7 @@ COMMIT_COUNT=$(git log --oneline --all --since="$AFTER_TIMESTAMP" | wc -l)
 cd - || true
 cd /testbed
 pnpm i
-EOF_f7026d7e21a4
+EOF_f0a76c18e7a6
 
 
 WORKDIR /testbed

@@ -16,7 +16,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_7376717bd930
+RUN <<EOF_b30f1d150b5c
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/redis/redis /testbed
@@ -35,7 +35,7 @@ cd - || true
 cd /testbed
 make distclean
 make
-EOF_7376717bd930
+EOF_b30f1d150b5c
 
 
 WORKDIR /testbed

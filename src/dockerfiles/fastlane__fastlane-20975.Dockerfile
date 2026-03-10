@@ -15,7 +15,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_615aafc45503
+RUN <<EOF_052ef3152ea2
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/fastlane/fastlane /testbed
@@ -33,7 +33,7 @@ COMMIT_COUNT=$(git log --oneline --all --since="$AFTER_TIMESTAMP" | wc -l)
 cd - || true
 cd /testbed
 bundle install --jobs=$(nproc)
-EOF_615aafc45503
+EOF_052ef3152ea2
 
 
 WORKDIR /testbed

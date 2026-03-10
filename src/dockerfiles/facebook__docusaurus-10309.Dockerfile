@@ -38,7 +38,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_569aa7eb14a9
+RUN <<EOF_eb0de485562b
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/facebook/docusaurus /testbed
@@ -56,7 +56,7 @@ COMMIT_COUNT=$(git log --oneline --all --since="$AFTER_TIMESTAMP" | wc -l)
 cd - || true
 cd /testbed
 yarn install
-EOF_569aa7eb14a9
+EOF_eb0de485562b
 
 
 WORKDIR /testbed

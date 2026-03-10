@@ -14,7 +14,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_274cb6f7b3fe
+RUN <<EOF_a572b0764f60
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/burntsushi/ripgrep /testbed
@@ -32,7 +32,7 @@ COMMIT_COUNT=$(git log --oneline --all --since="$AFTER_TIMESTAMP" | wc -l)
 cd - || true
 cd /testbed
 RUSTFLAGS=-Awarnings cargo test --package ripgrep --test integration --no-run
-EOF_274cb6f7b3fe
+EOF_a572b0764f60
 
 
 WORKDIR /testbed

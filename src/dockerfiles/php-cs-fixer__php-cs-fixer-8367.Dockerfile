@@ -24,7 +24,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_2b5f19401039
+RUN <<EOF_55e2c2418f8b
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/php-cs-fixer/php-cs-fixer /testbed
@@ -43,7 +43,7 @@ cd - || true
 cd /testbed
 composer update
 composer install
-EOF_2b5f19401039
+EOF_55e2c2418f8b
 
 
 WORKDIR /testbed

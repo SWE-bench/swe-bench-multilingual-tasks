@@ -24,7 +24,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_e40296896493
+RUN <<EOF_36277b0233c8
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/laravel/framework /testbed
@@ -44,7 +44,7 @@ cd /testbed
 composer require laravel/prompts --no-update
 composer require orchestra/testbench-core --no-update
 composer install
-EOF_e40296896493
+EOF_36277b0233c8
 
 
 WORKDIR /testbed

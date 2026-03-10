@@ -16,7 +16,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_b443d32c5a7a
+RUN <<EOF_ff8af14e1de9
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/nlohmann/json /testbed
@@ -38,7 +38,7 @@ cd build
 cmake ..
 make test-udt_cpp11
 cd ..
-EOF_b443d32c5a7a
+EOF_ff8af14e1de9
 
 
 WORKDIR /testbed

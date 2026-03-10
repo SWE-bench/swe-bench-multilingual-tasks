@@ -38,7 +38,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_16da9737ded2
+RUN <<EOF_7e90394323ac
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/vuejs/core /testbed
@@ -57,7 +57,7 @@ cd - || true
 cd /testbed
 pnpm i
 pnpm run build compiler-sfc
-EOF_16da9737ded2
+EOF_7e90394323ac
 
 
 WORKDIR /testbed

@@ -15,7 +15,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_5a29f832943b
+RUN <<EOF_d3213a063c73
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/jekyll/jekyll /testbed
@@ -35,7 +35,7 @@ cd /testbed
 sed -i '/^[[:space:]]*install_if.*mingw/,/^[[:space:]]*end/d' Gemfile
 script/bootstrap
 bundle add webrick
-EOF_5a29f832943b
+EOF_d3213a063c73
 
 
 WORKDIR /testbed

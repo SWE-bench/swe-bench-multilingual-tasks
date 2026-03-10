@@ -53,7 +53,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_e79704b04f14
+RUN <<EOF_a70139dd0910
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/hashicorp/terraform /testbed
@@ -71,7 +71,7 @@ COMMIT_COUNT=$(git log --oneline --all --since="$AFTER_TIMESTAMP" | wc -l)
 cd - || true
 cd /testbed
 go test -c ./internal/terraform
-EOF_e79704b04f14
+EOF_a70139dd0910
 
 
 WORKDIR /testbed

@@ -16,7 +16,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_226ffff9d0ee
+RUN <<EOF_de39c89953f9
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/jqlang/jq /testbed
@@ -39,7 +39,7 @@ autoreconf -fi
 make clean
 touch src/parser.y src/lexer.l
 make -j$(nproc)
-EOF_226ffff9d0ee
+EOF_de39c89953f9
 
 
 WORKDIR /testbed

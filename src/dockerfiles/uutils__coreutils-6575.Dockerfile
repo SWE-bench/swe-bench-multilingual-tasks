@@ -14,7 +14,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_c66d71f38dc3
+RUN <<EOF_6840cb2b483e
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/uutils/coreutils /testbed
@@ -32,7 +32,7 @@ COMMIT_COUNT=$(git log --oneline --all --since="$AFTER_TIMESTAMP" | wc -l)
 cd - || true
 cd /testbed
 cargo test cksum --no-run
-EOF_c66d71f38dc3
+EOF_6840cb2b483e
 
 
 WORKDIR /testbed

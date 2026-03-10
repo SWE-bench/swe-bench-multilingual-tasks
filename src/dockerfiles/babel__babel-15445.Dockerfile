@@ -38,7 +38,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_cba5ba03cf13
+RUN <<EOF_53021e278e8d
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/babel/babel /testbed
@@ -57,7 +57,7 @@ cd - || true
 cd /testbed
 make bootstrap
 make build
-EOF_cba5ba03cf13
+EOF_53021e278e8d
 
 
 WORKDIR /testbed

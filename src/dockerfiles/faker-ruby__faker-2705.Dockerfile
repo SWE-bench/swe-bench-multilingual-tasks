@@ -15,7 +15,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_4a85714f8f07
+RUN <<EOF_ea7f30d2a58d
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/faker-ruby/faker /testbed
@@ -33,7 +33,7 @@ COMMIT_COUNT=$(git log --oneline --all --since="$AFTER_TIMESTAMP" | wc -l)
 cd - || true
 cd /testbed
 bundle install
-EOF_4a85714f8f07
+EOF_ea7f30d2a58d
 
 
 WORKDIR /testbed

@@ -38,7 +38,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_9c07fc045816
+RUN <<EOF_206bbc7e36b0
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/immutable-js/immutable-js /testbed
@@ -57,7 +57,7 @@ cd - || true
 cd /testbed
 npm install
 npm run build
-EOF_9c07fc045816
+EOF_206bbc7e36b0
 
 
 WORKDIR /testbed

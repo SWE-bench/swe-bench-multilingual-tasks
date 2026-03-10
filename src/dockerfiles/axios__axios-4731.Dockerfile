@@ -38,7 +38,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_386cce3ed0f9
+RUN <<EOF_71cb61070c6f
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/axios/axios /testbed
@@ -56,7 +56,7 @@ COMMIT_COUNT=$(git log --oneline --all --since="$AFTER_TIMESTAMP" | wc -l)
 cd - || true
 cd /testbed
 npm install
-EOF_386cce3ed0f9
+EOF_71cb61070c6f
 
 
 WORKDIR /testbed

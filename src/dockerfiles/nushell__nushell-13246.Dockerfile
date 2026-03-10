@@ -14,7 +14,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_1ae5a88e1f12
+RUN <<EOF_1a1cc3819ed0
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/nushell/nushell /testbed
@@ -33,7 +33,7 @@ cd - || true
 cd /testbed
 cargo test -p nu-command --no-run --test main find::
 cargo build
-EOF_1ae5a88e1f12
+EOF_1a1cc3819ed0
 
 
 WORKDIR /testbed

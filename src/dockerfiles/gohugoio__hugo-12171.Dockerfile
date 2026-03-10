@@ -53,7 +53,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_36d31a34ecf4
+RUN <<EOF_9f55d7d8999e
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/gohugoio/hugo /testbed
@@ -71,7 +71,7 @@ COMMIT_COUNT=$(git log --oneline --all --since="$AFTER_TIMESTAMP" | wc -l)
 cd - || true
 cd /testbed
 go test -c ./hugolib
-EOF_36d31a34ecf4
+EOF_9f55d7d8999e
 
 
 WORKDIR /testbed

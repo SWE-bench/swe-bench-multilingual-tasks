@@ -15,7 +15,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_7aa3c06d8ae1
+RUN <<EOF_0f8e32035fd8
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/fluent/fluentd /testbed
@@ -33,7 +33,7 @@ COMMIT_COUNT=$(git log --oneline --all --since="$AFTER_TIMESTAMP" | wc -l)
 cd - || true
 cd /testbed
 bundle install
-EOF_7aa3c06d8ae1
+EOF_0f8e32035fd8
 
 
 WORKDIR /testbed

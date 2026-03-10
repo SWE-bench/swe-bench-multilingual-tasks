@@ -16,7 +16,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_e25f6dd36b7c
+RUN <<EOF_0b2bec1eb500
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/valkey-io/valkey /testbed
@@ -35,7 +35,7 @@ cd - || true
 cd /testbed
 make distclean
 make
-EOF_e25f6dd36b7c
+EOF_0b2bec1eb500
 
 
 WORKDIR /testbed
