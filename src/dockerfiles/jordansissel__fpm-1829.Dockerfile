@@ -1,5 +1,5 @@
 
-FROM --platform=linux/amd64 ruby:3.1
+FROM --platform=linux/amd64 ruby:3.1.7-bookworm
 
 ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=Etc/UTC

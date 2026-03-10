@@ -20,7 +20,7 @@ RUN apt-get update && apt-get install -y nodejs
 RUN node -v && npm -v
 
 # Install pnpm
-RUN npm install --global corepack@latest
+RUN npm install --global corepack@0.32.0
 RUN corepack enable pnpm
 
 # Install Chrome for browser testing
@@ -38,7 +38,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_9e4d09aec78b
+RUN <<EOF_5c8d9a35bab3
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/preactjs/preact /testbed
@@ -57,7 +57,7 @@ cd - || true
 cd /testbed
 npm install
 git checkout -- mangle.json
-EOF_9e4d09aec78b
+EOF_5c8d9a35bab3
 
 
 WORKDIR /testbed

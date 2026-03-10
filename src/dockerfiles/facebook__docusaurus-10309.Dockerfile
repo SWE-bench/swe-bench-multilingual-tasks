@@ -20,7 +20,7 @@ RUN apt-get update && apt-get install -y nodejs
 RUN node -v && npm -v
 
 # Install pnpm
-RUN npm install --global corepack@latest
+RUN npm install --global corepack@0.32.0
 RUN corepack enable pnpm
 
 # Install Chrome for browser testing
