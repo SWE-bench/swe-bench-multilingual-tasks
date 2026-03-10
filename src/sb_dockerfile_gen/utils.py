@@ -41,7 +41,7 @@ def git_clone_timesafe(repo: str, base_commit: str, workdir: str) -> list[str]:
         "git gc --prune=now --aggressive",
         "AFTER_TIMESTAMP=$(date -d \"$TARGET_TIMESTAMP + 1 second\" '+%Y-%m-%d %H:%M:%S')",
         'COMMIT_COUNT=$(git log --oneline --all --since="$AFTER_TIMESTAMP" | wc -l)',
-        '[ "$COMMIT_COUNT" -eq 0 ] || echo "WARNING: $COMMIT_COUNT commits found after base_commit (expected 0, non-fatal)"',
+        '[ "$COMMIT_COUNT" -eq 0 ] || exit 1',
         "cd - || true",
     ]
 

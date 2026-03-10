@@ -28,7 +28,7 @@ git reflog expire --expire=now --all
 git gc --prune=now --aggressive
 AFTER_TIMESTAMP=$(date -d "$TARGET_TIMESTAMP + 1 second" '+%Y-%m-%d %H:%M:%S')
 COMMIT_COUNT=$(git log --oneline --all --since="$AFTER_TIMESTAMP" | wc -l)
-[ "$COMMIT_COUNT" -eq 0 ] || echo "WARNING: $COMMIT_COUNT commits found after base_commit (expected 0, non-fatal)"
+[ "$COMMIT_COUNT" -eq 0 ] || exit 1
 cd - || true
 cd /testbed
 cat <<'EOF_3bc66a8e0882' > Cargo.lock
