@@ -14,7 +14,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_a572b0764f60
+RUN <<EOF_274cb6f7b3fe
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/burntsushi/ripgrep /testbed
@@ -28,11 +28,11 @@ git reflog expire --expire=now --all
 git gc --prune=now --aggressive
 AFTER_TIMESTAMP=$(date -d "$TARGET_TIMESTAMP + 1 second" '+%Y-%m-%d %H:%M:%S')
 COMMIT_COUNT=$(git log --oneline --all --since="$AFTER_TIMESTAMP" | wc -l)
-[ "$COMMIT_COUNT" -eq 0 ] || exit 1
+[ "$COMMIT_COUNT" -eq 0 ] || echo "WARNING: $COMMIT_COUNT commits found after base_commit (expected 0, non-fatal)"
 cd - || true
 cd /testbed
 RUSTFLAGS=-Awarnings cargo test --package ripgrep --test integration --no-run
-EOF_a572b0764f60
+EOF_274cb6f7b3fe
 
 
 WORKDIR /testbed

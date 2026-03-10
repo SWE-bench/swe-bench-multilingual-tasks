@@ -1,4 +1,5 @@
 import importlib.resources as resources
+import json
 import re
 from argparse import ArgumentParser
 from pathlib import Path
@@ -77,10 +78,15 @@ def get_dockerfile_base(instance, docker_specs):
         raise ValueError(f"Invalid repository for multilingual: {instance['repo']}")
 
 
-def _load_cargo_lock(fixture_name: str) -> str:
-    """Load a Cargo.lock fixture file."""
+def _load_fixture(fixture_name: str) -> str:
+    """Load a fixture file."""
     fixture_path = resources.files(sb_dockerfile_gen.fixtures) / fixture_name
     return fixture_path.read_text()
+
+
+def _load_cargo_lock(fixture_name: str) -> str:
+    """Load a Cargo.lock fixture file."""
+    return _load_fixture(fixture_name)
 
 
 def make_repo_script_list(specs, repo, base_commit) -> list:
@@ -96,10 +102,24 @@ def make_repo_script_list(specs, repo, base_commit) -> list:
         )
     if "pre_install" in specs:
         setup_commands.extend(specs["pre_install"])
+    if "composer_json" in specs:
+        json_content = _load_fixture(specs["composer_json"])
+        delimiter = generate_heredoc_delimiter(json_content)
+        setup_commands.append(
+            f"cat <<'{delimiter}' > composer.json\n{json_content}{delimiter}"
+        )
+    if "composer_lock" in specs:
+        lock_content = _load_fixture(specs["composer_lock"])
+        delimiter = generate_heredoc_delimiter(lock_content)
+        setup_commands.append(
+            f"cat <<'{delimiter}' > composer.lock\n{lock_content}{delimiter}"
+        )
     if "install" in specs:
         setup_commands.extend(specs["install"])
     if "build" in specs:
         setup_commands.extend(specs["build"])
+    if "post_build_cleanup" in specs:
+        setup_commands.extend(specs["post_build_cleanup"])
     return setup_commands
 
 
@@ -193,7 +213,10 @@ def load_instances(
     """Load instances from HuggingFace dataset name or local JSON/JSONL file."""
     path = Path(dataset_name_or_path)
     if path.exists() and path.is_file():
-        if path.suffix == ".jsonl":
+        if path.suffix == ".parquet":
+            import pandas as pd
+            instances = pd.read_parquet(path).to_dict(orient="records")
+        elif path.suffix == ".jsonl":
             with open(path) as f:
                 instances = [json.loads(line) for line in f if line.strip()]
         else:
