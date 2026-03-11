@@ -121,8 +121,11 @@ SPECS_JSON = {
     },
 }
 
+_MICROPYTHON_APT_PKGS = ["libffi-dev", "pkg-config"]
+
 SPECS_MICROPYTHON = {
     "15898": {
+        "apt-pkgs": _MICROPYTHON_APT_PKGS,
         "pre_install": ["python -m venv .venv", "source .venv/bin/activate"],
         "build": [
             "source ./tools/ci.sh",
@@ -135,6 +138,7 @@ SPECS_MICROPYTHON = {
         ],
     },
     "13569": {
+        "apt-pkgs": _MICROPYTHON_APT_PKGS,
         "pre_install": ["python -m venv .venv", "source .venv/bin/activate"],
         "build": [
             "source ./tools/ci.sh",
@@ -147,6 +151,7 @@ SPECS_MICROPYTHON = {
         ],
     },
     "13039": {
+        "apt-pkgs": _MICROPYTHON_APT_PKGS,
         "pre_install": ["python -m venv .venv", "source .venv/bin/activate"],
         "build": [
             "source ./tools/ci.sh",
@@ -159,6 +164,7 @@ SPECS_MICROPYTHON = {
         ],
     },
     "12158": {
+        "apt-pkgs": _MICROPYTHON_APT_PKGS,
         "pre_install": ["python -m venv .venv", "source .venv/bin/activate"],
         "build": [
             "source ./tools/ci.sh",
@@ -171,6 +177,7 @@ SPECS_MICROPYTHON = {
         ],
     },
     "10095": {
+        "apt-pkgs": _MICROPYTHON_APT_PKGS,
         "pre_install": [
             "python -m venv .venv",
             "source .venv/bin/activate",
