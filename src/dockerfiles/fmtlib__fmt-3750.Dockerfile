@@ -16,7 +16,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_a36e01867c88
+RUN <<EOF_1e4c53b07854
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/fmtlib/fmt /testbed
@@ -24,8 +24,9 @@ chmod -R 777 /testbed
 cd /testbed
 git reset --hard 5471a2426c432503bdadeab0c03df387bea97463
 git remote remove origin
+git branch | grep -v '^\*' | xargs -r git branch -D || true
+git tag -l | xargs -r git tag -d
 TARGET_TIMESTAMP=$(git show -s --format=%ci 5471a2426c432503bdadeab0c03df387bea97463)
-git tag -l | while read tag; do TAG_COMMIT=$(git rev-list -n 1 "$tag"); TAG_TIME=$(git show -s --format=%ci "$TAG_COMMIT"); if [[ "$TAG_TIME" > "$TARGET_TIMESTAMP" ]]; then git tag -d "$tag"; fi; done
 git reflog expire --expire=now --all
 git gc --prune=now --aggressive
 AFTER_TIMESTAMP=$(date -d "$TARGET_TIMESTAMP + 1 second" '+%Y-%m-%d %H:%M:%S')
@@ -36,7 +37,7 @@ cd /testbed
 mkdir -p build
 cmake -B build -S .
 cmake --build build --parallel $(nproc) --target format-test
-EOF_a36e01867c88
+EOF_1e4c53b07854
 
 
 WORKDIR /testbed

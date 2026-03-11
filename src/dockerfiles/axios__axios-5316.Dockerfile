@@ -20,7 +20,7 @@ RUN apt-get update && apt-get install -y nodejs
 RUN node -v && npm -v
 
 # Install pnpm
-RUN npm install --global corepack@latest
+RUN npm install --global corepack@0.32.0
 RUN corepack enable pnpm
 
 # Install Chrome for browser testing
@@ -38,7 +38,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_aaf5e04249c7
+RUN <<EOF_641a1dcce0b6
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/axios/axios /testbed
@@ -46,8 +46,9 @@ chmod -R 777 /testbed
 cd /testbed
 git reset --hard 65e8d1e28ce829f47a837e45129730e541950d3c
 git remote remove origin
+git branch | grep -v '^\*' | xargs -r git branch -D || true
+git tag -l | xargs -r git tag -d
 TARGET_TIMESTAMP=$(git show -s --format=%ci 65e8d1e28ce829f47a837e45129730e541950d3c)
-git tag -l | while read tag; do TAG_COMMIT=$(git rev-list -n 1 "$tag"); TAG_TIME=$(git show -s --format=%ci "$TAG_COMMIT"); if [[ "$TAG_TIME" > "$TARGET_TIMESTAMP" ]]; then git tag -d "$tag"; fi; done
 git reflog expire --expire=now --all
 git gc --prune=now --aggressive
 AFTER_TIMESTAMP=$(date -d "$TARGET_TIMESTAMP + 1 second" '+%Y-%m-%d %H:%M:%S')
@@ -57,7 +58,7 @@ cd - || true
 cd /testbed
 npm install
 npm install
-EOF_aaf5e04249c7
+EOF_641a1dcce0b6
 
 
 WORKDIR /testbed
