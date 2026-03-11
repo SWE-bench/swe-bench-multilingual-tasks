@@ -38,7 +38,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_f75d85edb85c
+RUN <<EOF_fee3d7717e21
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/babel/babel /testbed
@@ -46,8 +46,9 @@ chmod -R 777 /testbed
 cd /testbed
 git reset --hard 5134505bf93013c5fa7df66704df8d04becb7f7d
 git remote remove origin
+git branch | grep -v '^\*' | xargs -r git branch -D || true
+git tag -l | xargs -r git tag -d
 TARGET_TIMESTAMP=$(git show -s --format=%ci 5134505bf93013c5fa7df66704df8d04becb7f7d)
-git tag -l | while read tag; do TAG_COMMIT=$(git rev-list -n 1 "$tag"); TAG_TIME=$(git show -s --format=%ci "$TAG_COMMIT"); if [[ "$TAG_TIME" > "$TARGET_TIMESTAMP" ]]; then git tag -d "$tag"; fi; done
 git reflog expire --expire=now --all
 git gc --prune=now --aggressive
 AFTER_TIMESTAMP=$(date -d "$TARGET_TIMESTAMP + 1 second" '+%Y-%m-%d %H:%M:%S')
@@ -57,7 +58,7 @@ cd - || true
 cd /testbed
 make bootstrap
 make build
-EOF_f75d85edb85c
+EOF_fee3d7717e21
 
 
 WORKDIR /testbed

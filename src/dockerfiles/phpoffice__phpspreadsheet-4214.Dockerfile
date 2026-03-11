@@ -24,7 +24,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_5787ccc7677a
+RUN <<EOF_92d9c70699c8
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/phpoffice/phpspreadsheet /testbed
@@ -32,8 +32,9 @@ chmod -R 777 /testbed
 cd /testbed
 git reset --hard 915bfc55cd6217e059b5859b341bab7bdd0874c8
 git remote remove origin
+git branch | grep -v '^\*' | xargs -r git branch -D || true
+git tag -l | xargs -r git tag -d
 TARGET_TIMESTAMP=$(git show -s --format=%ci 915bfc55cd6217e059b5859b341bab7bdd0874c8)
-git tag -l | while read tag; do TAG_COMMIT=$(git rev-list -n 1 "$tag"); TAG_TIME=$(git show -s --format=%ci "$TAG_COMMIT"); if [[ "$TAG_TIME" > "$TARGET_TIMESTAMP" ]]; then git tag -d "$tag"; fi; done
 git reflog expire --expire=now --all
 git gc --prune=now --aggressive
 AFTER_TIMESTAMP=$(date -d "$TARGET_TIMESTAMP + 1 second" '+%Y-%m-%d %H:%M:%S')
@@ -5955,7 +5956,7 @@ cat <<'EOF_2a4b436d4826' > composer.lock
 }
 EOF_2a4b436d4826
 composer install
-EOF_5787ccc7677a
+EOF_92d9c70699c8
 
 
 WORKDIR /testbed

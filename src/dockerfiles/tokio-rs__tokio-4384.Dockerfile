@@ -14,7 +14,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_9b8c938a8c74
+RUN <<EOF_e974c07b8f77
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/tokio-rs/tokio /testbed
@@ -22,8 +22,9 @@ chmod -R 777 /testbed
 cd /testbed
 git reset --hard 553cc3b194df875cac8736473e1f01cf3e40a660
 git remote remove origin
+git branch | grep -v '^\*' | xargs -r git branch -D || true
+git tag -l | xargs -r git tag -d
 TARGET_TIMESTAMP=$(git show -s --format=%ci 553cc3b194df875cac8736473e1f01cf3e40a660)
-git tag -l | while read tag; do TAG_COMMIT=$(git rev-list -n 1 "$tag"); TAG_TIME=$(git show -s --format=%ci "$TAG_COMMIT"); if [[ "$TAG_TIME" > "$TARGET_TIMESTAMP" ]]; then git tag -d "$tag"; fi; done
 git reflog expire --expire=now --all
 git gc --prune=now --aggressive
 AFTER_TIMESTAMP=$(date -d "$TARGET_TIMESTAMP + 1 second" '+%Y-%m-%d %H:%M:%S')
@@ -1775,7 +1776,7 @@ dependencies = [
  "syn 2.0.111",
 ]
 EOF_afcc877348f8
-EOF_9b8c938a8c74
+EOF_e974c07b8f77
 
 
 WORKDIR /testbed

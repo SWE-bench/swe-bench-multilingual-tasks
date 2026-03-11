@@ -24,7 +24,7 @@ EOF_aa563141c5a4
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_d5e8c2eacd36
+RUN <<EOF_201d16a25799
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/micropython/micropython /testbed
@@ -32,8 +32,9 @@ chmod -R 777 /testbed
 cd /testbed
 git reset --hard 2d7fb9a715d8c9f1f7ba73a62cfd587fa6ffc24a
 git remote remove origin
+git branch | grep -v '^\*' | xargs -r git branch -D || true
+git tag -l | xargs -r git tag -d
 TARGET_TIMESTAMP=$(git show -s --format=%ci 2d7fb9a715d8c9f1f7ba73a62cfd587fa6ffc24a)
-git tag -l | while read tag; do TAG_COMMIT=$(git rev-list -n 1 "$tag"); TAG_TIME=$(git show -s --format=%ci "$TAG_COMMIT"); if [[ "$TAG_TIME" > "$TARGET_TIMESTAMP" ]]; then git tag -d "$tag"; fi; done
 git reflog expire --expire=now --all
 git gc --prune=now --aggressive
 AFTER_TIMESTAMP=$(date -d "$TARGET_TIMESTAMP + 1 second" '+%Y-%m-%d %H:%M:%S')
@@ -46,7 +47,7 @@ source .venv/bin/activate
 source ./tools/ci.sh
 ci_unix_build_helper VARIANT=standard
 gcc -shared -o tests/ports/unix/ffi_lib.so tests/ports/unix/ffi_lib.c
-EOF_d5e8c2eacd36
+EOF_201d16a25799
 
 
 WORKDIR /testbed

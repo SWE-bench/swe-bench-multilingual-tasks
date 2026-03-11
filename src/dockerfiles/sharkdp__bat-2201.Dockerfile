@@ -14,7 +14,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_4ff13b55d8c1
+RUN <<EOF_893fe88f39ec
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/sharkdp/bat /testbed
@@ -22,8 +22,9 @@ chmod -R 777 /testbed
 cd /testbed
 git reset --hard 02a9d191ed06e6e37d4e352f12e25e65e8037dd0
 git remote remove origin
+git branch | grep -v '^\*' | xargs -r git branch -D || true
+git tag -l | xargs -r git tag -d
 TARGET_TIMESTAMP=$(git show -s --format=%ci 02a9d191ed06e6e37d4e352f12e25e65e8037dd0)
-git tag -l | while read tag; do TAG_COMMIT=$(git rev-list -n 1 "$tag"); TAG_TIME=$(git show -s --format=%ci "$TAG_COMMIT"); if [[ "$TAG_TIME" > "$TARGET_TIMESTAMP" ]]; then git tag -d "$tag"; fi; done
 git reflog expire --expire=now --all
 git gc --prune=now --aggressive
 AFTER_TIMESTAMP=$(date -d "$TARGET_TIMESTAMP + 1 second" '+%Y-%m-%d %H:%M:%S')
@@ -32,7 +33,7 @@ COMMIT_COUNT=$(git log --oneline --all --since="$AFTER_TIMESTAMP" | wc -l)
 cd - || true
 cd /testbed
 RUSTFLAGS=-Awarnings cargo test --package bat --test integration_tests pag --no-run
-EOF_4ff13b55d8c1
+EOF_893fe88f39ec
 
 
 WORKDIR /testbed
