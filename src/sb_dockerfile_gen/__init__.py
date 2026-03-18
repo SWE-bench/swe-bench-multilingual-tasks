@@ -82,6 +82,8 @@ def make_repo_script_list(specs, repo, base_commit) -> list:
         setup_commands.extend(specs["install"])
     if "build" in specs:
         setup_commands.extend(specs["build"])
+    if "post_build_cleanup" in specs:
+        setup_commands.extend(specs["post_build_cleanup"])
     return setup_commands
 
 
