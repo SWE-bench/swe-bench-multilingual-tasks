@@ -98,10 +98,24 @@ def make_repo_script_list(specs, repo, base_commit) -> list:
         )
     if "pre_install" in specs:
         setup_commands.extend(specs["pre_install"])
+    if "composer_json" in specs:
+        json_content = _load_fixture(specs["composer_json"])
+        delimiter = generate_heredoc_delimiter(json_content)
+        setup_commands.append(
+            f"cat <<'{delimiter}' > composer.json\n{json_content}{delimiter}"
+        )
+    if "composer_lock" in specs:
+        lock_content = _load_fixture(specs["composer_lock"])
+        delimiter = generate_heredoc_delimiter(lock_content)
+        setup_commands.append(
+            f"cat <<'{delimiter}' > composer.lock\n{lock_content}{delimiter}"
+        )
     if "install" in specs:
         setup_commands.extend(specs["install"])
     if "build" in specs:
         setup_commands.extend(specs["build"])
+    if "post_build_cleanup" in specs:
+        setup_commands.extend(specs["post_build_cleanup"])
     return setup_commands
 
 
