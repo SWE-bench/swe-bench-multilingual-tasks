@@ -80,11 +80,22 @@ def _load_fixture(fixture_name: str) -> str:
     return fixture_path.read_text()
 
 
+def _load_cargo_lock(fixture_name: str) -> str:
+    """Load a Cargo.lock fixture file."""
+    return _load_fixture(fixture_name)
+
+
 def make_repo_script_list(specs, repo, base_commit) -> list:
     setup_commands = [
         *git_clone_timesafe(repo, base_commit, CONTAINER_WORKDIR),
         f"cd {CONTAINER_WORKDIR}",
     ]
+    if "cargo_lock" in specs:
+        lock_content = _load_cargo_lock(specs["cargo_lock"])
+        delimiter = generate_heredoc_delimiter(lock_content)
+        setup_commands.append(
+            f"cat <<'{delimiter}' > Cargo.lock\n{lock_content}{delimiter}"
+        )
     if "pre_install" in specs:
         setup_commands.extend(specs["pre_install"])
     if "composer_json" in specs:

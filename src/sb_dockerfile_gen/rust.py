@@ -137,7 +137,7 @@ SPECS_RUFF = {
         ],
     },
     "15394": {
-        "docker_specs": {"rust_version": "1.83"},
+        "docker_specs": {"rust_version": "1.85"},
         "install": [
             "RUSTFLAGS=-Awarnings cargo test --package ruff_linter --lib rules::flake8_pie --no-run"
         ],
@@ -146,7 +146,7 @@ SPECS_RUFF = {
         ],
     },
     "15356": {
-        "docker_specs": {"rust_version": "1.83"},
+        "docker_specs": {"rust_version": "1.85"},
         "install": [
             "RUSTFLAGS=-Awarnings cargo test --package ruff_linter --lib rules::pycodestyle --no-run"
         ],
@@ -155,7 +155,7 @@ SPECS_RUFF = {
         ],
     },
     "15330": {
-        "docker_specs": {"rust_version": "1.83"},
+        "docker_specs": {"rust_version": "1.85"},
         "install": [
             "RUSTFLAGS=-Awarnings cargo test --package ruff_linter --lib rules::eradicate --no-run"
         ],
@@ -164,7 +164,7 @@ SPECS_RUFF = {
         ],
     },
     "15309": {
-        "docker_specs": {"rust_version": "1.83"},
+        "docker_specs": {"rust_version": "1.85"},
         "install": ["RUSTFLAGS=-Awarnings cargo test --package ruff_linter --no-run"],
         "test_cmd": [
             "cargo test --package ruff_linter 'f52'",
@@ -174,29 +174,32 @@ SPECS_RUFF = {
 
 TOKIO_SPECS = {
     "6724": {
-        "docker_specs": {"rust_version": "1.81"},
-        # install only as much as needed to run the tests
+        "docker_specs": {"rust_version": "1.85"},
+        "cargo_lock": "tokio-rs__tokio-6724.Cargo.lock",
         "install": ["cargo test --test io_write_all_buf --no-fail-fast --no-run"],
-        # no build step, cargo test will build the relevant packages
         "test_cmd": ["cargo test --test io_write_all_buf --no-fail-fast"],
     },
     "6838": {
-        "docker_specs": {"rust_version": "1.81"},
+        "docker_specs": {"rust_version": "1.85"},
+        "cargo_lock": "tokio-rs__tokio-6838.Cargo.lock",
         "install": ["cargo test --test uds_stream --no-fail-fast --no-run"],
         "test_cmd": ["cargo test --test uds_stream --no-fail-fast"],
     },
     "6752": {
-        "docker_specs": {"rust_version": "1.81"},
+        "docker_specs": {"rust_version": "1.85"},
+        "cargo_lock": "tokio-rs__tokio-6752.Cargo.lock",
         "install": ["cargo test --test time_delay_queue --no-fail-fast --no-run"],
         "test_cmd": ["cargo test --test time_delay_queue --no-fail-fast"],
     },
     "4867": {
-        "docker_specs": {"rust_version": "1.81"},
+        "docker_specs": {"rust_version": "1.85"},
+        "cargo_lock": "tokio-rs__tokio-4867.Cargo.lock",
         "install": ["cargo test --test sync_broadcast --no-fail-fast --no-run"],
         "test_cmd": ["cargo test --test sync_broadcast --no-fail-fast"],
     },
     "4898": {
-        "docker_specs": {"rust_version": "1.81"},
+        "docker_specs": {"rust_version": "1.85"},
+        "cargo_lock": "tokio-rs__tokio-4898.Cargo.lock",
         "install": [
             'RUSTFLAGS="--cfg tokio_unstable" cargo test --features full --test rt_metrics --no-run'
         ],
@@ -205,12 +208,14 @@ TOKIO_SPECS = {
         ],
     },
     "6603": {
-        "docker_specs": {"rust_version": "1.81"},
+        "docker_specs": {"rust_version": "1.85"},
+        "cargo_lock": "tokio-rs__tokio-6603.Cargo.lock",
         "install": ["cargo test --test sync_mpsc --no-fail-fast --no-run"],
         "test_cmd": ["cargo test --test sync_mpsc --no-fail-fast"],
     },
     "6551": {
-        "docker_specs": {"rust_version": "1.81"},
+        "docker_specs": {"rust_version": "1.85"},
+        "cargo_lock": "tokio-rs__tokio-6551.Cargo.lock",
         "install": [
             'RUSTFLAGS="--cfg tokio_unstable" cargo test --features full --test rt_metrics --no-fail-fast --no-run'
         ],
@@ -219,13 +224,15 @@ TOKIO_SPECS = {
         ],
     },
     "4384": {
-        "docker_specs": {"rust_version": "1.81"},
+        "docker_specs": {"rust_version": "1.85"},
+        "cargo_lock": "tokio-rs__tokio-4384.Cargo.lock",
         "test_cmd": [
             "RUSTFLAGS=-Awarnings cargo test --package tokio --test net_types_unwind --features full --no-fail-fast"
         ],
     },
     "7139": {
-        "docker_specs": {"rust_version": "1.81"},
+        "docker_specs": {"rust_version": "1.85"},
+        "cargo_lock": "tokio-rs__tokio-7139.Cargo.lock",
         "install": [
             'RUSTFLAGS="--cfg tokio_unstable" cargo test --test fs_file --no-fail-fast --no-run'
         ],
@@ -300,14 +307,16 @@ NUSHELL_SPECS = {
 
 AXUM_SPECS = {
     "2096": {
-        "docker_specs": {"rust_version": "1.81"},
+        "docker_specs": {"rust_version": "1.85"},
+        "cargo_lock": "tokio-rs__axum-2096.Cargo.lock",
         "install": ["RUSTFLAGS=-Awarnings cargo test --package axum --lib --no-run"],
         "test_cmd": [
             "RUSTFLAGS=-Awarnings cargo test --package axum --lib -- routing::tests::fallback"
         ],
     },
     "1934": {
-        "docker_specs": {"rust_version": "1.81"},
+        "docker_specs": {"rust_version": "1.85"},
+        "cargo_lock": "tokio-rs__axum-1934.Cargo.lock",
         "install": ["RUSTFLAGS=-Awarnings cargo test --package axum --lib --no-run"],
         "test_cmd": [
             "RUSTFLAGS=-Awarnings cargo test --package axum --lib -- routing::tests::fallback"
@@ -315,35 +324,40 @@ AXUM_SPECS = {
     },
     # All tests for 1730 are PASS_TO_PASS since it tests compilation
     "1730": {
-        "docker_specs": {"rust_version": "1.81"},
+        "docker_specs": {"rust_version": "1.85"},
+        "cargo_lock": "tokio-rs__axum-1730.Cargo.lock",
         "install": ["RUSTFLAGS=-Awarnings cargo test --package axum --lib --no-run"],
         "test_cmd": [
             "RUSTFLAGS=-Awarnings cargo test --package axum --lib -- routing::tests::mod state"
         ],
     },
     "1119": {
-        "docker_specs": {"rust_version": "1.81"},
+        "docker_specs": {"rust_version": "1.85"},
+        "cargo_lock": "tokio-rs__axum-1119.Cargo.lock",
         "install": [
             "RUSTFLAGS=-Awarnings cargo test --package axum --lib slash --no-run"
         ],
         "test_cmd": ["RUSTFLAGS=-Awarnings cargo test --package axum --lib slash"],
     },
     "734": {
-        "docker_specs": {"rust_version": "1.81"},
+        "docker_specs": {"rust_version": "1.85"},
+        "cargo_lock": "tokio-rs__axum-734.Cargo.lock",
         "install": ["RUSTFLAGS=-Awarnings cargo test --package axum --lib --no-run"],
         "test_cmd": [
             "RUSTFLAGS=-Awarnings cargo test --package axum --lib -- routing::tests::head"
         ],
     },
     "691": {
-        "docker_specs": {"rust_version": "1.81"},
+        "docker_specs": {"rust_version": "1.85"},
+        "cargo_lock": "tokio-rs__axum-691.Cargo.lock",
         "install": ["RUSTFLAGS=-Awarnings cargo test --package axum --lib --no-run"],
         "test_cmd": [
             "RUSTFLAGS=-Awarnings cargo test --package axum --lib -- routing::tests::nest::nesting_router_at_root --exact"
         ],
     },
     "682": {
-        "docker_specs": {"rust_version": "1.81"},
+        "docker_specs": {"rust_version": "1.85"},
+        "cargo_lock": "tokio-rs__axum-682.Cargo.lock",
         "install": [
             "RUSTFLAGS=-Awarnings cargo test --package axum --lib trailing --no-run"
         ],
