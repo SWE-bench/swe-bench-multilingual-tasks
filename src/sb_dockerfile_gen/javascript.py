@@ -22,7 +22,7 @@ RUN apt-get update && apt-get install -y nodejs
 RUN node -v && npm -v
 
 # Install pnpm
-RUN npm install --global corepack@latest
+RUN npm install --global corepack@0.32.0
 RUN corepack enable pnpm
 
 # Install Chrome for browser testing
@@ -295,7 +295,7 @@ SPECS_PREACT = {
     },
     "2927": {
         "docker_specs": {"node_version": "16"},
-        "install": ["npm install"],
+        "install": ["npm install", "git checkout -- mangle.json"],
         "test_cmd": [
             'COVERAGE=false BABEL_NO_MODULES=true npx karma start karma.conf.js --single-run --grep="test/browser/render.test.js"',
         ],
