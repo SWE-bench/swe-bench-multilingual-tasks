@@ -1,5 +1,5 @@
 _DOCKERFILE_BASE_JAVA = r"""
-FROM --platform=linux/amd64 maven:3.9-eclipse-temurin-{java_version}
+FROM --platform=linux/amd64 {java_image}
 
 ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=Etc/UTC
@@ -179,7 +179,7 @@ EOF
 # Constants - Task Instance Installation Environment
 SPECS_GSON = {
     "2158": {
-        "docker_specs": {"java_version": "11"},
+        "docker_specs": {"java_image": "maven:3.9.12-eclipse-temurin-11-noble"},
         "install": ["mvn clean install -B -pl gson -DskipTests -am"],
         "test_cmd": [
             # FAIL_TO_PASS
@@ -197,7 +197,7 @@ SPECS_GSON = {
         ],
     },
     "2024": {
-        "docker_specs": {"java_version": "11"},
+        "docker_specs": {"java_image": "maven:3.9.12-eclipse-temurin-11-noble"},
         "install": ["mvn clean install -B -pl gson -DskipTests -am"],
         "test_cmd": [
             # FAIL_TO_PASS
@@ -207,7 +207,7 @@ SPECS_GSON = {
         ],
     },
     "2479": {
-        "docker_specs": {"java_version": "11"},
+        "docker_specs": {"java_image": "maven:3.9.12-eclipse-temurin-11-noble"},
         "install": ["mvn clean install -B -pl gson -DskipTests -am"],
         "test_cmd": [
             # FAIL_TO_PASS
@@ -218,7 +218,7 @@ SPECS_GSON = {
         ],
     },
     "2134": {
-        "docker_specs": {"java_version": "11"},
+        "docker_specs": {"java_image": "maven:3.9.12-eclipse-temurin-11-noble"},
         "install": ["mvn clean install -B -pl gson -DskipTests -am"],
         "test_cmd": [
             # FAIL_TO_PASS
@@ -229,7 +229,7 @@ SPECS_GSON = {
         ],
     },
     "2061": {
-        "docker_specs": {"java_version": "11"},
+        "docker_specs": {"java_image": "maven:3.9.12-eclipse-temurin-11-noble"},
         "install": ["mvn clean install -B -pl gson -DskipTests -am"],
         "test_cmd": [
             # FAIL_TO_PASS
@@ -243,7 +243,7 @@ SPECS_GSON = {
         ],
     },
     "2311": {
-        "docker_specs": {"java_version": "11"},
+        "docker_specs": {"java_image": "maven:3.9.12-eclipse-temurin-11-noble"},
         "install": ["mvn clean install -B -pl gson -DskipTests -am"],
         "test_cmd": [
             # FAIL_TO_PASS
@@ -254,7 +254,7 @@ SPECS_GSON = {
         ],
     },
     "1100": {
-        "docker_specs": {"java_version": "11"},
+        "docker_specs": {"java_image": "maven:3.9.12-eclipse-temurin-11-noble"},
         "install": ["mvn clean install -B -pl gson -DskipTests -am"],
         "test_cmd": [
             # FAIL_TO_PASS
@@ -265,7 +265,7 @@ SPECS_GSON = {
         ],
     },
     "1093": {
-        "docker_specs": {"java_version": "11"},
+        "docker_specs": {"java_image": "maven:3.9.12-eclipse-temurin-11-noble"},
         "install": ["mvn clean install -B -pl gson -DskipTests -am"],
         "test_cmd": [
             # FAIL_TO_PASS
@@ -278,7 +278,7 @@ SPECS_GSON = {
         ],
     },
     "1014": {
-        "docker_specs": {"java_version": "11"},
+        "docker_specs": {"java_image": "maven:3.9.12-eclipse-temurin-11-noble"},
         "install": ["mvn clean install -B -pl gson -DskipTests -am"],
         "test_cmd": [
             # FAIL_TO_PASS
@@ -290,7 +290,7 @@ SPECS_GSON = {
 
 SPECS_DRUID = {
     "15402": {
-        "docker_specs": {"java_version": "11"},
+        "docker_specs": {"java_image": "maven:3.9.12-eclipse-temurin-11-noble"},
         "install": [
             "mvn clean install -B -pl processing -DskipTests -am",
         ],
@@ -303,7 +303,7 @@ SPECS_DRUID = {
         ],
     },
     "14092": {
-        "docker_specs": {"java_version": "11"},
+        "docker_specs": {"java_image": "maven:3.9.12-eclipse-temurin-11-noble"},
         "install": [
             "mvn clean install -B -pl processing,cloud/aws-common,cloud/gcp-common -DskipTests -am",
         ],
@@ -315,7 +315,7 @@ SPECS_DRUID = {
         ],
     },
     "14136": {
-        "docker_specs": {"java_version": "11"},
+        "docker_specs": {"java_image": "maven:3.9.12-eclipse-temurin-11-noble"},
         "install": [
             "mvn clean install -B -pl processing -DskipTests -am",
         ],
@@ -331,7 +331,7 @@ SPECS_DRUID = {
         ],
     },
     "13704": {
-        "docker_specs": {"java_version": "11"},
+        "docker_specs": {"java_image": "maven:3.9.12-eclipse-temurin-11-noble"},
         "install": [
             # Update the pom.xml to use the correct version of the resource bundle. See https://github.com/apache/druid/pull/14054
             r"sed -i 's/<resourceBundle>org.apache.apache.resources:apache-jar-resource-bundle:1.5-SNAPSHOT<\/resourceBundle>/<resourceBundle>org.apache.apache.resources:apache-jar-resource-bundle:1.5<\/resourceBundle>/' pom.xml",
@@ -346,7 +346,7 @@ SPECS_DRUID = {
         ],
     },
     "16875": {
-        "docker_specs": {"java_version": "11"},
+        "docker_specs": {"java_image": "maven:3.9.12-eclipse-temurin-11-noble"},
         "install": [
             "mvn clean install -B -pl server -DskipTests -am",
         ],
@@ -362,7 +362,7 @@ SPECS_DRUID = {
 
 SPECS_JAVAPARSER = {
     "4561": {
-        "docker_specs": {"java_version": "17"},
+        "docker_specs": {"java_image": "maven:3.9.12-eclipse-temurin-17-noble"},
         # build is run before patch is applied to recompile the relevant files
         "build": [
             "./mvnw clean install -B -pl javaparser-symbol-solver-testing -DskipTests -am"
@@ -375,7 +375,7 @@ SPECS_JAVAPARSER = {
         ],
     },
     "4538": {
-        "docker_specs": {"java_version": "17"},
+        "docker_specs": {"java_image": "maven:3.9.12-eclipse-temurin-17-noble"},
         "build": [
             "./mvnw clean install -B -pl javaparser-core-testing -DskipTests -am"
         ],
@@ -392,7 +392,7 @@ SPECS_LOMBOK = {
     # Note: With some instances, PASS_TO_PASS only contains a few tests
     # relevant to the instance, not all the tests that pass
     "3602": {
-        "docker_specs": {"java_version": "11"},
+        "docker_specs": {"java_image": "maven:3.9.12-eclipse-temurin-11-noble"},
         "pre_install": make_lombok_pre_install_script(
             ["lombok.bytecode.TestPostCompiler"]
         ),
@@ -401,7 +401,7 @@ SPECS_LOMBOK = {
     },
     **{
         k: {
-            "docker_specs": {"java_version": "11"},
+            "docker_specs": {"java_image": "maven:3.9.12-eclipse-temurin-11-noble"},
             "pre_install": make_lombok_pre_install_script(
                 ["lombok.transform.TestWithDelombok"]
             ),
@@ -424,7 +424,7 @@ SPECS_LOMBOK = {
     },
     **{
         k: {
-            "docker_specs": {"java_version": "17"},
+            "docker_specs": {"java_image": "maven:3.9.12-eclipse-temurin-17-noble"},
             "pre_install": make_lombok_pre_install_script(
                 ["lombok.transform.TestWithDelombok"]
             ),
@@ -437,7 +437,7 @@ SPECS_LOMBOK = {
 
 SPECS_LUCENE = {
     "13494": {
-        "docker_specs": {"java_version": "21"},
+        "docker_specs": {"java_image": "maven:3.9.12-eclipse-temurin-21-noble"},
         "pre_install": make_lucene_pre_install_script(),
         # No install script, download dependencies and compile in the test phase
         "test_cmd": [
@@ -445,54 +445,54 @@ SPECS_LUCENE = {
         ],
     },
     "13704": {
-        "docker_specs": {"java_version": "21"},
+        "docker_specs": {"java_image": "maven:3.9.12-eclipse-temurin-21-noble"},
         "pre_install": make_lucene_pre_install_script(),
         "test_cmd": [
             "./gradlew test --tests org.apache.lucene.search.TestLatLonDocValuesQueries",
         ],
     },
     "13301": {
-        "docker_specs": {"java_version": "21"},
+        "docker_specs": {"java_image": "maven:3.9.12-eclipse-temurin-21-noble"},
         "pre_install": make_lucene_pre_install_script(),
         "test_cmd": [
             "./gradlew test --tests TestXYPoint.testEqualsAndHashCode -Dtests.seed=3ABEFE4D876DD310 -Dtests.nightly=true -Dtests.locale=es-419 -Dtests.timezone=Asia/Ulaanbaatar -Dtests.asserts=true -Dtests.file.encoding=UTF-8",
         ],
     },
     "12626": {
-        "docker_specs": {"java_version": "21"},
+        "docker_specs": {"java_image": "maven:3.9.12-eclipse-temurin-21-noble"},
         "pre_install": make_lucene_pre_install_script(),
         "test_cmd": ["./gradlew test --tests org.apache.lucene.index.TestIndexWriter"],
     },
     "12212": {
-        "docker_specs": {"java_version": "17"},
+        "docker_specs": {"java_image": "maven:3.9.12-eclipse-temurin-17-noble"},
         "pre_install": make_lucene_pre_install_script(),
         "test_cmd": [
             "./gradlew test --tests org.apache.lucene.facet.TestDrillSideways"
         ],
     },
     "13170": {
-        "docker_specs": {"java_version": "21"},
+        "docker_specs": {"java_image": "maven:3.9.12-eclipse-temurin-21-noble"},
         "pre_install": make_lucene_pre_install_script(),
         "test_cmd": [
             "./gradlew test --tests org.apache.lucene.analysis.opennlp.TestOpenNLPSentenceBreakIterator"
         ],
     },
     "12196": {
-        "docker_specs": {"java_version": "17"},
+        "docker_specs": {"java_image": "maven:3.9.12-eclipse-temurin-17-noble"},
         "pre_install": make_lucene_pre_install_script(),
         "test_cmd": [
             "./gradlew test --tests org.apache.lucene.queryparser.classic.TestMultiFieldQueryParser"
         ],
     },
     "12022": {
-        "docker_specs": {"java_version": "17"},
+        "docker_specs": {"java_image": "maven:3.9.12-eclipse-temurin-17-noble"},
         "pre_install": make_lucene_pre_install_script(),
         "test_cmd": [
             "./gradlew test --tests org.apache.lucene.document.TestLatLonShape"
         ],
     },
     "11760": {
-        "docker_specs": {"java_version": "17"},
+        "docker_specs": {"java_image": "maven:3.9.12-eclipse-temurin-17-noble"},
         "pre_install": make_lucene_pre_install_script(),
         "test_cmd": [
             "./gradlew test --tests org.apache.lucene.queries.intervals.TestIntervalBuilder"
@@ -502,7 +502,7 @@ SPECS_LUCENE = {
 
 SPECS_RXJAVA = {
     "7597": {
-        "docker_specs": {"java_version": "11"},
+        "docker_specs": {"java_image": "maven:3.9.12-eclipse-temurin-11-noble"},
         "pre_install": make_rxjava_pre_install_script(),
         "test_cmd": [
             "./gradlew test --tests io.reactivex.rxjava3.internal.operators.observable.ObservableSwitchTest"

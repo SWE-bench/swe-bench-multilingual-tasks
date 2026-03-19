@@ -1,3 +1,4 @@
+import importlib.resources as resources
 import json
 import re
 from argparse import ArgumentParser
@@ -37,7 +38,9 @@ from sb_dockerfile_gen.constants import (
     END_TEST_OUTPUT,
     START_TEST_OUTPUT,
 )
+import sb_dockerfile_gen.fixtures
 from sb_dockerfile_gen.utils import (
+    generate_heredoc_delimiter,
     git_clone_timesafe,
     make_heredoc_run_command,
 )
@@ -54,13 +57,6 @@ MAP_REPO_VERSION_TO_SPECS = {
 
 
 # ── Dockerfile generation ──────────────────────────────────────────────
-
-_EOF_DELIMITER_RE = re.compile(r"\bEOF_[0-9a-f]{12}\b")
-
-
-def _strip_eof_delimiters(text: str) -> str:
-    """Normalize EOF heredoc delimiters so content-only changes can be detected."""
-    return _EOF_DELIMITER_RE.sub("EOF_PLACEHOLDER", text)
 
 
 def get_dockerfile_base(instance, docker_specs):
@@ -82,17 +78,48 @@ def get_dockerfile_base(instance, docker_specs):
         raise ValueError(f"Invalid repository for multilingual: {instance['repo']}")
 
 
+def _load_fixture(fixture_name: str) -> str:
+    """Load a fixture file."""
+    fixture_path = resources.files(sb_dockerfile_gen.fixtures) / fixture_name
+    return fixture_path.read_text()
+
+
+def _load_cargo_lock(fixture_name: str) -> str:
+    """Load a Cargo.lock fixture file."""
+    return _load_fixture(fixture_name)
+
+
 def make_repo_script_list(specs, repo, base_commit) -> list:
     setup_commands = [
         *git_clone_timesafe(repo, base_commit, CONTAINER_WORKDIR),
         f"cd {CONTAINER_WORKDIR}",
     ]
+    if "cargo_lock" in specs:
+        lock_content = _load_cargo_lock(specs["cargo_lock"])
+        delimiter = generate_heredoc_delimiter(lock_content)
+        setup_commands.append(
+            f"cat <<'{delimiter}' > Cargo.lock\n{lock_content}{delimiter}"
+        )
     if "pre_install" in specs:
         setup_commands.extend(specs["pre_install"])
+    if "composer_json" in specs:
+        json_content = _load_fixture(specs["composer_json"])
+        delimiter = generate_heredoc_delimiter(json_content)
+        setup_commands.append(
+            f"cat <<'{delimiter}' > composer.json\n{json_content}{delimiter}"
+        )
+    if "composer_lock" in specs:
+        lock_content = _load_fixture(specs["composer_lock"])
+        delimiter = generate_heredoc_delimiter(lock_content)
+        setup_commands.append(
+            f"cat <<'{delimiter}' > composer.lock\n{lock_content}{delimiter}"
+        )
     if "install" in specs:
         setup_commands.extend(specs["install"])
     if "build" in specs:
         setup_commands.extend(specs["build"])
+    if "post_build_cleanup" in specs:
+        setup_commands.extend(specs["post_build_cleanup"])
     return setup_commands
 
 
@@ -222,12 +249,7 @@ def generate_instances(
 
     for instance in instances:
         dockerfile_path = output_path / f"{instance['instance_id']}.Dockerfile"
-        new_content = _get_dockerfile(instance)
-        if dockerfile_path.exists():
-            old_content = dockerfile_path.read_text()
-            if _strip_eof_delimiters(old_content) == _strip_eof_delimiters(new_content):
-                continue
-        dockerfile_path.write_text(new_content)
+        dockerfile_path.write_text(_get_dockerfile(instance))
 
     print(f"Generated {len(instances)} Dockerfiles in {output_path}")
 
