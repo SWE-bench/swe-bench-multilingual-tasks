@@ -1,5 +1,5 @@
 
-FROM --platform=linux/amd64 maven:3.9-eclipse-temurin-21
+FROM --platform=linux/amd64 maven:3.9.12-eclipse-temurin-21-noble
 
 ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=Etc/UTC
@@ -25,7 +25,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_68a215f77221
+RUN <<EOF_be71a8d48a56
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/apache/lucene /testbed
@@ -33,8 +33,9 @@ chmod -R 777 /testbed
 cd /testbed
 git reset --hard ce4f56e74ad1087df8bdc019fc09d1b40438e8b3
 git remote remove origin
+git branch | grep -v '^\*' | xargs -r git branch -D || true
+git tag -l | xargs -r git tag -d
 TARGET_TIMESTAMP=$(git show -s --format=%ci ce4f56e74ad1087df8bdc019fc09d1b40438e8b3)
-git tag -l | while read tag; do TAG_COMMIT=$(git rev-list -n 1 "$tag"); TAG_TIME=$(git show -s --format=%ci "$TAG_COMMIT"); if [[ "$TAG_TIME" > "$TARGET_TIMESTAMP" ]]; then git tag -d "$tag"; fi; done
 git reflog expire --expire=now --all
 git gc --prune=now --aggressive
 AFTER_TIMESTAMP=$(date -d "$TARGET_TIMESTAMP + 1 second" '+%Y-%m-%d %H:%M:%S')
@@ -83,7 +84,7 @@ testLogging {
   }
 }
 EOF
-EOF_68a215f77221
+EOF_be71a8d48a56
 
 
 WORKDIR /testbed

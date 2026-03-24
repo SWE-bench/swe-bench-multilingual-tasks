@@ -20,7 +20,7 @@ RUN apt-get update && apt-get install -y nodejs
 RUN node -v && npm -v
 
 # Install pnpm
-RUN npm install --global corepack@latest
+RUN npm install --global corepack@0.32.0
 RUN corepack enable pnpm
 
 # Install Chrome for browser testing
@@ -38,7 +38,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_206bbc7e36b0
+RUN <<EOF_e7c8f779c9f7
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/immutable-js/immutable-js /testbed
@@ -46,8 +46,9 @@ chmod -R 777 /testbed
 cd /testbed
 git reset --hard 77434b3cbbc8ee21206f4cc6965e1c9b09cc92b6
 git remote remove origin
+git branch | grep -v '^\*' | xargs -r git branch -D || true
+git tag -l | xargs -r git tag -d
 TARGET_TIMESTAMP=$(git show -s --format=%ci 77434b3cbbc8ee21206f4cc6965e1c9b09cc92b6)
-git tag -l | while read tag; do TAG_COMMIT=$(git rev-list -n 1 "$tag"); TAG_TIME=$(git show -s --format=%ci "$TAG_COMMIT"); if [[ "$TAG_TIME" > "$TARGET_TIMESTAMP" ]]; then git tag -d "$tag"; fi; done
 git reflog expire --expire=now --all
 git gc --prune=now --aggressive
 AFTER_TIMESTAMP=$(date -d "$TARGET_TIMESTAMP + 1 second" '+%Y-%m-%d %H:%M:%S')
@@ -57,7 +58,7 @@ cd - || true
 cd /testbed
 npm install
 npm run build
-EOF_206bbc7e36b0
+EOF_e7c8f779c9f7
 
 
 WORKDIR /testbed

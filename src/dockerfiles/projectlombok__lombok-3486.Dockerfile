@@ -1,5 +1,5 @@
 
-FROM --platform=linux/amd64 maven:3.9-eclipse-temurin-11
+FROM --platform=linux/amd64 maven:3.9.12-eclipse-temurin-11-noble
 
 ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=Etc/UTC
@@ -25,7 +25,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_6170e8c700b9
+RUN <<EOF_b8a94ba9c9c9
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/projectlombok/lombok /testbed
@@ -33,8 +33,9 @@ chmod -R 777 /testbed
 cd /testbed
 git reset --hard 28e5ddb075b61525ba686f3ed6ecbf7f762fc558
 git remote remove origin
+git branch | grep -v '^\*' | xargs -r git branch -D || true
+git tag -l | xargs -r git tag -d
 TARGET_TIMESTAMP=$(git show -s --format=%ci 28e5ddb075b61525ba686f3ed6ecbf7f762fc558)
-git tag -l | while read tag; do TAG_COMMIT=$(git rev-list -n 1 "$tag"); TAG_TIME=$(git show -s --format=%ci "$TAG_COMMIT"); if [[ "$TAG_TIME" > "$TARGET_TIMESTAMP" ]]; then git tag -d "$tag"; fi; done
 git reflog expire --expire=now --all
 git gc --prune=now --aggressive
 AFTER_TIMESTAMP=$(date -d "$TARGET_TIMESTAMP + 1 second" '+%Y-%m-%d %H:%M:%S')
@@ -55,7 +56,7 @@ cd /testbed
       </junit>
     </target>'; tail -n 1 buildScripts/tests.ant.xml; } > temp_file && mv temp_file buildScripts/tests.ant.xml
 ant test.compile
-EOF_6170e8c700b9
+EOF_b8a94ba9c9c9
 
 
 WORKDIR /testbed

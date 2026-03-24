@@ -14,7 +14,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_86393bc0f2b3
+RUN <<EOF_81fa4e39aaae
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/nushell/nushell /testbed
@@ -22,8 +22,9 @@ chmod -R 777 /testbed
 cd /testbed
 git reset --hard fb34a4fc6c9ca882cc6dc95d437902a45c402e9a
 git remote remove origin
+git branch | grep -v '^\*' | xargs -r git branch -D || true
+git tag -l | xargs -r git tag -d
 TARGET_TIMESTAMP=$(git show -s --format=%ci fb34a4fc6c9ca882cc6dc95d437902a45c402e9a)
-git tag -l | while read tag; do TAG_COMMIT=$(git rev-list -n 1 "$tag"); TAG_TIME=$(git show -s --format=%ci "$TAG_COMMIT"); if [[ "$TAG_TIME" > "$TARGET_TIMESTAMP" ]]; then git tag -d "$tag"; fi; done
 git reflog expire --expire=now --all
 git gc --prune=now --aggressive
 AFTER_TIMESTAMP=$(date -d "$TARGET_TIMESTAMP + 1 second" '+%Y-%m-%d %H:%M:%S')
@@ -33,7 +34,7 @@ cd - || true
 cd /testbed
 cargo test -p nu-command --no-run split_column
 cargo build
-EOF_86393bc0f2b3
+EOF_81fa4e39aaae
 
 
 WORKDIR /testbed

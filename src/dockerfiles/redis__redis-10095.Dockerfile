@@ -16,7 +16,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_ad99be0b4f31
+RUN <<EOF_d3bae1e5519a
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/redis/redis /testbed
@@ -24,8 +24,9 @@ chmod -R 777 /testbed
 cd /testbed
 git reset --hard 1e25bdf7808bb400f2dc552ec0d6690d1b340d23
 git remote remove origin
+git branch | grep -v '^\*' | xargs -r git branch -D || true
+git tag -l | xargs -r git tag -d
 TARGET_TIMESTAMP=$(git show -s --format=%ci 1e25bdf7808bb400f2dc552ec0d6690d1b340d23)
-git tag -l | while read tag; do TAG_COMMIT=$(git rev-list -n 1 "$tag"); TAG_TIME=$(git show -s --format=%ci "$TAG_COMMIT"); if [[ "$TAG_TIME" > "$TARGET_TIMESTAMP" ]]; then git tag -d "$tag"; fi; done
 git reflog expire --expire=now --all
 git gc --prune=now --aggressive
 AFTER_TIMESTAMP=$(date -d "$TARGET_TIMESTAMP + 1 second" '+%Y-%m-%d %H:%M:%S')
@@ -35,7 +36,7 @@ cd - || true
 cd /testbed
 make distclean
 make
-EOF_ad99be0b4f31
+EOF_d3bae1e5519a
 
 
 WORKDIR /testbed

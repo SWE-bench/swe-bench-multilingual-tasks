@@ -1,5 +1,5 @@
 
-FROM --platform=linux/amd64 maven:3.9-eclipse-temurin-11
+FROM --platform=linux/amd64 maven:3.9.12-eclipse-temurin-11-noble
 
 ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=Etc/UTC
@@ -25,7 +25,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_48579ece3a1a
+RUN <<EOF_14c1a9ff18d6
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/google/gson /testbed
@@ -33,8 +33,9 @@ chmod -R 777 /testbed
 cd /testbed
 git reset --hard 796193d0326a2f44bc314bf24262732ea3e64014
 git remote remove origin
+git branch | grep -v '^\*' | xargs -r git branch -D || true
+git tag -l | xargs -r git tag -d
 TARGET_TIMESTAMP=$(git show -s --format=%ci 796193d0326a2f44bc314bf24262732ea3e64014)
-git tag -l | while read tag; do TAG_COMMIT=$(git rev-list -n 1 "$tag"); TAG_TIME=$(git show -s --format=%ci "$TAG_COMMIT"); if [[ "$TAG_TIME" > "$TARGET_TIMESTAMP" ]]; then git tag -d "$tag"; fi; done
 git reflog expire --expire=now --all
 git gc --prune=now --aggressive
 AFTER_TIMESTAMP=$(date -d "$TARGET_TIMESTAMP + 1 second" '+%Y-%m-%d %H:%M:%S')
@@ -43,7 +44,7 @@ COMMIT_COUNT=$(git log --oneline --all --since="$AFTER_TIMESTAMP" | wc -l)
 cd - || true
 cd /testbed
 mvn clean install -B -pl gson -DskipTests -am
-EOF_48579ece3a1a
+EOF_14c1a9ff18d6
 
 
 WORKDIR /testbed
