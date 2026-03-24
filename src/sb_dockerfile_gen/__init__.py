@@ -1,4 +1,6 @@
 import importlib.resources as resources
+import json
+import re
 from argparse import ArgumentParser
 from pathlib import Path
 
@@ -33,6 +35,8 @@ from sb_dockerfile_gen.rust import (
 from sb_dockerfile_gen.constants import (
     CONTAINER_ENV_NAME,
     CONTAINER_WORKDIR,
+    END_TEST_OUTPUT,
+    START_TEST_OUTPUT,
 )
 import sb_dockerfile_gen.fixtures
 from sb_dockerfile_gen.utils import (
@@ -147,6 +151,55 @@ def _get_dockerfile(instance) -> str:
     return monolithic_dockerfile
 
 
+# ── Eval script generation ─────────────────────────────────────────────
+
+
+def _get_eval_script(instance: dict) -> str:
+    """Generate the eval.sh script for a multilingual instance."""
+    repo = instance["repo"]
+    version = instance.get("version")
+    base_commit = instance["base_commit"]
+    test_patch = instance["test_patch"]
+    specs = MAP_REPO_VERSION_TO_SPECS[repo][version]
+
+    # Files modified by the test patch – use a/ side for reset so renames work
+    test_files_old = re.findall(r"diff --git a/(.*) b/.*", test_patch)
+    reset_tests_command = f"git checkout {base_commit} {' '.join(test_files_old)}"
+
+    HEREDOC_DELIMITER = "EOF_114329324912"
+    apply_test_patch_command = (
+        f"git apply -v - <<'{HEREDOC_DELIMITER}'\n{test_patch}\n{HEREDOC_DELIMITER}"
+    )
+
+    # test_cmd is a list for multilingual
+    test_cmd = specs["test_cmd"]
+    if isinstance(test_cmd, list):
+        test_command = " && ".join(test_cmd)
+    else:
+        test_command = test_cmd
+
+    eval_commands = [
+        "#!/bin/bash",
+        "set -uxo pipefail",
+        f"cd {CONTAINER_WORKDIR}",
+        f"git config --global --add safe.directory {CONTAINER_WORKDIR}",
+        "git status",
+        "git show",
+        f"git -c core.fileMode=false diff {base_commit}",
+        reset_tests_command,
+        apply_test_patch_command,
+    ]
+    if "build" in specs:
+        eval_commands.extend(specs["build"])
+    eval_commands += [
+        f": '{START_TEST_OUTPUT}'",
+        f"({test_command}) | cat",
+        f": '{END_TEST_OUTPUT}'",
+        reset_tests_command,
+    ]
+    return "\n".join(eval_commands) + "\n"
+
+
 # ── CLI ────────────────────────────────────────────────────────────────
 
 
@@ -158,7 +211,10 @@ def load_instances(
     """Load instances from HuggingFace dataset name or local JSON/JSONL file."""
     path = Path(dataset_name_or_path)
     if path.exists() and path.is_file():
-        if path.suffix == ".jsonl":
+        if path.suffix == ".parquet":
+            import pandas as pd
+            instances = pd.read_parquet(path).to_dict(orient="records")
+        elif path.suffix == ".jsonl":
             with open(path) as f:
                 instances = [json.loads(line) for line in f if line.strip()]
         else:
