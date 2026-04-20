@@ -9576,6 +9576,7 @@ cat <<'EOF_c98d96d6c9a1' > composer.lock
     "plugin-api-version": "2.2.0"
 }
 EOF_c98d96d6c9a1
+export COMPOSER_ROOT_VERSION=12.50.0
 composer install
 EOF_c2cd799e132d
 
