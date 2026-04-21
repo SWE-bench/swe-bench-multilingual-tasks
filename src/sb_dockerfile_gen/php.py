@@ -113,6 +113,7 @@ SPECS_LARAVEL_FRAMEWORK = {
         "composer_json": "php/laravel__framework-53914.composer.json",
         "composer_lock": "php/laravel__framework-53914.composer.lock",
         "install": [
+            "export COMPOSER_ROOT_VERSION=12.50.0",
             "composer install",
         ],
         "test_cmd": [
@@ -124,6 +125,7 @@ SPECS_LARAVEL_FRAMEWORK = {
         "composer_json": "php/laravel__framework-53206.composer.json",
         "composer_lock": "php/laravel__framework-53206.composer.lock",
         "install": [
+            "export COMPOSER_ROOT_VERSION=12.50.0",
             "composer install",
         ],
         "test_cmd": [
@@ -135,6 +137,7 @@ SPECS_LARAVEL_FRAMEWORK = {
         "composer_json": "php/laravel__framework-52866.composer.json",
         "composer_lock": "php/laravel__framework-52866.composer.lock",
         "install": [
+            "export COMPOSER_ROOT_VERSION=12.50.0",
             "composer install",
         ],
         "test_cmd": [
@@ -146,6 +149,7 @@ SPECS_LARAVEL_FRAMEWORK = {
         "composer_json": "php/laravel__framework-52684.composer.json",
         "composer_lock": "php/laravel__framework-52684.composer.lock",
         "install": [
+            "export COMPOSER_ROOT_VERSION=12.50.0",
             "composer install",
         ],
         "test_cmd": [
@@ -157,6 +161,7 @@ SPECS_LARAVEL_FRAMEWORK = {
         "composer_json": "php/laravel__framework-52680.composer.json",
         "composer_lock": "php/laravel__framework-52680.composer.lock",
         "install": [
+            "export COMPOSER_ROOT_VERSION=12.50.0",
             "composer install",
         ],
         "test_cmd": [
@@ -168,6 +173,7 @@ SPECS_LARAVEL_FRAMEWORK = {
         "composer_json": "php/laravel__framework-52451.composer.json",
         "composer_lock": "php/laravel__framework-52451.composer.lock",
         "install": [
+            "export COMPOSER_ROOT_VERSION=12.50.0",
             "composer install",
         ],
         "test_cmd": [
@@ -179,6 +185,7 @@ SPECS_LARAVEL_FRAMEWORK = {
         "composer_json": "php/laravel__framework-53949.composer.json",
         "composer_lock": "php/laravel__framework-53949.composer.lock",
         "install": [
+            "export COMPOSER_ROOT_VERSION=12.50.0",
             "composer install",
         ],
         "test_cmd": [
@@ -190,6 +197,7 @@ SPECS_LARAVEL_FRAMEWORK = {
         "composer_json": "php/laravel__framework-51890.composer.json",
         "composer_lock": "php/laravel__framework-51890.composer.lock",
         "install": [
+            "export COMPOSER_ROOT_VERSION=12.50.0",
             "composer install",
         ],
         "test_cmd": [
@@ -201,6 +209,7 @@ SPECS_LARAVEL_FRAMEWORK = {
         "composer_json": "php/laravel__framework-51195.composer.json",
         "composer_lock": "php/laravel__framework-51195.composer.lock",
         "install": [
+            "export COMPOSER_ROOT_VERSION=12.50.0",
             "composer install",
         ],
         "test_cmd": [
@@ -239,6 +248,7 @@ SPECS_LARAVEL_FRAMEWORK = {
         "composer_json": "php/laravel__framework-53696.composer.json",
         "composer_lock": "php/laravel__framework-53696.composer.lock",
         "install": [
+            "export COMPOSER_ROOT_VERSION=12.50.0",
             "composer install",
         ],
         "test_cmd": [
