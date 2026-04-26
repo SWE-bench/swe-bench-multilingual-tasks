@@ -12,6 +12,34 @@ END_TEST_OUTPUT = ">>>>> End Test Output"
 
 FAIL_ONLY_REPOS: set[str] = set()  # No fail-only repos in multilingual
 
+# p5.js v0.6/v0.7 strip the structured JSON reporter (see the multimodal
+# generator's specs/p5_js.py `_REPORTER_INCOMPATIBLE_VERSIONS`); newer
+# versions install it.
+_P5JS_REPORTER_INCOMPATIBLE_VERSIONS = {"0.6", "0.7"}
+
+
+def _pick_p5js_parser(instance: dict) -> str:
+    if instance.get("version") in _P5JS_REPORTER_INCOMPATIBLE_VERSIONS:
+        return "parse_log_p5js_mocha_spec"
+    return "parse_log_p5js_json"
+
+
+# immutable-js: PR 2005 uses jest --json (transformed), 2006 uses jest --verbose.
+_IMMUTABLE_JS_JEST_JSON_PRS = {"2005"}
+_IMMUTABLE_JS_JEST_PRS = {"2006"}
+
+
+def _pick_immutable_js_parser(instance: dict) -> str:
+    pr = instance["instance_id"].split("-")[-1]
+    if pr in _IMMUTABLE_JS_JEST_JSON_PRS:
+        return "parse_log_jest_json"
+    if pr in _IMMUTABLE_JS_JEST_PRS:
+        return "parse_log_jest"
+    raise ValueError(f"Unknown immutable-js instance: {instance['instance_id']}")
+
+
+# Values are either a parser-name string (constant for the repo) or a callable
+# `(instance) -> name` for repos whose parser depends on the instance.
 MAP_REPO_TO_PARSER_NAME = {
     # C
     "redis/redis": "parse_log_redis",
@@ -37,14 +65,14 @@ MAP_REPO_TO_PARSER_NAME = {
     "Automattic/wp-calypso": "parse_log_calypso",
     "chartjs/Chart.js": "parse_log_chart_js",
     "markedjs/marked": "parse_log_marked",
-    "processing/p5.js": "parse_log_p5js",
+    "processing/p5.js": _pick_p5js_parser,
     "diegomura/react-pdf": "parse_log_react_pdf",
     "babel/babel": "parse_log_jest",
     "vuejs/core": "parse_log_vitest",
     "facebook/docusaurus": "parse_log_jest",
-    "immutable-js/immutable-js": "parse_log_immutable_js",
+    "immutable-js/immutable-js": _pick_immutable_js_parser,
     "mrdoob/three.js": "parse_log_tap",
-    "preactjs/preact": "parse_log_karma",
+    "preactjs/preact": "parse_log_karma_text",
     "axios/axios": "parse_log_tap",
     # PHP
     "phpoffice/phpspreadsheet": "parse_log_phpunit",
