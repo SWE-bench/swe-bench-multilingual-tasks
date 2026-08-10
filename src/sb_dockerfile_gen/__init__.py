@@ -164,7 +164,24 @@ def _get_eval_script(instance: dict) -> str:
 
     # Files modified by the test patch – use a/ side for reset so renames work
     test_files_old = re.findall(r"diff --git a/(.*) b/.*", test_patch)
-    reset_tests_command = f"git checkout {base_commit} {' '.join(test_files_old)}"
+    # files the test patch creates do not exist at base_commit, so `git checkout`
+    # fails on them with a pathspec error and the tests never run
+    _lines = test_patch.split("\n")
+    _new = set()
+    for _i, _l in enumerate(_lines):
+        if "new file mode" in _l:
+            for _j in range(max(0, _i - 3), _i):
+                _m = re.match(r"diff --git a/(.*) b/.*", _lines[_j])
+                if _m:
+                    _new.add(_m.group(1))
+    _existing = [f for f in test_files_old if f not in _new]
+    _created = [f for f in test_files_old if f in _new]
+    _reset = []
+    if _existing:
+        _reset.append(f"git checkout {base_commit} {' '.join(_existing)}")
+    if _created:
+        _reset.append(f"rm -f {' '.join(_created)}")
+    reset_tests_command = " && ".join(_reset) if _reset else "true"
 
     HEREDOC_DELIMITER = "EOF_114329324912"
     apply_test_patch_command = (
