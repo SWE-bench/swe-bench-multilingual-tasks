@@ -67,3 +67,22 @@ MAP_REPO_TO_PARSER_NAME = {
     "nushell/nushell": "parse_log_cargo",
     "tokio-rs/axum": "parse_log_cargo",
 }
+
+# Per-instance repairs, keyed by instance_id. Files in src/dockerfiles/ are
+# generated and get overwritten, so fixes belong here.
+#
+# isolate_streams: emit the test-output markers on stdout (instead of relying on
+#   the `set -x` trace, which goes to stderr) and divert the test command's stderr
+#   for the duration of the run. Without it, stdout and stderr interleave with no
+#   line synchronisation and results can land outside the parsed region or get
+#   spliced mid-line. Only needed where that has actually been observed.
+INSTANCE_OVERRIDES: dict[str, dict] = {
+    "apache__lucene-13170": {
+        "isolate_streams": True,
+        "why": "gradle warnings on stderr splice mid-line, e.g. `testSliceEnd PASSEDWARNING: ...`",
+    },
+    "fastlane__fastlane-21857": {
+        "isolate_streams": True,
+        "why": "rspec|tail|jq stdout is block-buffered and can flush after the End marker",
+    },
+}

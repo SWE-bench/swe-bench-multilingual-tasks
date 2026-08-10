@@ -37,6 +37,7 @@ from sb_dockerfile_gen.constants import (
     CONTAINER_WORKDIR,
     END_TEST_OUTPUT,
     START_TEST_OUTPUT,
+    INSTANCE_OVERRIDES,
 )
 import sb_dockerfile_gen.fixtures
 from sb_dockerfile_gen.utils import (
@@ -209,9 +210,24 @@ def _get_eval_script(instance: dict) -> str:
     if "build" in specs:
         eval_commands.extend(specs["build"])
     eval_commands += [
-        f": '{START_TEST_OUTPUT}'",
-        f"({test_command}) | cat",
-        f": '{END_TEST_OUTPUT}'",
+        *(
+            [
+                # xtrace off, or the trace echoes the marker text a second time and
+                # the harness splits on the wrong occurrence
+                "{ set +x; } 2>/dev/null",
+                f"echo '{START_TEST_OUTPUT}'",
+                f"({test_command}) 2>/tmp/swebench_test_stderr.log | cat",
+                f"echo '{END_TEST_OUTPUT}'",
+                "cat /tmp/swebench_test_stderr.log >&2 || true",
+                "set -x",
+            ]
+            if INSTANCE_OVERRIDES.get(instance["instance_id"], {}).get("isolate_streams")
+            else [
+                f": '{START_TEST_OUTPUT}'",
+                f"({test_command}) | cat",
+                f": '{END_TEST_OUTPUT}'",
+            ]
+        ),
         reset_tests_command,
     ]
     return "\n".join(eval_commands) + "\n"
