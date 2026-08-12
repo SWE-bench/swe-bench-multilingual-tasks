@@ -15,7 +15,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_467770da97c7
+RUN <<EOF_a6e0a7affc41
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/rubocop/rubocop /testbed
@@ -23,9 +23,9 @@ chmod -R 777 /testbed
 cd /testbed
 git reset --hard 3e855b0e2eb51311c690bb809d767653d1a0ee4a
 git remote remove origin
+TARGET_TIMESTAMP=$(git show -s --format=%ci 3e855b0e2eb51311c690bb809d767653d1a0ee4a)
 git branch | grep -v '^\*' | xargs -r git branch -D || true
 git tag -l | xargs -r git tag -d
-TARGET_TIMESTAMP=$(git show -s --format=%ci 3e855b0e2eb51311c690bb809d767653d1a0ee4a)
 git reflog expire --expire=now --all
 git gc --prune=now --aggressive
 AFTER_TIMESTAMP=$(date -d "$TARGET_TIMESTAMP + 1 second" '+%Y-%m-%d %H:%M:%S')
@@ -34,7 +34,7 @@ COMMIT_COUNT=$(git log --oneline --all --since="$AFTER_TIMESTAMP" | wc -l)
 cd - || true
 cd /testbed
 bundle install
-EOF_467770da97c7
+EOF_a6e0a7affc41
 
 
 WORKDIR /testbed

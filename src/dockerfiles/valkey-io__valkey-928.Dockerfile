@@ -16,7 +16,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_292993700328
+RUN <<EOF_fd1781a3fd5f
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/valkey-io/valkey /testbed
@@ -24,9 +24,9 @@ chmod -R 777 /testbed
 cd /testbed
 git reset --hard 5d97f5133c271313cd5a172617e8af1fe845e0e2
 git remote remove origin
+TARGET_TIMESTAMP=$(git show -s --format=%ci 5d97f5133c271313cd5a172617e8af1fe845e0e2)
 git branch | grep -v '^\*' | xargs -r git branch -D || true
 git tag -l | xargs -r git tag -d
-TARGET_TIMESTAMP=$(git show -s --format=%ci 5d97f5133c271313cd5a172617e8af1fe845e0e2)
 git reflog expire --expire=now --all
 git gc --prune=now --aggressive
 AFTER_TIMESTAMP=$(date -d "$TARGET_TIMESTAMP + 1 second" '+%Y-%m-%d %H:%M:%S')
@@ -36,7 +36,7 @@ cd - || true
 cd /testbed
 make distclean
 make
-EOF_292993700328
+EOF_fd1781a3fd5f
 
 
 WORKDIR /testbed

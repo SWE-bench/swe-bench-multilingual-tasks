@@ -38,7 +38,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_6b41ae5f4f71
+RUN <<EOF_af4dede82c64
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/mrdoob/three.js /testbed
@@ -46,9 +46,9 @@ chmod -R 777 /testbed
 cd /testbed
 git reset --hard 8d9f8d50b923d5f8a673590ae138bc5d86a3a256
 git remote remove origin
+TARGET_TIMESTAMP=$(git show -s --format=%ci 8d9f8d50b923d5f8a673590ae138bc5d86a3a256)
 git branch | grep -v '^\*' | xargs -r git branch -D || true
 git tag -l | xargs -r git tag -d
-TARGET_TIMESTAMP=$(git show -s --format=%ci 8d9f8d50b923d5f8a673590ae138bc5d86a3a256)
 git reflog expire --expire=now --all
 git gc --prune=now --aggressive
 AFTER_TIMESTAMP=$(date -d "$TARGET_TIMESTAMP + 1 second" '+%Y-%m-%d %H:%M:%S')
@@ -57,7 +57,7 @@ COMMIT_COUNT=$(git log --oneline --all --since="$AFTER_TIMESTAMP" | wc -l)
 cd - || true
 cd /testbed
 npm install --ignore-scripts
-EOF_6b41ae5f4f71
+EOF_af4dede82c64
 
 
 WORKDIR /testbed

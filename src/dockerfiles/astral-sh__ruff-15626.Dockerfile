@@ -14,7 +14,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_f2af78dcc080
+RUN <<EOF_1334eefbd190
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/astral-sh/ruff /testbed
@@ -22,9 +22,9 @@ chmod -R 777 /testbed
 cd /testbed
 git reset --hard 13a6b5600b47489ca6af0b5a13d916bda8e50662
 git remote remove origin
+TARGET_TIMESTAMP=$(git show -s --format=%ci 13a6b5600b47489ca6af0b5a13d916bda8e50662)
 git branch | grep -v '^\*' | xargs -r git branch -D || true
 git tag -l | xargs -r git tag -d
-TARGET_TIMESTAMP=$(git show -s --format=%ci 13a6b5600b47489ca6af0b5a13d916bda8e50662)
 git reflog expire --expire=now --all
 git gc --prune=now --aggressive
 AFTER_TIMESTAMP=$(date -d "$TARGET_TIMESTAMP + 1 second" '+%Y-%m-%d %H:%M:%S')
@@ -33,7 +33,7 @@ COMMIT_COUNT=$(git log --oneline --all --since="$AFTER_TIMESTAMP" | wc -l)
 cd - || true
 cd /testbed
 RUSTFLAGS=-Awarnings cargo test --package ruff_linter --lib rules::flake8_simplify::tests --no-run
-EOF_f2af78dcc080
+EOF_1334eefbd190
 
 
 WORKDIR /testbed

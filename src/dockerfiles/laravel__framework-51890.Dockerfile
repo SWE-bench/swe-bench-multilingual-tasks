@@ -24,7 +24,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_71ec006c4c84
+RUN <<EOF_f17c2f1416f7
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/laravel/framework /testbed
@@ -32,9 +32,9 @@ chmod -R 777 /testbed
 cd /testbed
 git reset --hard 5ed0ce8bbbc50843f4a63b47ed7004326e546697
 git remote remove origin
+TARGET_TIMESTAMP=$(git show -s --format=%ci 5ed0ce8bbbc50843f4a63b47ed7004326e546697)
 git branch | grep -v '^\*' | xargs -r git branch -D || true
 git tag -l | xargs -r git tag -d
-TARGET_TIMESTAMP=$(git show -s --format=%ci 5ed0ce8bbbc50843f4a63b47ed7004326e546697)
 git reflog expire --expire=now --all
 git gc --prune=now --aggressive
 AFTER_TIMESTAMP=$(date -d "$TARGET_TIMESTAMP + 1 second" '+%Y-%m-%d %H:%M:%S')
@@ -9573,7 +9573,7 @@ cat <<'EOF_ccb8e9706e00' > composer.lock
 }
 EOF_ccb8e9706e00
 composer install
-EOF_71ec006c4c84
+EOF_f17c2f1416f7
 
 
 WORKDIR /testbed

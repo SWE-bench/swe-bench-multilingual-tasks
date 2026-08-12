@@ -38,7 +38,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_7bcf5a3baa98
+RUN <<EOF_3c3bd6600b99
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/preactjs/preact /testbed
@@ -46,9 +46,9 @@ chmod -R 777 /testbed
 cd /testbed
 git reset --hard ee76c1eb169897412501d86fbe40122b34cd2e8d
 git remote remove origin
+TARGET_TIMESTAMP=$(git show -s --format=%ci ee76c1eb169897412501d86fbe40122b34cd2e8d)
 git branch | grep -v '^\*' | xargs -r git branch -D || true
 git tag -l | xargs -r git tag -d
-TARGET_TIMESTAMP=$(git show -s --format=%ci ee76c1eb169897412501d86fbe40122b34cd2e8d)
 git reflog expire --expire=now --all
 git gc --prune=now --aggressive
 AFTER_TIMESTAMP=$(date -d "$TARGET_TIMESTAMP + 1 second" '+%Y-%m-%d %H:%M:%S')
@@ -58,7 +58,7 @@ cd - || true
 cd /testbed
 npm install
 git checkout -- mangle.json
-EOF_7bcf5a3baa98
+EOF_3c3bd6600b99
 
 
 WORKDIR /testbed

@@ -25,7 +25,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_8694b727658d
+RUN <<EOF_2d73374fca43
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/projectlombok/lombok /testbed
@@ -33,9 +33,9 @@ chmod -R 777 /testbed
 cd /testbed
 git reset --hard 9e6f66c557205bff3c87eefb4c7a7631d0b89ff0
 git remote remove origin
+TARGET_TIMESTAMP=$(git show -s --format=%ci 9e6f66c557205bff3c87eefb4c7a7631d0b89ff0)
 git branch | grep -v '^\*' | xargs -r git branch -D || true
 git tag -l | xargs -r git tag -d
-TARGET_TIMESTAMP=$(git show -s --format=%ci 9e6f66c557205bff3c87eefb4c7a7631d0b89ff0)
 git reflog expire --expire=now --all
 git gc --prune=now --aggressive
 AFTER_TIMESTAMP=$(date -d "$TARGET_TIMESTAMP + 1 second" '+%Y-%m-%d %H:%M:%S')
@@ -56,7 +56,7 @@ cd /testbed
       </junit>
     </target>'; tail -n 1 buildScripts/tests.ant.xml; } > temp_file && mv temp_file buildScripts/tests.ant.xml
 ant test.compile
-EOF_8694b727658d
+EOF_2d73374fca43
 
 
 WORKDIR /testbed

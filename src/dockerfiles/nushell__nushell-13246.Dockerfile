@@ -14,7 +14,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_395ddc3824e1
+RUN <<EOF_8fa48f170cb1
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/nushell/nushell /testbed
@@ -22,9 +22,9 @@ chmod -R 777 /testbed
 cd /testbed
 git reset --hard 46ed69ab126015375d5163972ae321715f34874b
 git remote remove origin
+TARGET_TIMESTAMP=$(git show -s --format=%ci 46ed69ab126015375d5163972ae321715f34874b)
 git branch | grep -v '^\*' | xargs -r git branch -D || true
 git tag -l | xargs -r git tag -d
-TARGET_TIMESTAMP=$(git show -s --format=%ci 46ed69ab126015375d5163972ae321715f34874b)
 git reflog expire --expire=now --all
 git gc --prune=now --aggressive
 AFTER_TIMESTAMP=$(date -d "$TARGET_TIMESTAMP + 1 second" '+%Y-%m-%d %H:%M:%S')
@@ -34,7 +34,7 @@ cd - || true
 cd /testbed
 cargo test -p nu-command --no-run --test main find::
 cargo build
-EOF_395ddc3824e1
+EOF_8fa48f170cb1
 
 
 WORKDIR /testbed

@@ -15,7 +15,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_f6e381ca066d
+RUN <<EOF_481375a557fd
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/jordansissel/fpm /testbed
@@ -23,9 +23,9 @@ chmod -R 777 /testbed
 cd /testbed
 git reset --hard 809c7269442f6b6e4be7c3d480bb4489caa281c5
 git remote remove origin
+TARGET_TIMESTAMP=$(git show -s --format=%ci 809c7269442f6b6e4be7c3d480bb4489caa281c5)
 git branch | grep -v '^\*' | xargs -r git branch -D || true
 git tag -l | xargs -r git tag -d
-TARGET_TIMESTAMP=$(git show -s --format=%ci 809c7269442f6b6e4be7c3d480bb4489caa281c5)
 git reflog expire --expire=now --all
 git gc --prune=now --aggressive
 AFTER_TIMESTAMP=$(date -d "$TARGET_TIMESTAMP + 1 second" '+%Y-%m-%d %H:%M:%S')
@@ -34,7 +34,7 @@ COMMIT_COUNT=$(git log --oneline --all --since="$AFTER_TIMESTAMP" | wc -l)
 cd - || true
 cd /testbed
 bundle install
-EOF_f6e381ca066d
+EOF_481375a557fd
 
 
 WORKDIR /testbed

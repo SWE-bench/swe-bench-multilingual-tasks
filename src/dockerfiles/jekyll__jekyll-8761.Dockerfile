@@ -15,7 +15,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_3c7869de15ee
+RUN <<EOF_bbecac2a3669
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/jekyll/jekyll /testbed
@@ -23,9 +23,9 @@ chmod -R 777 /testbed
 cd /testbed
 git reset --hard 310459370ad8bb9c0b574735dcca4868a5f05803
 git remote remove origin
+TARGET_TIMESTAMP=$(git show -s --format=%ci 310459370ad8bb9c0b574735dcca4868a5f05803)
 git branch | grep -v '^\*' | xargs -r git branch -D || true
 git tag -l | xargs -r git tag -d
-TARGET_TIMESTAMP=$(git show -s --format=%ci 310459370ad8bb9c0b574735dcca4868a5f05803)
 git reflog expire --expire=now --all
 git gc --prune=now --aggressive
 AFTER_TIMESTAMP=$(date -d "$TARGET_TIMESTAMP + 1 second" '+%Y-%m-%d %H:%M:%S')
@@ -34,7 +34,7 @@ COMMIT_COUNT=$(git log --oneline --all --since="$AFTER_TIMESTAMP" | wc -l)
 cd - || true
 cd /testbed
 script/bootstrap
-EOF_3c7869de15ee
+EOF_bbecac2a3669
 
 
 WORKDIR /testbed

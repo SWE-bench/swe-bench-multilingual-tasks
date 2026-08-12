@@ -24,7 +24,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_6bdf96396461
+RUN <<EOF_9472acb336b1
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/briannesbitt/carbon /testbed
@@ -32,9 +32,9 @@ chmod -R 777 /testbed
 cd /testbed
 git reset --hard 8c019924327fe0251294adb61543981e3d27652c
 git remote remove origin
+TARGET_TIMESTAMP=$(git show -s --format=%ci 8c019924327fe0251294adb61543981e3d27652c)
 git branch | grep -v '^\*' | xargs -r git branch -D || true
 git tag -l | xargs -r git tag -d
-TARGET_TIMESTAMP=$(git show -s --format=%ci 8c019924327fe0251294adb61543981e3d27652c)
 git reflog expire --expire=now --all
 git gc --prune=now --aggressive
 AFTER_TIMESTAMP=$(date -d "$TARGET_TIMESTAMP + 1 second" '+%Y-%m-%d %H:%M:%S')
@@ -6551,7 +6551,7 @@ EOF_05075433ad49
 composer install
 composer update
 composer install
-EOF_6bdf96396461
+EOF_9472acb336b1
 
 
 WORKDIR /testbed

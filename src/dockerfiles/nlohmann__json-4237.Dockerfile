@@ -16,7 +16,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_50f1fa15ea4d
+RUN <<EOF_3c7532c8c9e5
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/nlohmann/json /testbed
@@ -24,9 +24,9 @@ chmod -R 777 /testbed
 cd /testbed
 git reset --hard 3780b41dd070436f3f55327b0a88f27a52e2dfa8
 git remote remove origin
+TARGET_TIMESTAMP=$(git show -s --format=%ci 3780b41dd070436f3f55327b0a88f27a52e2dfa8)
 git branch | grep -v '^\*' | xargs -r git branch -D || true
 git tag -l | xargs -r git tag -d
-TARGET_TIMESTAMP=$(git show -s --format=%ci 3780b41dd070436f3f55327b0a88f27a52e2dfa8)
 git reflog expire --expire=now --all
 git gc --prune=now --aggressive
 AFTER_TIMESTAMP=$(date -d "$TARGET_TIMESTAMP + 1 second" '+%Y-%m-%d %H:%M:%S')
@@ -39,7 +39,7 @@ cd build
 cmake ..
 make test-udt_cpp11
 cd ..
-EOF_50f1fa15ea4d
+EOF_3c7532c8c9e5
 
 
 WORKDIR /testbed

@@ -25,7 +25,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_784784ab908a
+RUN <<EOF_425621856fa3
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/reactivex/rxjava /testbed
@@ -33,9 +33,9 @@ chmod -R 777 /testbed
 cd /testbed
 git reset --hard 13a8d83656940dce0c18e8e0a2a17ac157dd1ddb
 git remote remove origin
+TARGET_TIMESTAMP=$(git show -s --format=%ci 13a8d83656940dce0c18e8e0a2a17ac157dd1ddb)
 git branch | grep -v '^\*' | xargs -r git branch -D || true
 git tag -l | xargs -r git tag -d
-TARGET_TIMESTAMP=$(git show -s --format=%ci 13a8d83656940dce0c18e8e0a2a17ac157dd1ddb)
 git reflog expire --expire=now --all
 git gc --prune=now --aggressive
 AFTER_TIMESTAMP=$(date -d "$TARGET_TIMESTAMP + 1 second" '+%Y-%m-%d %H:%M:%S')
@@ -91,7 +91,7 @@ testLogging {
     }
 }
 EOF
-EOF_784784ab908a
+EOF_425621856fa3
 
 
 WORKDIR /testbed

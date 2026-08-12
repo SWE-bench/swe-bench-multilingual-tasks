@@ -24,7 +24,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_5a455397c2ed
+RUN <<EOF_95589d6c55d8
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/php-cs-fixer/php-cs-fixer /testbed
@@ -32,9 +32,9 @@ chmod -R 777 /testbed
 cd /testbed
 git reset --hard 10fb65e3e8b8645f74f6ab099dfa11ce5ac5cfcd
 git remote remove origin
+TARGET_TIMESTAMP=$(git show -s --format=%ci 10fb65e3e8b8645f74f6ab099dfa11ce5ac5cfcd)
 git branch | grep -v '^\*' | xargs -r git branch -D || true
 git tag -l | xargs -r git tag -d
-TARGET_TIMESTAMP=$(git show -s --format=%ci 10fb65e3e8b8645f74f6ab099dfa11ce5ac5cfcd)
 git reflog expire --expire=now --all
 git gc --prune=now --aggressive
 AFTER_TIMESTAMP=$(date -d "$TARGET_TIMESTAMP + 1 second" '+%Y-%m-%d %H:%M:%S')
@@ -5516,7 +5516,7 @@ cat <<'EOF_35fa722a3ce0' > composer.lock
 }
 EOF_35fa722a3ce0
 composer install
-EOF_5a455397c2ed
+EOF_95589d6c55d8
 
 
 WORKDIR /testbed

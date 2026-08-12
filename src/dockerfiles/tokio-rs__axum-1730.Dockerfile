@@ -14,7 +14,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_8440302db646
+RUN <<EOF_200639c0b100
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/tokio-rs/axum /testbed
@@ -22,9 +22,9 @@ chmod -R 777 /testbed
 cd /testbed
 git reset --hard b4204e223dc96df3d51fc8893f32d37b66be7005
 git remote remove origin
+TARGET_TIMESTAMP=$(git show -s --format=%ci b4204e223dc96df3d51fc8893f32d37b66be7005)
 git branch | grep -v '^\*' | xargs -r git branch -D || true
 git tag -l | xargs -r git tag -d
-TARGET_TIMESTAMP=$(git show -s --format=%ci b4204e223dc96df3d51fc8893f32d37b66be7005)
 git reflog expire --expire=now --all
 git gc --prune=now --aggressive
 AFTER_TIMESTAMP=$(date -d "$TARGET_TIMESTAMP + 1 second" '+%Y-%m-%d %H:%M:%S')
@@ -2482,7 +2482,7 @@ dependencies = [
 ]
 EOF_c8122a735ade
 RUSTFLAGS=-Awarnings cargo test --package axum --lib --no-run
-EOF_8440302db646
+EOF_200639c0b100
 
 
 WORKDIR /testbed

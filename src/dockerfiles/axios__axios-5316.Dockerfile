@@ -38,7 +38,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_641a1dcce0b6
+RUN <<EOF_1b211f441598
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/axios/axios /testbed
@@ -46,9 +46,9 @@ chmod -R 777 /testbed
 cd /testbed
 git reset --hard 65e8d1e28ce829f47a837e45129730e541950d3c
 git remote remove origin
+TARGET_TIMESTAMP=$(git show -s --format=%ci 65e8d1e28ce829f47a837e45129730e541950d3c)
 git branch | grep -v '^\*' | xargs -r git branch -D || true
 git tag -l | xargs -r git tag -d
-TARGET_TIMESTAMP=$(git show -s --format=%ci 65e8d1e28ce829f47a837e45129730e541950d3c)
 git reflog expire --expire=now --all
 git gc --prune=now --aggressive
 AFTER_TIMESTAMP=$(date -d "$TARGET_TIMESTAMP + 1 second" '+%Y-%m-%d %H:%M:%S')
@@ -58,7 +58,7 @@ cd - || true
 cd /testbed
 npm install
 npm install
-EOF_641a1dcce0b6
+EOF_1b211f441598
 
 
 WORKDIR /testbed

@@ -16,7 +16,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_57b0d4d353f2
+RUN <<EOF_40baffc399eb
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/jqlang/jq /testbed
@@ -24,9 +24,9 @@ chmod -R 777 /testbed
 cd /testbed
 git reset --hard c077b95ba2dcaafee39e302cc086bf99fa9248d0
 git remote remove origin
+TARGET_TIMESTAMP=$(git show -s --format=%ci c077b95ba2dcaafee39e302cc086bf99fa9248d0)
 git branch | grep -v '^\*' | xargs -r git branch -D || true
 git tag -l | xargs -r git tag -d
-TARGET_TIMESTAMP=$(git show -s --format=%ci c077b95ba2dcaafee39e302cc086bf99fa9248d0)
 git reflog expire --expire=now --all
 git gc --prune=now --aggressive
 AFTER_TIMESTAMP=$(date -d "$TARGET_TIMESTAMP + 1 second" '+%Y-%m-%d %H:%M:%S')
@@ -41,7 +41,7 @@ make clean
 touch src/parser.y src/lexer.l
 make -j$(nproc)
 git checkout -- src/lexer.c src/lexer.h src/parser.c src/parser.h
-EOF_57b0d4d353f2
+EOF_40baffc399eb
 
 
 WORKDIR /testbed

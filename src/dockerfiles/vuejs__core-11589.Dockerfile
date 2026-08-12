@@ -38,7 +38,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_49ffe9964be9
+RUN <<EOF_d3e66c543ecb
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/vuejs/core /testbed
@@ -46,9 +46,9 @@ chmod -R 777 /testbed
 cd /testbed
 git reset --hard 3653bc0f45d6fedf84e29b64ca52584359c383c0
 git remote remove origin
+TARGET_TIMESTAMP=$(git show -s --format=%ci 3653bc0f45d6fedf84e29b64ca52584359c383c0)
 git branch | grep -v '^\*' | xargs -r git branch -D || true
 git tag -l | xargs -r git tag -d
-TARGET_TIMESTAMP=$(git show -s --format=%ci 3653bc0f45d6fedf84e29b64ca52584359c383c0)
 git reflog expire --expire=now --all
 git gc --prune=now --aggressive
 AFTER_TIMESTAMP=$(date -d "$TARGET_TIMESTAMP + 1 second" '+%Y-%m-%d %H:%M:%S')
@@ -57,7 +57,7 @@ COMMIT_COUNT=$(git log --oneline --all --since="$AFTER_TIMESTAMP" | wc -l)
 cd - || true
 cd /testbed
 pnpm i
-EOF_49ffe9964be9
+EOF_d3e66c543ecb
 
 
 WORKDIR /testbed
