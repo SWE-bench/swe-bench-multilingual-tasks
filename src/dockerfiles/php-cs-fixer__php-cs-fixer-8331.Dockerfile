@@ -24,7 +24,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_165c8e3f9691
+RUN <<EOF_317766c0c7e9
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/php-cs-fixer/php-cs-fixer /testbed
@@ -33,8 +33,9 @@ cd /testbed
 git reset --hard ae2b729efb3507871ddf501424b1a92db4e5b16a
 git remote remove origin
 TARGET_TIMESTAMP=$(git show -s --format=%ci ae2b729efb3507871ddf501424b1a92db4e5b16a)
+TARGET_EPOCH=$(git show -s --format=%ct ae2b729efb3507871ddf501424b1a92db4e5b16a)
+for tag in $(git tag -l); do TAG_EPOCH=$(git log -1 --format=%ct "$tag" 2>/dev/null || echo 0); if [ "${TAG_EPOCH:-0}" -gt "$TARGET_EPOCH" ]; then git tag -d "$tag" >/dev/null 2>&1 || true; fi; done
 git branch | grep -v '^\*' | xargs -r git branch -D || true
-git tag -l | xargs -r git tag -d
 git reflog expire --expire=now --all
 git gc --prune=now --aggressive
 AFTER_TIMESTAMP=$(date -d "$TARGET_TIMESTAMP + 1 second" '+%Y-%m-%d %H:%M:%S')
@@ -6679,7 +6680,7 @@ cat <<'EOF_b506ed377f5c' > composer.lock
 }
 EOF_b506ed377f5c
 composer install
-EOF_165c8e3f9691
+EOF_317766c0c7e9
 
 
 WORKDIR /testbed

@@ -14,7 +14,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_1334eefbd190
+RUN <<EOF_e3ab21ec67db
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/astral-sh/ruff /testbed
@@ -23,8 +23,9 @@ cd /testbed
 git reset --hard 13a6b5600b47489ca6af0b5a13d916bda8e50662
 git remote remove origin
 TARGET_TIMESTAMP=$(git show -s --format=%ci 13a6b5600b47489ca6af0b5a13d916bda8e50662)
+TARGET_EPOCH=$(git show -s --format=%ct 13a6b5600b47489ca6af0b5a13d916bda8e50662)
+for tag in $(git tag -l); do TAG_EPOCH=$(git log -1 --format=%ct "$tag" 2>/dev/null || echo 0); if [ "${TAG_EPOCH:-0}" -gt "$TARGET_EPOCH" ]; then git tag -d "$tag" >/dev/null 2>&1 || true; fi; done
 git branch | grep -v '^\*' | xargs -r git branch -D || true
-git tag -l | xargs -r git tag -d
 git reflog expire --expire=now --all
 git gc --prune=now --aggressive
 AFTER_TIMESTAMP=$(date -d "$TARGET_TIMESTAMP + 1 second" '+%Y-%m-%d %H:%M:%S')
@@ -33,7 +34,7 @@ COMMIT_COUNT=$(git log --oneline --all --since="$AFTER_TIMESTAMP" | wc -l)
 cd - || true
 cd /testbed
 RUSTFLAGS=-Awarnings cargo test --package ruff_linter --lib rules::flake8_simplify::tests --no-run
-EOF_1334eefbd190
+EOF_e3ab21ec67db
 
 
 WORKDIR /testbed

@@ -25,7 +25,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_87e2622ad87e
+RUN <<EOF_08f5d6a18b87
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/apache/lucene /testbed
@@ -34,8 +34,9 @@ cd /testbed
 git reset --hard 11f2bc205652f1f2b2f61ba286cbfd2d77fd2d1b
 git remote remove origin
 TARGET_TIMESTAMP=$(git show -s --format=%ci 11f2bc205652f1f2b2f61ba286cbfd2d77fd2d1b)
+TARGET_EPOCH=$(git show -s --format=%ct 11f2bc205652f1f2b2f61ba286cbfd2d77fd2d1b)
+for tag in $(git tag -l); do TAG_EPOCH=$(git log -1 --format=%ct "$tag" 2>/dev/null || echo 0); if [ "${TAG_EPOCH:-0}" -gt "$TARGET_EPOCH" ]; then git tag -d "$tag" >/dev/null 2>&1 || true; fi; done
 git branch | grep -v '^\*' | xargs -r git branch -D || true
-git tag -l | xargs -r git tag -d
 git reflog expire --expire=now --all
 git gc --prune=now --aggressive
 AFTER_TIMESTAMP=$(date -d "$TARGET_TIMESTAMP + 1 second" '+%Y-%m-%d %H:%M:%S')
@@ -84,7 +85,7 @@ testLogging {
   }
 }
 EOF
-EOF_87e2622ad87e
+EOF_08f5d6a18b87
 
 
 WORKDIR /testbed

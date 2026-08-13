@@ -24,7 +24,7 @@ EOF_aa563141c5a4
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_b8edd2b95aad
+RUN <<EOF_e74f067ca4f1
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/micropython/micropython /testbed
@@ -33,8 +33,9 @@ cd /testbed
 git reset --hard cc26bf7406dac7822de347d14a9935c101d7e8aa
 git remote remove origin
 TARGET_TIMESTAMP=$(git show -s --format=%ci cc26bf7406dac7822de347d14a9935c101d7e8aa)
+TARGET_EPOCH=$(git show -s --format=%ct cc26bf7406dac7822de347d14a9935c101d7e8aa)
+for tag in $(git tag -l); do TAG_EPOCH=$(git log -1 --format=%ct "$tag" 2>/dev/null || echo 0); if [ "${TAG_EPOCH:-0}" -gt "$TARGET_EPOCH" ]; then git tag -d "$tag" >/dev/null 2>&1 || true; fi; done
 git branch | grep -v '^\*' | xargs -r git branch -D || true
-git tag -l | xargs -r git tag -d
 git reflog expire --expire=now --all
 git gc --prune=now --aggressive
 AFTER_TIMESTAMP=$(date -d "$TARGET_TIMESTAMP + 1 second" '+%Y-%m-%d %H:%M:%S')
@@ -47,7 +48,7 @@ source .venv/bin/activate
 sed -i 's/uint mp_import_stat/mp_import_stat_t mp_import_stat/' mpy-cross/main.c
 source ./tools/ci.sh
 ci_unix_build_helper VARIANT=standard
-EOF_b8edd2b95aad
+EOF_e74f067ca4f1
 
 
 WORKDIR /testbed

@@ -53,7 +53,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_08d9c3d45358
+RUN <<EOF_b7bf6be6b4d7
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/hashicorp/terraform /testbed
@@ -62,8 +62,9 @@ cd /testbed
 git reset --hard f2e4cb411ed6dfd36fd4f9960a74d8f29c7b8882
 git remote remove origin
 TARGET_TIMESTAMP=$(git show -s --format=%ci f2e4cb411ed6dfd36fd4f9960a74d8f29c7b8882)
+TARGET_EPOCH=$(git show -s --format=%ct f2e4cb411ed6dfd36fd4f9960a74d8f29c7b8882)
+for tag in $(git tag -l); do TAG_EPOCH=$(git log -1 --format=%ct "$tag" 2>/dev/null || echo 0); if [ "${TAG_EPOCH:-0}" -gt "$TARGET_EPOCH" ]; then git tag -d "$tag" >/dev/null 2>&1 || true; fi; done
 git branch | grep -v '^\*' | xargs -r git branch -D || true
-git tag -l | xargs -r git tag -d
 git reflog expire --expire=now --all
 git gc --prune=now --aggressive
 AFTER_TIMESTAMP=$(date -d "$TARGET_TIMESTAMP + 1 second" '+%Y-%m-%d %H:%M:%S')
@@ -72,7 +73,7 @@ COMMIT_COUNT=$(git log --oneline --all --since="$AFTER_TIMESTAMP" | wc -l)
 cd - || true
 cd /testbed
 go test -c ./internal/terraform
-EOF_08d9c3d45358
+EOF_b7bf6be6b4d7
 
 
 WORKDIR /testbed

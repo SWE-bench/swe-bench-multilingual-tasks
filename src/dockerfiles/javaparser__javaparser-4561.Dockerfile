@@ -25,7 +25,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_d39972339888
+RUN <<EOF_f1aa9e4320d9
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/javaparser/javaparser /testbed
@@ -34,8 +34,9 @@ cd /testbed
 git reset --hard 5be2e76b62e43b3c524b94463afe2294ac419fc8
 git remote remove origin
 TARGET_TIMESTAMP=$(git show -s --format=%ci 5be2e76b62e43b3c524b94463afe2294ac419fc8)
+TARGET_EPOCH=$(git show -s --format=%ct 5be2e76b62e43b3c524b94463afe2294ac419fc8)
+for tag in $(git tag -l); do TAG_EPOCH=$(git log -1 --format=%ct "$tag" 2>/dev/null || echo 0); if [ "${TAG_EPOCH:-0}" -gt "$TARGET_EPOCH" ]; then git tag -d "$tag" >/dev/null 2>&1 || true; fi; done
 git branch | grep -v '^\*' | xargs -r git branch -D || true
-git tag -l | xargs -r git tag -d
 git reflog expire --expire=now --all
 git gc --prune=now --aggressive
 AFTER_TIMESTAMP=$(date -d "$TARGET_TIMESTAMP + 1 second" '+%Y-%m-%d %H:%M:%S')
@@ -44,7 +45,7 @@ COMMIT_COUNT=$(git log --oneline --all --since="$AFTER_TIMESTAMP" | wc -l)
 cd - || true
 cd /testbed
 ./mvnw clean install -B -pl javaparser-symbol-solver-testing -DskipTests -am
-EOF_d39972339888
+EOF_f1aa9e4320d9
 
 
 WORKDIR /testbed

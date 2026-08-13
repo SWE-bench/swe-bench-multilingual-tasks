@@ -15,7 +15,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_3f63d623966a
+RUN <<EOF_56341188e457
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/jekyll/jekyll /testbed
@@ -24,8 +24,9 @@ cd /testbed
 git reset --hard 11dd8934166d0947055bc01017426bad01277bc1
 git remote remove origin
 TARGET_TIMESTAMP=$(git show -s --format=%ci 11dd8934166d0947055bc01017426bad01277bc1)
+TARGET_EPOCH=$(git show -s --format=%ct 11dd8934166d0947055bc01017426bad01277bc1)
+for tag in $(git tag -l); do TAG_EPOCH=$(git log -1 --format=%ct "$tag" 2>/dev/null || echo 0); if [ "${TAG_EPOCH:-0}" -gt "$TARGET_EPOCH" ]; then git tag -d "$tag" >/dev/null 2>&1 || true; fi; done
 git branch | grep -v '^\*' | xargs -r git branch -D || true
-git tag -l | xargs -r git tag -d
 git reflog expire --expire=now --all
 git gc --prune=now --aggressive
 AFTER_TIMESTAMP=$(date -d "$TARGET_TIMESTAMP + 1 second" '+%Y-%m-%d %H:%M:%S')
@@ -35,7 +36,7 @@ cd - || true
 cd /testbed
 script/bootstrap
 bundle add webrick
-EOF_3f63d623966a
+EOF_56341188e457
 
 
 WORKDIR /testbed

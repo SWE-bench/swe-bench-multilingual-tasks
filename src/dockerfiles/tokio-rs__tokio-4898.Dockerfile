@@ -14,7 +14,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_fe01bca4ae68
+RUN <<EOF_163352310a8a
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/tokio-rs/tokio /testbed
@@ -23,8 +23,9 @@ cd /testbed
 git reset --hard 9d9488db67136651f85d839efcb5f61aba8531c9
 git remote remove origin
 TARGET_TIMESTAMP=$(git show -s --format=%ci 9d9488db67136651f85d839efcb5f61aba8531c9)
+TARGET_EPOCH=$(git show -s --format=%ct 9d9488db67136651f85d839efcb5f61aba8531c9)
+for tag in $(git tag -l); do TAG_EPOCH=$(git log -1 --format=%ct "$tag" 2>/dev/null || echo 0); if [ "${TAG_EPOCH:-0}" -gt "$TARGET_EPOCH" ]; then git tag -d "$tag" >/dev/null 2>&1 || true; fi; done
 git branch | grep -v '^\*' | xargs -r git branch -D || true
-git tag -l | xargs -r git tag -d
 git reflog expire --expire=now --all
 git gc --prune=now --aggressive
 AFTER_TIMESTAMP=$(date -d "$TARGET_TIMESTAMP + 1 second" '+%Y-%m-%d %H:%M:%S')
@@ -1750,7 +1751,7 @@ dependencies = [
 ]
 EOF_abb7516c6d3e
 RUSTFLAGS="--cfg tokio_unstable" cargo test --features full --test rt_metrics --no-run
-EOF_fe01bca4ae68
+EOF_163352310a8a
 
 
 WORKDIR /testbed
