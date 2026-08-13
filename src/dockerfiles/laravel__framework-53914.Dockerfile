@@ -24,7 +24,7 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_180c0f58c067
+RUN <<EOF_75fdbc6dfeaa
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/laravel/framework /testbed
@@ -9374,8 +9374,8 @@ cat <<'EOF_e489ce007bf1' > composer.lock
     "plugin-api-version": "2.6.0"
 }
 EOF_e489ce007bf1
-composer install
-EOF_180c0f58c067
+COMPOSER_ROOT_VERSION=12.9.9 composer install
+EOF_75fdbc6dfeaa
 
 
 WORKDIR /testbed

@@ -113,7 +113,9 @@ SPECS_LARAVEL_FRAMEWORK = {
         "composer_json": "php/laravel__framework-53914.composer.json",
         "composer_lock": "php/laravel__framework-53914.composer.lock",
         "install": [
-            "composer install",
+            # composer reads the root version from the git branch, which now resolves
+            # to 13.x-dev and conflicts with the locked testbench 10.2.1 (<13.0.0).
+            "COMPOSER_ROOT_VERSION=12.9.9 composer install",
         ],
         "test_cmd": [
             "vendor/bin/phpunit --testdox --colors=never tests/Integration/Database/DatabaseConnectionsTest.php"
@@ -121,9 +123,13 @@ SPECS_LARAVEL_FRAMEWORK = {
     },
     "53206": {
         "docker_specs": {"php_version": "8.3.16"},
-        "composer_json": "php/laravel__framework-53206.composer.json",
-        "composer_lock": "php/laravel__framework-53206.composer.lock",
         "install": [
+            # composer derives the root version from the git branch; a --single-branch
+            # clone lands on laravel's current default, whose testbench constraint
+            # conflicts with this era. Name it master so dev-master applies, and let
+            # the repo's own composer.json resolve instead of a mis-captured fixture.
+            "git checkout -B master",
+            "rm -f composer.lock",
             "composer install",
         ],
         "test_cmd": [
@@ -132,9 +138,13 @@ SPECS_LARAVEL_FRAMEWORK = {
     },
     "52866": {
         "docker_specs": {"php_version": "8.3.16"},
-        "composer_json": "php/laravel__framework-52866.composer.json",
-        "composer_lock": "php/laravel__framework-52866.composer.lock",
         "install": [
+            # composer derives the root version from the git branch; a --single-branch
+            # clone lands on laravel's current default, whose testbench constraint
+            # conflicts with this era. Name it master so dev-master applies, and let
+            # the repo's own composer.json resolve instead of a mis-captured fixture.
+            "git checkout -B master",
+            "rm -f composer.lock",
             "composer install",
         ],
         "test_cmd": [
@@ -143,9 +153,13 @@ SPECS_LARAVEL_FRAMEWORK = {
     },
     "52684": {
         "docker_specs": {"php_version": "8.3.16"},
-        "composer_json": "php/laravel__framework-52684.composer.json",
-        "composer_lock": "php/laravel__framework-52684.composer.lock",
         "install": [
+            # composer derives the root version from the git branch; a --single-branch
+            # clone lands on laravel's current default, whose testbench constraint
+            # conflicts with this era. Name it master so dev-master applies, and let
+            # the repo's own composer.json resolve instead of a mis-captured fixture.
+            "git checkout -B master",
+            "rm -f composer.lock",
             "composer install",
         ],
         "test_cmd": [
@@ -154,9 +168,13 @@ SPECS_LARAVEL_FRAMEWORK = {
     },
     "52680": {
         "docker_specs": {"php_version": "8.3.16"},
-        "composer_json": "php/laravel__framework-52680.composer.json",
-        "composer_lock": "php/laravel__framework-52680.composer.lock",
         "install": [
+            # composer derives the root version from the git branch; a --single-branch
+            # clone lands on laravel's current default, whose testbench constraint
+            # conflicts with this era. Name it master so dev-master applies, and let
+            # the repo's own composer.json resolve instead of a mis-captured fixture.
+            "git checkout -B master",
+            "rm -f composer.lock",
             "composer install",
         ],
         "test_cmd": [
@@ -165,9 +183,12 @@ SPECS_LARAVEL_FRAMEWORK = {
     },
     "52451": {
         "docker_specs": {"php_version": "8.3.16"},
-        "composer_json": "php/laravel__framework-52451.composer.json",
-        "composer_lock": "php/laravel__framework-52451.composer.lock",
         "install": [
+            # composer derives the root version from the git branch; a --single-branch
+            # clone lands on laravel's current default (12.x/13.x), which conflicts with
+            # this era's testbench. Name it master so the dev-master alias applies.
+            "git checkout -B master",
+            "rm -f composer.lock",
             "composer install",
         ],
         "test_cmd": [
@@ -176,9 +197,13 @@ SPECS_LARAVEL_FRAMEWORK = {
     },
     "53949": {
         "docker_specs": {"php_version": "8.3.16"},
-        "composer_json": "php/laravel__framework-53949.composer.json",
-        "composer_lock": "php/laravel__framework-53949.composer.lock",
         "install": [
+            # composer derives the root version from the git branch; a --single-branch
+            # clone lands on laravel's current default, whose testbench constraint
+            # conflicts with this era. Name it master so dev-master applies, and let
+            # the repo's own composer.json resolve instead of a mis-captured fixture.
+            "git checkout -B master",
+            "rm -f composer.lock",
             "composer install",
         ],
         "test_cmd": [
@@ -187,9 +212,12 @@ SPECS_LARAVEL_FRAMEWORK = {
     },
     "51890": {
         "docker_specs": {"php_version": "8.3.16"},
-        "composer_json": "php/laravel__framework-51890.composer.json",
-        "composer_lock": "php/laravel__framework-51890.composer.lock",
         "install": [
+            # composer derives the root version from the git branch; a --single-branch
+            # clone lands on laravel's current default (12.x/13.x), which conflicts with
+            # this era's testbench. Name it master so the dev-master alias applies.
+            "git checkout -B master",
+            "rm -f composer.lock",
             "composer install",
         ],
         "test_cmd": [
@@ -198,9 +226,12 @@ SPECS_LARAVEL_FRAMEWORK = {
     },
     "51195": {
         "docker_specs": {"php_version": "8.3.16"},
-        "composer_json": "php/laravel__framework-51195.composer.json",
-        "composer_lock": "php/laravel__framework-51195.composer.lock",
         "install": [
+            # composer derives the root version from the git branch; a --single-branch
+            # clone lands on laravel's current default (12.x/13.x), which conflicts with
+            # this era's testbench. Name it master so the dev-master alias applies.
+            "git checkout -B master",
+            "rm -f composer.lock",
             "composer install",
         ],
         "test_cmd": [
@@ -236,9 +267,13 @@ SPECS_LARAVEL_FRAMEWORK = {
     },
     "53696": {
         "docker_specs": {"php_version": "8.3.16"},
-        "composer_json": "php/laravel__framework-53696.composer.json",
-        "composer_lock": "php/laravel__framework-53696.composer.lock",
         "install": [
+            # composer derives the root version from the git branch; a --single-branch
+            # clone lands on laravel's current default, whose testbench constraint
+            # conflicts with this era. Name it master so dev-master applies, and let
+            # the repo's own composer.json resolve instead of a mis-captured fixture.
+            "git checkout -B master",
+            "rm -f composer.lock",
             "composer install",
         ],
         "test_cmd": [
