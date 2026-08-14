@@ -53,11 +53,10 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_f9b890180b00
+RUN <<EOF_44b18102418b
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/caddyserver/caddy /testbed
-chmod -R 777 /testbed
 cd /testbed
 git reset --hard 59cbb2c83a03b6fe352ae0b5d05581d9148a4d24
 git remote remove origin
@@ -70,10 +69,11 @@ git gc --prune=now --aggressive
 AFTER_TIMESTAMP=$(date -d "$TARGET_TIMESTAMP + 1 second" '+%Y-%m-%d %H:%M:%S')
 COMMIT_COUNT=$(git log --oneline --all --since="$AFTER_TIMESTAMP" | wc -l)
 [ "$COMMIT_COUNT" -eq 0 ] || exit 1
+chmod -R 777 /testbed
 cd - || true
 cd /testbed
 go mod tidy
-EOF_f9b890180b00
+EOF_44b18102418b
 
 
 WORKDIR /testbed

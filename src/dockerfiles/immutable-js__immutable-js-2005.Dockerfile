@@ -38,11 +38,10 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_6fe05337c380
+RUN <<EOF_1ecd5b753f3b
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/immutable-js/immutable-js /testbed
-chmod -R 777 /testbed
 cd /testbed
 git reset --hard 77434b3cbbc8ee21206f4cc6965e1c9b09cc92b6
 git remote remove origin
@@ -55,11 +54,12 @@ git gc --prune=now --aggressive
 AFTER_TIMESTAMP=$(date -d "$TARGET_TIMESTAMP + 1 second" '+%Y-%m-%d %H:%M:%S')
 COMMIT_COUNT=$(git log --oneline --all --since="$AFTER_TIMESTAMP" | wc -l)
 [ "$COMMIT_COUNT" -eq 0 ] || exit 1
+chmod -R 777 /testbed
 cd - || true
 cd /testbed
 npm install
 npm run build
-EOF_6fe05337c380
+EOF_1ecd5b753f3b
 
 
 WORKDIR /testbed

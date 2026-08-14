@@ -31,7 +31,6 @@ def git_clone_timesafe(repo: str, base_commit: str, workdir: str) -> list[str]:
     branch = f"--branch {branch}" if branch else ""
     return [
         f"git clone -o origin {branch} --single-branch https://github.com/{repo} {workdir}",
-        f"chmod -R 777 {workdir}",
         f"cd {workdir}",
         f"git reset --hard {base_commit}",
         "git remote remove origin",
@@ -49,6 +48,10 @@ def git_clone_timesafe(repo: str, base_commit: str, workdir: str) -> list[str]:
         "AFTER_TIMESTAMP=$(date -d \"$TARGET_TIMESTAMP + 1 second\" '+%Y-%m-%d %H:%M:%S')",
         'COMMIT_COUNT=$(git log --oneline --all --since="$AFTER_TIMESTAMP" | wc -l)',
         '[ "$COMMIT_COUNT" -eq 0 ] || exit 1',
+        # chmod last: `git reset --hard` above re-creates working-tree files as
+        # root-owned 0644, so chmod'ing before it left committed lockfiles
+        # unwritable by a non-root install user.
+        f"chmod -R 777 {workdir}",
         "cd - || true",
     ]
 

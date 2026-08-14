@@ -15,11 +15,10 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_598b87a1c7ea
+RUN <<EOF_af4f22128914
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/fastlane/fastlane /testbed
-chmod -R 777 /testbed
 cd /testbed
 git reset --hard 950bb820237d52e15690408083e328f739ac0ef3
 git remote remove origin
@@ -32,10 +31,11 @@ git gc --prune=now --aggressive
 AFTER_TIMESTAMP=$(date -d "$TARGET_TIMESTAMP + 1 second" '+%Y-%m-%d %H:%M:%S')
 COMMIT_COUNT=$(git log --oneline --all --since="$AFTER_TIMESTAMP" | wc -l)
 [ "$COMMIT_COUNT" -eq 0 ] || exit 1
+chmod -R 777 /testbed
 cd - || true
 cd /testbed
 bundle install --jobs=$(nproc)
-EOF_598b87a1c7ea
+EOF_af4f22128914
 
 
 WORKDIR /testbed

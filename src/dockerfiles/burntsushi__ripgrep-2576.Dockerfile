@@ -14,11 +14,10 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_b34fdc7e3af6
+RUN <<EOF_13ebe46daff2
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/burntsushi/ripgrep /testbed
-chmod -R 777 /testbed
 cd /testbed
 git reset --hard fed4fea217abbc502f2e823465de903c8f2b623d
 git remote remove origin
@@ -31,10 +30,11 @@ git gc --prune=now --aggressive
 AFTER_TIMESTAMP=$(date -d "$TARGET_TIMESTAMP + 1 second" '+%Y-%m-%d %H:%M:%S')
 COMMIT_COUNT=$(git log --oneline --all --since="$AFTER_TIMESTAMP" | wc -l)
 [ "$COMMIT_COUNT" -eq 0 ] || exit 1
+chmod -R 777 /testbed
 cd - || true
 cd /testbed
 RUSTFLAGS=-Awarnings cargo test --package ripgrep --test integration --no-run
-EOF_b34fdc7e3af6
+EOF_13ebe46daff2
 
 
 WORKDIR /testbed

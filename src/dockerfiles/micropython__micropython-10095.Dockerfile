@@ -24,11 +24,10 @@ EOF_aa563141c5a4
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_e74f067ca4f1
+RUN <<EOF_493fa9cc559b
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/micropython/micropython /testbed
-chmod -R 777 /testbed
 cd /testbed
 git reset --hard cc26bf7406dac7822de347d14a9935c101d7e8aa
 git remote remove origin
@@ -41,6 +40,7 @@ git gc --prune=now --aggressive
 AFTER_TIMESTAMP=$(date -d "$TARGET_TIMESTAMP + 1 second" '+%Y-%m-%d %H:%M:%S')
 COMMIT_COUNT=$(git log --oneline --all --since="$AFTER_TIMESTAMP" | wc -l)
 [ "$COMMIT_COUNT" -eq 0 ] || exit 1
+chmod -R 777 /testbed
 cd - || true
 cd /testbed
 python -m venv .venv
@@ -48,7 +48,7 @@ source .venv/bin/activate
 sed -i 's/uint mp_import_stat/mp_import_stat_t mp_import_stat/' mpy-cross/main.c
 source ./tools/ci.sh
 ci_unix_build_helper VARIANT=standard
-EOF_e74f067ca4f1
+EOF_493fa9cc559b
 
 
 WORKDIR /testbed

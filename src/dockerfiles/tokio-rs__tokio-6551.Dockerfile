@@ -14,11 +14,10 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_474a0822aefa
+RUN <<EOF_370e15a3ad5e
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/tokio-rs/tokio /testbed
-chmod -R 777 /testbed
 cd /testbed
 git reset --hard 0a85a9662d30139c779ea49a59be30db0f292b5d
 git remote remove origin
@@ -31,6 +30,7 @@ git gc --prune=now --aggressive
 AFTER_TIMESTAMP=$(date -d "$TARGET_TIMESTAMP + 1 second" '+%Y-%m-%d %H:%M:%S')
 COMMIT_COUNT=$(git log --oneline --all --since="$AFTER_TIMESTAMP" | wc -l)
 [ "$COMMIT_COUNT" -eq 0 ] || exit 1
+chmod -R 777 /testbed
 cd - || true
 cd /testbed
 cat <<'EOF_6e2000a97bb7' > Cargo.lock
@@ -1905,7 +1905,7 @@ dependencies = [
 ]
 EOF_6e2000a97bb7
 RUSTFLAGS="--cfg tokio_unstable" cargo test --features full --test rt_metrics --no-fail-fast --no-run
-EOF_474a0822aefa
+EOF_370e15a3ad5e
 
 
 WORKDIR /testbed

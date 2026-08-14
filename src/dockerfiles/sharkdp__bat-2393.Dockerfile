@@ -14,11 +14,10 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_dc8d7c0ac90a
+RUN <<EOF_3bee012d703a
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/sharkdp/bat /testbed
-chmod -R 777 /testbed
 cd /testbed
 git reset --hard 7c847d84b0c3c97df6badfbb39d153ad93aec74e
 git remote remove origin
@@ -31,10 +30,11 @@ git gc --prune=now --aggressive
 AFTER_TIMESTAMP=$(date -d "$TARGET_TIMESTAMP + 1 second" '+%Y-%m-%d %H:%M:%S')
 COMMIT_COUNT=$(git log --oneline --all --since="$AFTER_TIMESTAMP" | wc -l)
 [ "$COMMIT_COUNT" -eq 0 ] || exit 1
+chmod -R 777 /testbed
 cd - || true
 cd /testbed
 RUSTFLAGS=-Awarnings cargo test --package bat --test integration_tests cache_ --no-run
-EOF_dc8d7c0ac90a
+EOF_3bee012d703a
 
 
 WORKDIR /testbed

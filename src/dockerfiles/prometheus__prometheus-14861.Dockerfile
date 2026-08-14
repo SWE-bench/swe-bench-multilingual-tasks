@@ -53,11 +53,10 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_ab35f2ea89ce
+RUN <<EOF_76a6c0158ed3
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/prometheus/prometheus /testbed
-chmod -R 777 /testbed
 cd /testbed
 git reset --hard 9f57f14d6c5e3c10ed212010cb34522458f43d64
 git remote remove origin
@@ -70,10 +69,11 @@ git gc --prune=now --aggressive
 AFTER_TIMESTAMP=$(date -d "$TARGET_TIMESTAMP + 1 second" '+%Y-%m-%d %H:%M:%S')
 COMMIT_COUNT=$(git log --oneline --all --since="$AFTER_TIMESTAMP" | wc -l)
 [ "$COMMIT_COUNT" -eq 0 ] || exit 1
+chmod -R 777 /testbed
 cd - || true
 cd /testbed
 go test -c ./promql
-EOF_ab35f2ea89ce
+EOF_76a6c0158ed3
 
 
 WORKDIR /testbed

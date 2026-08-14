@@ -14,11 +14,10 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_f7d847b1e0c5
+RUN <<EOF_ac86bd93a39e
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/tokio-rs/tokio /testbed
-chmod -R 777 /testbed
 cd /testbed
 git reset --hard 553cc3b194df875cac8736473e1f01cf3e40a660
 git remote remove origin
@@ -31,6 +30,7 @@ git gc --prune=now --aggressive
 AFTER_TIMESTAMP=$(date -d "$TARGET_TIMESTAMP + 1 second" '+%Y-%m-%d %H:%M:%S')
 COMMIT_COUNT=$(git log --oneline --all --since="$AFTER_TIMESTAMP" | wc -l)
 [ "$COMMIT_COUNT" -eq 0 ] || exit 1
+chmod -R 777 /testbed
 cd - || true
 cd /testbed
 cat <<'EOF_afcc877348f8' > Cargo.lock
@@ -1777,7 +1777,7 @@ dependencies = [
  "syn 2.0.111",
 ]
 EOF_afcc877348f8
-EOF_f7d847b1e0c5
+EOF_ac86bd93a39e
 
 
 WORKDIR /testbed

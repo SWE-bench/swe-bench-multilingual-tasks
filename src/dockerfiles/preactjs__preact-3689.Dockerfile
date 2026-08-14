@@ -38,11 +38,10 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_7bc3d796aa64
+RUN <<EOF_e94faa1bd65b
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/preactjs/preact /testbed
-chmod -R 777 /testbed
 cd /testbed
 git reset --hard 9457b221fdacd1052ffdb385918e1bab4b10e833
 git remote remove origin
@@ -55,10 +54,11 @@ git gc --prune=now --aggressive
 AFTER_TIMESTAMP=$(date -d "$TARGET_TIMESTAMP + 1 second" '+%Y-%m-%d %H:%M:%S')
 COMMIT_COUNT=$(git log --oneline --all --since="$AFTER_TIMESTAMP" | wc -l)
 [ "$COMMIT_COUNT" -eq 0 ] || exit 1
+chmod -R 777 /testbed
 cd - || true
 cd /testbed
 npm install
-EOF_7bc3d796aa64
+EOF_e94faa1bd65b
 
 
 WORKDIR /testbed

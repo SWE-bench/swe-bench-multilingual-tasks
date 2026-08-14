@@ -53,11 +53,10 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_65e8fc490f0c
+RUN <<EOF_075fc989a3c9
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/hashicorp/terraform /testbed
-chmod -R 777 /testbed
 cd /testbed
 git reset --hard 047c1af0b4a9e1e650f3811d011bcb92b2ceb15a
 git remote remove origin
@@ -70,10 +69,11 @@ git gc --prune=now --aggressive
 AFTER_TIMESTAMP=$(date -d "$TARGET_TIMESTAMP + 1 second" '+%Y-%m-%d %H:%M:%S')
 COMMIT_COUNT=$(git log --oneline --all --since="$AFTER_TIMESTAMP" | wc -l)
 [ "$COMMIT_COUNT" -eq 0 ] || exit 1
+chmod -R 777 /testbed
 cd - || true
 cd /testbed
 go test -c ./internal/terraform
-EOF_65e8fc490f0c
+EOF_075fc989a3c9
 
 
 WORKDIR /testbed

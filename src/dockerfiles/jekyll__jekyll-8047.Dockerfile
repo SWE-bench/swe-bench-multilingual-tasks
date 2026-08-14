@@ -15,11 +15,10 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_563ad4fdf991
+RUN <<EOF_935bf844de52
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/jekyll/jekyll /testbed
-chmod -R 777 /testbed
 cd /testbed
 git reset --hard ab6ef0b257e4c7aafec0518d93bea3e9c4b75b75
 git remote remove origin
@@ -32,12 +31,13 @@ git gc --prune=now --aggressive
 AFTER_TIMESTAMP=$(date -d "$TARGET_TIMESTAMP + 1 second" '+%Y-%m-%d %H:%M:%S')
 COMMIT_COUNT=$(git log --oneline --all --since="$AFTER_TIMESTAMP" | wc -l)
 [ "$COMMIT_COUNT" -eq 0 ] || exit 1
+chmod -R 777 /testbed
 cd - || true
 cd /testbed
 sed -i '/^[[:space:]]*install_if.*mingw/,/^[[:space:]]*end/d' Gemfile
 script/bootstrap
 bundle add webrick
-EOF_563ad4fdf991
+EOF_935bf844de52
 
 
 WORKDIR /testbed

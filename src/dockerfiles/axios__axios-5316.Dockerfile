@@ -38,11 +38,10 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_2d4eaf4c509a
+RUN <<EOF_8680d03618a6
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/axios/axios /testbed
-chmod -R 777 /testbed
 cd /testbed
 git reset --hard 65e8d1e28ce829f47a837e45129730e541950d3c
 git remote remove origin
@@ -55,11 +54,12 @@ git gc --prune=now --aggressive
 AFTER_TIMESTAMP=$(date -d "$TARGET_TIMESTAMP + 1 second" '+%Y-%m-%d %H:%M:%S')
 COMMIT_COUNT=$(git log --oneline --all --since="$AFTER_TIMESTAMP" | wc -l)
 [ "$COMMIT_COUNT" -eq 0 ] || exit 1
+chmod -R 777 /testbed
 cd - || true
 cd /testbed
 npm install
 npm install
-EOF_2d4eaf4c509a
+EOF_8680d03618a6
 
 
 WORKDIR /testbed

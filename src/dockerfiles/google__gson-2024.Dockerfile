@@ -25,11 +25,10 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_2d09f08e05e5
+RUN <<EOF_49de054cfd17
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/google/gson /testbed
-chmod -R 777 /testbed
 cd /testbed
 git reset --hard 16b42ff5805074126c2e5484450c182773e408a2
 git remote remove origin
@@ -42,10 +41,11 @@ git gc --prune=now --aggressive
 AFTER_TIMESTAMP=$(date -d "$TARGET_TIMESTAMP + 1 second" '+%Y-%m-%d %H:%M:%S')
 COMMIT_COUNT=$(git log --oneline --all --since="$AFTER_TIMESTAMP" | wc -l)
 [ "$COMMIT_COUNT" -eq 0 ] || exit 1
+chmod -R 777 /testbed
 cd - || true
 cd /testbed
 mvn clean install -B -pl gson -DskipTests -am
-EOF_2d09f08e05e5
+EOF_49de054cfd17
 
 
 WORKDIR /testbed

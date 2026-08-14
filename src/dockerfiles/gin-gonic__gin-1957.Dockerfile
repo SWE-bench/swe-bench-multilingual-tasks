@@ -53,11 +53,10 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_086485db1075
+RUN <<EOF_59acd0786c6a
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/gin-gonic/gin /testbed
-chmod -R 777 /testbed
 cd /testbed
 git reset --hard 09a3650c97ca7ef3a542d428a9fb2c8da8c18002
 git remote remove origin
@@ -70,10 +69,11 @@ git gc --prune=now --aggressive
 AFTER_TIMESTAMP=$(date -d "$TARGET_TIMESTAMP + 1 second" '+%Y-%m-%d %H:%M:%S')
 COMMIT_COUNT=$(git log --oneline --all --since="$AFTER_TIMESTAMP" | wc -l)
 [ "$COMMIT_COUNT" -eq 0 ] || exit 1
+chmod -R 777 /testbed
 cd - || true
 cd /testbed
 go test -c .
-EOF_086485db1075
+EOF_59acd0786c6a
 
 
 WORKDIR /testbed

@@ -15,11 +15,10 @@ RUN adduser --disabled-password --gecos 'dog' nonroot
 
 RUN echo "source /opt/miniconda3/etc/profile.d/conda.sh && conda activate testbed" > /root/.bashrc
 
-RUN <<EOF_d75cda75a5b7
+RUN <<EOF_572ecd95bdfb
 #!/bin/bash
 set -euxo pipefail
 git clone -o origin  --single-branch https://github.com/fluent/fluentd /testbed
-chmod -R 777 /testbed
 cd /testbed
 git reset --hard 296f02180749bee4c22605474cd95194b04012d8
 git remote remove origin
@@ -32,10 +31,11 @@ git gc --prune=now --aggressive
 AFTER_TIMESTAMP=$(date -d "$TARGET_TIMESTAMP + 1 second" '+%Y-%m-%d %H:%M:%S')
 COMMIT_COUNT=$(git log --oneline --all --since="$AFTER_TIMESTAMP" | wc -l)
 [ "$COMMIT_COUNT" -eq 0 ] || exit 1
+chmod -R 777 /testbed
 cd - || true
 cd /testbed
 bundle install
-EOF_d75cda75a5b7
+EOF_572ecd95bdfb
 
 
 WORKDIR /testbed
