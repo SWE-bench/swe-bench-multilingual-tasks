@@ -12,7 +12,7 @@ dependencies = [
 ]
 
 [project.scripts]
-sb-dockerfile-gen-multilingual = "sb_dockerfile_gen:main"
+dockerfile-gen = "dockerfile_gen:main"
 
 [tool.setuptools.packages.find]
-where = ["src"]
+include = ["dockerfile_gen*"]

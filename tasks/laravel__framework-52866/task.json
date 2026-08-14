@@ -1,0 +1,31 @@
+{
+  "FAIL_TO_PASS": [
+    "Contextual Attribute Binding > Nested attribute on app call"
+  ],
+  "PASS_TO_PASS": [
+    "Contextual Attribute Binding > Dependency can be resolved from attribute binding",
+    "Contextual Attribute Binding > Scalar dependency can be resolved from attribute binding",
+    "Contextual Attribute Binding > Scalar dependency can be resolved from attribute resolve method",
+    "Contextual Attribute Binding > Dependency with after callback attribute can be resolved",
+    "Contextual Attribute Binding > Authed attribute",
+    "Contextual Attribute Binding > Cache attribute",
+    "Contextual Attribute Binding > Config attribute",
+    "Contextual Attribute Binding > Database attribute",
+    "Contextual Attribute Binding > Auth attribute",
+    "Contextual Attribute Binding > Log attribute",
+    "Contextual Attribute Binding > Storage attribute",
+    "Contextual Attribute Binding > Injection with attribute on app call",
+    "Contextual Attribute Binding > Attribute on app call",
+    "Contextual Attribute Binding > Tag attribute"
+  ],
+  "base_commit": "4c7850844e218b4fa25e29c83bc80b7ef06836cb",
+  "created_at": "2024-09-20 10:34:46",
+  "eval_type": "pass_and_fail",
+  "hints_text": "",
+  "image": "swebench/sweb.eval.x86_64.laravel_1776_framework-52866:latest",
+  "instance_id": "laravel__framework-52866",
+  "log_parser": "parse_log_phpunit",
+  "repo": "laravel/framework",
+  "split": "test",
+  "version": "52866"
+}

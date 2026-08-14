@@ -1,0 +1,29 @@
+{
+  "FAIL_TO_PASS": [
+    "useState > respects updates initiated from the parent"
+  ],
+  "PASS_TO_PASS": [
+    "useState > serves the same state across render calls",
+    "useState > can initialize the state via a function",
+    "useState > does not rerender on equal state",
+    "useState > rerenders when setting the state",
+    "useState > can be set by another component",
+    "useState > should correctly initialize",
+    "useState > should correctly re-initialize when first run threw an error",
+    "useState > should handle queued useState",
+    "useState > should render a second time when the render function updates state",
+    "useState > correctly updates with multiple state updates",
+    "useState > ensure we iterate over all hooks",
+    "useState > does not loop when states are equal after batches"
+  ],
+  "base_commit": "2cafedee2ddf7c73795e887ef1970df4be2bca90",
+  "created_at": "2022-09-19 13:54:47",
+  "eval_type": "pass_and_fail",
+  "hints_text": "Hey,\r\n\r\nThank you for the elaborate investigation, I think I know what might be causing this, the callsite is located [here](https://github.com/preactjs/preact/blob/master/hooks/src/index.js#L227)\r\n\r\nBasically what this code does is when we repeatedly call state-setters within the same batch we'll evaluate the eventual result and see whether we need to reach out into this child or not. Generally this has been implemented to avoid infinite loops as described in https://github.com/preactjs/preact/pull/3621\r\n\r\nNow what happens here is that we set have the following tree\r\n\r\n```js\r\n<Parent> // does legitimate update\r\n  <Child /> // does 2 updates that result in eventually the same state but also receives a prop from the parent\r\n```\r\n\r\nI am trying to think if we could introduce a proper heuristic for this but generally this could be a downside of batching states here, I am saying this because my first thought was we can fix this by looking at what component initialized the update and decide whether this is a valid invocation of sCU \ud83d\ude05 trying to think a bit more about this",
+  "image": "swebench/sweb.eval.x86_64.preactjs_1776_preact-3739:latest",
+  "instance_id": "preactjs__preact-3739",
+  "log_parser": "parse_log_karma",
+  "repo": "preactjs/preact",
+  "split": "test",
+  "version": "3739"
+}

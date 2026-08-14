@@ -1,0 +1,25 @@
+{
+  "FAIL_TO_PASS": [
+    "Style > Style cell address object",
+    "Style > Style cell range object"
+  ],
+  "PASS_TO_PASS": [
+    "Style > Style odd methods",
+    "Style > Style column",
+    "Style > Style is reused",
+    "Style > Style row",
+    "Style > Issue 1712 a",
+    "Style > Issue 1712 b",
+    "Style > Style loop upwards"
+  ],
+  "base_commit": "e4a770eae9e1751314296ca4342b3c6271c9ba13",
+  "created_at": "2023-03-19 16:18:49",
+  "eval_type": "pass_and_fail",
+  "hints_text": "",
+  "image": "swebench/sweb.eval.x86_64.phpoffice_1776_phpspreadsheet-3469:latest",
+  "instance_id": "phpoffice__phpspreadsheet-3469",
+  "log_parser": "parse_log_phpunit",
+  "repo": "phpoffice/phpspreadsheet",
+  "split": "test",
+  "version": "3469"
+}

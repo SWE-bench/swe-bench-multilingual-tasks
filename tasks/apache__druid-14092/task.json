@@ -1,0 +1,18 @@
+{
+  "FAIL_TO_PASS": [
+    "org.apache.druid.discovery.DruidLeaderClientTest#test503ResponseFromServerAndCacheRefresh"
+  ],
+  "PASS_TO_PASS": [
+    "org.apache.druid.discovery.DruidLeaderClientTest#testServerFailureAndRedirect"
+  ],
+  "base_commit": "4fffee17761286996a8c43154b72db4bcaafb16d",
+  "created_at": "2023-04-14 21:01:40",
+  "eval_type": "pass_and_fail",
+  "hints_text": "",
+  "image": "swebench/sweb.eval.x86_64.apache_1776_druid-14092:latest",
+  "instance_id": "apache__druid-14092",
+  "log_parser": "parse_log_maven",
+  "repo": "apache/druid",
+  "split": "test",
+  "version": "14092"
+}

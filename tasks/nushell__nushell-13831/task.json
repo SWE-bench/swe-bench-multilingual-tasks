@@ -1,0 +1,16 @@
+{
+  "FAIL_TO_PASS": [
+    "commands::split_column::to_column"
+  ],
+  "PASS_TO_PASS": [],
+  "base_commit": "fb34a4fc6c9ca882cc6dc95d437902a45c402e9a",
+  "created_at": "2024-09-11 20:01:42",
+  "eval_type": "pass_and_fail",
+  "hints_text": "",
+  "image": "swebench/sweb.eval.x86_64.nushell_1776_nushell-13831:latest",
+  "instance_id": "nushell__nushell-13831",
+  "log_parser": "parse_log_cargo",
+  "repo": "nushell/nushell",
+  "split": "test",
+  "version": "13831"
+}

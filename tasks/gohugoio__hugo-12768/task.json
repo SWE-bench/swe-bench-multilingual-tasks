@@ -1,0 +1,19 @@
+{
+  "FAIL_TO_PASS": [
+    "TestBlockquoteHook"
+  ],
+  "PASS_TO_PASS": [
+    "TestResolveGitHubAlert",
+    "TestBlockquoteEmptyIssue12756"
+  ],
+  "base_commit": "83235262d06a060bd22c168b3413903667b8aeb6",
+  "created_at": "2024-08-14 14:58:22",
+  "eval_type": "pass_and_fail",
+  "hints_text": ">Hugo won't render [!note], or [!Note], or [!nOtE] as alert while GitHub will.\r\n\r\nWell, one could argue that the bug lives in GitHub's implementation, because their spec says nothing about casing, but their examples all indicate ... upper case:\r\n\r\nhttps://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#alerts\r\n\r\n... but I guess we can adjust our regexp ...\r\n\r\n> [!nOte]\r\n> Hmm ...\r\n\r\n",
+  "image": "swebench/sweb.eval.x86_64.gohugoio_1776_hugo-12768:latest",
+  "instance_id": "gohugoio__hugo-12768",
+  "log_parser": "parse_log_gotest",
+  "repo": "gohugoio/hugo",
+  "split": "test",
+  "version": "12768"
+}

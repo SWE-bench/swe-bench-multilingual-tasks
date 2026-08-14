@@ -1,0 +1,16 @@
+{
+  "FAIL_TO_PASS": [
+    "TestCaddyfileAdaptToJSON"
+  ],
+  "PASS_TO_PASS": [],
+  "base_commit": "f6d2c293e752254769efe21c8d06a16ebad4845e",
+  "created_at": "2024-05-27 18:46:06",
+  "eval_type": "pass_and_fail",
+  "hints_text": "",
+  "image": "swebench/sweb.eval.x86_64.caddyserver_1776_caddy-6345:latest",
+  "instance_id": "caddyserver__caddy-6345",
+  "log_parser": "parse_log_gotest",
+  "repo": "caddyserver/caddy",
+  "split": "test",
+  "version": "6345"
+}

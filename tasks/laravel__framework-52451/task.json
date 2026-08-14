@@ -1,0 +1,35 @@
+{
+  "FAIL_TO_PASS": [
+    "Validation Validator > Custom validation is appended to messages"
+  ],
+  "PASS_TO_PASS": [
+    "Validation Validator > Custom replacers are called",
+    "Validation Validator > Class based custom replacers",
+    "Validation Validator > Displayable attributes are replaced in custom replacers",
+    "Validation Validator > Custom validation lines are respected",
+    "Validation Validator > Custom validation lines for size rules",
+    "Validation Validator > Custom validation lines are respected with asterisks",
+    "Validation Validator > Custom exception",
+    "Validation Validator > Custom exception must extend validation exception",
+    "Validation Validator > Validation dot custom dot anything can be translated",
+    "Validation Validator > Validate email with custom class check",
+    "Validation Validator > Custom validators",
+    "Validation Validator > Class based custom validators",
+    "Validation Validator > Class based custom validators using conventional method",
+    "Validation Validator > Custom implicit validators",
+    "Validation Validator > Custom dependent validators",
+    "Validation Validator > Custom validation object",
+    "Validation Validator > Custom validation object with dot keys is correctly passed value",
+    "Validation Validator > Implicit custom validation objects"
+  ],
+  "base_commit": "b8ca298a5475497d01b194ed5688441454d8ee34",
+  "created_at": "2024-08-11 18:32:17",
+  "eval_type": "pass_and_fail",
+  "hints_text": "Thank you for reporting this issue!\n\nAs Laravel is an open source project, we rely on the community to help us diagnose and fix issues as it is not possible to research and fix every issue reported to us via GitHub.\n\nIf possible, please make a pull request fixing the issue you have described, along with corresponding tests. All pull requests are promptly reviewed by the Laravel team.\n\nThank you!",
+  "image": "swebench/sweb.eval.x86_64.laravel_1776_framework-52451:latest",
+  "instance_id": "laravel__framework-52451",
+  "log_parser": "parse_log_phpunit",
+  "repo": "laravel/framework",
+  "split": "test",
+  "version": "52451"
+}

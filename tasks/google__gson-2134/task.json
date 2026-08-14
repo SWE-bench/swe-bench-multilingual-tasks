@@ -1,0 +1,19 @@
+{
+  "FAIL_TO_PASS": [
+    "com.google.gson.internal.bind.util.ISO8601UtilsTest#testDateParseInvalidDay",
+    "com.google.gson.internal.bind.util.ISO8601UtilsTest#testDateParseInvalidMonth"
+  ],
+  "PASS_TO_PASS": [
+    "com.google.gson.internal.bind.util.ISO8601UtilsTest#testDateParseWithDefaultTimezone"
+  ],
+  "base_commit": "96ab171eb48dcea94fd9b8f425f65c531e6c3aad",
+  "created_at": "2022-06-12 20:12:27",
+  "eval_type": "pass_and_fail",
+  "hints_text": "",
+  "image": "swebench/sweb.eval.x86_64.google_1776_gson-2134:latest",
+  "instance_id": "google__gson-2134",
+  "log_parser": "parse_log_maven",
+  "repo": "google/gson",
+  "split": "test",
+  "version": "2134"
+}

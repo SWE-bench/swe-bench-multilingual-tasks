@@ -1,0 +1,21 @@
+{
+  "FAIL_TO_PASS": [
+    "TestSite#test_: static files in a collection should not be revisited in `Site#each_site_file`"
+  ],
+  "PASS_TO_PASS": [
+    "TestSite#test_: creating sites should write static files if not modified but missing in destination",
+    "TestSite#test_: creating sites should write only modified static files",
+    "TestSite#test_: creating sites should expose list of static files to site payload",
+    "TestSite#test_: static files in a collection should be exposed via site instance"
+  ],
+  "base_commit": "bb851e235dfbe1f197388aea3e7f0eeb1b50c4e3",
+  "created_at": "2022-10-01 00:35:01",
+  "eval_type": "pass_and_fail",
+  "hints_text": "This is a strange bug.\n@xinghengwang Are you using any plugins? I wonder how there are two copies of the same file..\nYeah, it is wierd. since they are basically same file. one is aboslute path (as on my mac), one is relative to the \"root\" of the repo. \r\n\r\nThese are my plugins. \r\n\r\n\r\n```\r\nsource \"https://rubygems.org\"\r\n\r\ngem \"jekyll\", group: :jekyll_plugins\r\ngem \"json\"\r\n\r\ngroup :jekyll_plugins do\r\n  gem \"jekyll-paginate\"\r\n  gem \"jekyll-sitemap\"\r\n  gem \"jekyll-gist\"\r\n  gem \"jekyll-feed\"\r\n  gem \"jemoji\"\r\n  gem \"jekyll-redirect-from\"\r\n  gem \"jekyll-remote-include\"\r\n  gem \"jekyll-include-cache\"\r\n  gem \"jekyll-algolia\"\r\n  gem \"kramdown-parser-gfm\"\r\nend\r\n\r\ngem \"webrick\", \"~> 1.7\"\r\n```\r\n",
+  "image": "swebench/sweb.eval.x86_64.jekyll_1776_jekyll-9141:latest",
+  "instance_id": "jekyll__jekyll-9141",
+  "log_parser": "parse_log_jekyll",
+  "repo": "jekyll/jekyll",
+  "split": "test",
+  "version": "9141"
+}

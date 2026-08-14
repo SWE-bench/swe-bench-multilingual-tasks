@@ -1,0 +1,38 @@
+{
+  "FAIL_TO_PASS": [
+    "num_blocking_threads"
+  ],
+  "PASS_TO_PASS": [
+    "budget_exhaustion_yield_with_joins",
+    "injection_queue_depth_current_thread",
+    "budget_exhaustion_yield",
+    "blocking_queue_depth",
+    "active_tasks_count",
+    "injection_queue_depth_multi_thread",
+    "num_workers",
+    "worker_local_schedule_count",
+    "remote_schedule_count",
+    "io_driver_fd_count",
+    "worker_local_queue_depth",
+    "num_idle_blocking_threads",
+    "io_driver_ready_count",
+    "worker_park_count",
+    "worker_poll_count_histogram_range",
+    "worker_poll_count_histogram",
+    "worker_overflow_count",
+    "worker_poll_count_histogram_disabled_without_explicit_enable",
+    "worker_noop_count",
+    "worker_poll_count_and_time",
+    "worker_total_busy_duration"
+  ],
+  "base_commit": "0a85a9662d30139c779ea49a59be30db0f292b5d",
+  "created_at": "2024-05-10 15:30:26",
+  "eval_type": "pass_and_fail",
+  "hints_text": "",
+  "image": "swebench/sweb.eval.x86_64.tokio-rs_1776_tokio-6551:latest",
+  "instance_id": "tokio-rs__tokio-6551",
+  "log_parser": "parse_log_cargo",
+  "repo": "tokio-rs/tokio",
+  "split": "test",
+  "version": "6551"
+}

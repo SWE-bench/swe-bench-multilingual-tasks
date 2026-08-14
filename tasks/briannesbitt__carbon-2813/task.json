@@ -1,0 +1,20 @@
+{
+  "FAIL_TO_PASS": [
+    "Factory > Psr clock"
+  ],
+  "PASS_TO_PASS": [
+    "Factory > Factory",
+    "Factory > Factory modification",
+    "Factory > Factory timezone"
+  ],
+  "base_commit": "8c019924327fe0251294adb61543981e3d27652c",
+  "created_at": "2023-06-23 10:24:05",
+  "eval_type": "pass_and_fail",
+  "hints_text": "",
+  "image": "swebench/sweb.eval.x86_64.briannesbitt_1776_carbon-2813:latest",
+  "instance_id": "briannesbitt__carbon-2813",
+  "log_parser": "parse_log_phpunit",
+  "repo": "briannesbitt/carbon",
+  "split": "test",
+  "version": "2813"
+}

@@ -1,0 +1,24 @@
+{
+  "FAIL_TO_PASS": [
+    "Database Connections > Dynamic connection doesnt fail on reconnect"
+  ],
+  "PASS_TO_PASS": [
+    "Database Connections > Build database connection",
+    "Database Connections > Establish database connection",
+    "Database Connections > Throw exception if connection already exists",
+    "Database Connections > Override existing connection",
+    "Database Connections > Establishing a connection will dispatch an event",
+    "Database Connections > Table prefix",
+    "Database Connections > Dynamic connection with no name doesnt fail on reconnect"
+  ],
+  "base_commit": "37d48c45e0e2496c3acecee431416c1d1aab52bb",
+  "created_at": "2024-12-16 11:21:23",
+  "eval_type": "pass_and_fail",
+  "hints_text": "The problem on the DatabaseManager is that the `refreshPdoConnections()` method calls the `makeConnection()` method which attempts to get the config from the `config/database.php`. Since the connection is built on the fly and does not exists on the config file, it throws an `InvalidArgumentException`.\nThank you for reporting this issue!\n\nAs Laravel is an open source project, we rely on the community to help us diagnose and fix issues as it is not possible to research and fix every issue reported to us via GitHub.\n\nIf possible, please make a pull request fixing the issue you have described, along with corresponding tests. All pull requests are promptly reviewed by the Laravel team.\n\nThank you!",
+  "image": "swebench/sweb.eval.x86_64.laravel_1776_framework-53914:latest",
+  "instance_id": "laravel__framework-53914",
+  "log_parser": "parse_log_phpunit",
+  "repo": "laravel/framework",
+  "split": "test",
+  "version": "53914"
+}

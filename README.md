@@ -6,18 +6,18 @@ Dockerfile generator for SWE-bench Multilingual benchmarks (C, Go, Java, JavaScr
 
 ```bash
 # From HuggingFace dataset
-sb-dockerfile-gen-multilingual SWE-bench/SWE-bench_Multilingual --output_dir src/dockerfiles
+dockerfile-gen
 
 # From local JSON/JSONL file
-sb-dockerfile-gen-multilingual instances.jsonl --output_dir src/dockerfiles
+dockerfile-gen --instance_ids google__gson-2479
 
 # Specific instances
-sb-dockerfile-gen-multilingual SWE-bench/SWE-bench_Multilingual --instance_ids some_instance --output_dir src/dockerfiles
+dockerfile-gen --instance_ids google__gson-2479
 ```
 
 ## Output
 
-Generated Dockerfiles are written to `src/dockerfiles/<instance_id>.Dockerfile`.
+`Dockerfile` and `eval.sh` are regenerated in place under `tasks/<instance_id>/`, from that task's `task.json`.
 
 ## Install
 

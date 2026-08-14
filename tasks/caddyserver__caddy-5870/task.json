@@ -1,0 +1,16 @@
+{
+  "FAIL_TO_PASS": [
+    "TestUnsyncedConfigAccess"
+  ],
+  "PASS_TO_PASS": [],
+  "base_commit": "fae195ac7eb9f4b0e9436384cd0529a11355e367",
+  "created_at": "2023-10-08 16:53:41",
+  "eval_type": "pass_and_fail",
+  "hints_text": "Thanks for the issue, I'll look into this soon! (Currently reworking the Caddy website.)",
+  "image": "swebench/sweb.eval.x86_64.caddyserver_1776_caddy-5870:latest",
+  "instance_id": "caddyserver__caddy-5870",
+  "log_parser": "parse_log_gotest",
+  "repo": "caddyserver/caddy",
+  "split": "test",
+  "version": "5870"
+}

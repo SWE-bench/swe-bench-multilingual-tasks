@@ -1,0 +1,30 @@
+{
+  "FAIL_TO_PASS": [
+    "Formula Translator > Addresses with data set \"range period in sheet name\"",
+    "Formula Translator > Addresses with data set \"range special chars and period in sheet name\"",
+    "Formula Translator > Addresses with data set \"cell period in sheet name\"",
+    "Formula Translator > Formulas with data set \"ranges sheet name with period\""
+  ],
+  "PASS_TO_PASS": [
+    "Formula Translator > Addresses with data set \"range unquoted sheet name\"",
+    "Formula Translator > Addresses with data set \"range unquoted sheet name with $\"",
+    "Formula Translator > Addresses with data set \"range quoted sheet name with $\"",
+    "Formula Translator > Addresses with data set \"cell unquoted sheet name\"",
+    "Formula Translator > Addresses with data set \"range no sheet name all dollars\"",
+    "Formula Translator > Addresses with data set \"range no sheet name some dollars\"",
+    "Formula Translator > Addresses with data set \"range no sheet name no dollars\"",
+    "Formula Translator > Formulas with data set \"ranges no sheet name\"",
+    "Formula Translator > Formulas with data set \"ranges unquoted sheet name\"",
+    "Formula Translator > Formulas with data set \"ranges quoted sheet name without period\""
+  ],
+  "base_commit": "eacaa25dca01b79b9b468184c452b97ad0b30dd7",
+  "created_at": "2025-01-10 07:18:11",
+  "eval_type": "pass_and_fail",
+  "hints_text": "I can work with it by simply renaming the sheet. But I think - at the very least, there should be a warning that dots are not supported (yet).\nI do not see convertToExelRange. I think the problem you are reporting is in convertToExcelAddressValue. I think I have a solution for that, but, unsurprisingly, convertToExcelFormulaValue has the same problem, and the solution for Formula seems more difficult.\n> I do not see convertToExelRange. I think the problem you are reporting is in convertToExcelAddressValue.\r\n\r\nMy apologies. It was quite late last night but you're right. The function I meant is called \"convertToExcelAddressValue\"",
+  "image": "swebench/sweb.eval.x86_64.phpoffice_1776_phpspreadsheet-4313:latest",
+  "instance_id": "phpoffice__phpspreadsheet-4313",
+  "log_parser": "parse_log_phpunit",
+  "repo": "phpoffice/phpspreadsheet",
+  "split": "test",
+  "version": "4313"
+}

@@ -1,0 +1,19 @@
+{
+  "FAIL_TO_PASS": [
+    "should default to 'all'"
+  ],
+  "PASS_TO_PASS": [
+    "should always return the empty string",
+    "should accept changing the architecture"
+  ],
+  "base_commit": "809c7269442f6b6e4be7c3d480bb4489caa281c5",
+  "created_at": "2021-11-10 05:01:50",
+  "eval_type": "pass_and_fail",
+  "hints_text": "",
+  "image": "swebench/sweb.eval.x86_64.jordansissel_1776_fpm-1850:latest",
+  "instance_id": "jordansissel__fpm-1850",
+  "log_parser": "parse_log_rspec_transformed_json",
+  "repo": "jordansissel/fpm",
+  "split": "test",
+  "version": "1850"
+}

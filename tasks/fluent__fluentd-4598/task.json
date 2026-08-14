@@ -1,0 +1,18 @@
+{
+  "FAIL_TO_PASS": [
+    "mount frozen path"
+  ],
+  "PASS_TO_PASS": [
+    "mount given path"
+  ],
+  "base_commit": "a6978e59adaced5626506d5083056c39f4b629bf",
+  "created_at": "2024-08-16 05:20:49",
+  "eval_type": "pass_and_fail",
+  "hints_text": "",
+  "image": "swebench/sweb.eval.x86_64.fluent_1776_fluentd-4598:latest",
+  "instance_id": "fluent__fluentd-4598",
+  "log_parser": "parse_log_ruby_unit",
+  "repo": "fluent/fluentd",
+  "split": "test",
+  "version": "4598"
+}

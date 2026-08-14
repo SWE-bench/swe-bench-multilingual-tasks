@@ -1,0 +1,25 @@
+{
+  "FAIL_TO_PASS": [
+    "memo() > should not unnecessarily reorder children #2895"
+  ],
+  "PASS_TO_PASS": [
+    "memo() > should have isReactComponent flag",
+    "memo() > should work with function components",
+    "memo() > should support adding refs",
+    "memo() > should support custom comparer functions",
+    "memo() > should rerender when custom comparer returns false",
+    "memo() > should pass props and nextProps to comparer fn",
+    "memo() > should nest without errors",
+    "memo() > should pass ref through nested memos"
+  ],
+  "base_commit": "a9f7e676dc03b5008b8483e0937fc27c1af8287f",
+  "created_at": "2021-01-01 02:27:31",
+  "eval_type": "pass_and_fail",
+  "hints_text": "",
+  "image": "swebench/sweb.eval.x86_64.preactjs_1776_preact-2896:latest",
+  "instance_id": "preactjs__preact-2896",
+  "log_parser": "parse_log_karma",
+  "repo": "preactjs/preact",
+  "split": "test",
+  "version": "2896"
+}

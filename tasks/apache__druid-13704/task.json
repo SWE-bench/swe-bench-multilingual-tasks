@@ -1,0 +1,19 @@
+{
+  "FAIL_TO_PASS": [
+    "org.apache.druid.query.aggregation.post.ArithmeticPostAggregatorTest#testPow"
+  ],
+  "PASS_TO_PASS": [
+    "org.apache.druid.query.aggregation.post.ArithmeticPostAggregatorTest#testDiv",
+    "org.apache.druid.query.aggregation.post.ArithmeticPostAggregatorTest#testQuotient"
+  ],
+  "base_commit": "51dfde02840017092486fb75be2b16566aff6a19",
+  "created_at": "2023-01-23 04:10:47",
+  "eval_type": "pass_and_fail",
+  "hints_text": "",
+  "image": "swebench/sweb.eval.x86_64.apache_1776_druid-13704:latest",
+  "instance_id": "apache__druid-13704",
+  "log_parser": "parse_log_maven",
+  "repo": "apache/druid",
+  "split": "test",
+  "version": "13704"
+}
