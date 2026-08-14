@@ -1,0 +1,9 @@
+{
+  "FAIL_TO_PASS": [
+    "should default to 'all'"
+  ],
+  "PASS_TO_PASS": [
+    "should always return the empty string",
+    "should accept changing the architecture"
+  ]
+}

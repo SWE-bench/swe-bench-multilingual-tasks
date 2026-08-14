@@ -1,18 +1,6 @@
-FAIL_TO_PASS:
-- TestStringValueFacetCounts > testEmptyMatchset
-PASS_TO_PASS:
-- TestStringValueFacetCounts > testStaleState
-- TestStringValueFacetCounts > testRandom
-- TestStringValueFacetCounts > testSparseMultiSegmentCase
-- TestStringValueFacetCounts > testBasicSingleValued
-- TestStringValueFacetCounts > testBasicMultiValued
-- TestStringValueFacetCounts > testMissingSegment
-- TestStringValueFacetCounts > testBasicSingleValuedUsingSortedDoc
-- TestStringValueFacetCounts > testCountAll
 base_commit: ab291210db08276fef1b52bf7b840d431e96ce08
 created_at: '2024-06-17 12:54:11'
 eval_type: pass_and_fail
-hints_text: ''
 image: swebench/sweb.eval.x86_64.apache_1776_lucene-13494:latest
 instance_id: apache__lucene-13494
 log_parser: parse_log_gradle_custom

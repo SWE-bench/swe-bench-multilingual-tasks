@@ -1,42 +1,6 @@
-FAIL_TO_PASS:
-- basics/try_finally_return.py
-PASS_TO_PASS:
-- micropython/viper_try.py
-- micropython/native_try.py
-- micropython/native_try_deep.py
-- basics/try1.py
-- import/try_module.py
-- basics/try2.py
-- basics/try3.py
-- basics/try4.py
-- basics/try_as_var.py
-- basics/try_continue.py
-- basics/try_else.py
-- basics/try_else_finally.py
-- basics/try_error.py
-- basics/try_except_break.py
-- basics/try_finally1.py
-- basics/try_finally2.py
-- basics/try_finally_break.py
-- basics/try_finally_break2.py
-- basics/try_finally_continue.py
-- basics/try_finally_loops.py
-- basics/try_finally_return2.py
-- basics/try_finally_return3.py
-- basics/try_finally_return4.py
-- basics/try_finally_return5.py
-- basics/try_reraise.py
-- basics/try_reraise2.py
-- basics/try_return.py
 base_commit: 2d7fb9a715d8c9f1f7ba73a62cfd587fa6ffc24a
 created_at: '2024-01-31 02:05:03'
 eval_type: pass_and_fail
-hints_text: "Confirmed. Somehow, the type of self is changed to int in the line `self._i\
-  \ += 1`, but only after the `finally` statement, and only with the `+=` operator.\
-  \ Writing `self._i = self._i + 1` is fine, and moving `self._i += 1` to another\
-  \ line is fine as well.\nThanks for the report, I can also confirm the bug.\r\n\r\
-  \nIt's a Python stack overflow in the VM.  The compiler/emitter is not allocating\
-  \ enough Python stack for the try-finally when it contains a return statement."
 image: swebench/sweb.eval.x86_64.micropython_1776_micropython-13569:latest
 instance_id: micropython__micropython-13569
 log_parser: parse_log_micropython_test

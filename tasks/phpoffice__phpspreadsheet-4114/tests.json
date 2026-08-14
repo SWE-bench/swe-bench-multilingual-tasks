@@ -1,0 +1,11 @@
+{
+  "FAIL_TO_PASS": [
+    "Issue4112 > Issue 4112 with data set \"problem case\"",
+    "Issue4112 > Issue 4112 with data set \"positive number\""
+  ],
+  "PASS_TO_PASS": [
+    "Issue4112 > Issue 4112 with data set \"normal case\"",
+    "Issue4112 > Issue 4112 with data set \"negative 1 (as if there were no sheets)\"",
+    "Issue4112 > Issue 4112 with data set \"diffeent negative number\""
+  ]
+}

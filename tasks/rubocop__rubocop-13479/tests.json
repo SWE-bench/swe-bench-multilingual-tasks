@@ -1,0 +1,32 @@
+{
+  "FAIL_TO_PASS": [
+    "does not register an offense for a multiline shebang starting on the first line"
+  ],
+  "PASS_TO_PASS": [
+    "accepts =begin/=end comments",
+    "accepts sprockets directives",
+    "does not register an offense for # followed by no text",
+    "does not register an offense for #! on first line",
+    "does not register an offense for #\\ on first line",
+    "does not register an offense for more than one #",
+    "does not register an offense for more than one space",
+    "does not register an offense for only #s",
+    "does not register an offense when using RBS::Inline annotation",
+    "does not register an offense when using Steep annotation",
+    "does not register an offense when using `#++` or `#--`",
+    "does not register an offense when using ruby config as comment",
+    "does not register offense when using Doxygen style",
+    "registers an offense and corrects #! after the first line",
+    "registers an offense and corrects #\\ after the first line",
+    "registers an offense and corrects #\\ on first line",
+    "registers an offense and corrects comment without leading space",
+    "registers an offense and corrects for #\\ after the first line",
+    "registers an offense and corrects for a multiline shebang starting after the first line",
+    "registers an offense and corrects using Doxygen style",
+    "registers an offense and corrects using RBS::Inline annotation",
+    "registers an offense and corrects using Steep annotation",
+    "registers an offense when starting `:`",
+    "registers an offense when using `#+` or `#-` as they are not RDoc comments",
+    "registers an offense when using ruby config as comment"
+  ]
+}

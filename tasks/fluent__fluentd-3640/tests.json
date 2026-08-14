@@ -1,0 +1,13 @@
+{
+  "FAIL_TO_PASS": [
+    "exponential backoff retries with secondary and max_steps"
+  ],
+  "PASS_TO_PASS": [
+    "exponential backoff forever without randomization",
+    "exponential backoff retries with secondary",
+    "exponential backoff retries with secondary and specified threshold",
+    "exponential backoff with max_interval",
+    "exponential backoff with max_steps",
+    "exponential backoff with shorter timeout"
+  ]
+}

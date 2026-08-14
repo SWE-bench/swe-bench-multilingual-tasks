@@ -1,0 +1,20 @@
+{
+  "FAIL_TO_PASS": [
+    "does not replace non-Markdown links",
+    "handles stray spaces"
+  ],
+  "PASS_TO_PASS": [
+    "does basic replace",
+    "replaces two links on the same line",
+    "replaces reference style Markdown links",
+    "resolves absolute and relative links differently",
+    "ignores links in HTML comments",
+    "ignores links in fenced blocks",
+    "ignores links in inline code",
+    "replaces links with same title as URL",
+    "replaces multiple links on same line",
+    "replaces Markdown links with spaces",
+    "handles link titles",
+    "preserves query/hash"
+  ]
+}

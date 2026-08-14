@@ -1,0 +1,9 @@
+{
+  "FAIL_TO_PASS": [
+    "org.apache.druid.query.aggregation.post.ArithmeticPostAggregatorTest#testPow"
+  ],
+  "PASS_TO_PASS": [
+    "org.apache.druid.query.aggregation.post.ArithmeticPostAggregatorTest#testDiv",
+    "org.apache.druid.query.aggregation.post.ArithmeticPostAggregatorTest#testQuotient"
+  ]
+}

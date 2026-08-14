@@ -1,49 +1,6 @@
-FAIL_TO_PASS:
-- Database Schema Blueprint > Generate relationship column with non incremental model
-PASS_TO_PASS:
-- Database Schema Blueprint > To sql runs commands from blueprint
-- Database Schema Blueprint > Index default names
-- Database Schema Blueprint > Index default names when prefix supplied
-- Database Schema Blueprint > Drop index default names
-- Database Schema Blueprint > Drop index default names when prefix supplied
-- Database Schema Blueprint > Default current date time
-- Database Schema Blueprint > Default current timestamp
-- Database Schema Blueprint > Remove column
-- Database Schema Blueprint > Rename column
-- Database Schema Blueprint > Native rename column on mysql 57
-- Database Schema Blueprint > Native rename column on legacy maria d b
-- Database Schema Blueprint > Drop column
-- Database Schema Blueprint > Macroable
-- Database Schema Blueprint > Default using id morph
-- Database Schema Blueprint > Default using nullable id morph
-- Database Schema Blueprint > Default using uuid morph
-- Database Schema Blueprint > Default using nullable uuid morph
-- Database Schema Blueprint > Default using ulid morph
-- Database Schema Blueprint > Default using nullable ulid morph
-- Database Schema Blueprint > Generate relationship column with incremental model
-- Database Schema Blueprint > Generate relationship column with uuid model
-- Database Schema Blueprint > Generate relationship column with ulid model
-- Database Schema Blueprint > Generate relationship constrained column
-- Database Schema Blueprint > Generate relationship for model with non standard primary
-  key name
-- Database Schema Blueprint > Drop relationship column with incremental model
-- Database Schema Blueprint > Drop relationship column with uuid model
-- Database Schema Blueprint > Drop constrained relationship column with incremental
-  model
-- Database Schema Blueprint > Drop constrained relationship column with uuid model
-- Database Schema Blueprint > Tiny text column
-- Database Schema Blueprint > Tiny text nullable column
-- Database Schema Blueprint > Raw column
-- Database Schema Blueprint > Table comment
 base_commit: 9ec9479e8e10d766eeeb85a3bdd451a505abf8ec
 created_at: '2024-11-28 10:31:22'
 eval_type: pass_and_fail
-hints_text: "I think you're correct about this. However, at the same time I don't\
-  \ think we can change this on the current major release because it would be breaking\
-  \ for anyone expecting the current behavior.\r\n\r\nOne solution would be to send\
-  \ in a fix for 11.x to master. Another one to try adding a new method with the behavior\
-  \ you want. I'll leave it up to you to decide which PR you want to send in. Thanks!\n\
-  Will this ever get Fixed?\nNobody has sent in a PR yet I believe."
 image: swebench/sweb.eval.x86_64.laravel_1776_framework-53696:latest
 instance_id: laravel__framework-53696
 log_parser: parse_log_phpunit

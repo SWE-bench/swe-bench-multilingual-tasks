@@ -1,0 +1,17 @@
+{
+  "FAIL_TO_PASS": [
+    "Test_isCaddyfile",
+    "Test_isCaddyfile/prefix_of_Caddyfile_and_./_with_any_extension_is_Caddyfile",
+    "Test_isCaddyfile/prefix_of_Caddyfile_without_./_with_any_extension_is_Caddyfile"
+  ],
+  "PASS_TO_PASS": [
+    "TestParseEnvFile",
+    "Test_isCaddyfile/bare_Caddyfile_without_adapter",
+    "Test_isCaddyfile/local_Caddyfile_without_adapter",
+    "Test_isCaddyfile/local_caddyfile_with_adapter",
+    "Test_isCaddyfile/ends_with_.caddyfile_with_adapter",
+    "Test_isCaddyfile/ends_with_.caddyfile_without_adapter",
+    "Test_isCaddyfile/config_is_Caddyfile.yaml_with_adapter",
+    "Test_isCaddyfile/json_is_not_caddyfile_but_not_error"
+  ]
+}

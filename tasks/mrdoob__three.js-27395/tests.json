@@ -1,0 +1,25 @@
+{
+  "FAIL_TO_PASS": [
+    "Maths > Sphere > isSphere"
+  ],
+  "PASS_TO_PASS": [
+    "Maths > Sphere > Instancing",
+    "Maths > Sphere > set",
+    "Maths > Sphere > setFromPoints",
+    "Maths > Sphere > copy",
+    "Maths > Sphere > isEmpty",
+    "Maths > Sphere > makeEmpty",
+    "Maths > Sphere > containsPoint",
+    "Maths > Sphere > distanceToPoint",
+    "Maths > Sphere > intersectsSphere",
+    "Maths > Sphere > intersectsBox",
+    "Maths > Sphere > intersectsPlane",
+    "Maths > Sphere > clampPoint",
+    "Maths > Sphere > getBoundingBox",
+    "Maths > Sphere > applyMatrix4",
+    "Maths > Sphere > translate",
+    "Maths > Sphere > expandByPoint",
+    "Maths > Sphere > union",
+    "Maths > Sphere > equals"
+  ]
+}

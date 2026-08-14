@@ -1,0 +1,9 @@
+{
+  "FAIL_TO_PASS": [
+    "TestBlockquoteHook"
+  ],
+  "PASS_TO_PASS": [
+    "TestResolveGitHubAlert",
+    "TestBlockquoteEmptyIssue12756"
+  ]
+}

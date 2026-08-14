@@ -1,0 +1,12 @@
+{
+  "FAIL_TO_PASS": [
+    "TestCookieFilter"
+  ],
+  "PASS_TO_PASS": [
+    "TestQueryFilter",
+    "TestValidateQueryFilter",
+    "TestValidateCookieFilter",
+    "TestRegexpFilter",
+    "TestHashFilter"
+  ]
+}

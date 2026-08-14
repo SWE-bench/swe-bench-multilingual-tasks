@@ -1,0 +1,19 @@
+{
+  "FAIL_TO_PASS": [
+    "useState > respects updates initiated from the parent"
+  ],
+  "PASS_TO_PASS": [
+    "useState > serves the same state across render calls",
+    "useState > can initialize the state via a function",
+    "useState > does not rerender on equal state",
+    "useState > rerenders when setting the state",
+    "useState > can be set by another component",
+    "useState > should correctly initialize",
+    "useState > should correctly re-initialize when first run threw an error",
+    "useState > should handle queued useState",
+    "useState > should render a second time when the render function updates state",
+    "useState > correctly updates with multiple state updates",
+    "useState > ensure we iterate over all hooks",
+    "useState > does not loop when states are equal after batches"
+  ]
+}

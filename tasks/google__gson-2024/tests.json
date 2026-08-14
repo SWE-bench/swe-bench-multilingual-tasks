@@ -1,0 +1,8 @@
+{
+  "FAIL_TO_PASS": [
+    "com.google.gson.functional.FieldNamingTest#testUpperCaseWithUnderscores",
+    "com.google.gson.functional.NamingPolicyTest#testGsonWithUpperCaseUnderscorePolicySerialization",
+    "com.google.gson.functional.NamingPolicyTest#testGsonWithUpperCaseUnderscorePolicyDeserialiation"
+  ],
+  "PASS_TO_PASS": []
+}

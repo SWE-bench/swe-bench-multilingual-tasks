@@ -1,0 +1,29 @@
+{
+  "FAIL_TO_PASS": [
+    "registers an offense and corrects with safe navigation method chain"
+  ],
+  "PASS_TO_PASS": [
+    "does not register an offense for `X::dig`",
+    "does not register an offense for a hash",
+    "does not register an offense for chained dig without arguments",
+    "does not register an offense for dig chained to something else",
+    "does not register an offense for dig without arguments",
+    "does not register an offense for kwargs",
+    "does not register an offense for unchained `dig` without a receiver",
+    "does not register an offense when `dig` is given a forwarded anonymous block",
+    "does not register an offense when combining would add a syntax error",
+    "does not register an offense when the chain is broken up",
+    "does not register an offense with forwarded anonymous kwsplat",
+    "registers an offense and corrects when attached to a chain of non-dig receivers",
+    "registers an offense and corrects when split over multiple lines",
+    "registers an offense and corrects when split over multiple lines with comments",
+    "registers an offense and corrects with `::` instead of dot",
+    "registers an offense and corrects with forwarded anonymous splat",
+    "registers an offense and corrects with forwarded args",
+    "registers an offense and corrects with multiple values",
+    "registers an offense and corrects with safe navigation",
+    "registers an offense and corrects with single values",
+    "registers an offense and corrects with splat",
+    "registers an offense and corrects without a receiver"
+  ]
+}

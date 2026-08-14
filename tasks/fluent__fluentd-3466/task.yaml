@@ -1,14 +1,6 @@
-FAIL_TO_PASS:
-- test_should_replace_target_info
-PASS_TO_PASS: []
 base_commit: d2867c02472185f610a49cff1cf39c491df1039b
 created_at: '2021-07-24 16:12:49'
 eval_type: pass_and_fail
-hints_text: "```\r\n# wc -l *\r\n   422486 0.log\r\n   777520 0.log.20210721-164752\r\
-  \n  1200006 total\r\n```\r\nIt looks like all the logs in **0.log** file are duplicated.\
-  \ \r\n777,520+422,486*2-6(nginx starting logs)=**1,622,486**, which matches the\
-  \ observed number of log entries in Kibana.\nI test both read_bytes_limit_per_second=100000,\
-  \ 500000. Found the same issue of duplicated logs."
 image: swebench/sweb.eval.x86_64.fluent_1776_fluentd-3466:latest
 instance_id: fluent__fluentd-3466
 log_parser: parse_log_ruby_unit

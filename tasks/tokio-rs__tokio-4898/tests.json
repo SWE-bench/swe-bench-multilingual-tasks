@@ -1,0 +1,19 @@
+{
+  "FAIL_TO_PASS": [
+    "io_driver_ready_count"
+  ],
+  "PASS_TO_PASS": [
+    "num_workers",
+    "worker_local_schedule_count",
+    "remote_schedule_count",
+    "injection_queue_depth",
+    "worker_steal_count",
+    "worker_noop_count",
+    "worker_local_queue_depth",
+    "worker_poll_count",
+    "worker_overflow_count",
+    "worker_total_busy_duration",
+    "io_driver_fd_count",
+    "worker_park_count"
+  ]
+}

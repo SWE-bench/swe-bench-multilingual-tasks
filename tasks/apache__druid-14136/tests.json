@@ -1,0 +1,11 @@
+{
+  "FAIL_TO_PASS": [
+    "org.apache.druid.timeline.VersionedIntervalTimelineTest#testOverlapSecondContainsFirstZeroLengthInterval",
+    "org.apache.druid.timeline.VersionedIntervalTimelineTest#testOverlapSecondContainsFirstZeroLengthInterval2",
+    "org.apache.druid.timeline.VersionedIntervalTimelineTest#testOverlapSecondContainsFirstZeroLengthInterval3"
+  ],
+  "PASS_TO_PASS": [
+    "org.apache.druid.timeline.VersionedIntervalTimelineTest#testOverlapFirstContainsSecond",
+    "org.apache.druid.timeline.VersionedIntervalTimelineTest#testOverlapSecondContainsFirst"
+  ]
+}

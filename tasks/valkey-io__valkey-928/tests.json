@@ -1,0 +1,6 @@
+{
+  "FAIL_TO_PASS": [
+    "valkey-cli make source node ignores NOREPLICAS error when doing the last CLUSTER SETSLOT"
+  ],
+  "PASS_TO_PASS": []
+}

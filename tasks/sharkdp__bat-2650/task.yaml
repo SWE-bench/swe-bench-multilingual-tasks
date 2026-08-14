@@ -1,13 +1,6 @@
-FAIL_TO_PASS:
-- highlighting_independant_from_map_syntax_case
-PASS_TO_PASS:
-- map_syntax_and_ignored_suffix_work_together
 base_commit: e2bf85e749d87459e3fced697af5cd9cc96eeb8c
 created_at: '2023-08-28 14:14:31'
 eval_type: pass_and_fail
-hints_text: Thanks for reporting. I wanted to say that I thought we had fixed this
-  (https://github.com/sharkdp/bat/issues/1807 / https://github.com/sharkdp/bat/pull/2181)
-  but as the fix was in `syntect`, it probably doesn't apply for `bat`'s `--map-syntax`.
 image: swebench/sweb.eval.x86_64.sharkdp_1776_bat-2650:latest
 instance_id: sharkdp__bat-2650
 log_parser: parse_log_cargo

@@ -1,0 +1,1 @@
+This seems to be caused by PR https://github.com/gin-gonic/gin/pull/1663

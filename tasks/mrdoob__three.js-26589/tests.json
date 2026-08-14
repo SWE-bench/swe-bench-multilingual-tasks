@@ -1,0 +1,22 @@
+{
+  "FAIL_TO_PASS": [
+    "Objects > Line > copy/material",
+    "Objects > Mesh > copy/material",
+    "Objects > Points > copy/material"
+  ],
+  "PASS_TO_PASS": [
+    "Objects > Line > Extending",
+    "Objects > Line > Instancing",
+    "Objects > Line > type",
+    "Objects > Line > isLine",
+    "Objects > Mesh > Extending",
+    "Objects > Mesh > Instancing",
+    "Objects > Mesh > type",
+    "Objects > Mesh > isMesh",
+    "Objects > Mesh > raycast/range",
+    "Objects > Points > Extending",
+    "Objects > Points > Instancing",
+    "Objects > Points > type",
+    "Objects > Points > isPoints"
+  ]
+}

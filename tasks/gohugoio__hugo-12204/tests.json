@@ -1,0 +1,8 @@
+{
+  "FAIL_TO_PASS": [
+    "TestEmbeddedImageRenderHookMarkdownAttributes"
+  ],
+  "PASS_TO_PASS": [
+    "TestEmbeddedLinkRenderHook"
+  ]
+}

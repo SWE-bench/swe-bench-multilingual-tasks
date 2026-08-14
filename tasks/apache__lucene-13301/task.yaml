@@ -1,10 +1,6 @@
-FAIL_TO_PASS:
-- org.apache.lucene.geo.TestXYPoint > testEqualsAndHashCode
-PASS_TO_PASS: []
 base_commit: 0345fcabb3ceb71fb39c1aa77502bae220f259ca
 created_at: '2024-04-14 11:17:15'
 eval_type: pass_and_fail
-hints_text: ''
 image: swebench/sweb.eval.x86_64.apache_1776_lucene-13301:latest
 instance_id: apache__lucene-13301
 log_parser: parse_log_gradle_custom

@@ -1,37 +1,6 @@
-FAIL_TO_PASS:
-- tests/shtest
-PASS_TO_PASS:
-- test_utf8
-- test_syntax
-- test_options
-- testc
-- testcu
-- test_regset
-- test_back
-- encode
-- listcap
-- names
-- simple
-- sql
-- syntax
-- user_property
-- callout
-- echo
-- count
-- bug_fix
-- regset
-- scan
-- callback_each_match
-- tests/optionaltest
-- tests/mantest
-- tests/jqtest
-- tests/onigtest
-- tests/utf8test
-- tests/base64test
 base_commit: c077b95ba2dcaafee39e302cc086bf99fa9248d0
 created_at: '2023-07-05 16:28:49'
 eval_type: pass_and_fail
-hints_text: ''
 image: swebench/sweb.eval.x86_64.jqlang_1776_jq-2658:latest
 instance_id: jqlang__jq-2658
 log_parser: parse_log_jq

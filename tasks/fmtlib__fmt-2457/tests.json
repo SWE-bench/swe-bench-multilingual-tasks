@@ -1,0 +1,25 @@
+{
+  "FAIL_TO_PASS": [
+    "ranges_test.join_tuple"
+  ],
+  "PASS_TO_PASS": [
+    "ranges_test.format_array",
+    "ranges_test.format_2d_array",
+    "ranges_test.format_array_of_literals",
+    "ranges_test.format_vector",
+    "ranges_test.format_vector2",
+    "ranges_test.format_map",
+    "ranges_test.format_pair",
+    "ranges_test.format_tuple",
+    "ranges_test.format_struct",
+    "ranges_test.format_to",
+    "ranges_test.path_like",
+    "ranges_test.range",
+    "ranges_test.unformattable_range",
+    "ranges_test.join_initializer_list",
+    "ranges_test.join_sentinel",
+    "ranges_test.join_range",
+    "ranges_test.is_printable",
+    "ranges_test.escape_string"
+  ]
+}

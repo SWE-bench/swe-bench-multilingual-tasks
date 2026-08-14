@@ -1,0 +1,10 @@
+{
+  "FAIL_TO_PASS": [
+    "Factory > Psr clock"
+  ],
+  "PASS_TO_PASS": [
+    "Factory > Factory",
+    "Factory > Factory modification",
+    "Factory > Factory timezone"
+  ]
+}

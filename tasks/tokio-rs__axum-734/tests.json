@@ -1,0 +1,9 @@
+{
+  "FAIL_TO_PASS": [
+    "routing::tests::head_content_length_through_hyper_server"
+  ],
+  "PASS_TO_PASS": [
+    "routing::method_routing::tests::head_takes_precedence_over_get",
+    "routing::tests::head_content_length_through_hyper_server_that_hits_fallback"
+  ]
+}

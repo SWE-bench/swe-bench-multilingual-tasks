@@ -1,0 +1,8 @@
+{
+  "FAIL_TO_PASS": [
+    "strings for rotate_age[daily]",
+    "strings for rotate_age[weekly]",
+    "strings for rotate_age[monthly]"
+  ],
+  "PASS_TO_PASS": []
+}

@@ -1,0 +1,27 @@
+{
+  "FAIL_TO_PASS": [
+    "shell::environment::env::hides_environment_from_child"
+  ],
+  "PASS_TO_PASS": [
+    "shell::environment::env::env_shorthand",
+    "shell::environment::env::env_assignment_with_if",
+    "shell::environment::env::env_assignment",
+    "shell::environment::env::env_shorthand_multi_first_with_comma_colons_equals",
+    "shell::environment::env::env_shorthand_with_comma_colons_equals",
+    "shell::environment::env::env_shorthand_multi_second_with_comma_colons_equals",
+    "shell::environment::env::env_assignment_with_match",
+    "shell::environment::env::env_shorthand_multi",
+    "shell::environment::env::env_shorthand_with_interpolation",
+    "shell::environment::env::env_shorthand_with_comma_equals",
+    "shell::environment::env::env_shorthand_with_equals",
+    "shell::environment::env::env_var_not_var",
+    "shell::environment::env::env_var_case_insensitive",
+    "shell::environment::env::load_env_file_pwd_env_var_fails",
+    "shell::environment::env::load_env_pwd_env_var_fails",
+    "shell::environment::env::mutate_env_file_pwd_env_var_fails",
+    "shell::environment::env::passes_with_env_env_var_to_external_process",
+    "shell::environment::env::has_file_loc",
+    "shell::environment::env::has_file_pwd",
+    "shell::environment::env::hides_env_in_block"
+  ]
+}

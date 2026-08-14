@@ -1,0 +1,11 @@
+{
+  "FAIL_TO_PASS": [
+    "CLUSTER SHARDS slot response is non-empty when primary node fails"
+  ],
+  "PASS_TO_PASS": [
+    "Cluster should start ok",
+    "Cluster shards response is ok for shard 0",
+    "Kill a node and tell the replica to immediately takeover",
+    "Verify health as fail for killed node"
+  ]
+}

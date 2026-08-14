@@ -1,0 +1,41 @@
+{
+  "FAIL_TO_PASS": [
+    "locale_test.localized_double"
+  ],
+  "PASS_TO_PASS": [
+    "is_string_test/0.is_string",
+    "is_string_test/1.is_string",
+    "is_string_test/2.is_string",
+    "is_string_test/3.is_string",
+    "xchar_test.format_explicitly_convertible_to_wstring_view",
+    "xchar_test.format",
+    "xchar_test.is_formattable",
+    "xchar_test.compile_time_string",
+    "xchar_test.format_custom_char",
+    "xchar_test.format_utf8_precision",
+    "xchar_test.format_to",
+    "xchar_test.vformat_to",
+    "xchar_test.named_arg_udl",
+    "xchar_test.print",
+    "xchar_test.join",
+    "xchar_test.enum",
+    "xchar_test.streamed",
+    "xchar_test.sign_not_truncated",
+    "xchar_test.chrono",
+    "xchar_test.color",
+    "xchar_test.ostream",
+    "xchar_test.format_map",
+    "xchar_test.escape_string",
+    "xchar_test.to_wstring",
+    "format_test.wide_format_to_n",
+    "chrono_test_wchar.time_point",
+    "locale_test.format",
+    "locale_test.format_detault_align",
+    "locale_test.format_plus",
+    "locale_test.wformat",
+    "locale_test.int_formatter",
+    "locale_test.complex",
+    "locale_test.chrono_weekday",
+    "locale_test.sign"
+  ]
+}

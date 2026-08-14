@@ -1,0 +1,1 @@
+OK, I see the problem, the interval remember the start and end used to create it, but we need to forget them as soon as the interval is altered again.

@@ -1,31 +1,6 @@
-FAIL_TO_PASS:
-- basic usage > conversion to json via free-functions
-PASS_TO_PASS:
-- basic usage > conversion from json via free-functions
-- basic usage > via explicit calls to get
-- basic usage > via explicit calls to get_to
-- basic usage > implicit conversions
-- adl_serializer specialization > partial specialization
-- adl_serializer specialization > to_json
-- adl_serializer specialization > from_json
-- adl_serializer specialization > total specialization
-- Non-copyable types > to_json
-- Non-copyable types > from_json
-- different basic_json types conversions > null
-- different basic_json types conversions > boolean
-- different basic_json types conversions > discarded
-- different basic_json types conversions > array
-- different basic_json types conversions > integer
-- different basic_json types conversions > float
-- different basic_json types conversions > unsigned
-- different basic_json types conversions > string
-- different basic_json types conversions > binary
-- different basic_json types conversions > object
-- different basic_json types conversions > get<custom_json>
 base_commit: 3780b41dd070436f3f55327b0a88f27a52e2dfa8
 created_at: '2023-12-08 22:24:37'
 eval_type: pass_and_fail
-hints_text: ''
 image: swebench/sweb.eval.x86_64.nlohmann_1776_json-4237:latest
 instance_id: nlohmann__json-4237
 log_parser: parse_log_doctest

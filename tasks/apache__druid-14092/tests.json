@@ -1,0 +1,8 @@
+{
+  "FAIL_TO_PASS": [
+    "org.apache.druid.discovery.DruidLeaderClientTest#test503ResponseFromServerAndCacheRefresh"
+  ],
+  "PASS_TO_PASS": [
+    "org.apache.druid.discovery.DruidLeaderClientTest#testServerFailureAndRedirect"
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "FAIL_TO_PASS": [
+    "Server-Side Request Forgery (SSRF) should not fetch bad server"
+  ],
+  "PASS_TO_PASS": []
+}

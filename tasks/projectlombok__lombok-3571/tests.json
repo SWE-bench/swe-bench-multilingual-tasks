@@ -1,0 +1,10 @@
+{
+  "FAIL_TO_PASS": [
+    "javac-BuilderOnNestedRecord.java(lombok.transform.TestWithDelombok)",
+    "javac-WithOnNestedRecord.java(lombok.transform.TestWithDelombok)"
+  ],
+  "PASS_TO_PASS": [
+    "javac-WithOnRecord.java(lombok.transform.TestWithDelombok)",
+    "javac-BuilderSimpleOnRecord.java(lombok.transform.TestWithDelombok)"
+  ]
+}

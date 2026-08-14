@@ -1,0 +1,12 @@
+{
+  "FAIL_TO_PASS": [
+    "errorBoundary > should not duplicate in lists where an item throws and the parent catches and returns a differing type"
+  ],
+  "PASS_TO_PASS": [
+    "errorBoundary > catches errors",
+    "errorBoundary > calls the errorBoundary callback",
+    "errorBoundary > returns error",
+    "errorBoundary > does not leave a stale closure",
+    "errorBoundary > does not invoke old effects when a cleanup callback throws an error and is handled"
+  ]
+}

@@ -1,22 +1,6 @@
-FAIL_TO_PASS:
-- TestPagesSimilarSectionNames
-PASS_TO_PASS:
-- TestBundleDuplicatePagesAndResources
-- TestRegularPagesRecursive
-- TestRegularPagesRecursiveHome
-- TestPagesPrevNext
-- TestPaginatorNodePagesOnly
-- TestRebuildAddPageListPagesInHome
-- TestRebuildAddPageWithSpaceListPagesInHome
-- TestTaxonomiesListPages
-- TestOrderedPages
-- TestGroupedPages
-- TestTitleCaseStyleWithAutomaticSectionPages
-- TestMenusSectionPagesMenu
 base_commit: a322282e70c2935c79f9c0f5c593bfdd032eb964
 created_at: '2024-02-28 15:12:28'
 eval_type: pass_and_fail
-hints_text: ''
 image: swebench/sweb.eval.x86_64.gohugoio_1776_hugo-12171:latest
 instance_id: gohugoio__hugo-12171
 log_parser: parse_log_gotest

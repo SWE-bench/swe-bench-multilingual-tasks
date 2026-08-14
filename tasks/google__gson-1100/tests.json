@@ -1,0 +1,9 @@
+{
+  "FAIL_TO_PASS": [
+    "com.google.gson.DefaultDateTypeAdapterTest#testNullValue"
+  ],
+  "PASS_TO_PASS": [
+    "com.google.gson.DefaultDateTypeAdapterTest#testDatePattern",
+    "com.google.gson.DefaultDateTypeAdapterTest#testInvalidDatePattern"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "FAIL_TO_PASS": [
+    "com.google.gson.JsonPrimitiveTest#testEqualsIntegerAndBigInteger"
+  ],
+  "PASS_TO_PASS": [
+    "com.google.gson.JsonPrimitiveTest#testLongEqualsBigInteger",
+    "com.google.gson.JsonPrimitiveTest#testEqualsAcrossTypes"
+  ]
+}

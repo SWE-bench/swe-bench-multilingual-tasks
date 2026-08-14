@@ -1,0 +1,18 @@
+{
+  "FAIL_TO_PASS": [
+    "TestEngine_Close",
+    "TestEngine_Close/nil_engine"
+  ],
+  "PASS_TO_PASS": [
+    "TestEngineShutdown",
+    "TestEngineEvalStmtTimestamps",
+    "TestEngineEvalStmtTimestamps/0_query=1",
+    "TestEngineEvalStmtTimestamps/1_query=metric",
+    "TestEngineEvalStmtTimestamps/2_query=metric[20s]",
+    "TestEngineEvalStmtTimestamps/3_query=1",
+    "TestEngineEvalStmtTimestamps/4_query=metric",
+    "TestEngineEvalStmtTimestamps/5_query=metric",
+    "TestEngineEvalStmtTimestamps/6_query=count_values(\"wrong_label!\",_metric)",
+    "TestEngineOptsValidation"
+  ]
+}

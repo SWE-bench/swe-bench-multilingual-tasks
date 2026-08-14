@@ -1,0 +1,13 @@
+{
+  "FAIL_TO_PASS": [
+    "Blade Verbatim > Newlines are inserted correctly after echo"
+  ],
+  "PASS_TO_PASS": [
+    "Blade Verbatim > Verbatim blocks are compiled",
+    "Blade Verbatim > Verbatim blocks with multiple lines are compiled",
+    "Blade Verbatim > Multiple verbatim blocks are compiled",
+    "Blade Verbatim > Raw blocks are rendered in the right order",
+    "Blade Verbatim > Multiline templates with raw blocks are rendered in the right order",
+    "Blade Verbatim > Raw blocks dont get mixed up when some are removed by blade comments"
+  ]
+}

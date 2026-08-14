@@ -1,0 +1,17 @@
+{
+  "FAIL_TO_PASS": [
+    "Round > Floor year"
+  ],
+  "PASS_TO_PASS": [
+    "Round > Round with default unit",
+    "Round > Round with strings",
+    "Round > Round with strings exception",
+    "Round > Round with interval",
+    "Round > Round with interval exception",
+    "Round > Round with base unit",
+    "Round > Round with meta unit",
+    "Round > Round week",
+    "Round > Ceil month",
+    "Round > Round invalid argument"
+  ]
+}

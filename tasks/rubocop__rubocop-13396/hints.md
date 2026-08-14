@@ -1,0 +1,1 @@
+Related to https://github.com/rubocop/rubocop/issues/13299; precedence for complex expressions with multiline blocks is weird.

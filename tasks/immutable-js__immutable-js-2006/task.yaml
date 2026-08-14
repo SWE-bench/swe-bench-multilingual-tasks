@@ -1,35 +1,6 @@
-FAIL_TO_PASS:
-- sliced sequence works even on filtered sequence
-PASS_TO_PASS:
-- fixed range
-- stepped range
-- open range
-- backwards range
-- empty range
-- includes first, excludes last
-- slices the same as array slices
-- slices range
-- empty slice of range
-- slices empty range
-- stepped range does not land on end
-- can be float
-- can be negative
-- can get from any index in O(1)
-- can find an index in O(1)
-- maps values
-- filters values
-- partitions values
-- reduces values
-- takes and skips values
-- can describe lazy operations
-- efficiently chains array methods
 base_commit: 493afba6ec17d9c999dc5a15ac80c71c6bdba1c3
 created_at: '2024-07-22 11:59:35'
 eval_type: pass_and_fail
-hints_text: "![image](https://github.com/immutable-js/immutable-js/assets/4937041/fb5f50b4-9c8f-4d12-a2d8-01104ceb9c5b)\r\
-  \n\r\njust confirming. \r\n\nYou are right, this is a bug.\nI will try to address\
-  \ that when I have the time.\n\nIf you are willing to investigate in the code to\
-  \ fix this, I would gladly accept a PR. \n~Might be fixed in 4.3.6~"
 image: swebench/sweb.eval.x86_64.immutable-js_1776_immutable-js-2006:latest
 instance_id: immutable-js__immutable-js-2006
 log_parser: parse_log_immutable_js

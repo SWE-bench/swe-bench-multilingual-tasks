@@ -1,0 +1,6 @@
+{
+  "FAIL_TO_PASS": [
+    "org.apache.lucene.geo.TestXYPoint > testEqualsAndHashCode"
+  ],
+  "PASS_TO_PASS": []
+}

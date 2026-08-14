@@ -1,0 +1,15 @@
+{
+  "FAIL_TO_PASS": [
+    "org.apache.lucene.analysis.opennlp.TestOpenNLPSentenceBreakIterator > testPrecedingWithTwoSentences"
+  ],
+  "PASS_TO_PASS": [
+    "org.apache.lucene.analysis.opennlp.TestOpenNLPSentenceBreakIterator > testFirstPosition",
+    "org.apache.lucene.analysis.opennlp.TestOpenNLPSentenceBreakIterator > testThreeSentences",
+    "org.apache.lucene.analysis.opennlp.TestOpenNLPSentenceBreakIterator > testWhitespaceOnly",
+    "org.apache.lucene.analysis.opennlp.TestOpenNLPSentenceBreakIterator > testEmptyString",
+    "org.apache.lucene.analysis.opennlp.TestOpenNLPSentenceBreakIterator > testSliceStart",
+    "org.apache.lucene.analysis.opennlp.TestOpenNLPSentenceBreakIterator > testSliceMiddle",
+    "org.apache.lucene.analysis.opennlp.TestOpenNLPSentenceBreakIterator > testSliceEnd",
+    "org.apache.lucene.analysis.opennlp.TestOpenNLPSentenceBreakIterator > testSingleSentence"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "FAIL_TO_PASS": [
+    "TestHashSignInPermalink"
+  ],
+  "PASS_TO_PASS": [
+    "TestPermalinkExpansionSliceSyntax",
+    "TestPermalinkExpansionSliceSyntax/Basic",
+    "TestPermalinkExpansionSliceSyntax/Out_of_bounds",
+    "TestPermalinkExpansionMultiSection",
+    "TestPermalinkExpansion",
+    "TestPermalinkExpansion/title",
+    "TestPermalinkExpansion/year-month-title",
+    "TestPermalinkExpansion/yearyeardaymonthmonthnamedayweekdayweekdayname",
+    "TestPermalinkExpansion/section",
+    "TestPermalinkExpansion/title#01",
+    "TestPermalinkExpansion/slug",
+    "TestPermalinkExpansion/slugorfilename",
+    "TestPermalinkExpansion/filename",
+    "TestPermalinkExpansion/06-1-2-Monday",
+    "TestPermalinkExpansion/2006_01_02_15_04_05.000",
+    "TestPermalinkExpansion/sections",
+    "TestPermalinkExpansion/sectionslast",
+    "TestPermalinkExpansion/sections0sectionslast",
+    "TestPermalinkExpansionConcurrent",
+    "TestPermalinkExpansionSectionsRepeated",
+    "TestPermalinksNestedSections",
+    "TestPermalinksOldSetup",
+    "TestPermalinks"
+  ]
+}

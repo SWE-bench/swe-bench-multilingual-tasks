@@ -1,0 +1,15 @@
+{
+  "FAIL_TO_PASS": [
+    "Style > Style cell address object",
+    "Style > Style cell range object"
+  ],
+  "PASS_TO_PASS": [
+    "Style > Style odd methods",
+    "Style > Style column",
+    "Style > Style is reused",
+    "Style > Style row",
+    "Style > Issue 1712 a",
+    "Style > Issue 1712 b",
+    "Style > Style loop upwards"
+  ]
+}

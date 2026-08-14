@@ -1,16 +1,6 @@
-FAIL_TO_PASS:
-- exponential backoff retries with secondary and max_steps
-PASS_TO_PASS:
-- exponential backoff forever without randomization
-- exponential backoff retries with secondary
-- exponential backoff retries with secondary and specified threshold
-- exponential backoff with max_interval
-- exponential backoff with max_steps
-- exponential backoff with shorter timeout
 base_commit: 8ced42ce86edf5a5c73e009cfd093e6c3fcc7e2d
 created_at: '2022-02-22 15:11:48'
 eval_type: pass_and_fail
-hints_text: ''
 image: swebench/sweb.eval.x86_64.fluent_1776_fluentd-3640:latest
 instance_id: fluent__fluentd-3640
 log_parser: parse_log_ruby_unit

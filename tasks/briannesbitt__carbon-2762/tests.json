@@ -1,0 +1,12 @@
+{
+  "FAIL_TO_PASS": [
+    "Rounding > With cascade factors",
+    "Rounding > Ceil"
+  ],
+  "PASS_TO_PASS": [
+    "Rounding > Throws exception for composite interval",
+    "Rounding > Floor",
+    "Rounding > Round",
+    "Rounding > Total after round"
+  ]
+}

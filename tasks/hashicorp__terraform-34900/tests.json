@@ -1,0 +1,23 @@
+{
+  "FAIL_TO_PASS": [
+    "TestContext2Apply_sensitiveNestedComputedAttributes",
+    "TestContext2Plan_nestedSensitiveMarks"
+  ],
+  "PASS_TO_PASS": [
+    "TestContext2Apply_additionalSensitiveFromState",
+    "TestContext2Apply_sensitiveOutputPassthrough",
+    "TestContext2Apply_moduleOutputWithSensitiveAttrs",
+    "TestContext2Apply_sensitiveInputVariableValue",
+    "TestContext2Apply_provisionerSensitive",
+    "TestContext2Apply_dataSensitive",
+    "TestContext2Plan_noChangeDataSourceSensitiveNestedSet",
+    "TestContext2Plan_unmarkingSensitiveAttributeForOutput",
+    "TestContext2Plan_invalidSensitiveModuleOutput",
+    "TestContext2Plan_planDataSourceSensitiveNested",
+    "TestContext2Plan_preconditionSensitiveValues",
+    "TestContext2Plan_sensitiveInputVariableValue",
+    "TestContext2Plan_dataSourceSensitiveRead",
+    "TestContext2Plan_ignoreChangesSensitive",
+    "TestContext2Plan_variableCustomValidationsSensitive"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "FAIL_TO_PASS": [
+    "NodeTest"
+  ],
+  "PASS_TO_PASS": [
+    "NodePositionTest"
+  ]
+}

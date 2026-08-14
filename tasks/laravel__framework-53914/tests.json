@@ -1,0 +1,14 @@
+{
+  "FAIL_TO_PASS": [
+    "Database Connections > Dynamic connection doesnt fail on reconnect"
+  ],
+  "PASS_TO_PASS": [
+    "Database Connections > Build database connection",
+    "Database Connections > Establish database connection",
+    "Database Connections > Throw exception if connection already exists",
+    "Database Connections > Override existing connection",
+    "Database Connections > Establishing a connection will dispatch an event",
+    "Database Connections > Table prefix",
+    "Database Connections > Dynamic connection with no name doesnt fail on reconnect"
+  ]
+}

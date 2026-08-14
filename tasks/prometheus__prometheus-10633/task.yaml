@@ -1,14 +1,6 @@
-FAIL_TO_PASS:
-- TestPuppetDBRefreshWithParameters
-PASS_TO_PASS: []
 base_commit: 64fc3e58fec13af55968db89a484b9e0c5425bd6
 created_at: '2022-04-26 11:51:30'
 eval_type: pass_and_fail
-hints_text: |-
-  /assign
-  hello @heapdavid  could you work on this issue?
-  I'd accept a pull request for this. @heapdavid do you want to give this a shot?
-  Thanks, yep will give it a go.
 image: swebench/sweb.eval.x86_64.prometheus_1776_prometheus-10633:latest
 instance_id: prometheus__prometheus-10633
 log_parser: parse_log_gotest

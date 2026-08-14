@@ -1,0 +1,9 @@
+{
+  "FAIL_TO_PASS": [
+    "javac-NullLibrary3.java(lombok.transform.TestWithDelombok)"
+  ],
+  "PASS_TO_PASS": [
+    "javac-NullLibrary1.java(lombok.transform.TestWithDelombok)",
+    "javac-NullLibrary2.java(lombok.transform.TestWithDelombok)"
+  ]
+}

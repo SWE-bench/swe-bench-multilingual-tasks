@@ -1,0 +1,24 @@
+{
+  "FAIL_TO_PASS": [
+    "Simple To Complex String Variable Fixer > Fix with data set \"array elements\""
+  ],
+  "PASS_TO_PASS": [
+    "Simple To Complex String Variable Fixer > Not defining constructor",
+    "Simple To Complex String Variable Fixer > Is risky",
+    "Simple To Complex String Variable Fixer > Fixer definitions",
+    "Simple To Complex String Variable Fixer > Fixers are final",
+    "Simple To Complex String Variable Fixer > Deprecated fixers have correct summary",
+    "Simple To Complex String Variable Fixer > Deprecated fixers do not have deprecated successor",
+    "Simple To Complex String Variable Fixer > Fixer use insert slices when only insertions are performed",
+    "Simple To Complex String Variable Fixer > Fixer configuration definitions",
+    "Simple To Complex String Variable Fixer > Proper method naming",
+    "Simple To Complex String Variable Fixer > Fix with data set \"basic fix\"",
+    "Simple To Complex String Variable Fixer > Fix with data set \"heredoc\"",
+    "Simple To Complex String Variable Fixer > Fix with data set \"implicit\"",
+    "Simple To Complex String Variable Fixer > Fix with data set \"implicit again\"",
+    "Simple To Complex String Variable Fixer > Fix with data set \"escaped\"",
+    "Simple To Complex String Variable Fixer > Fix with data set \"double dollar\"",
+    "Simple To Complex String Variable Fixer > Fix with data set \"double dollar heredoc\"",
+    "Simple To Complex String Variable Fixer > Fix with data set \"double dollar single quote\""
+  ]
+}

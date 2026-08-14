@@ -1,17 +1,6 @@
-FAIL_TO_PASS:
-- can pass records modified by filters to handle_emits_error
-PASS_TO_PASS:
-- call handle_emits_error when emit failed
 base_commit: e890533484dfb7d4546f68a84fdff9a98fb459bd
 created_at: '2022-02-14 09:21:20'
 eval_type: pass_and_fail
-hints_text: "Hmm, it's not hard to fix but I'm not sure it should be treated as a\
-  \ bug or a specification.\r\n\r\nhttps://github.com/fluent/fluentd/blob/28eda36552838bb4a4ccccbb5c46fb403eb36700/lib/fluent/event_router.rb#L114-L121\r\
-  \n\r\nhttps://github.com/fluent/fluentd/blob/28eda36552838bb4a4ccccbb5c46fb403eb36700/lib/fluent/event_router.rb#L179-L182\r\
-  \n\r\nhttps://github.com/fluent/fluentd/blob/28eda36552838bb4a4ccccbb5c46fb403eb36700/lib/fluent/root_agent.rb#L356-L370\r\
-  \n\nThis issue has been automatically marked as stale because it has been open 90\
-  \ days with no activity. Remove stale label or comment or this issue will be closed\
-  \ in 30 days"
 image: swebench/sweb.eval.x86_64.fluent_1776_fluentd-3631:latest
 instance_id: fluent__fluentd-3631
 log_parser: parse_log_ruby_unit

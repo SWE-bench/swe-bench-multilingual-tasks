@@ -1,0 +1,13 @@
+{
+  "FAIL_TO_PASS": [
+    "TestGetPageContentAdapterBaseIssue12561"
+  ],
+  "PASS_TO_PASS": [
+    "TestGetPageIndexIndex",
+    "TestGetPageRelative",
+    "TestGetPageIssue11883",
+    "TestGetPageBundleToRegular",
+    "TestGetPageMultilingual",
+    "TestGetPageIssue12120"
+  ]
+}

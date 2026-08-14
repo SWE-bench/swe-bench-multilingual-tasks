@@ -1,0 +1,12 @@
+{
+  "FAIL_TO_PASS": [
+    "com.google.gson.stream.JsonReaderTest#testHasNextEndOfDocument",
+    "com.google.gson.internal.bind.JsonTreeReaderTest#testHasNext_endOfDocument"
+  ],
+  "PASS_TO_PASS": [
+    "com.google.gson.stream.JsonReaderTest#testReadEmptyObject",
+    "com.google.gson.stream.JsonReaderTest#testReadEmptyArray",
+    "com.google.gson.internal.bind.JsonTreeReaderTest#testSkipValue_emptyJsonObject",
+    "com.google.gson.internal.bind.JsonTreeReaderTest#testSkipValue_filledJsonObject"
+  ]
+}

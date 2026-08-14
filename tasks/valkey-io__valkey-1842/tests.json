@@ -1,0 +1,10 @@
+{
+  "FAIL_TO_PASS": [
+    "Test ACL LOAD works on replica"
+  ],
+  "PASS_TO_PASS": [
+    "ACL LOAD only disconnects affected clients",
+    "ACL LOAD disconnects clients of deleted users",
+    "Test ACL LOAD works on primary"
+  ]
+}

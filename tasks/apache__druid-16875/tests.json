@@ -1,0 +1,9 @@
+{
+  "FAIL_TO_PASS": [
+    "org.apache.druid.server.metrics.WorkerTaskCountStatsMonitorTest#testMonitorWithPeon"
+  ],
+  "PASS_TO_PASS": [
+    "org.apache.druid.server.metrics.WorkerTaskCountStatsMonitorTest#testMonitorWithNulls",
+    "org.apache.druid.server.metrics.WorkerTaskCountStatsMonitorTest#testMonitorIndexer"
+  ]
+}

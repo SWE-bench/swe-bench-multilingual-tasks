@@ -1,16 +1,6 @@
-FAIL_TO_PASS:
-- TestGetPageContentAdapterBaseIssue12561
-PASS_TO_PASS:
-- TestGetPageIndexIndex
-- TestGetPageRelative
-- TestGetPageIssue11883
-- TestGetPageBundleToRegular
-- TestGetPageMultilingual
-- TestGetPageIssue12120
 base_commit: c8dac67defbb512877e974814e196782989b8214
 created_at: '2024-06-02 10:59:35'
 eval_type: pass_and_fail
-hints_text: ''
 image: swebench/sweb.eval.x86_64.gohugoio_1776_hugo-12562:latest
 instance_id: gohugoio__hugo-12562
 log_parser: parse_log_gotest

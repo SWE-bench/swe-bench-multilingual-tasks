@@ -1,0 +1,8 @@
+{
+  "FAIL_TO_PASS": [
+    "supports http with nodejs should properly support default max body length (follow-redirects as well)"
+  ],
+  "PASS_TO_PASS": [
+    "supports http with nodejs should support max body length"
+  ]
+}

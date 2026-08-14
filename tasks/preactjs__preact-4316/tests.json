@@ -1,0 +1,17 @@
+{
+  "FAIL_TO_PASS": [
+    "event handling > should support camel-case focus event names"
+  ],
+  "PASS_TO_PASS": [
+    "event handling > should only register on* functions as handlers",
+    "event handling > should only register truthy values as handlers",
+    "event handling > should support native event names",
+    "event handling > should support camel-case event names",
+    "event handling > should update event handlers",
+    "event handling > should remove event handlers",
+    "event handling > should register events not appearing on dom nodes",
+    "event handling > should use capturing for event props ending with *Capture",
+    "event handling > should support both capturing and non-capturing events on the same element",
+    "event handling > should support (got|lost)PointerCapture events"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "FAIL_TO_PASS": [
+    "accepts valid non-strict link with anchor"
+  ],
+  "PASS_TO_PASS": [
+    "accepts valid link",
+    "accepts valid non-exact link",
+    "accepts valid non-strict link",
+    "accepts valid link to uncollected page",
+    "accepts valid link to nested route",
+    "accepts valid relative link",
+    "accepts valid link with anchor",
+    "accepts valid link with anchor reported with hash prefix",
+    "accepts valid links and anchors, sparse arrays",
+    "accepts valid link and anchor to collected pages that are not in routes",
+    "accepts valid link with querystring + anchor",
+    "accepts valid link to self",
+    "accepts valid link with spaces and encoding",
+    "accepts valid link with anchor with spaces and encoding",
+    "accepts valid link with empty anchor",
+    "rejects broken link",
+    "rejects broken link due to strict matching",
+    "rejects broken link due to strict exact matching",
+    "rejects broken link with anchor",
+    "rejects broken link with querystring + anchor",
+    "rejects valid link with broken anchor",
+    "rejects valid link with broken anchor + query-string",
+    "rejects valid link with broken anchor to self",
+    "rejects valid link with broken anchor to uncollected page",
+    "rejects broken anchor with query-string to uncollected page",
+    "can ignore broken links",
+    "can ignore broken anchors",
+    "can ignore broken anchors but report broken link",
+    "can ignore broken link but report broken anchors",
+    "can warn for broken links",
+    "can warn for broken anchors",
+    "can warn for both broken links and anchors",
+    "reports frequent broken links differently",
+    "is performant and minimize calls to matchRoutes"
+  ]
+}

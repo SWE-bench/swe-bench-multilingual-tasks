@@ -1,0 +1,17 @@
+{
+  "FAIL_TO_PASS": [
+    "org.apache.lucene.facet.TestDrillSideways > testDrillSidewaysSearchUseCorrectIterator"
+  ],
+  "PASS_TO_PASS": [
+    "org.apache.lucene.facet.TestDrillSideways > testSometimesInvalidDrillDown",
+    "org.apache.lucene.facet.TestDrillSideways > testScorer",
+    "org.apache.lucene.facet.TestDrillSideways > testBasicWithCollectorManager",
+    "org.apache.lucene.facet.TestDrillSideways > testNoCaching",
+    "org.apache.lucene.facet.TestDrillSideways > testMultipleRequestsPerDim",
+    "org.apache.lucene.facet.TestDrillSideways > testExtendedDrillSidewaysResult",
+    "org.apache.lucene.facet.TestDrillSideways > testRandom",
+    "org.apache.lucene.facet.TestDrillSideways > testBasic",
+    "org.apache.lucene.facet.TestDrillSideways > testNoDrillDownFacetCollection",
+    "org.apache.lucene.facet.TestDrillSideways > testEmptyIndex"
+  ]
+}

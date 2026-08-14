@@ -1,0 +1,7 @@
+{
+  "FAIL_TO_PASS": [
+    "testPostCompilerPreventNullAnalysis(lombok.bytecode.TestPostCompiler)",
+    "testPostCompilerSneakyThrows(lombok.bytecode.TestPostCompiler)"
+  ],
+  "PASS_TO_PASS": []
+}

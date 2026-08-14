@@ -1,0 +1,23 @@
+{
+  "FAIL_TO_PASS": [
+    "TestMappingBaseTypes"
+  ],
+  "PASS_TO_PASS": [
+    "TestMappingDefault",
+    "TestMappingSkipField",
+    "TestMappingIgnoreField",
+    "TestMappingUnexportedField",
+    "TestMappingPrivateField",
+    "TestMappingUnknownFieldType",
+    "TestMappingURI",
+    "TestMappingForm",
+    "TestMappingTime",
+    "TestMappingTimeDuration",
+    "TestMappingSlice",
+    "TestMappingArray",
+    "TestMappingStructField",
+    "TestMappingPtrField",
+    "TestMappingMapField",
+    "TestMappingIgnoredCircularRef"
+  ]
+}

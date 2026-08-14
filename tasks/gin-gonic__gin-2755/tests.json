@@ -1,0 +1,20 @@
+{
+  "FAIL_TO_PASS": [
+    "TestTreeInvalidParamsType"
+  ],
+  "PASS_TO_PASS": [
+    "TestTreeAddAndGet",
+    "TestTreeWildcard",
+    "TestTreeWildcardConflict",
+    "TestTreeChildConflict",
+    "TestTreeDupliatePath",
+    "TestTreeCatchAllConflict",
+    "TestTreeCatchAllConflictRoot",
+    "TestTreeCatchMaxParams",
+    "TestTreeDoubleWildcard",
+    "TestTreeTrailingSlashRedirect",
+    "TestTreeRootTrailingSlashRedirect",
+    "TestTreeFindCaseInsensitivePath",
+    "TestTreeInvalidNodeType"
+  ]
+}

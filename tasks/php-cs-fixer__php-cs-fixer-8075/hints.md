@@ -1,0 +1,1 @@
+introduced in https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/pull/7831, /cc @kubawerlos

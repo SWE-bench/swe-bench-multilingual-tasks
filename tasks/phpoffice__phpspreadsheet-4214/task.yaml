@@ -1,54 +1,6 @@
-FAIL_TO_PASS:
-- 'Round Down > Round down with data set "issue 4213 #1"'
-- 'Round Down > Round down with data set "issue 4213 #2"'
-PASS_TO_PASS:
-- 'Round Down > Round down with data set #0'
-- 'Round Down > Round down with data set #1'
-- 'Round Down > Round down with data set #2'
-- 'Round Down > Round down with data set #3'
-- 'Round Down > Round down with data set #4'
-- 'Round Down > Round down with data set #5'
-- 'Round Down > Round down with data set #6'
-- 'Round Down > Round down with data set #7'
-- 'Round Down > Round down with data set #8'
-- 'Round Down > Round down with data set #9'
-- 'Round Down > Round down with data set #10'
-- 'Round Down > Round down with data set #11'
-- 'Round Down > Round down with data set #12'
-- 'Round Down > Round down with data set #13'
-- 'Round Down > Round down with data set #14'
-- 'Round Down > Round down with data set #15'
-- 'Round Down > Round down with data set #16'
-- 'Round Down > Round down with data set #17'
-- 'Round Down > Round down with data set #18'
-- 'Round Down > Round down with data set #19'
-- 'Round Down > Round down with data set #20'
-- 'Round Down > Round down with data set #21'
-- 'Round Down > Round down with data set #22'
-- 'Round Down > Round down with data set #23'
-- 'Round Down > Round down with data set #24'
-- 'Round Down > Round down with data set #25'
-- 'Round Down > Round down with data set #26'
-- 'Round Down > Round down with data set #27'
-- 'Round Down > Round down with data set #28'
-- 'Round Down > Round down with data set #29'
-- Round Down > Round down with data set "negative number and precision ROUNDDOWN"
-- Round Down > Round down array with data set "first argument row vector"
-- Round Down > Round down array with data set "first argument column vector"
-- Round Down > Round down array with data set "first argument matrix"
-- Round Down > Round down array with data set "second argument row vector"
-- Round Down > Round down array with data set "second argument column vector"
-- Round Down > Round down array with data set "second argument matrix"
-- Round Down > Round down array with data set "A row and a column vector"
-- Round Down > Round down array with data set "Two row vectors"
-- Round Down > Round down array with data set "Two column vectors"
 base_commit: 915bfc55cd6217e059b5859b341bab7bdd0874c8
 created_at: '2024-11-05 03:25:21'
 eval_type: pass_and_fail
-hints_text: These functions (ROUNDDOWN, ROUND, ROUNDUP, TRUNC) are tough to get right.
-  We have many test cases, and continue to add to those as users like yourself report
-  problems, or as we notice problems when Php changes (or will change) things. I will
-  have to investigate what is going wrong here.
 image: swebench/sweb.eval.x86_64.phpoffice_1776_phpspreadsheet-4214:latest
 instance_id: phpoffice__phpspreadsheet-4214
 log_parser: parse_log_phpunit

@@ -1,0 +1,9 @@
+{
+  "FAIL_TO_PASS": [
+    "Core > Object3D > toJSON"
+  ],
+  "PASS_TO_PASS": [
+    "Core > Object3D > clone",
+    "Core > Object3D > copy"
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "FAIL_TO_PASS": [
+    "TestCaddyfileAdaptToJSON"
+  ],
+  "PASS_TO_PASS": []
+}

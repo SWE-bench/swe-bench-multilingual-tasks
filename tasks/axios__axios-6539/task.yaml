@@ -1,12 +1,6 @@
-FAIL_TO_PASS:
-- Server-Side Request Forgery (SSRF) should not fetch bad server
-PASS_TO_PASS: []
 base_commit: c6cce43cd94489f655f4488c5a50ecaf781c94f2
 created_at: '2024-08-12 15:14:58'
 eval_type: pass_and_fail
-hints_text: "Is there a fix plan for this? v1.7.3 is not fixing this and it's blocking\
-  \ releasing one of our libraries.\r\n\r\n![image](https://github.com/user-attachments/assets/3d5875b9-ccd3-472b-acc1-20e814814750)\r\
-  \n"
 image: swebench/sweb.eval.x86_64.axios_1776_axios-6539:latest
 instance_id: axios__axios-6539
 log_parser: parse_log_tap

@@ -1,0 +1,19 @@
+{
+  "FAIL_TO_PASS": [
+    "TestPagesSimilarSectionNames"
+  ],
+  "PASS_TO_PASS": [
+    "TestBundleDuplicatePagesAndResources",
+    "TestRegularPagesRecursive",
+    "TestRegularPagesRecursiveHome",
+    "TestPagesPrevNext",
+    "TestPaginatorNodePagesOnly",
+    "TestRebuildAddPageListPagesInHome",
+    "TestRebuildAddPageWithSpaceListPagesInHome",
+    "TestTaxonomiesListPages",
+    "TestOrderedPages",
+    "TestGroupedPages",
+    "TestTitleCaseStyleWithAutomaticSectionPages",
+    "TestMenusSectionPagesMenu"
+  ]
+}

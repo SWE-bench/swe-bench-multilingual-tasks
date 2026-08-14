@@ -1,0 +1,25 @@
+{
+  "FAIL_TO_PASS": [
+    "TestFmt_MockDataFiles",
+    "TestFmt_MockDataFiles/data",
+    "TestFmt_MockDataFiles/resource"
+  ],
+  "PASS_TO_PASS": [
+    "TestFmt_TestFiles",
+    "TestFmt_TestFiles/main",
+    "TestFmt",
+    "TestFmt/general",
+    "TestFmt/variable_type",
+    "TestFmt_nonexist",
+    "TestFmt_syntaxError",
+    "TestFmt_snippetInError",
+    "TestFmt_manyArgs",
+    "TestFmt_workingDirectory",
+    "TestFmt_directoryArg",
+    "TestFmt_fileArg",
+    "TestFmt_stdinArg",
+    "TestFmt_nonDefaultOptions",
+    "TestFmt_check",
+    "TestFmt_checkStdin"
+  ]
+}

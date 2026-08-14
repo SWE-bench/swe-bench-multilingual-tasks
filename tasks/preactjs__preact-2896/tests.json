@@ -1,0 +1,15 @@
+{
+  "FAIL_TO_PASS": [
+    "memo() > should not unnecessarily reorder children #2895"
+  ],
+  "PASS_TO_PASS": [
+    "memo() > should have isReactComponent flag",
+    "memo() > should work with function components",
+    "memo() > should support adding refs",
+    "memo() > should support custom comparer functions",
+    "memo() > should rerender when custom comparer returns false",
+    "memo() > should pass props and nextProps to comparer fn",
+    "memo() > should nest without errors",
+    "memo() > should pass ref through nested memos"
+  ]
+}

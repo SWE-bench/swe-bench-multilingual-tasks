@@ -1,0 +1,1 @@
+I'm fine with adding these impls. You can safely use `AssertUnwindSafe` to circumvent it.

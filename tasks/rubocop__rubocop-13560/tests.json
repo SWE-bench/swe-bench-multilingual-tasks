@@ -1,0 +1,19 @@
+{
+  "FAIL_TO_PASS": [
+    "does not register an offense when the entire string is `NUL` without '/dev/null'"
+  ],
+  "PASS_TO_PASS": [
+    "does not register an offense for a hash key",
+    "does not register an offense for a hash value",
+    "does not register an offense for a string within %w[]",
+    "does not register an offense for a string within an array",
+    "does not register an offense for a substring",
+    "does not register an offense for an empty string",
+    "does not register an offense when there is an invalid byte sequence error",
+    "is case insensitive",
+    "registers an offense and corrects when the entire string is `/dev/null`",
+    "registers an offense and corrects when the entire string is `NUL:` or '/dev/null'",
+    "registers an offense and corrects when the entire string is `NUL` or '/dev/null'",
+    "registers an offense when the entire string is `NUL:` without '/dev/null'"
+  ]
+}

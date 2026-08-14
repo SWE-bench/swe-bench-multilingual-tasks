@@ -1,0 +1,13 @@
+{
+  "FAIL_TO_PASS": [
+    "Support Js > Scalars"
+  ],
+  "PASS_TO_PASS": [
+    "Support Js > Arrays",
+    "Support Js > Objects",
+    "Support Js > Json serializable",
+    "Support Js > Jsonable",
+    "Support Js > Arrayable",
+    "Support Js > Backed enums"
+  ]
+}

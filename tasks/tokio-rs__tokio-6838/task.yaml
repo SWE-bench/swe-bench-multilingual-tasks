@@ -1,20 +1,6 @@
-FAIL_TO_PASS:
-- abstract_socket_name
-PASS_TO_PASS:
-- epollhup
-- accept_read_write
-- shutdown
-- poll_write_ready
-- poll_read_ready
-- try_read_write
-- try_read_buf
 base_commit: d6213594ca3767f182e8981fde7a119575e94c65
 created_at: '2024-09-11 15:23:25'
 eval_type: pass_and_fail
-hints_text: "The bug was introduced from this commit: https://github.com/tokio-rs/tokio/commit/b2ea40bb543a5116109b37e1fd64713c116e4312\
-  \ by @mox692 , please consider submit a fix.\r\n\r\nOne possible and straight forward\
-  \ solution:\r\n\r\n```rust\r\n    StdSocketAddr::from_abstract_name(&os_str_bytes[1..])?\r\
-  \n```\nThanks for the report, I'll submit a fix for this soon."
 image: swebench/sweb.eval.x86_64.tokio-rs_1776_tokio-6838:latest
 instance_id: tokio-rs__tokio-6838
 log_parser: parse_log_cargo

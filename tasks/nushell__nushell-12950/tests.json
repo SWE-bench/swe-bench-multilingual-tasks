@@ -1,0 +1,8 @@
+{
+  "FAIL_TO_PASS": [
+    "shell::pipeline::commands::external::pass_dot_as_external_arguments"
+  ],
+  "PASS_TO_PASS": [
+    "shell::pipeline::commands::external::correctly_escape_external_arguments"
+  ]
+}

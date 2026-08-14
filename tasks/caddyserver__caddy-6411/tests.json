@@ -1,0 +1,8 @@
+{
+  "FAIL_TO_PASS": [
+    "TestReplacerNew"
+  ],
+  "PASS_TO_PASS": [
+    "TestReplacerNewWithoutFile"
+  ]
+}

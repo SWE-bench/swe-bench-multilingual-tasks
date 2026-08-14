@@ -1,0 +1,26 @@
+{
+  "FAIL_TO_PASS": [
+    "Once > Memoization null values"
+  ],
+  "PASS_TO_PASS": [
+    "Once > Result memoization",
+    "Once > Callable is called once",
+    "Once > Flush",
+    "Once > Not memoized when object is garbage collected",
+    "Once > Is not memoized when callable uses changes",
+    "Once > Usage of this",
+    "Once > Invokables",
+    "Once > First class callable syntax",
+    "Once > First class callable syntax with array syntax",
+    "Once > Static memoization",
+    "Once > Memoization when once is within closure",
+    "Once > Memoization on global functions",
+    "Once > Disable",
+    "Once > Temporary disable",
+    "Once > Memoization within evals",
+    "Once > Result is different when called from different closures",
+    "Once > Result is memoized when called from methods with same name",
+    "Once > Recursive once calls",
+    "Once > Global closures"
+  ]
+}

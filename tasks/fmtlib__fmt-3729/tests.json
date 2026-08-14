@@ -1,0 +1,19 @@
+{
+  "FAIL_TO_PASS": [
+    "std_test.path"
+  ],
+  "PASS_TO_PASS": [
+    "std_test.thread_id",
+    "std_test.optional",
+    "std_test.optional_format_as",
+    "std_test.variant",
+    "std_test.error_code",
+    "std_test.exception",
+    "std_test.format_bit_reference",
+    "std_test.format_const_bit_reference",
+    "std_test.format_bitset",
+    "std_test.format_atomic",
+    "ranges_std_test.format_vector_path",
+    "ranges_std_test.format_quote_path"
+  ]
+}

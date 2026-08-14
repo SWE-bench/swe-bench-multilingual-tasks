@@ -1,0 +1,11 @@
+{
+  "FAIL_TO_PASS": [
+    "javac-UtilityClassGeneric.java(lombok.transform.TestWithDelombok)"
+  ],
+  "PASS_TO_PASS": [
+    "javac-UtilityClass.java(lombok.transform.TestWithDelombok)",
+    "javac-UtilityClassErrors.java(lombok.transform.TestWithDelombok)",
+    "javac-UtilityClassInAnonymousClass.java(lombok.transform.TestWithDelombok)",
+    "javac-UtilityClassInner.java(lombok.transform.TestWithDelombok)"
+  ]
+}

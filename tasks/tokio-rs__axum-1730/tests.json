@@ -1,0 +1,12 @@
+{
+  "FAIL_TO_PASS": [],
+  "PASS_TO_PASS": [
+    "routing::method_routing::tests::accessing_state",
+    "routing::method_routing::tests::merge_accessing_state",
+    "routing::method_routing::tests::fallback_accessing_state",
+    "handler::tests::with_layer_that_changes_request_body_and_state",
+    "routing::tests::explicitly_set_state",
+    "routing::tests::extract_state",
+    "routing::tests::fallback::fallback_accessing_state"
+  ]
+}

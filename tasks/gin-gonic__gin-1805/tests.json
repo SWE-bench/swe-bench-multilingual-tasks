@@ -1,0 +1,20 @@
+{
+  "FAIL_TO_PASS": [
+    "TestMiddlewareCalledOnceByRouterStaticFSNotFound"
+  ],
+  "PASS_TO_PASS": [
+    "TestCreateDefaultRouter",
+    "TestRouterGroupBasic",
+    "TestRouterGroupBasicHandle",
+    "TestRouterGroupInvalidStatic",
+    "TestRouterGroupInvalidStaticFile",
+    "TestRouterGroupTooManyHandlers",
+    "TestRouterGroupBadMethod",
+    "TestRouterGroupPipeline",
+    "TestRouterMethod",
+    "TestRouterGroupRouteOK",
+    "TestRouterNotFound",
+    "TestRouterStaticFSNotFound",
+    "TestRouterStaticFSFileNotFound"
+  ]
+}

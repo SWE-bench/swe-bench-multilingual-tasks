@@ -1,0 +1,9 @@
+{
+  "FAIL_TO_PASS": [
+    "ACL GETUSER provides correct results"
+  ],
+  "PASS_TO_PASS": [
+    "ACL GETUSER is able to translate back command permissions",
+    "ACL GETUSER provides reasonable results"
+  ]
+}

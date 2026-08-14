@@ -1,57 +1,6 @@
-FAIL_TO_PASS:
-- Setters > Set unit no overflow february
-PASS_TO_PASS:
-- Setters > Year setter
-- Setters > Month setter
-- Setters > Month enum on wrong unit
-- Setters > Month enum
-- Setters > Month float fail with decimal part
-- Setters > Month float pass with zero decimal part
-- Setters > Month setter with wrap
-- Setters > Day setter
-- Setters > Day setter with wrap
-- Setters > Hour setter
-- Setters > Hour setter with wrap
-- Setters > Minute setter
-- Setters > Minute setter with wrap
-- Setters > Second setter
-- Setters > Time setter
-- Setters > Time setter with chaining
-- Setters > Time setter with zero
-- Setters > Date time setter
-- Setters > Date time setter with zero
-- Setters > Date time setter with chaining
-- Setters > Set date after string creation
-- Setters > Second setter with wrap
-- Setters > Timestamp setter
-- Setters > Set timezone with invalid timezone
-- Setters > Timezone with invalid timezone
-- Setters > Timezone with invalid timezone setter
-- Setters > Tz with invalid timezone
-- Setters > Tz with invalid timezone setter
-- Setters > Set timezone using string
-- Setters > Shift timezone
-- Setters > Timezone using string
-- Setters > Tz using string
-- Setters > Set timezone using date time zone
-- Setters > Timezone using date time zone
-- Setters > Tz using date time zone
-- Setters > Invalid setter
-- 'Setters > Set time from time string with data set #0'
-- 'Setters > Set time from time string with data set #1'
-- 'Setters > Set time from time string with data set #2'
-- 'Setters > Set time from time string with data set #3'
-- 'Setters > Set time from time string with data set #4'
-- 'Setters > Set time from time string with data set #5'
-- Setters > Weekend days setter
-- Setters > Mid day at setter
-- Setters > Setter
 base_commit: d481d8d69a94dc00e5c1b147ec1f7e7492626b12
 created_at: '2024-11-07 17:38:38'
 eval_type: pass_and_fail
-hints_text: "Thank you for the report and the analysis.\r\n\r\nI added a test with\
-  \ your case and I reproduce it. I tried to revert this change but apparently it's\
-  \ not the faulty one.\r\n\r\nI'm investigating."
 image: swebench/sweb.eval.x86_64.briannesbitt_1776_carbon-3103:latest
 instance_id: briannesbitt__carbon-3103
 log_parser: parse_log_phpunit

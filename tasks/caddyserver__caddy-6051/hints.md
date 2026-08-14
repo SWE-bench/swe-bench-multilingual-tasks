@@ -1,0 +1,1 @@
+Yeah you're right we should probably allow fully blank lines. I'll look into that soon. (Unless someone gets to it before me, PRs welcome)

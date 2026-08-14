@@ -1,25 +1,6 @@
-FAIL_TO_PASS:
-- Function Prefix > Function prefix with data set "DAYS/NETWORKDAYS 5"
-PASS_TO_PASS:
-- Function Prefix > Function prefix with data set "Basic Legacy Function"
-- Function Prefix > Function prefix with data set "New Function without Prefix"
-- Function Prefix > Function prefix with data set "New Function already Prefixed"
-- Function Prefix > Function prefix with data set "New Function requiring Double-Prefix"
-- Function Prefix > Function prefix with data set "New Function requiring Double-Prefix
-  already partially Prefixed"
-- 'Function Prefix > Function prefix with data set "New Function requiring Double-Prefix
-  already partially Prefixed #2"'
-- Function Prefix > Function prefix with data set "New Function requiring Double-Prefix
-  already Fully Prefixed"
-- Function Prefix > Function prefix with data set "Multiple Functions"
-- Function Prefix > Function prefix with data set "DAYS/NETWORKDAYS 1"
-- Function Prefix > Function prefix with data set "DAYS/NETWORKDAYS 2"
-- Function Prefix > Function prefix with data set "DAYS/NETWORKDAYS 3"
-- Function Prefix > Function prefix with data set "DAYS/NETWORKDAYS 4"
 base_commit: 99a7de3812c9033b80eddbf759efd298cd50c3c5
 created_at: '2023-03-17 07:08:26'
 eval_type: pass_and_fail
-hints_text: ''
 image: swebench/sweb.eval.x86_64.phpoffice_1776_phpspreadsheet-3463:latest
 instance_id: phpoffice__phpspreadsheet-3463
 log_parser: parse_log_phpunit

@@ -1,0 +1,21 @@
+{
+  "FAIL_TO_PASS": [
+    "TestContextBindHeader",
+    "TestContextShouldBindHeader"
+  ],
+  "PASS_TO_PASS": [
+    "TestContextAutoBindJSON",
+    "TestContextBindWithJSON",
+    "TestContextBindWithXML",
+    "TestContextBindWithQuery",
+    "TestContextBindWithYAML",
+    "TestContextBadAutoBind",
+    "TestContextAutoShouldBindJSON",
+    "TestContextShouldBindWithJSON",
+    "TestContextShouldBindWithXML",
+    "TestContextShouldBindWithQuery",
+    "TestContextShouldBindWithYAML",
+    "TestContextBadAutoShouldBind",
+    "TestContextShouldBindBodyWith"
+  ]
+}

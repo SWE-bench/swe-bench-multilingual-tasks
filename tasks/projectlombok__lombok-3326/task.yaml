@@ -1,14 +1,6 @@
-FAIL_TO_PASS:
-- javac-UtilityClassGeneric.java(lombok.transform.TestWithDelombok)
-PASS_TO_PASS:
-- javac-UtilityClass.java(lombok.transform.TestWithDelombok)
-- javac-UtilityClassErrors.java(lombok.transform.TestWithDelombok)
-- javac-UtilityClassInAnonymousClass.java(lombok.transform.TestWithDelombok)
-- javac-UtilityClassInner.java(lombok.transform.TestWithDelombok)
 base_commit: 9e6f66c557205bff3c87eefb4c7a7631d0b89ff0
 created_at: '2023-01-09 22:15:37'
 eval_type: pass_and_fail
-hints_text: ''
 image: swebench/sweb.eval.x86_64.projectlombok_1776_lombok-3326:latest
 instance_id: projectlombok__lombok-3326
 log_parser: parse_log_ant

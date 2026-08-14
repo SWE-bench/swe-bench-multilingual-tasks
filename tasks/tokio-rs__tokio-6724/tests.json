@@ -1,0 +1,9 @@
+{
+  "FAIL_TO_PASS": [
+    "write_all_buf_vectored"
+  ],
+  "PASS_TO_PASS": [
+    "write_all_buf",
+    "write_buf_err"
+  ]
+}

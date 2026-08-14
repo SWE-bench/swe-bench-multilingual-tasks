@@ -1,0 +1,20 @@
+{
+  "FAIL_TO_PASS": [
+    "basics/slice_indices.py"
+  ],
+  "PASS_TO_PASS": [
+    "basics/builtin_slice.py",
+    "unicode/unicode_slice.py",
+    "basics/list_slice.py",
+    "basics/bytearray_slice_assign.py",
+    "basics/string_slice.py",
+    "basics/tuple_slice.py",
+    "basics/slice_attrs.py",
+    "basics/list_slice_3arg.py",
+    "basics/list_slice_assign.py",
+    "basics/list_slice_assign_grow.py",
+    "basics/memoryview_slice_assign.py",
+    "basics/memoryview_slice_size.py",
+    "basics/slice_intbig.py"
+  ]
+}

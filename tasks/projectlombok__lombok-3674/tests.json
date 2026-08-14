@@ -1,0 +1,9 @@
+{
+  "FAIL_TO_PASS": [
+    "javac-StandardExceptionWithConstructor.java(lombok.transform.TestWithDelombok)",
+    "javac-StandardExceptions.java(lombok.transform.TestWithDelombok)"
+  ],
+  "PASS_TO_PASS": [
+    "javac-NonNullWithAlternateException.java(lombok.transform.TestWithDelombok)"
+  ]
+}

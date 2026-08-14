@@ -1,0 +1,7 @@
+{
+  "FAIL_TO_PASS": [
+    "net_types_are_unwind_safe",
+    "unix_net_types_are_unwind_safe"
+  ],
+  "PASS_TO_PASS": []
+}

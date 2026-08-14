@@ -1,31 +1,6 @@
-FAIL_TO_PASS:
-- OrderedSet > hashCode should return the same value if the values are the same
-- OrderedMap > hashCode should return the same value if the values are the same
-PASS_TO_PASS:
-- OrderedSet > provides initial values in a mixed order
-- OrderedSet > maintains order when new values are added
-- OrderedSet > resets order when a value is deleted
-- OrderedSet > removes correctly
-- OrderedSet > respects order for equality
-- OrderedSet > respects order when unioning
-- OrderedSet > can be zipped
-- OrderedSet > handles `subtract` when Set contains >=32 elements
-- OrderedSet > handles consecutive `subtract` invocations
-- OrderedSet > keeps the Set ordered when updating a value with .map()
-- OrderedMap > converts from object
-- OrderedMap > constructor provides initial values
-- OrderedMap > provides initial values in a mixed order
-- OrderedMap > constructor accepts sequences
-- OrderedMap > maintains order when new keys are set
-- OrderedMap > resets order when a keys is deleted
-- OrderedMap > removes correctly
-- OrderedMap > respects order for equality
-- OrderedMap > respects order when merging
-- OrderedMap > performs deleteAll correctly after resizing internal list
 base_commit: 77434b3cbbc8ee21206f4cc6965e1c9b09cc92b6
 created_at: '2024-07-22 09:22:26'
 eval_type: pass_and_fail
-hints_text: ''
 image: swebench/sweb.eval.x86_64.immutable-js_1776_immutable-js-2005:latest
 instance_id: immutable-js__immutable-js-2005
 log_parser: parse_log_immutable_js

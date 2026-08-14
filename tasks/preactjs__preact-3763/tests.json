@@ -1,0 +1,8 @@
+{
+  "FAIL_TO_PASS": [
+    "Lifecycle methods > #componentDidMount > supports multiple setState callbacks"
+  ],
+  "PASS_TO_PASS": [
+    "Lifecycle methods > #componentDidMount > is invoked after refs are set"
+  ]
+}

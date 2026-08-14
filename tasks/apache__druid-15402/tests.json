@@ -1,0 +1,9 @@
+{
+  "FAIL_TO_PASS": [
+    "org.apache.druid.query.groupby.GroupByQueryQueryToolChestTest#testCacheStrategy"
+  ],
+  "PASS_TO_PASS": [
+    "org.apache.druid.query.groupby.GroupByQueryQueryToolChestTest#testResultLevelCacheKeyWithSubTotalsSpec",
+    "org.apache.druid.query.groupby.GroupByQueryQueryToolChestTest#testMultiColumnCacheStrategy"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "FAIL_TO_PASS": [
+    "declaration name conflict helper entrypoint"
+  ],
+  "PASS_TO_PASS": [
+    "get with falsy receiver",
+    "get without receiver",
+    "basic",
+    "deep",
+    "missing",
+    "multiple",
+    "rename binding equal",
+    "rename deep global",
+    "reuse dependency",
+    "variable same name dependency",
+    "9496"
+  ]
+}

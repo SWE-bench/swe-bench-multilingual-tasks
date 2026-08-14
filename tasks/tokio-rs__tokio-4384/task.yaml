@@ -1,12 +1,6 @@
-FAIL_TO_PASS:
-- net_types_are_unwind_safe
-- unix_net_types_are_unwind_safe
-PASS_TO_PASS: []
 base_commit: 553cc3b194df875cac8736473e1f01cf3e40a660
 created_at: '2022-01-07 08:41:06'
 eval_type: pass_and_fail
-hints_text: I'm fine with adding these impls. You can safely use `AssertUnwindSafe`
-  to circumvent it.
 image: swebench/sweb.eval.x86_64.tokio-rs_1776_tokio-4384:latest
 instance_id: tokio-rs__tokio-4384
 log_parser: parse_log_cargo

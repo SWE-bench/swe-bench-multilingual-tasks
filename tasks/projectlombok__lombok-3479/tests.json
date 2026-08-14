@@ -1,0 +1,9 @@
+{
+  "FAIL_TO_PASS": [
+    "javac-ExtensionMethodOnRecord.java(lombok.transform.TestWithDelombok)"
+  ],
+  "PASS_TO_PASS": [
+    "javac-ExtensionMethodPlain.java(lombok.transform.TestWithDelombok)",
+    "javac-ExtensionMethodGeneric.java(lombok.transform.TestWithDelombok)"
+  ]
+}

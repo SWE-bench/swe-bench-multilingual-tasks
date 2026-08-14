@@ -1,0 +1,18 @@
+{
+  "FAIL_TO_PASS": [
+    "TestFilters#test_: filters where_exp filter should filter objects across multiple conditions"
+  ],
+  "PASS_TO_PASS": [
+    "TestFilters#test_: filters where_exp filter should filter objects appropriately",
+    "TestFilters#test_: filters where_exp filter should filter with other operators",
+    "TestFilters#test_: filters where_exp filter should filter objects appropriately with 'or', 'and' operators",
+    "TestFilters#test_: filters where_exp filter should always return an array if the object responds to 'select'",
+    "TestFilters#test_: filters where_exp filter should filter with the contains operator over hash keys",
+    "TestFilters#test_: filters where_exp filter should return any input that is not an array",
+    "TestFilters#test_: filters where_exp filter should filter posts",
+    "TestFilters#test_: filters where_exp filter should filter by variable values",
+    "TestFilters#test_: filters where_exp filter should filter objects in a hash appropriately",
+    "TestFilters#test_: filters where_exp filter should filter with the contains operator over arrays",
+    "TestFilters#test_: filters where_exp filter should stringify during comparison for compatibility with liquid parsing"
+  ]
+}

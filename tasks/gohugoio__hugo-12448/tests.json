@@ -1,0 +1,41 @@
+{
+  "FAIL_TO_PASS": [
+    "TestRebuildHomeThenPageIssue12436"
+  ],
+  "PASS_TO_PASS": [
+    "TestRebuildOnAssetChange",
+    "TestRebuildEditTextFileInLeafBundle",
+    "TestRebuildEditTextFileInHomeBundle",
+    "TestRebuildEditTextFileInBranchBundle",
+    "TestRebuildRenameTextFileInLeafBundle",
+    "TestRebuildRenameTextFileInBranchBundle",
+    "TestRebuildRenameTextFileInHomeBundle",
+    "TestRebuildRenameDirectoryWithLeafBundle",
+    "TestRebuildRenameDirectoryWithBranchBundle",
+    "TestRebuildRenameDirectoryWithRegularPageUsedInHome",
+    "TestRebuildAddRegularFileRegularPageUsedInHomeMultilingual",
+    "TestRebuildRenameDirectoryWithBranchBundleFastRender",
+    "TestRebuildAddPageListPagesInHome",
+    "TestRebuildAddPageWithSpaceListPagesInHome",
+    "TestRebuildScopedToOutputFormat",
+    "TestRebuildBaseof",
+    "TestRebuildFromString",
+    "TestRebuildVariations",
+    "TestRebuildConcat",
+    "TestRebuildEditSingleListChangeUbuntuIssue12362",
+    "TestRebuildVariationsAssetsJSImport",
+    "TestRebuildEditArchetypeFile",
+    "TestRebuildVariationsJSInNestedPartialFingerprintedInBase",
+    "TestRebuildI18n",
+    "TestRebuildVariationsJSNoneFingerprinted",
+    "TestRebuildVariationsJSInNestedCachedPartialFingerprinted",
+    "TestRebuildEditContentNonDefaultLanguageDifferentBundles",
+    "TestRebuildDeeplyNestedLink",
+    "TestRebuildEditContentNonDefaultLanguage",
+    "TestRebuildEditHomeContent",
+    "TestRebuildSingleWithBaseof",
+    "TestRebuildEditData",
+    "TestRebuildVariationsJSBundled",
+    "TestRebuildEditMixedCaseTemplateFileIssue12165"
+  ]
+}

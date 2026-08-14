@@ -1,14 +1,6 @@
-FAIL_TO_PASS:
-- raises no error when another thread closes a socket
-PASS_TO_PASS:
-- returns chunk_id, node, sock and result status[chunk_id is matched]
-- returns chunk_id, node, sock and result status[chunk_id is empty]
-- returns nil if raise an error
-- when ack is expired
 base_commit: a5bf404134f98f32c5cbcbc2f0989d9f88542853
 created_at: '2023-01-27 09:58:28'
 eval_type: pass_and_fail
-hints_text: ''
 image: swebench/sweb.eval.x86_64.fluent_1776_fluentd-4030:latest
 instance_id: fluent__fluentd-4030
 log_parser: parse_log_ruby_unit

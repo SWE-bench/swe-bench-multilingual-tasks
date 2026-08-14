@@ -1,17 +1,6 @@
-FAIL_TO_PASS:
-- ACL GETUSER provides correct results
-PASS_TO_PASS:
-- ACL GETUSER is able to translate back command permissions
-- ACL GETUSER provides reasonable results
 base_commit: 6abfda54c380c07ea0d460706833929654fac25a
 created_at: '2023-08-10 04:00:07'
 eval_type: pass_and_fail
-hints_text: "Yeah, it looks like an odd interaction with how rules get compacted.\
-  \ +config should overwrite all the previous subcommand rules, but is only overwriting\
-  \ one of them.\r\n\n@roshkhatri Will take a look at this.\n> Yeah, it looks like\
-  \ an odd interaction with how rules get compacted. +config should overwrite all\
-  \ the previous subcommand rules, but is only overwriting one of them.\r\n\r\nthank\
-  \ you reply, I would like to participate fix the bug if possible"
 image: swebench/sweb.eval.x86_64.redis_1776_redis-12472:latest
 instance_id: redis__redis-12472
 log_parser: parse_log_redis

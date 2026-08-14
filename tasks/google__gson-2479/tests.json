@@ -1,0 +1,9 @@
+{
+  "FAIL_TO_PASS": [
+    "com.google.gson.GsonBuilderTest#testRegisterTypeAdapterForObjectAndJsonElements",
+    "com.google.gson.GsonBuilderTest#testRegisterTypeHierarchyAdapterJsonElements"
+  ],
+  "PASS_TO_PASS": [
+    "com.google.gson.GsonBuilderTest#testModificationAfterCreate"
+  ]
+}

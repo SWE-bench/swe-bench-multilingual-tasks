@@ -1,0 +1,8 @@
+{
+  "FAIL_TO_PASS": [
+    "features/post_data.feature:30  Scenario: Use page.name variable"
+  ],
+  "PASS_TO_PASS": [
+    "features/post_data.feature:6  Scenario: Use post.title variable"
+  ]
+}

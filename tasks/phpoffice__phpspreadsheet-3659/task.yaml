@@ -1,11 +1,6 @@
-FAIL_TO_PASS:
-- Issue3635 > New example
-- Issue3635 > Original example
-PASS_TO_PASS: []
 base_commit: 37a8a56299d3098032e3f8e1c2790607e226952e
 created_at: '2023-07-31 09:58:06'
 eval_type: pass_and_fail
-hints_text: ''
 image: swebench/sweb.eval.x86_64.phpoffice_1776_phpspreadsheet-3659:latest
 instance_id: phpoffice__phpspreadsheet-3659
 log_parser: parse_log_phpunit

@@ -1,0 +1,11 @@
+{
+  "FAIL_TO_PASS": [
+    "MONITOR can log commands issued by functions"
+  ],
+  "PASS_TO_PASS": [
+    "MONITOR can log executed commands",
+    "MONITOR can log commands issued by the scripting engine",
+    "MONITOR supports redacting command arguments",
+    "MONITOR correctly handles multi-exec cases"
+  ]
+}

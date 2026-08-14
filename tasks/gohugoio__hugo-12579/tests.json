@@ -1,0 +1,30 @@
+{
+  "FAIL_TO_PASS": [
+    "TestGroupByParamCalledWithUnavailableParam"
+  ],
+  "PASS_TO_PASS": [
+    "TestGroupByParamCalledWithCapitalLetterString",
+    "TestGroupByLocalizedDate",
+    "TestGroupByPublishDateWithEmptyPages",
+    "TestGroupByParamDateWithStringParams",
+    "TestGroupByDateInReverseOrder",
+    "TestGroupByCalledWithEmptyPages",
+    "TestGroupByParamInReverseOrder",
+    "TestGroupByParamDateWithEmptyPages",
+    "TestGroupByParamDateInReverseOrder",
+    "TestGroupByLastmod",
+    "TestGroupByWithFieldNameArg",
+    "TestGroupByInReverseOrder",
+    "TestGroupByDate",
+    "TestGroupByPublishDateInReverseOrder",
+    "TestGroupByWithSectionArg",
+    "TestGroupByParam",
+    "TestGroupByParamDate",
+    "TestGroupByPublishDate",
+    "TestGroupByParamCalledWithEmptyPages",
+    "TestGroupByExpiryDate",
+    "TestGroupByLastmodInReverseOrder",
+    "TestGroupByParamCalledWithSomeUnavailableParams",
+    "TestGroupByWithMethodNameArg"
+  ]
+}

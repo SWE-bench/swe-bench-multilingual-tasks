@@ -1,0 +1,10 @@
+{
+  "FAIL_TO_PASS": [
+    "supports http with nodejs should respect the timeoutErrorMessage property"
+  ],
+  "PASS_TO_PASS": [
+    "supports http with nodejs should throw an error if the timeout property is not parsable as a number",
+    "supports http with nodejs should parse the timeout property",
+    "supports http with nodejs should respect the timeout property"
+  ]
+}

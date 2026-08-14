@@ -1,0 +1,25 @@
+{
+  "FAIL_TO_PASS": [
+    "thread/thread_ident1.py"
+  ],
+  "PASS_TO_PASS": [
+    "thread/thread_exc1.py",
+    "thread/stress_recurse.py",
+    "thread/stress_schedule.py",
+    "thread/thread_heap_lock.py",
+    "thread/thread_gc1.py",
+    "thread/thread_exc2.py",
+    "thread/stress_create.py",
+    "thread/thread_shared1.py",
+    "thread/thread_shared2.py",
+    "thread/thread_sleep1.py",
+    "thread/thread_stacksize1.py",
+    "thread/thread_exit1.py",
+    "thread/stress_heap.py",
+    "thread/thread_exit2.py",
+    "thread/stress_aes.py",
+    "thread/thread_qstr1.py",
+    "thread/thread_start1.py",
+    "thread/thread_start2.py"
+  ]
+}

@@ -1,40 +1,6 @@
-FAIL_TO_PASS:
-- Total > Alteration after diff
-PASS_TO_PASS:
-- 'Total > Returns total value with data set #0'
-- 'Total > Returns total value with data set #1'
-- 'Total > Returns total value with data set #2'
-- 'Total > Returns total value with data set #3'
-- 'Total > Returns total value with data set #4'
-- 'Total > Returns total value with data set #5'
-- 'Total > Returns total value with data set #6'
-- 'Total > Returns total value with data set #7'
-- 'Total > Returns total value with data set #8'
-- 'Total > Returns total value with data set #9'
-- 'Total > Returns total value with data set #10'
-- 'Total > Returns total value with data set #11'
-- 'Total > Returns total value with data set #12'
-- 'Total > Returns total value with data set #13'
-- 'Total > Returns total value with data set #14'
-- 'Total > Returns total value with data set #15'
-- Total > Throws exception for invalid units
-- Total > Get totals via getters
-- 'Total > Get negative totals via getters with data set #0'
-- 'Total > Get negative totals via getters with data set #1'
-- 'Total > Get negative totals via getters with data set #2'
-- Total > Totals with custom factors
-- Total > Float hours factors
-- Total > Float days factors
-- Total > Float in multiple factors
-- Total > Get totals via getters with custom factors
-- Total > Get totals via getters with false factor
-- Total > Microseconds interval
-- Total > With diff interval
 base_commit: 1d762cbdb379838b10bde0a5a901c5b5c2a83437
 created_at: '2024-03-27 11:30:56'
 eval_type: pass_and_fail
-hints_text: OK, I see the problem, the interval remember the start and end used to
-  create it, but we need to forget them as soon as the interval is altered again.
 image: swebench/sweb.eval.x86_64.briannesbitt_1776_carbon-2981:latest
 instance_id: briannesbitt__carbon-2981
 log_parser: parse_log_phpunit

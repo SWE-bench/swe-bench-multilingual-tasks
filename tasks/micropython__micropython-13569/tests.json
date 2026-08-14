@@ -1,0 +1,34 @@
+{
+  "FAIL_TO_PASS": [
+    "basics/try_finally_return.py"
+  ],
+  "PASS_TO_PASS": [
+    "micropython/viper_try.py",
+    "micropython/native_try.py",
+    "micropython/native_try_deep.py",
+    "basics/try1.py",
+    "import/try_module.py",
+    "basics/try2.py",
+    "basics/try3.py",
+    "basics/try4.py",
+    "basics/try_as_var.py",
+    "basics/try_continue.py",
+    "basics/try_else.py",
+    "basics/try_else_finally.py",
+    "basics/try_error.py",
+    "basics/try_except_break.py",
+    "basics/try_finally1.py",
+    "basics/try_finally2.py",
+    "basics/try_finally_break.py",
+    "basics/try_finally_break2.py",
+    "basics/try_finally_continue.py",
+    "basics/try_finally_loops.py",
+    "basics/try_finally_return2.py",
+    "basics/try_finally_return3.py",
+    "basics/try_finally_return4.py",
+    "basics/try_finally_return5.py",
+    "basics/try_reraise.py",
+    "basics/try_reraise2.py",
+    "basics/try_return.py"
+  ]
+}

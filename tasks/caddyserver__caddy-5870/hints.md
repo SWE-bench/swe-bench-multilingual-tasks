@@ -1,0 +1,1 @@
+Thanks for the issue, I'll look into this soon! (Currently reworking the Caddy website.)

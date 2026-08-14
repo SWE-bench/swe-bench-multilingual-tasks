@@ -1,0 +1,18 @@
+{
+  "FAIL_TO_PASS": [
+    "GETRANGE against string value",
+    "GETRANGE against integer-encoded value"
+  ],
+  "PASS_TO_PASS": [
+    "SETRANGE against non-existing key",
+    "SETRANGE against string-encoded key",
+    "SETRANGE against integer-encoded key",
+    "SETRANGE against key with wrong type",
+    "SETRANGE with out of range offset",
+    "GETRANGE against non-existing key",
+    "GETRANGE against wrong key type",
+    "GETRANGE fuzzing",
+    "GETRANGE with huge ranges, Github issue #1844",
+    "SETRANGE with huge offset"
+  ]
+}

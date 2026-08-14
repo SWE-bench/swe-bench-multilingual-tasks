@@ -1,0 +1,14 @@
+{
+  "FAIL_TO_PASS": [
+    "abstract_socket_name"
+  ],
+  "PASS_TO_PASS": [
+    "epollhup",
+    "accept_read_write",
+    "shutdown",
+    "poll_write_ready",
+    "poll_read_ready",
+    "try_read_write",
+    "try_read_buf"
+  ]
+}

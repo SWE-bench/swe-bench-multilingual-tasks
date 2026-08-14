@@ -1,0 +1,8 @@
+{
+  "FAIL_TO_PASS": [
+    "does_not_print_unwanted_file_named_cache"
+  ],
+  "PASS_TO_PASS": [
+    "can_print_file_named_cache"
+  ]
+}

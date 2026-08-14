@@ -1,0 +1,15 @@
+{
+  "FAIL_TO_PASS": [
+    "test_email_with_abbreviations"
+  ],
+  "PASS_TO_PASS": [
+    "test_email_against_name_generator",
+    "test_email_name_with_non_permitted_characters",
+    "test_email_with_apostrophes",
+    "test_email_with_domain_name_option_given",
+    "test_email_with_full_domain_option_given",
+    "test_email_with_name_seperators_domain",
+    "test_email_with_no_arguments",
+    "test_email_with_separators"
+  ]
+}

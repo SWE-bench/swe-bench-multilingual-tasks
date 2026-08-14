@@ -1,0 +1,8 @@
+{
+  "FAIL_TO_PASS": [
+    "can pass records modified by filters to handle_emits_error"
+  ],
+  "PASS_TO_PASS": [
+    "call handle_emits_error when emit failed"
+  ]
+}

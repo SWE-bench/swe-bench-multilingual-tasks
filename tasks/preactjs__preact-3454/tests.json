@@ -1,0 +1,17 @@
+{
+  "FAIL_TO_PASS": [
+    "svg > should support svg xlink:href attribute"
+  ],
+  "PASS_TO_PASS": [
+    "svg > should render SVG to string",
+    "svg > should support svg attributes",
+    "svg > should render SVG to DOM",
+    "svg > should render with the correct namespace URI",
+    "svg > should use attributes for className",
+    "svg > should still support class attribute",
+    "svg > should still support className attribute",
+    "svg > should switch back to HTML for <foreignObject>",
+    "svg > should render foreignObject as an svg element",
+    "svg > should transition from DOM to SVG and back"
+  ]
+}

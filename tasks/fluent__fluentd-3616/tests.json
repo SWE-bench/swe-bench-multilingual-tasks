@@ -1,0 +1,9 @@
+{
+  "FAIL_TO_PASS": [
+    "test_application_ndjson"
+  ],
+  "PASS_TO_PASS": [
+    "test_application_json",
+    "test_application_msgpack"
+  ]
+}

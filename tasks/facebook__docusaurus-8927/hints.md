@@ -1,0 +1,1 @@
+There is a fault with our link replacement logic. I will refactor this part of the code since it's getting really dense. Thanks for reporting!

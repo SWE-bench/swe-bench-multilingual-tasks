@@ -1,0 +1,9 @@
+{
+  "FAIL_TO_PASS": [
+    "com.google.gson.internal.bind.util.ISO8601UtilsTest#testDateParseInvalidDay",
+    "com.google.gson.internal.bind.util.ISO8601UtilsTest#testDateParseInvalidMonth"
+  ],
+  "PASS_TO_PASS": [
+    "com.google.gson.internal.bind.util.ISO8601UtilsTest#testDateParseWithDefaultTimezone"
+  ]
+}

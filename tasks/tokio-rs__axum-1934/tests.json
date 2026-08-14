@@ -1,0 +1,22 @@
+{
+  "FAIL_TO_PASS": [
+    "routing::tests::fallback::doesnt_panic_if_used_with_nested_router"
+  ],
+  "PASS_TO_PASS": [
+    "routing::method_routing::tests::fallback_accessing_state",
+    "routing::tests::fallback::deeply_nested_inherit_from_middle_with_nest_service",
+    "routing::tests::fallback::also_inherits_default_layered_fallback",
+    "routing::tests::fallback::deeply_nested_inherit_from_top",
+    "routing::tests::fallback::deeply_nested_inherit_from_middle",
+    "routing::tests::fallback::fallback_inherited_into_nested_opaque_service",
+    "routing::tests::fallback::nested_router_inherits_fallback",
+    "routing::tests::fallback::fallback_accessing_state",
+    "routing::tests::fallback::nest_fallback_on_inner",
+    "routing::tests::fallback::nest",
+    "routing::tests::fallback::with_middleware_on_inner_fallback",
+    "routing::tests::fallback::fallback_inherited_into_nested_router_service",
+    "routing::tests::fallback::or",
+    "routing::tests::fallback::basic",
+    "routing::tests::fallback::doesnt_inherit_fallback_if_overriden"
+  ]
+}

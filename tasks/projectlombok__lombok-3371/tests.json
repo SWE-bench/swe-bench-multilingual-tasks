@@ -1,0 +1,9 @@
+{
+  "FAIL_TO_PASS": [
+    "javac-NonNullOnRecordTypeUse.java(lombok.transform.TestWithDelombok)"
+  ],
+  "PASS_TO_PASS": [
+    "javac-NonNullOnRecordSimple.java(lombok.transform.TestWithDelombok)",
+    "javac-NonNullOnRecordExistingSetter.java(lombok.transform.TestWithDelombok)"
+  ]
+}

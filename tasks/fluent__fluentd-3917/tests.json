@@ -1,0 +1,13 @@
+{
+  "FAIL_TO_PASS": [
+    "test_included_glob"
+  ],
+  "PASS_TO_PASS": [
+    "test_check_not_fetchd",
+    "test_inline",
+    "read config",
+    "read config with additional_config",
+    "read config with encoding",
+    "test_included"
+  ]
+}

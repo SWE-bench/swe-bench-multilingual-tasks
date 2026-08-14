@@ -1,23 +1,6 @@
-FAIL_TO_PASS:
-- basics/string_format_intbig.py
-PASS_TO_PASS:
-- basics/string_format.py
-- float/string_format.py
-- float/string_format2.py
-- basics/string_format2.py
-- basics/string_format_cp310.py
-- float/string_format_fp30.py
-- basics/string_format_error.py
-- float/string_format_modulo.py
-- float/string_format_modulo2.py
-- basics/string_format_modulo.py
-- basics/string_format_modulo_int.py
-- float/string_format_modulo2_intbig.py
-- float/string_format_modulo3.py
 base_commit: b0ba151102a6c1b2e0e4c419c6482a64677c9b40
 created_at: '2024-09-23 15:37:03'
 eval_type: pass_and_fail
-hints_text: ''
 image: swebench/sweb.eval.x86_64.micropython_1776_micropython-15898:latest
 instance_id: micropython__micropython-15898
 log_parser: parse_log_micropython_test

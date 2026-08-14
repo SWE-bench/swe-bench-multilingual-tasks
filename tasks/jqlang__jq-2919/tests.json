@@ -1,0 +1,35 @@
+{
+  "FAIL_TO_PASS": [
+    "tests/shtest"
+  ],
+  "PASS_TO_PASS": [
+    "test_utf8",
+    "test_syntax",
+    "test_options",
+    "testc",
+    "testcu",
+    "test_regset",
+    "test_back",
+    "encode",
+    "listcap",
+    "names",
+    "simple",
+    "sql",
+    "syntax",
+    "user_property",
+    "callout",
+    "echo",
+    "count",
+    "bug_fix",
+    "regset",
+    "scan",
+    "callback_each_match",
+    "tests/mantest",
+    "tests/jqtest",
+    "tests/utf8test",
+    "tests/base64test",
+    "tests/optionaltest",
+    "tests/onigtest",
+    "tests/manonigtest"
+  ]
+}

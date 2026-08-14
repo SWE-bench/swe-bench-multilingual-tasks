@@ -1,0 +1,9 @@
+{
+  "FAIL_TO_PASS": [
+    "cache_clear"
+  ],
+  "PASS_TO_PASS": [
+    "cache_build",
+    "can_print_file_named_cache_with_additional_argument"
+  ]
+}

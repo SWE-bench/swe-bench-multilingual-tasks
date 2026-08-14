@@ -1,0 +1,10 @@
+{
+  "FAIL_TO_PASS": [
+    "errorBoundary > calls the errorBoundary callback"
+  ],
+  "PASS_TO_PASS": [
+    "errorBoundary > catches errors",
+    "errorBoundary > returns error",
+    "errorBoundary > does not leave a stale closure"
+  ]
+}

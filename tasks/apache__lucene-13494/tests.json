@@ -1,0 +1,15 @@
+{
+  "FAIL_TO_PASS": [
+    "TestStringValueFacetCounts > testEmptyMatchset"
+  ],
+  "PASS_TO_PASS": [
+    "TestStringValueFacetCounts > testStaleState",
+    "TestStringValueFacetCounts > testRandom",
+    "TestStringValueFacetCounts > testSparseMultiSegmentCase",
+    "TestStringValueFacetCounts > testBasicSingleValued",
+    "TestStringValueFacetCounts > testBasicMultiValued",
+    "TestStringValueFacetCounts > testMissingSegment",
+    "TestStringValueFacetCounts > testBasicSingleValuedUsingSortedDoc",
+    "TestStringValueFacetCounts > testCountAll"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "FAIL_TO_PASS": [
+    "javac-SuperBuilderWithArrayTypeParam.java(lombok.transform.TestWithDelombok)"
+  ],
+  "PASS_TO_PASS": [
+    "javac-CheckerFrameworkSuperBuilder.java(lombok.transform.TestWithDelombok)",
+    "javac-ConstructorsWithSuperBuilderDefaults.java(lombok.transform.TestWithDelombok)",
+    "javac-JacksonizedSuperBuilderSimple.java(lombok.transform.TestWithDelombok)",
+    "javac-JacksonizedSuperBuilderWithJsonDeserialize.java(lombok.transform.TestWithDelombok)",
+    "javac-NullAnnotatedCheckerFrameworkSuperBuilder.java(lombok.transform.TestWithDelombok)",
+    "javac-SuperBuilderAbstract.java(lombok.transform.TestWithDelombok)",
+    "javac-SuperBuilderAbstractToBuilder.java(lombok.transform.TestWithDelombok)",
+    "javac-SuperBuilderBasic.java(lombok.transform.TestWithDelombok)",
+    "javac-SuperBuilderBasicToBuilder.java(lombok.transform.TestWithDelombok)",
+    "javac-SuperBuilderCustomName.java(lombok.transform.TestWithDelombok)",
+    "javac-SuperBuilderCustomized.java(lombok.transform.TestWithDelombok)",
+    "javac-SuperBuilderCustomizedWithSetterPrefix.java(lombok.transform.TestWithDelombok)",
+    "javac-SuperBuilderInAnonymousClass.java(lombok.transform.TestWithDelombok)",
+    "javac-SuperBuilderInitializer.java(lombok.transform.TestWithDelombok)",
+    "javac-SuperBuilderJavadoc.java(lombok.transform.TestWithDelombok)",
+    "javac-SuperBuilderNameClashes.java(lombok.transform.TestWithDelombok)",
+    "javac-SuperBuilderNestedGenericTypes.java(lombok.transform.TestWithDelombok)",
+    "javac-SuperBuilderSingularAnnotatedTypes.java(lombok.transform.TestWithDelombok)",
+    "javac-SuperBuilderSingularCustomized.java(lombok.transform.TestWithDelombok)",
+    "javac-SuperBuilderSingularToBuilderGuava.java(lombok.transform.TestWithDelombok)",
+    "javac-SuperBuilderWithAnnotatedTypeParam.java(lombok.transform.TestWithDelombok)",
+    "javac-SuperBuilderWithCustomBuilderClassName.java(lombok.transform.TestWithDelombok)",
+    "javac-SuperBuilderWithCustomBuilderMethod.java(lombok.transform.TestWithDelombok)",
+    "javac-SuperBuilderWithDefaults.java(lombok.transform.TestWithDelombok)",
+    "javac-SuperBuilderWithDefaultsAndTargetTyping.java(lombok.transform.TestWithDelombok)",
+    "javac-SuperBuilderWithExistingConstructor.java(lombok.transform.TestWithDelombok)",
+    "javac-SuperBuilderWithGenerics.java(lombok.transform.TestWithDelombok)",
+    "javac-SuperBuilderWithGenerics2.java(lombok.transform.TestWithDelombok)",
+    "javac-SuperBuilderWithGenerics3.java(lombok.transform.TestWithDelombok)",
+    "javac-SuperBuilderWithGenericsAndToBuilder.java(lombok.transform.TestWithDelombok)",
+    "javac-SuperBuilderWithNonNull.java(lombok.transform.TestWithDelombok)",
+    "javac-SuperBuilderWithOverloadedGeneratedMethods.java(lombok.transform.TestWithDelombok)",
+    "javac-SuperBuilderWithPrefixes.java(lombok.transform.TestWithDelombok)",
+    "javac-SuperBuilderWithSetterPrefix.java(lombok.transform.TestWithDelombok)"
+  ]
+}

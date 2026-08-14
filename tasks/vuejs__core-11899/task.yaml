@@ -1,53 +1,6 @@
-FAIL_TO_PASS:
-- packages/compiler-sfc/__tests__/compileStyle.spec.ts > SFC scoped CSS > nesting
-  selector with atrule and comment
-PASS_TO_PASS:
-- packages/compiler-sfc/__tests__/compileStyle.spec.ts > SFC scoped CSS > simple selectors
-- packages/compiler-sfc/__tests__/compileStyle.spec.ts > SFC scoped CSS > descendent
-  selector
-- packages/compiler-sfc/__tests__/compileStyle.spec.ts > SFC scoped CSS > nesting
-  selector
-- packages/compiler-sfc/__tests__/compileStyle.spec.ts > SFC scoped CSS > multiple
-  selectors
-- packages/compiler-sfc/__tests__/compileStyle.spec.ts > SFC scoped CSS > pseudo class
-- packages/compiler-sfc/__tests__/compileStyle.spec.ts > SFC scoped CSS > pseudo element
-- packages/compiler-sfc/__tests__/compileStyle.spec.ts > SFC scoped CSS > spaces before
-  pseudo element
-- packages/compiler-sfc/__tests__/compileStyle.spec.ts > SFC scoped CSS > ::v-deep
-- packages/compiler-sfc/__tests__/compileStyle.spec.ts > SFC scoped CSS > ::v-slotted
-- packages/compiler-sfc/__tests__/compileStyle.spec.ts > SFC scoped CSS > ::v-global
-- packages/compiler-sfc/__tests__/compileStyle.spec.ts > SFC scoped CSS > :is() and
-  :where() with multiple selectors
-- packages/compiler-sfc/__tests__/compileStyle.spec.ts > SFC scoped CSS > :is() and
-  :where() in compound selectors
-- packages/compiler-sfc/__tests__/compileStyle.spec.ts > SFC scoped CSS > media query
-- packages/compiler-sfc/__tests__/compileStyle.spec.ts > SFC scoped CSS > supports
-  query
-- packages/compiler-sfc/__tests__/compileStyle.spec.ts > SFC scoped CSS > scoped keyframes
-- packages/compiler-sfc/__tests__/compileStyle.spec.ts > SFC scoped CSS > spaces after
-  selector
-- packages/compiler-sfc/__tests__/compileStyle.spec.ts > SFC scoped CSS > deprecated
-  syntax > ::v-deep as combinator
-- packages/compiler-sfc/__tests__/compileStyle.spec.ts > SFC scoped CSS > deprecated
-  syntax > >>> (deprecated syntax)
-- packages/compiler-sfc/__tests__/compileStyle.spec.ts > SFC scoped CSS > deprecated
-  syntax > /deep/ (deprecated syntax)
-- packages/compiler-sfc/__tests__/compileStyle.spec.ts > SFC CSS modules > should
-  include resulting classes object in result
-- packages/compiler-sfc/__tests__/compileStyle.spec.ts > SFC CSS modules > postcss-modules
-  options
-- packages/compiler-sfc/__tests__/compileStyle.spec.ts > SFC style preprocessors >
-  scss @import
-- packages/compiler-sfc/__tests__/compileStyle.spec.ts > SFC style preprocessors >
-  scss respect user-defined string options.additionalData
-- packages/compiler-sfc/__tests__/compileStyle.spec.ts > SFC style preprocessors >
-  scss respect user-defined function options.additionalData
-- packages/compiler-sfc/__tests__/compileStyle.spec.ts > SFC style preprocessors >
-  should mount scope on correct selector when have universal selector
 base_commit: 706d4ac1d0210b2d9134b3228280187fe02fc971
 created_at: '2024-09-12 02:10:01'
 eval_type: pass_and_fail
-hints_text: ''
 image: swebench/sweb.eval.x86_64.vuejs_1776_core-11899:latest
 instance_id: vuejs__core-11899
 log_parser: parse_log_vitest

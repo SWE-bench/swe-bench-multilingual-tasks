@@ -1,0 +1,9 @@
+{
+  "FAIL_TO_PASS": [
+    "javac-SuperBuilderWithAnnotatedTypeParam.java(lombok.transform.TestWithDelombok)"
+  ],
+  "PASS_TO_PASS": [
+    "javac-SuperBuilderWithDefaults.java(lombok.transform.TestWithDelombok)",
+    "javac-SuperBuilderWithGenerics.java(lombok.transform.TestWithDelombok)"
+  ]
+}

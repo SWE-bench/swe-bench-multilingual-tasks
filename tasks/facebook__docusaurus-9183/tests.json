@@ -1,0 +1,42 @@
+{
+  "FAIL_TO_PASS": [
+    "accepts valid theme config"
+  ],
+  "PASS_TO_PASS": [
+    "rejects outdated sidebar options",
+    "allows possible types of navbar items",
+    "accept \"custom-\" prefixed custom navbar item type",
+    "rejects unknown navbar item type",
+    "rejects nested dropdowns",
+    "rejects nested dropdowns 2",
+    "rejects position attribute within dropdown",
+    "gives friendly error when href and to coexist",
+    "allows empty alt tags for the logo image in the header",
+    "allows empty alt tags for the logo image in the footer",
+    "allows simple links in footer",
+    "allows footer column with no title",
+    "rejects mix of simple and multi-column links in footer",
+    "allows width and height specification for logo",
+    "accepts a range of magic comments",
+    "rejects incomplete magic comments",
+    "switch config",
+    "max config",
+    "undefined config",
+    "empty config",
+    "accepts undefined",
+    "accepts empty",
+    "accepts min",
+    "accepts max",
+    "rejects min 2.5",
+    "rejects max 2.5",
+    "rejects min 1",
+    "rejects min 7",
+    "rejects max 1",
+    "rejects max 7",
+    "rejects min 5 + max 3",
+    "accepts customCss undefined",
+    "accepts customCss string",
+    "accepts customCss string array",
+    "rejects customCss number"
+  ]
+}

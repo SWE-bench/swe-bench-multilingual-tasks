@@ -1,0 +1,1 @@
+Just ran into this as well. Seems the code attempting to expand the capacity of the params slice at line 446 in `tree.go` doesn't handle expanding the underlying capacity properly.

@@ -1,5 +1,6 @@
 """Reading and writing the tasks/ tree, which is the source of truth."""
 
+import json
 from pathlib import Path
 
 import yaml
@@ -36,6 +37,9 @@ def load_task(task_dir: Path) -> dict:
     instance = yaml.safe_load((task_dir / "task.yaml").read_text())
     for column, filename in AS_FILE.items():
         instance[column] = _read(task_dir / filename)
+    hints = task_dir / "hints.md"
+    instance["hints_text"] = _read(hints) if hints.is_file() else ""
+    instance.update(json.loads((task_dir / "tests.json").read_text()))
     return instance
 
 

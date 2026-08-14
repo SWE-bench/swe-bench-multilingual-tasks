@@ -1,28 +1,6 @@
-FAIL_TO_PASS:
-- empty_read
-PASS_TO_PASS:
-- read_file_from_unix_fd
-- coop
-- read_file_from_std
-- basic_write_and_shutdown
-- basic_read
-- basic_write
-- set_max_buf_size_read
-- file_debug_fmt
-- write_into_std
-- set_max_buf_size_write
-- rewind_seek_position
-- unix_fd_is_valid
-- write_into_std_immediate
-- write_vectored_and_shutdown
-- write_to_clone
-- write_vectored
 base_commit: b8ac94ed70df22f885bad7ea3c0ff51c536bad4a
 created_at: '2025-02-05 10:35:02'
 eval_type: pass_and_fail
-hints_text: |-
-  Hmm, I wonder if #7054 inadvertently changed the behavior here. Can you try with that commit reverted?
-  The issue still existed before #7054, I can reproduce on the prior commit bd3e8577377a2b684b50fc0cb50d98f03ad09703. From code inspection it looks like it has always been a problem (since tokio::fs was implemented using spawn_blocking).
 image: swebench/sweb.eval.x86_64.tokio-rs_1776_tokio-7139:latest
 instance_id: tokio-rs__tokio-7139
 log_parser: parse_log_cargo
