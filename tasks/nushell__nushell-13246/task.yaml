@@ -1,0 +1,27 @@
+FAIL_TO_PASS:
+- commands::find::find_with_bytestream_search_with_char
+PASS_TO_PASS:
+- commands::find::find_with_list_search_with_char
+- commands::find::find_takes_into_account_linebreaks_in_string
+- commands::find::find_in_table_only_keep_rows_with_matches_on_selected_columns
+- commands::find::find_with_filepath_search_with_string
+- commands::find::find_with_filepath_search_with_multiple_patterns
+- commands::find::find_with_list_search_with_number
+- commands::find::find_in_table_keeps_row_with_single_matched_and_keeps_other_columns
+- commands::find::find_with_string_search_with_string
+- commands::find::find_with_regex_in_table_keeps_row_if_one_column_matches
+- commands::find::inverted_find_in_table_keeps_row_if_none_of_the_selected_columns_matches
+- commands::find::find_with_list_search_with_string
+- commands::find::find_in_table_keeps_row_with_multiple_matched_and_keeps_other_columns
+- commands::find::find_with_string_search_with_string_not_found
+- commands::find::inverted_find_with_regex_in_table_keeps_row_if_none_of_the_columns_matches
+base_commit: 46ed69ab126015375d5163972ae321715f34874b
+created_at: '2024-06-27 08:47:46'
+eval_type: pass_and_fail
+hints_text: ''
+image: swebench/sweb.eval.x86_64.nushell_1776_nushell-13246:latest
+instance_id: nushell__nushell-13246
+log_parser: parse_log_cargo
+repo: nushell/nushell
+split: test
+version: '13246'

@@ -1,0 +1,44 @@
+FAIL_TO_PASS:
+- VLookup > V lookup array with data set "issue 3561"
+PASS_TO_PASS:
+- 'VLookup > V l o o k u p with data set #0'
+- 'VLookup > V l o o k u p with data set #1'
+- 'VLookup > V l o o k u p with data set #2'
+- 'VLookup > V l o o k u p with data set #3'
+- 'VLookup > V l o o k u p with data set #4'
+- 'VLookup > V l o o k u p with data set #5'
+- 'VLookup > V l o o k u p with data set #6'
+- 'VLookup > V l o o k u p with data set #7'
+- 'VLookup > V l o o k u p with data set #8'
+- 'VLookup > V l o o k u p with data set #9'
+- 'VLookup > V l o o k u p with data set #10'
+- 'VLookup > V l o o k u p with data set #11'
+- 'VLookup > V l o o k u p with data set #12'
+- 'VLookup > V l o o k u p with data set #13'
+- VLookup > V l o o k u p with data set "issue2934"
+- VLookup > V l o o k u p with data set "string supplied as index"
+- VLookup > V l o o k u p with data set "num error propagated"
+- VLookup > V lookup array with data set "row vector"
+base_commit: 40203ff6cb18c9fff9f605ba78f21ce95fd04d6c
+created_at: '2023-05-16 14:02:51'
+eval_type: pass_and_fail
+hints_text: "@MarkBaker - this has something to with `arrayEnabled`, which I haven't\
+  \ studied enough to be familiar with. However, I think the following change fixes\
+  \ this problem, but I can't be sure that it doesn't break something else. If it\
+  \ works, I imagine it might need to be applied to other functions as well.\r\n\r\
+  \nExisting code in Vlookup.php:\r\n```php\r\n    public static function lookup($lookupValue,\
+  \ $lookupArray, $indexNumber, $notExactMatch = true)\r\n    {\r\n        if (is_array($lookupValue))\
+  \ {\r\n            return self::evaluateArrayArgumentsIgnore([self::class, __FUNCTION__],\
+  \ 1, $lookupValue, $lookupArray, $indexNumber, $notExactMatch);\r\n        }\r\n\
+  ```\r\n\r\nChanged code (one statement changed, the 'if' statement):\r\n```php\r\
+  \n    public static function lookup($lookupValue, $lookupArray, $indexNumber, $notExactMatch\
+  \ = true)\r\n    {\r\n        if (is_array($lookupValue) || is_array($indexNumber))\
+  \ {\r\n            return self::evaluateArrayArgumentsIgnore([self::class, __FUNCTION__],\
+  \ 1, $lookupValue, $lookupArray, $indexNumber, $notExactMatch);\r\n        }\r\n\
+  ```\nthank you!"
+image: swebench/sweb.eval.x86_64.phpoffice_1776_phpspreadsheet-3570:latest
+instance_id: phpoffice__phpspreadsheet-3570
+log_parser: parse_log_phpunit
+repo: phpoffice/phpspreadsheet
+split: test
+version: '3570'

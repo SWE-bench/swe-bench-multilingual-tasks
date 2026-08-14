@@ -1,0 +1,38 @@
+FAIL_TO_PASS:
+- thread/thread_ident1.py
+PASS_TO_PASS:
+- thread/thread_exc1.py
+- thread/stress_recurse.py
+- thread/stress_schedule.py
+- thread/thread_heap_lock.py
+- thread/thread_gc1.py
+- thread/thread_exc2.py
+- thread/stress_create.py
+- thread/thread_shared1.py
+- thread/thread_shared2.py
+- thread/thread_sleep1.py
+- thread/thread_stacksize1.py
+- thread/thread_exit1.py
+- thread/stress_heap.py
+- thread/thread_exit2.py
+- thread/stress_aes.py
+- thread/thread_qstr1.py
+- thread/thread_start1.py
+- thread/thread_start2.py
+base_commit: c0d4c604e6a140c0f2967e1b43fd94d0b029c73f
+created_at: '2023-08-03 20:26:24'
+eval_type: pass_and_fail
+hints_text: "Here is a patch for the unix port that we've been carrying for a while:\
+  \ https://github.com/pybricks/micropython/commit/afe519d7e00d2ab1578ec8a5173530801fd92056\r\
+  \n\r\nWe have a use case where we are using signals to interrupt syscalls that are\
+  \ blocking a specific thread (using `pthread_kill()`) and so this feature is essential\
+  \ in order to get the thread id while avoiding race conditions.\nThank you very\
+  \ much for your reply! I am working on ESP32. Do you think it could be ported easily?\
+  \ Anyway, I'm curious if there is some underlying reason for not letting start_new_thread\
+  \ return the id in the original implementation."
+image: swebench/sweb.eval.x86_64.micropython_1776_micropython-12158:latest
+instance_id: micropython__micropython-12158
+log_parser: parse_log_micropython_test
+repo: micropython/micropython
+split: test
+version: '12158'

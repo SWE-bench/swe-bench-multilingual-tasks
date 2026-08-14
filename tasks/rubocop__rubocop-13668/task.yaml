@@ -1,0 +1,74 @@
+FAIL_TO_PASS:
+- registers an offense and corrects when using `unless` and `===` without parens in
+  the outer condition and nested modifier condition
+PASS_TO_PASS:
+- does not register an offense for nested conditionals when outer conditional has
+  an `else` branch
+- does not register an offense when nested conditional has an `else` branch
+- does not register an offense when no nested conditionals
+- does not register an offense when using nested conditional is not the whole body
+- does not register an offense when using nested conditional within `elsif`
+- does not register an offense when using nested modifier conditional
+- does not register an offense when using nested modifier on value assigned in multiple
+  conditions
+- does not register an offense when using nested modifier on value assigned in single
+  condition
+- does not register an offense when using nested ternary within conditional
+- registers an offense and corrects
+- registers an offense and corrects for multiple nested conditionals
+- registers an offense and corrects for multiple nested conditionals with using method
+  call outer condition by omitting parentheses
+- registers an offense and corrects when `if` foo && bar do_something end `if` baz
+- registers an offense and corrects when `if` foo && bar do_something end `unless`
+  baz
+- registers an offense and corrects when `if` foo do_something end `if` bar
+- registers an offense and corrects when `if` foo do_something end `if` bar && baz
+- registers an offense and corrects when `if` foo do_something end `unless` bar
+- registers an offense and corrects when `if` foo do_something end `unless` bar &&
+  baz
+- registers an offense and corrects when `unless` foo && bar do_something end `if`
+  baz
+- registers an offense and corrects when `unless` foo do_something end `if` bar
+- registers an offense and corrects when comment is in an empty nested `if` body
+- registers an offense and corrects when nested `||` operator condition
+- registers an offense and corrects when nested `||` operator modifier condition
+- registers an offense and corrects when there are outer and inline comments
+- registers an offense and corrects when using `unless` and `&&` without parens in
+  the outer condition and nested modifier condition
+- registers an offense and corrects when using `unless` and `||` and parens in the
+  outer condition and nested modifier condition
+- registers an offense and corrects when using `unless` and `||` without parens in
+  the outer condition and nested modifier condition
+- registers an offense and corrects when using `unless` and method arguments with
+  parentheses in the outer condition and nested modifier condition
+- registers an offense and corrects when using `unless` and method arguments without
+  parentheses in the outer condition and nested modifier condition
+- registers an offense and corrects when using `unless` and multiple method arguments
+  with parenthesesin the outer condition and nested modifier condition
+- registers an offense and corrects when using `||` in the outer condition
+- registers an offense and corrects when using `||` in the outer condition and nested
+  modifier condition
+- registers an offense and corrects when using guard conditional with outer comment
+- registers an offense and corrects when using nested `if` modifier conditional
+- registers an offense and corrects when using nested `if` within `if foo = bar`
+- registers an offense and corrects when using nested `if` within `if`
+- registers an offense and corrects when using nested `if` within `unless foo == bar`
+- registers an offense and corrects when using nested `if` within `unless`
+- registers an offense and corrects when using nested `unless` modifier conditional
+- registers an offense and corrects when using nested `unless` modifier multiple conditional
+- registers an offense and corrects when using nested `unless` modifier with a single
+  expression condition
+- registers an offense and corrects when using nested `unless` within `if`
+- registers an offense and corrects when using nested `unless` within `unless`
+- registers an offense and corrects when using nested conditional and branch contains
+  a comment
+base_commit: 418fdc98d631cfb52333c7aeae80c43c4a68d13a
+created_at: '2025-01-10 11:02:27'
+eval_type: pass_and_fail
+hints_text: ''
+image: swebench/sweb.eval.x86_64.rubocop_1776_rubocop-13668:latest
+instance_id: rubocop__rubocop-13668
+log_parser: parse_log_rspec_transformed_json
+repo: rubocop/rubocop
+split: test
+version: '13668'

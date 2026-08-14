@@ -1,0 +1,31 @@
+FAIL_TO_PASS:
+- 'TestFilters#test_: filters where_exp filter should filter objects across multiple
+  conditions'
+PASS_TO_PASS:
+- 'TestFilters#test_: filters where_exp filter should filter objects appropriately'
+- 'TestFilters#test_: filters where_exp filter should filter with other operators'
+- 'TestFilters#test_: filters where_exp filter should filter objects appropriately
+  with ''or'', ''and'' operators'
+- 'TestFilters#test_: filters where_exp filter should always return an array if the
+  object responds to ''select'''
+- 'TestFilters#test_: filters where_exp filter should filter with the contains operator
+  over hash keys'
+- 'TestFilters#test_: filters where_exp filter should return any input that is not
+  an array'
+- 'TestFilters#test_: filters where_exp filter should filter posts'
+- 'TestFilters#test_: filters where_exp filter should filter by variable values'
+- 'TestFilters#test_: filters where_exp filter should filter objects in a hash appropriately'
+- 'TestFilters#test_: filters where_exp filter should filter with the contains operator
+  over arrays'
+- 'TestFilters#test_: filters where_exp filter should stringify during comparison
+  for compatibility with liquid parsing'
+base_commit: ab6ef0b257e4c7aafec0518d93bea3e9c4b75b75
+created_at: '2020-03-06 11:52:28'
+eval_type: pass_and_fail
+hints_text: ''
+image: swebench/sweb.eval.x86_64.jekyll_1776_jekyll-8047:latest
+instance_id: jekyll__jekyll-8047
+log_parser: parse_log_jekyll
+repo: jekyll/jekyll
+split: test
+version: '8047'

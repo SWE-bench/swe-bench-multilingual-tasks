@@ -1,0 +1,21 @@
+FAIL_TO_PASS:
+- javac-ExtensionMethodNonStatic.java(lombok.transform.TestWithDelombok)
+PASS_TO_PASS:
+- javac-ExtensionMethodAutoboxing.java(lombok.transform.TestWithDelombok)
+- javac-ExtensionMethodChain.java(lombok.transform.TestWithDelombok)
+- javac-ExtensionMethodFunctional.java(lombok.transform.TestWithDelombok)
+- javac-ExtensionMethodGeneric.java(lombok.transform.TestWithDelombok)
+- javac-ExtensionMethodNames.java(lombok.transform.TestWithDelombok)
+- javac-ExtensionMethodPlain.java(lombok.transform.TestWithDelombok)
+- javac-ExtensionMethodSuppress.java(lombok.transform.TestWithDelombok)
+- javac-ExtensionMethodVarargs.java(lombok.transform.TestWithDelombok)
+base_commit: b69ff85b9494a1a05a5763ef53069437328d443a
+created_at: '2022-12-11 16:19:20'
+eval_type: pass_and_fail
+hints_text: ''
+image: swebench/sweb.eval.x86_64.projectlombok_1776_lombok-3312:latest
+instance_id: projectlombok__lombok-3312
+log_parser: parse_log_ant
+repo: projectlombok/lombok
+split: test
+version: '3312'

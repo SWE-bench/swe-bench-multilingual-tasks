@@ -1,0 +1,76 @@
+FAIL_TO_PASS:
+- supports http with nodejs compression algorithms GZIP decompression should support
+  decompression
+- supports http with nodejs compression algorithms GZIP decompression should not fail
+  if response content-length header is missing (GZIP)
+- supports http with nodejs compression algorithms GZIP decompression should not fail
+  with chunked responses (without Content-Length header)
+PASS_TO_PASS:
+- supports http with nodejs compression should support transparent gunzip
+- supports http with nodejs compression should support gunzip error handling
+- supports http with nodejs compression should support disabling automatic decompression
+  of response data
+- supports http with nodejs compression algorithms gzip decompression should support
+  decompression
+- supports http with nodejs compression algorithms gzip decompression should not fail
+  if response content-length header is missing (gzip)
+- supports http with nodejs compression algorithms gzip decompression should not fail
+  with chunked responses (without Content-Length header)
+- supports http with nodejs compression algorithms gzip decompression should not fail
+  with an empty response without content-length header (Z_BUF_ERROR)
+- supports http with nodejs compression algorithms gzip decompression should not fail
+  with an empty response with content-length header (Z_BUF_ERROR)
+- supports http with nodejs compression algorithms GZIP decompression should not fail
+  with an empty response without content-length header (Z_BUF_ERROR)
+- supports http with nodejs compression algorithms GZIP decompression should not fail
+  with an empty response with content-length header (Z_BUF_ERROR)
+- supports http with nodejs compression algorithms compress decompression should support
+  decompression
+- supports http with nodejs compression algorithms compress decompression should not
+  fail if response content-length header is missing (compress)
+- supports http with nodejs compression algorithms compress decompression should not
+  fail with chunked responses (without Content-Length header)
+- supports http with nodejs compression algorithms compress decompression should not
+  fail with an empty response without content-length header (Z_BUF_ERROR)
+- supports http with nodejs compression algorithms compress decompression should not
+  fail with an empty response with content-length header (Z_BUF_ERROR)
+- supports http with nodejs compression algorithms deflate decompression should support
+  decompression
+- supports http with nodejs compression algorithms deflate decompression should not
+  fail if response content-length header is missing (deflate)
+- supports http with nodejs compression algorithms deflate decompression should not
+  fail with chunked responses (without Content-Length header)
+- supports http with nodejs compression algorithms deflate decompression should not
+  fail with an empty response without content-length header (Z_BUF_ERROR)
+- supports http with nodejs compression algorithms deflate decompression should not
+  fail with an empty response with content-length header (Z_BUF_ERROR)
+- supports http with nodejs compression algorithms deflate-raw decompression should
+  support decompression
+- supports http with nodejs compression algorithms deflate-raw decompression should
+  not fail if response content-length header is missing (deflate)
+- supports http with nodejs compression algorithms deflate-raw decompression should
+  not fail with chunked responses (without Content-Length header)
+- supports http with nodejs compression algorithms deflate-raw decompression should
+  not fail with an empty response without content-length header (Z_BUF_ERROR)
+- supports http with nodejs compression algorithms deflate-raw decompression should
+  not fail with an empty response with content-length header (Z_BUF_ERROR)
+- supports http with nodejs compression algorithms br decompression should support
+  decompression
+- supports http with nodejs compression algorithms br decompression should not fail
+  if response content-length header is missing (br)
+- supports http with nodejs compression algorithms br decompression should not fail
+  with chunked responses (without Content-Length header)
+- supports http with nodejs compression algorithms br decompression should not fail
+  with an empty response without content-length header (Z_BUF_ERROR)
+- supports http with nodejs compression algorithms br decompression should not fail
+  with an empty response with content-length header (Z_BUF_ERROR)
+base_commit: ae003913a39f3bdf9bbbd8f71a1ed681fd044d8b
+created_at: '2023-09-12 11:58:18'
+eval_type: pass_and_fail
+hints_text: ''
+image: swebench/sweb.eval.x86_64.axios_1776_axios-5892:latest
+instance_id: axios__axios-5892
+log_parser: parse_log_tap
+repo: axios/axios
+split: test
+version: '5892'

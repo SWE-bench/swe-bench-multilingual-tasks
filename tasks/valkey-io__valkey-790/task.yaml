@@ -1,0 +1,18 @@
+FAIL_TO_PASS:
+- CLUSTER SHARDS slot response is non-empty when primary node fails
+PASS_TO_PASS:
+- Cluster should start ok
+- Cluster shards response is ok for shard 0
+- Kill a node and tell the replica to immediately takeover
+- Verify health as fail for killed node
+base_commit: 35a188833335332980a16239ac2efebf241c8a6a
+created_at: '2024-07-15 22:36:34'
+eval_type: pass_and_fail
+hints_text: "@hpatro can you take a look? This does look like some sort of bug.\n\
+  Taking a look. "
+image: swebench/sweb.eval.x86_64.valkey-io_1776_valkey-790:latest
+instance_id: valkey-io__valkey-790
+log_parser: parse_log_redis
+repo: valkey-io/valkey
+split: test
+version: '790'

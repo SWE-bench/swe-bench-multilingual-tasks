@@ -1,0 +1,45 @@
+FAIL_TO_PASS:
+- does not register an offense when in range references are used
+- only registers an offense when the regexp is matched as a literal
+- registers an offense when out of range references are used
+PASS_TO_PASS:
+- does not register an offense regexp containing non literal
+- does not register an offense when calling gsub on a valid nth-ref
+- does not register an offense when in range references are used inside a when clause
+- does not register offense to a regexp with encoding option and valid references
+  for numbered captures
+- does not register offense to a regexp with valid references for a mix named and
+  numbered captures
+- does not register offense to a regexp with valid references for named captures
+- does not register offense to a regexp with valid references for numbered captures
+- ignores `match` with no arguments
+- ignores `match` with no receiver
+- ignores calls to `match?`
+- ignores regexp when clause conditions contain interpolations
+- ignores regexp when clause conditions that contain interpolations
+- only considers the RHS regexp
+- only registers an offense for when clauses when the regexp is matched as a literal
+- registers an offense if the capturing groups have changed
+- registers an offense when calling gsub on an invalid nth-ref
+- registers an offense when out of range references are used for mix of numbered and
+  named captures
+- registers an offense when out of range references are used for named captures
+- registers an offense when out of range references are used for non captures
+- registers an offense when out of range references are used for numbered captures
+- registers an offense when out of range references are used inside a when clause
+- registers an offense when references are used before any regexp
+- registers an offense when the regexp appears on the right hand side of `=~`
+- registers an offense when the regexp is matched with `===`
+- registers an offense when the regexp is matched with `match`
+- uses the maximum number of captures for when clauses with multiple conditions
+- uses the maximum number of captures with multiple patterns
+base_commit: f2671d877442d7553fe2d0998ec934e36400b8f9
+created_at: '2025-01-15 05:49:15'
+eval_type: pass_and_fail
+hints_text: ''
+image: swebench/sweb.eval.x86_64.rubocop_1776_rubocop-13705:latest
+instance_id: rubocop__rubocop-13705
+log_parser: parse_log_rspec_transformed_json
+repo: rubocop/rubocop
+split: test
+version: '13705'

@@ -1,0 +1,13 @@
+FAIL_TO_PASS:
+- regression::r2208
+PASS_TO_PASS: []
+base_commit: 4dc6c73c5a9203c5a8a89ce2161feca542329812
+created_at: '2022-05-11 18:30:12'
+eval_type: pass_and_fail
+hints_text: 'I believe this is a duplicate of #2095.'
+image: swebench/sweb.eval.x86_64.burntsushi_1776_ripgrep-2209:latest
+instance_id: burntsushi__ripgrep-2209
+log_parser: parse_log_cargo
+repo: burntsushi/ripgrep
+split: test
+version: '2209'

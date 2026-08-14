@@ -1,0 +1,41 @@
+FAIL_TO_PASS:
+- getActiveDocContext
+- getActiveVersion for regular docs versions
+- getActiveVersion is not sensitive to version order
+- getActiveVersion is not sensitive to isLast attribute
+PASS_TO_PASS:
+- getActivePlugin
+- getLatestVersion
+- getDocVersionSuggestions
+- getActiveVersion matches first version when same paths
+- getActiveVersion without trailing slash
+- getActiveVersion with trailing slash
+- getActiveVersion - docs only without trailing slash
+- getActiveVersion - docs only with trailing slash
+base_commit: 5e9e1d051b2217b95498ecbc10f7e33f64e7a4d3
+created_at: '2024-07-18 11:10:38'
+eval_type: pass_and_fail
+hints_text: "I have some error in your sandbox however I reproduced it [here](https://stackblitz.com/edit/github-frlvcp?file=docusaurus.config.ts)\
+  \ and confirm the bug happens when `path: '/',` but doesn't if `path: '/aze',`\n\
+  Hmmm I see the problem is that we rely on the fact that the version is the \"last\
+  \ one\" to do the matching, but instead we should rather rely on the path.\r\n\r\
+  \nThis may not be the solution you look for, but this fixes the problem:\r\n\r\n\
+  ```js\r\nlastVersion: 'current',\r\n```\r\n\r\nThe problematic code is likely this:\r\
+  \n\r\n\r\n```js\r\nexport function getActiveVersion(\r\n  data: GlobalPluginData,\r\
+  \n  pathname: string,\r\n): GlobalVersion | undefined {\r\n  const lastVersion =\
+  \ getLatestVersion(data);\r\n  // Last version is a route like /docs/*,\r\n  //\
+  \ we need to match it last or it would match /docs/version-1.0/* as well\r\n  const\
+  \ orderedVersionsMetadata = [\r\n    ...data.versions.filter((version) => version\
+  \ !== lastVersion),\r\n    lastVersion,\r\n  ];\r\n  return orderedVersionsMetadata.find(\r\
+  \n    (version) =>\r\n      !!matchPath(pathname, {\r\n        path: version.path,\r\
+  \n        exact: false,\r\n        strict: false,\r\n      }),\r\n  );\r\n} \r\n\
+  ```\r\n\r\nInstead we should replace by code which matches the version with path\
+  \ `'/'` last (which is usually, but not always, the last version)\r\n\r\n@OzakIOne\
+  \ can you look at fixing this?\nThat solution worked for me. Thanks @slorber !\r\
+  \n"
+image: swebench/sweb.eval.x86_64.facebook_1776_docusaurus-10309:latest
+instance_id: facebook__docusaurus-10309
+log_parser: parse_log_jest
+repo: facebook/docusaurus
+split: test
+version: '10309'

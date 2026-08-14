@@ -1,0 +1,33 @@
+FAIL_TO_PASS:
+- rules::flake8_pie::tests::rules::rule_unnecessaryspread_path_new_pie800_py_expects
+PASS_TO_PASS:
+- rules::flake8_pie::tests::rules::rule_unnecessaryplaceholder_path_new_pie790_py_expects
+- rules::flake8_pie::tests::rules::rule_duplicateclassfielddefinition_path_new_pie794_py_expects
+- rules::flake8_pie::tests::rules::rule_unnecessarydictkwargs_path_new_pie804_py_expects
+- rules::flake8_pie::tests::rules::rule_unnecessaryrangestart_path_new_pie808_py_expects
+- rules::flake8_pie::tests::rules::rule_nonuniqueenums_path_new_pie796_pyi_expects
+- rules::flake8_pie::tests::rules::rule_nonuniqueenums_path_new_pie796_py_expects
+- rules::flake8_pie::tests::rules::rule_multiplestartsendswith_path_new_pie810_py_expects
+- rules::flake8_pie::tests::rules::rule_reimplementedcontainerbuiltin_path_new_pie807_py_expects
+base_commit: 73d424ee5e6963d577e196d71c3b19c82e84e612
+created_at: '2025-01-10 09:52:20'
+eval_type: pass_and_fail
+hints_text: |-
+  Thanks, the fixed version that contains a syntax error is:
+
+  ```py
+  class L:
+      def execute(self):
+          return {
+              "data": [],
+              "count": 1 if include_count else {}),
+  #                                              ^
+  #                                              This wasn't removed
+          }
+  ```
+image: swebench/sweb.eval.x86_64.astral-sh_1776_ruff-15394:latest
+instance_id: astral-sh__ruff-15394
+log_parser: parse_log_cargo
+repo: astral-sh/ruff
+split: test
+version: '15394'

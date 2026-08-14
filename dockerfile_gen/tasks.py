@@ -1,7 +1,8 @@
 """Reading and writing the tasks/ tree, which is the source of truth."""
 
-import json
 from pathlib import Path
+
+import yaml
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 TASKS_DIR = REPO_ROOT / "tasks"
@@ -27,12 +28,12 @@ def _write(path: Path, text: str) -> None:
 
 
 def task_dirs(tasks_dir: Path = TASKS_DIR) -> list[Path]:
-    return sorted(d for d in tasks_dir.iterdir() if (d / "task.json").exists())
+    return sorted(d for d in tasks_dir.iterdir() if (d / "task.yaml").exists())
 
 
 def load_task(task_dir: Path) -> dict:
     """A task directory, as the instance dict the generators expect."""
-    instance = json.loads((task_dir / "task.json").read_text())
+    instance = yaml.safe_load((task_dir / "task.yaml").read_text())
     for column, filename in AS_FILE.items():
         instance[column] = _read(task_dir / filename)
     return instance

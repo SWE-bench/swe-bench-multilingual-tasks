@@ -1,0 +1,26 @@
+FAIL_TO_PASS:
+- basics/slice_indices.py
+PASS_TO_PASS:
+- basics/builtin_slice.py
+- unicode/unicode_slice.py
+- basics/list_slice.py
+- basics/bytearray_slice_assign.py
+- basics/string_slice.py
+- basics/tuple_slice.py
+- basics/slice_attrs.py
+- basics/list_slice_3arg.py
+- basics/list_slice_assign.py
+- basics/list_slice_assign_grow.py
+- basics/memoryview_slice_assign.py
+- basics/memoryview_slice_size.py
+- basics/slice_intbig.py
+base_commit: fce8d9fd55409ab1027beee5671bc653fb5beb97
+created_at: '2023-11-21 11:33:55'
+eval_type: pass_and_fail
+hints_text: ''
+image: swebench/sweb.eval.x86_64.micropython_1776_micropython-13039:latest
+instance_id: micropython__micropython-13039
+log_parser: parse_log_micropython_test
+repo: micropython/micropython
+split: test
+version: '13039'

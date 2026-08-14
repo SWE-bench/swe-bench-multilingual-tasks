@@ -1,0 +1,54 @@
+FAIL_TO_PASS:
+- TestRebuildHomeThenPageIssue12436
+PASS_TO_PASS:
+- TestRebuildOnAssetChange
+- TestRebuildEditTextFileInLeafBundle
+- TestRebuildEditTextFileInHomeBundle
+- TestRebuildEditTextFileInBranchBundle
+- TestRebuildRenameTextFileInLeafBundle
+- TestRebuildRenameTextFileInBranchBundle
+- TestRebuildRenameTextFileInHomeBundle
+- TestRebuildRenameDirectoryWithLeafBundle
+- TestRebuildRenameDirectoryWithBranchBundle
+- TestRebuildRenameDirectoryWithRegularPageUsedInHome
+- TestRebuildAddRegularFileRegularPageUsedInHomeMultilingual
+- TestRebuildRenameDirectoryWithBranchBundleFastRender
+- TestRebuildAddPageListPagesInHome
+- TestRebuildAddPageWithSpaceListPagesInHome
+- TestRebuildScopedToOutputFormat
+- TestRebuildBaseof
+- TestRebuildFromString
+- TestRebuildVariations
+- TestRebuildConcat
+- TestRebuildEditSingleListChangeUbuntuIssue12362
+- TestRebuildVariationsAssetsJSImport
+- TestRebuildEditArchetypeFile
+- TestRebuildVariationsJSInNestedPartialFingerprintedInBase
+- TestRebuildI18n
+- TestRebuildVariationsJSNoneFingerprinted
+- TestRebuildVariationsJSInNestedCachedPartialFingerprinted
+- TestRebuildEditContentNonDefaultLanguageDifferentBundles
+- TestRebuildDeeplyNestedLink
+- TestRebuildEditContentNonDefaultLanguage
+- TestRebuildEditHomeContent
+- TestRebuildSingleWithBaseof
+- TestRebuildEditData
+- TestRebuildVariationsJSBundled
+- TestRebuildEditMixedCaseTemplateFileIssue12165
+base_commit: 196132753649e6e714f05c83122737cabd0da310
+created_at: '2024-04-30 17:15:54'
+eval_type: pass_and_fail
+hints_text: "Maybe related: https://github.com/gohugoio/hugo/issues/12375\r\n\r\n\
+  > In 0.123.0 the change detection is much more accurate and we try do be so fine\
+  \ grained as possible; in combination with \"fast render mode\" it has worked very\
+  \ well for me (and I'm a fairly active Hugo user).\n>I tried to create an integration\
+  \ test for this, but both of the final assertions are failing, so I'm probably doing\
+  \ it wrong:\r\n\r\nI see what happens, but the test needs to \r\n\r\n1. Include\
+  \ `rss` as output format\r\n2. Rebuild twice.\r\n\r\nI will take a stab on fixing\
+  \ it."
+image: swebench/sweb.eval.x86_64.gohugoio_1776_hugo-12448:latest
+instance_id: gohugoio__hugo-12448
+log_parser: parse_log_gotest
+repo: gohugoio/hugo
+split: test
+version: '12448'

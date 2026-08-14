@@ -1,0 +1,36 @@
+FAIL_TO_PASS:
+- TestGroupByParamCalledWithUnavailableParam
+PASS_TO_PASS:
+- TestGroupByParamCalledWithCapitalLetterString
+- TestGroupByLocalizedDate
+- TestGroupByPublishDateWithEmptyPages
+- TestGroupByParamDateWithStringParams
+- TestGroupByDateInReverseOrder
+- TestGroupByCalledWithEmptyPages
+- TestGroupByParamInReverseOrder
+- TestGroupByParamDateWithEmptyPages
+- TestGroupByParamDateInReverseOrder
+- TestGroupByLastmod
+- TestGroupByWithFieldNameArg
+- TestGroupByInReverseOrder
+- TestGroupByDate
+- TestGroupByPublishDateInReverseOrder
+- TestGroupByWithSectionArg
+- TestGroupByParam
+- TestGroupByParamDate
+- TestGroupByPublishDate
+- TestGroupByParamCalledWithEmptyPages
+- TestGroupByExpiryDate
+- TestGroupByLastmodInReverseOrder
+- TestGroupByParamCalledWithSomeUnavailableParams
+- TestGroupByWithMethodNameArg
+base_commit: 9c4e14eb4f890d2a3caad2dcd9209609b7274914
+created_at: '2024-06-08 13:53:20'
+eval_type: pass_and_fail
+hints_text: Agree.
+image: swebench/sweb.eval.x86_64.gohugoio_1776_hugo-12579:latest
+instance_id: gohugoio__hugo-12579
+log_parser: parse_log_gotest
+repo: gohugoio/hugo
+split: test
+version: '12579'

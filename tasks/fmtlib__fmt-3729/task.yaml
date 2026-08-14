@@ -1,0 +1,25 @@
+FAIL_TO_PASS:
+- std_test.path
+PASS_TO_PASS:
+- std_test.thread_id
+- std_test.optional
+- std_test.optional_format_as
+- std_test.variant
+- std_test.error_code
+- std_test.exception
+- std_test.format_bit_reference
+- std_test.format_const_bit_reference
+- std_test.format_bitset
+- std_test.format_atomic
+- ranges_std_test.format_vector_path
+- ranges_std_test.format_quote_path
+base_commit: 5cfd28d476c6859617878f951931b8ce7d36b9df
+created_at: '2023-11-27 03:14:35'
+eval_type: pass_and_fail
+hints_text: Sounds reasonable. A PR would be welcome!
+image: swebench/sweb.eval.x86_64.fmtlib_1776_fmt-3729:latest
+instance_id: fmtlib__fmt-3729
+log_parser: parse_log_googletest
+repo: fmtlib/fmt
+split: test
+version: '3729'

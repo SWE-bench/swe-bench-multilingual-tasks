@@ -1,0 +1,93 @@
+FAIL_TO_PASS:
+- Php Unit Attributes Fixer > Fix with data set "handle multiple annotations of the
+  same name"
+PASS_TO_PASS:
+- Php Unit Attributes Fixer > Not defining constructor
+- Php Unit Attributes Fixer > Is risky
+- Php Unit Attributes Fixer > Fixer definitions
+- Php Unit Attributes Fixer > Fixers are final
+- Php Unit Attributes Fixer > Deprecated fixers have correct summary
+- Php Unit Attributes Fixer > Deprecated fixers do not have deprecated successor
+- Php Unit Attributes Fixer > Fixer use insert slices when only insertions are performed
+- Php Unit Attributes Fixer > Fixer configuration definitions
+- Php Unit Attributes Fixer > Proper method naming
+- Php Unit Attributes Fixer > Fix with data set "do not fix with wrong values"
+- Php Unit Attributes Fixer > Fix with data set "do not fix with wrong casing"
+- Php Unit Attributes Fixer > Fix with data set "do not fix when not supported by
+  attributes"
+- Php Unit Attributes Fixer > Fix with data set "do not fix when there is already
+  attribute of related class"
+- Php Unit Attributes Fixer > Fix with data set "do not duplicate attribute when used
+  without leading slash"
+- Php Unit Attributes Fixer > Fix with data set "do not duplicate attribute when used
+  with import"
+- Php Unit Attributes Fixer > Fix with data set "do not duplicate attribute when used
+  with partial import"
+- Php Unit Attributes Fixer > Fix with data set "do not duplicate attribute when used
+  with alias"
+- Php Unit Attributes Fixer > Fix with data set "do not duplicate attribute when used
+  with partial alias"
+- Php Unit Attributes Fixer > Fix with data set "fix multiple annotations"
+- Php Unit Attributes Fixer > Fix with data set "fix with multiple spaces"
+- Php Unit Attributes Fixer > Fix with data set "fix with > in operator"
+- Php Unit Attributes Fixer > Fix with data set "fix with trailing spaces"
+- Php Unit Attributes Fixer > Fix with data set "fix with non-alphanumeric characters"
+- Php Unit Attributes Fixer > Fix with data set "handle After"
+- Php Unit Attributes Fixer > Fix with data set "handle AfterClass"
+- Php Unit Attributes Fixer > Fix with data set "handle BackupGlobals enabled"
+- Php Unit Attributes Fixer > Fix with data set "handle BackupGlobals disabled"
+- Php Unit Attributes Fixer > Fix with data set "handle BackupGlobals no"
+- Php Unit Attributes Fixer > Fix with data set "handle BackupStaticProperties enabled"
+- Php Unit Attributes Fixer > Fix with data set "handle BackupStaticProperties disabled"
+- Php Unit Attributes Fixer > Fix with data set "handle Before"
+- Php Unit Attributes Fixer > Fix with data set "handle BeforeClass"
+- Php Unit Attributes Fixer > Fix with data set "handle CoversClass"
+- Php Unit Attributes Fixer > Fix with data set "handle CoversFunction"
+- Php Unit Attributes Fixer > Fix with data set "handle CoversNothing"
+- Php Unit Attributes Fixer > Fix with data set "handle DataProvider"
+- Php Unit Attributes Fixer > Fix with data set "handle DataProviderExternal"
+- Php Unit Attributes Fixer > Fix with data set "handle Depends"
+- Php Unit Attributes Fixer > Fix with data set "handle DependsExternal"
+- Php Unit Attributes Fixer > Fix with data set "handle DependsExternalUsingDeepClone"
+- Php Unit Attributes Fixer > Fix with data set "handle DependsExternalUsingShallowClone"
+- Php Unit Attributes Fixer > Fix with data set "handle DependsOnClass"
+- Php Unit Attributes Fixer > Fix with data set "handle DependsOnClassUsingDeepClone"
+- Php Unit Attributes Fixer > Fix with data set "handle DependsOnClassUsingShallowClone"
+- Php Unit Attributes Fixer > Fix with data set "handle DependsUsingDeepClone"
+- Php Unit Attributes Fixer > Fix with data set "handle DependsUsingShallowClone"
+- Php Unit Attributes Fixer > Fix with data set "handle DoesNotPerformAssertions"
+- Php Unit Attributes Fixer > Fix with data set "handle Group"
+- Php Unit Attributes Fixer > Fix with data set "handle Large"
+- Php Unit Attributes Fixer > Fix with data set "handle Medium"
+- Php Unit Attributes Fixer > Fix with data set "handle PostCondition"
+- Php Unit Attributes Fixer > Fix with data set "handle PreCondition"
+- Php Unit Attributes Fixer > Fix with data set "handle PreserveGlobalState enabled"
+- Php Unit Attributes Fixer > Fix with data set "handle PreserveGlobalState disabled"
+- Php Unit Attributes Fixer > Fix with data set "handle RequiresFunction"
+- Php Unit Attributes Fixer > Fix with data set "handle RequiresMethod"
+- Php Unit Attributes Fixer > Fix with data set "handle RequiresOperatingSystem"
+- Php Unit Attributes Fixer > Fix with data set "handle RequiresOperatingSystemFamily"
+- Php Unit Attributes Fixer > Fix with data set "handle RequiresPhp"
+- Php Unit Attributes Fixer > Fix with data set "handle RequiresPhpExtension"
+- Php Unit Attributes Fixer > Fix with data set "handle RequiresPhpunit"
+- Php Unit Attributes Fixer > Fix with data set "handle RequiresSetting"
+- Php Unit Attributes Fixer > Fix with data set "handle RunInSeparateProcess"
+- Php Unit Attributes Fixer > Fix with data set "handle RunTestsInSeparateProcesses"
+- Php Unit Attributes Fixer > Fix with data set "handle Small"
+- Php Unit Attributes Fixer > Fix with data set "handle Test"
+- Php Unit Attributes Fixer > Fix with data set "handle TestDox"
+- Php Unit Attributes Fixer > Fix with data set "handle Ticket"
+- Php Unit Attributes Fixer > Fix with data set "handle UsesClass"
+- Php Unit Attributes Fixer > Fix with data set "handle UsesFunction"
+- Php Unit Attributes Fixer > Fix with data set "handle TestWith"
+base_commit: f0a95a77782538eafca6c4d2f2f2792be3dbbfcf
+created_at: '2024-06-10 18:21:26'
+eval_type: pass_and_fail
+hints_text: introduced in https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/pull/7831,
+  /cc @kubawerlos
+image: swebench/sweb.eval.x86_64.php-cs-fixer_1776_php-cs-fixer-8075:latest
+instance_id: php-cs-fixer__php-cs-fixer-8075
+log_parser: parse_log_phpunit
+repo: php-cs-fixer/php-cs-fixer
+split: test
+version: '8075'

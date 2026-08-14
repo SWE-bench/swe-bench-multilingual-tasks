@@ -1,0 +1,23 @@
+FAIL_TO_PASS:
+- MONITOR can log commands issued by functions
+PASS_TO_PASS:
+- MONITOR can log executed commands
+- MONITOR can log commands issued by the scripting engine
+- MONITOR supports redacting command arguments
+- MONITOR correctly handles multi-exec cases
+base_commit: a4bcdbcfd3a055eb6320f31e5c710931708a9501
+created_at: '2022-11-15 04:15:10'
+eval_type: pass_and_fail
+hints_text: "This looks like an oversight. Scripting commands are special in that\
+  \ they are given to monitoring clients \"before\" the command is executed, as opposed\
+  \ to after. This means EVAL/EVALSHA were handled specially, and that special handling\
+  \ was *not* ported to FCALL. With a one line change it seems to be working as expected:\r\
+  \n```\r\n1668484506.350345 [0 127.0.0.1:65395] \"fcall\" \"TEST123\" \"1\" \"123\"\
+  \ \"234\"\r\n1668484506.350384 [0 lua] \"set\" \"123\" \"234\"\r\n```\r\n\r\n```\r\
+  \n127.0.0.1:6379> fcall TEST123 1 123 234\r\nOK\r\n```"
+image: swebench/sweb.eval.x86_64.redis_1776_redis-11510:latest
+instance_id: redis__redis-11510
+log_parser: parse_log_redis
+repo: redis/redis
+split: test
+version: '11510'

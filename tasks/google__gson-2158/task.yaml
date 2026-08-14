@@ -1,0 +1,22 @@
+FAIL_TO_PASS:
+- com.google.gson.functional.PrimitiveTest#testByteSerialization
+- com.google.gson.functional.PrimitiveTest#testShortSerialization
+- com.google.gson.functional.PrimitiveTest#testIntSerialization
+- com.google.gson.functional.PrimitiveTest#testLongSerialization
+- com.google.gson.functional.PrimitiveTest#testFloatSerialization
+- com.google.gson.functional.PrimitiveTest#testDoubleSerialization
+PASS_TO_PASS:
+- com.google.gson.functional.PrimitiveTest#testPrimitiveIntegerAutoboxedSerialization
+- com.google.gson.functional.PrimitiveTest#testPrimitiveIntegerAutoboxedInASingleElementArraySerialization
+- com.google.gson.functional.PrimitiveTest#testReallyLongValuesSerialization
+- com.google.gson.functional.PrimitiveTest#testPrimitiveLongAutoboxedSerialization
+base_commit: 796193d0326a2f44bc314bf24262732ea3e64014
+created_at: '2022-07-26 15:20:13'
+eval_type: pass_and_fail
+hints_text: ''
+image: swebench/sweb.eval.x86_64.google_1776_gson-2158:latest
+instance_id: google__gson-2158
+log_parser: parse_log_maven
+repo: google/gson
+split: test
+version: '2158'

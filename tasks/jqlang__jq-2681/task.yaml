@@ -1,0 +1,45 @@
+FAIL_TO_PASS:
+- tests/jqtest
+PASS_TO_PASS:
+- test_utf8
+- test_syntax
+- test_options
+- testc
+- testcu
+- test_regset
+- test_back
+- encode
+- listcap
+- names
+- simple
+- sql
+- syntax
+- user_property
+- callout
+- echo
+- count
+- bug_fix
+- regset
+- scan
+- callback_each_match
+- tests/optionaltest
+- tests/mantest
+- tests/onigtest
+- tests/shtest
+- tests/utf8test
+- tests/base64test
+base_commit: c08ecbaf239592018a2050b8515040d4a9f2e7aa
+created_at: '2023-07-09 18:45:41'
+eval_type: pass_and_fail
+hints_text: "It is also possible to use `$      var` or `reduce range(10) as $   \
+  \   foo (`.\r\n\r\nSince we want to allow `$label`, and, in the parser, `'$'` is\
+  \ always used as `'$' IDENT`, we could just disallow `$         foo`, and lex those\
+  \ directly as VARIABLE tokens:\r\n```c\r\n\"$\"[a-zA-Z_][a-zA-Z_0-9]*  { yylval->literal\
+  \ = jv_string(yytext + 1); return VARIABLE;}\r\n```\r\n\r\nThen we should just need\
+  \ to replace all `'$' IDENT` in the parser with `VARIABLE`."
+image: swebench/sweb.eval.x86_64.jqlang_1776_jq-2681:latest
+instance_id: jqlang__jq-2681
+log_parser: parse_log_jq
+repo: jqlang/jq
+split: test
+version: '2681'

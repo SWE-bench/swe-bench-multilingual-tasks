@@ -1,0 +1,27 @@
+FAIL_TO_PASS:
+- does not replace non-Markdown links
+- handles stray spaces
+PASS_TO_PASS:
+- does basic replace
+- replaces two links on the same line
+- replaces reference style Markdown links
+- resolves absolute and relative links differently
+- ignores links in HTML comments
+- ignores links in fenced blocks
+- ignores links in inline code
+- replaces links with same title as URL
+- replaces multiple links on same line
+- replaces Markdown links with spaces
+- handles link titles
+- preserves query/hash
+base_commit: 41f1c1e3c26ad1e24acd3306077e2534dd8fa0db
+created_at: '2023-04-25 07:23:17'
+eval_type: pass_and_fail
+hints_text: There is a fault with our link replacement logic. I will refactor this
+  part of the code since it's getting really dense. Thanks for reporting!
+image: swebench/sweb.eval.x86_64.facebook_1776_docusaurus-8927:latest
+instance_id: facebook__docusaurus-8927
+log_parser: parse_log_jest
+repo: facebook/docusaurus
+split: test
+version: '8927'

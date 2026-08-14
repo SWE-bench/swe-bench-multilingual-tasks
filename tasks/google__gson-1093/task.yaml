@@ -1,0 +1,18 @@
+FAIL_TO_PASS:
+- com.google.gson.stream.JsonWriterTest#testNonFiniteDoublesWhenLenient
+PASS_TO_PASS:
+- com.google.gson.stream.JsonWriterTest#testNonFiniteBoxedDoublesWhenLenient
+- com.google.gson.stream.JsonWriterTest#testNonFiniteDoubles
+- com.google.gson.stream.JsonWriterTest#testNonFiniteBoxedDoubles
+- com.google.gson.stream.JsonWriterTest#testDoubles
+base_commit: 0aaef0fd1bb1b9729543dc40168adfb829eb75a4
+created_at: '2017-05-31 08:22:46'
+eval_type: pass_and_fail
+hints_text: Can you create a Pull Request with a JUnit test that fails? Even better
+  would be a fix that makes the test pass. Thanks.
+image: swebench/sweb.eval.x86_64.google_1776_gson-1093:latest
+instance_id: google__gson-1093
+log_parser: parse_log_maven
+repo: google/gson
+split: test
+version: '1093'

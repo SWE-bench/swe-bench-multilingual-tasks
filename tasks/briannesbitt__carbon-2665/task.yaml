@@ -1,0 +1,23 @@
+FAIL_TO_PASS:
+- Round > Floor year
+PASS_TO_PASS:
+- Round > Round with default unit
+- Round > Round with strings
+- Round > Round with strings exception
+- Round > Round with interval
+- Round > Round with interval exception
+- Round > Round with base unit
+- Round > Round with meta unit
+- Round > Round week
+- Round > Ceil month
+- Round > Round invalid argument
+base_commit: 01bc4cdefe98ef58d1f9cb31bdbbddddf2a88f7a
+created_at: '2022-09-02 23:09:21'
+eval_type: pass_and_fail
+hints_text: ''
+image: swebench/sweb.eval.x86_64.briannesbitt_1776_carbon-2665:latest
+instance_id: briannesbitt__carbon-2665
+log_parser: parse_log_phpunit
+repo: briannesbitt/carbon
+split: test
+version: '2665'

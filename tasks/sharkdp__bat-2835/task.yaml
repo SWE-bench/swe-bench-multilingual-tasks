@@ -1,0 +1,25 @@
+FAIL_TO_PASS:
+- header_very_narrow_terminal
+PASS_TO_PASS:
+- header_full_binary
+- header_binary
+- header_default_is_default
+- header_arg_overrides_env
+- header_env_basic
+- header_full_basic
+- header_full_padding
+- header_default
+- header_basic
+- header_full_padding_rule
+- header_padding_rule
+- header_padding
+base_commit: db66e4459bc4e66c03629d7cbc235f59245280c0
+created_at: '2024-01-21 16:24:00'
+eval_type: pass_and_fail
+hints_text: ''
+image: swebench/sweb.eval.x86_64.sharkdp_1776_bat-2835:latest
+instance_id: sharkdp__bat-2835
+log_parser: parse_log_cargo
+repo: sharkdp/bat
+split: test
+version: '2835'

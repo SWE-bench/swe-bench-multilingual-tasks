@@ -1,0 +1,26 @@
+FAIL_TO_PASS:
+- TestSnapshotAheadOfWALError
+PASS_TO_PASS:
+- TestSnapshotError
+base_commit: 5ec1b4baaf01dae0b22567db53886c83b74e0e76
+created_at: '2023-01-17 19:39:09'
+eval_type: pass_and_fail
+hints_text: "Prometheus uses the index number in the filename (the number after the\
+  \ first dot) to determine which file is the newest, rather than the age of the file.\
+  \ Since the old file has a larger index number, it would be selected.\n```\r\ndrwxrwsr-x\
+  \    2 1000     1000        4.0K Nov 21 12:00 chunk_snapshot.013482.0001871216\r\
+  \ndrwxrwsr-x    2 1000     1000        4.0K Aug 19 23:08 chunk_snapshot.178079.0114884608\r\
+  \n```\r\nWhy would the old file have a higher index number than the newer one? \U0001F914\
+  \ \n> Why would the old file have a higher index number than the newer one?\r\n\r\
+  \nDid you at any point delete all the WAL files but not the snapshot? In which case\
+  \ WAL files will start again from 0 while the old snapshot remains on the disk with\
+  \ higher index from before.\nMaybe TSDB could automatically delete the snapshot\
+  \ if all WAL files have numbers less than the number on the snapshot.\n> Did you\
+  \ at any point delete all the WAL files but not the snapshot?\r\n\r\nThat’s highly\
+  \ possible yes. We had some disk full issue in the past caused by OOM crashloop."
+image: swebench/sweb.eval.x86_64.prometheus_1776_prometheus-11859:latest
+instance_id: prometheus__prometheus-11859
+log_parser: parse_log_gotest
+repo: prometheus/prometheus
+split: test
+version: '11859'

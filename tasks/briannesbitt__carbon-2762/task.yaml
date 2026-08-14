@@ -1,0 +1,18 @@
+FAIL_TO_PASS:
+- Rounding > With cascade factors
+- Rounding > Ceil
+PASS_TO_PASS:
+- Rounding > Throws exception for composite interval
+- Rounding > Floor
+- Rounding > Round
+- Rounding > Total after round
+base_commit: 077657bce453df6992607e5aaa538d957068ae40
+created_at: '2023-01-29 18:11:23'
+eval_type: pass_and_fail
+hints_text: ''
+image: swebench/sweb.eval.x86_64.briannesbitt_1776_carbon-2762:latest
+instance_id: briannesbitt__carbon-2762
+log_parser: parse_log_phpunit
+repo: briannesbitt/carbon
+split: test
+version: '2762'

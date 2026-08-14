@@ -1,0 +1,15 @@
+FAIL_TO_PASS:
+- TestContextRenderDataFromReaderNoHeaders
+- TestReaderRenderNoHeaders
+PASS_TO_PASS:
+- TestContextRenderDataFromReader
+base_commit: 2ee0e963942d91be7944dfcc07dc8c02a4a78566
+created_at: '2019-11-03 22:16:36'
+eval_type: pass_and_fail
+hints_text: ''
+image: swebench/sweb.eval.x86_64.gin-gonic_1776_gin-2121:latest
+instance_id: gin-gonic__gin-2121
+log_parser: parse_log_gotest
+repo: gin-gonic/gin
+split: test
+version: '2121'

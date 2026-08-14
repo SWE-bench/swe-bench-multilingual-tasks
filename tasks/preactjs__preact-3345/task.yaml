@@ -1,0 +1,38 @@
+FAIL_TO_PASS:
+- useEffect > handles errors correctly
+PASS_TO_PASS:
+- useEffect > performs the effect after every render by default
+- useEffect > performs the effect only if one of the inputs changed
+- useEffect > performs the effect at mount time and never again if an empty input
+  Array is passed
+- useEffect > calls the cleanup function followed by the effect after each render
+- useEffect > cleanups the effect when the component get unmounted if the effect was
+  called before
+- useEffect > works with closure effect callbacks capturing props
+- useEffect > calls the effect immediately if another render is about to start
+- useEffect > cancels the effect when the component get unmounted before it had the
+  chance to run it
+- useEffect > should execute multiple effects in same component in the right order
+- useEffect > should execute effects in parent if child throws in effect
+- useEffect > should throw an error upwards
+- useEffect > should throw an error upwards from return
+- useEffect > catches errors when error is invoked during render
+- useEffect > should allow creating a new root
+- useEffect > should not crash when effect returns truthy non-function value
+- useEffect > support render roots from an effect
+base_commit: e0e17046753fe09881dfb8d5a69b44933d1fa1ea
+created_at: '2021-11-26 00:15:46'
+eval_type: pass_and_fail
+hints_text: "When reproducing this error there it doesn't look to happen https://codesandbox.io/s/tender-water-w17jr?file=/src/App.js\n\
+  @JoviDeCroock your example uses react and not preact. I said in my comment that\
+  \ react works fine with this code, hence the issue.\r\n\r\n![image](https://user-images.githubusercontent.com/10047074/143181108-840426db-e3eb-4467-8b1b-7c6de62b2466.png)\r\
+  \n\r\nBtw I couldn't make codesandbox run the example with preact, it always complains\
+  \ something about tslib.\nHere, https://codesandbox.io/s/preact-issue-3329-iseff\r\
+  \n\r\n![image](https://user-images.githubusercontent.com/10047074/143184453-480b301f-074b-4941-a17d-708916852e2f.png)\r\
+  \n"
+image: swebench/sweb.eval.x86_64.preactjs_1776_preact-3345:latest
+instance_id: preactjs__preact-3345
+log_parser: parse_log_karma
+repo: preactjs/preact
+split: test
+version: '3345'

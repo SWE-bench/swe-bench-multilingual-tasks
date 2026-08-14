@@ -1,0 +1,41 @@
+FAIL_TO_PASS:
+- tests/jqtest
+PASS_TO_PASS:
+- test_utf8
+- test_syntax
+- test_options
+- testc
+- testcu
+- test_regset
+- test_back
+- encode
+- listcap
+- names
+- simple
+- sql
+- syntax
+- user_property
+- callout
+- echo
+- count
+- bug_fix
+- regset
+- scan
+- callback_each_match
+- tests/optionaltest
+- tests/mantest
+- tests/shtest
+- tests/utf8test
+- tests/base64test
+- tests/onigtest
+- tests/manonigtest
+base_commit: 98f709d0c1fd87a8b6a3e10c679442667712b264
+created_at: '2023-07-22 21:14:38'
+eval_type: pass_and_fail
+hints_text: ''
+image: swebench/sweb.eval.x86_64.jqlang_1776_jq-2750:latest
+instance_id: jqlang__jq-2750
+log_parser: parse_log_jq
+repo: jqlang/jq
+split: test
+version: '2750'

@@ -1,0 +1,44 @@
+FAIL_TO_PASS:
+- Blank Line After Opening Tag Fixer > Fix with data set "file starting with multi-line
+  comment"
+PASS_TO_PASS:
+- 'Blank Line After Opening Tag Fixer > Fix with data set #0'
+- 'Blank Line After Opening Tag Fixer > Fix with data set #1'
+- 'Blank Line After Opening Tag Fixer > Fix with data set #2'
+- 'Blank Line After Opening Tag Fixer > Fix with data set #3'
+- 'Blank Line After Opening Tag Fixer > Fix with data set #4'
+- 'Blank Line After Opening Tag Fixer > Fix with data set #5'
+- 'Blank Line After Opening Tag Fixer > Fix with data set #6'
+- 'Blank Line After Opening Tag Fixer > Fix with data set #7'
+- 'Blank Line After Opening Tag Fixer > Fix with data set #8'
+- 'Blank Line After Opening Tag Fixer > Fix with data set #9'
+- 'Blank Line After Opening Tag Fixer > Fix with data set #10'
+- 'Blank Line After Opening Tag Fixer > Fix with data set #11'
+- Blank Line After Opening Tag Fixer > Fix with data set "empty file with open tag
+  without new line"
+- Blank Line After Opening Tag Fixer > Fix with data set "empty file with open tag
+  with new line"
+- Blank Line After Opening Tag Fixer > Fix with data set "file with shebang"
+- 'Blank Line After Opening Tag Fixer > With whitespaces config with data set #0'
+- 'Blank Line After Opening Tag Fixer > With whitespaces config with data set #1'
+- Blank Line After Opening Tag Fixer > Is risky
+- Blank Line After Opening Tag Fixer > Fixer definitions
+- Blank Line After Opening Tag Fixer > Fixers are final
+- Blank Line After Opening Tag Fixer > Deprecated fixers have correct summary
+- Blank Line After Opening Tag Fixer > Deprecated fixers do not have deprecated successor
+- Blank Line After Opening Tag Fixer > Fixer configuration definitions
+- Blank Line After Opening Tag Fixer > Proper method naming
+- Blank Line After Opening Tag Fixer > Not defining constructor
+base_commit: 27dde9afa3d4db851f8aaffc820f697a5dbe747f
+created_at: '2024-10-21 19:17:33'
+eval_type: pass_and_fail
+hints_text: I reproduced it and it seems like we really don't have [test case](https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/blob/60618e4681ca38edc18ee792225379c570779f7e/tests/Fixer/PhpTag/BlankLineAfterOpeningTagFixerTest.php)
+  for code like your example, with a comment directly after opening tag. `blank_line_after_opening_tag`
+  does not picks this, but it should. Thanks for reporting this, are you interested
+  in providing fix?
+image: swebench/sweb.eval.x86_64.php-cs-fixer_1776_php-cs-fixer-8256:latest
+instance_id: php-cs-fixer__php-cs-fixer-8256
+log_parser: parse_log_phpunit
+repo: php-cs-fixer/php-cs-fixer
+split: test
+version: '8256'

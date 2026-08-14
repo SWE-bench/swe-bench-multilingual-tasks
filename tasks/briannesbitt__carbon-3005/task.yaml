@@ -1,0 +1,47 @@
+FAIL_TO_PASS:
+- Construct > From serialization
+PASS_TO_PASS:
+- Construct > Inherited construct
+- Construct > Construct with date interval
+- Construct > Defaults
+- Construct > Nulls
+- Construct > Zeroes
+- Construct > Zeroes chained
+- Construct > Years
+- Construct > Months
+- Construct > Weeks
+- Construct > Days
+- Construct > Hours
+- Construct > Minutes
+- Construct > Seconds
+- Construct > Milliseconds
+- Construct > Microseconds
+- Construct > Years and hours
+- Construct > All
+- Construct > All with create
+- Construct > Instance
+- Construct > Instance with skip copy
+- Construct > Instance with negative date interval
+- Construct > Instance with days
+- Construct > Copy
+- Construct > Make
+- Construct > Bad formats
+- Construct > Out of range
+- Construct > Call invalid static method
+- Construct > Original
+- Construct > Create from date string
+- Construct > Create from date incorrect string
+- Construct > Create from date incorrect string with error as exception
+- Construct > Make from date incorrect string
+- Construct > Make from date incorrect string with error as exception
+- Construct > Enums
+base_commit: 640940f4a9303e458fc29341821395460f32b3b5
+created_at: '2024-04-23 12:33:02'
+eval_type: pass_and_fail
+hints_text: ''
+image: swebench/sweb.eval.x86_64.briannesbitt_1776_carbon-3005:latest
+instance_id: briannesbitt__carbon-3005
+log_parser: parse_log_phpunit
+repo: briannesbitt/carbon
+split: test
+version: '3005'

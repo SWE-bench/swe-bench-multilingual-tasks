@@ -1,0 +1,15 @@
+FAIL_TO_PASS:
+- TestMethodNotAllowedNoRoute
+PASS_TO_PASS: []
+base_commit: 9c081de9cdd1948f521d47d170d18cbc2981c33a
+created_at: '2024-06-20 08:37:46'
+eval_type: pass_and_fail
+hints_text: This works without issue in previous releases. For example in `v1.9.1`.
+  This bug was found during our unit tests run after upgrading to `v1.10.0`. We had
+  to rollback the upgrade
+image: swebench/sweb.eval.x86_64.gin-gonic_1776_gin-4003:latest
+instance_id: gin-gonic__gin-4003
+log_parser: parse_log_gotest
+repo: gin-gonic/gin
+split: test
+version: '4003'
