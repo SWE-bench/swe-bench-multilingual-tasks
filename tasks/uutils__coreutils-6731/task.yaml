@@ -1,5 +1,7 @@
 base_commit: a4088475832957e070b8f904cd3a33a818d07d72
 created_at: '2024-09-24 00:31:52'
+datasets:
+- SWE-bench/SWE-bench_Multilingual
 eval_type: pass_and_fail
 image: swebench/sweb.eval.x86_64.uutils_1776_coreutils-6731:latest
 instance_id: uutils__coreutils-6731

@@ -1,5 +1,7 @@
 base_commit: d1666fbbeec27fe534f261f388fbd5891546ffcf
 created_at: '2025-01-12 16:49:45'
+datasets:
+- SWE-bench/SWE-bench_Multilingual
 eval_type: pass_and_fail
 image: swebench/sweb.eval.x86_64.astral-sh_1776_ruff-15443:latest
 instance_id: astral-sh__ruff-15443

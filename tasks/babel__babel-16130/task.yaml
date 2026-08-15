@@ -1,5 +1,7 @@
 base_commit: 4e6e3cf1395cafd27f28f113918034232c6c1db5
 created_at: '2023-11-27 15:27:11'
+datasets:
+- SWE-bench/SWE-bench_Multilingual
 eval_type: pass_and_fail
 image: swebench/sweb.eval.x86_64.babel_1776_babel-16130:latest
 instance_id: babel__babel-16130

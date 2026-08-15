@@ -1,5 +1,7 @@
 base_commit: f2e4cb411ed6dfd36fd4f9960a74d8f29c7b8882
 created_at: '2024-03-28 15:47:18'
+datasets:
+- SWE-bench/SWE-bench_Multilingual
 eval_type: pass_and_fail
 image: swebench/sweb.eval.x86_64.hashicorp_1776_terraform-34900:latest
 instance_id: hashicorp__terraform-34900

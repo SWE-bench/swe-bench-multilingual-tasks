@@ -1,5 +1,7 @@
 base_commit: 0b9a9275b47e446106e6e97c78011896f7db2a61
 created_at: '2022-06-12 07:25:18'
+datasets:
+- SWE-bench/SWE-bench_Multilingual
 eval_type: pass_and_fail
 image: swebench/sweb.eval.x86_64.preactjs_1776_preact-3562:latest
 instance_id: preactjs__preact-3562

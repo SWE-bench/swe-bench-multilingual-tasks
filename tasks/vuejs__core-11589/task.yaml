@@ -1,5 +1,7 @@
 base_commit: 3653bc0f45d6fedf84e29b64ca52584359c383c0
 created_at: '2024-08-12 03:20:46'
+datasets:
+- SWE-bench/SWE-bench_Multilingual
 eval_type: pass_and_fail
 image: swebench/sweb.eval.x86_64.vuejs_1776_core-11589:latest
 instance_id: vuejs__core-11589

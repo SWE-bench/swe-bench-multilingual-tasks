@@ -1,5 +1,7 @@
 base_commit: 4de8cf3567b4dfd3a541219462b22d46c730c4b4
 created_at: '2025-03-12 12:08:09'
+datasets:
+- SWE-bench/SWE-bench_Multilingual
 eval_type: pass_and_fail
 image: swebench/sweb.eval.x86_64.valkey-io_1776_valkey-1842:latest
 instance_id: valkey-io__valkey-1842

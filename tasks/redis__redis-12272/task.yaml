@@ -1,5 +1,7 @@
 base_commit: 7f0a7f0a69318788edeca5a55ce05e278fdaa90b
 created_at: '2023-06-06 15:13:41'
+datasets:
+- SWE-bench/SWE-bench_Multilingual
 eval_type: pass_and_fail
 image: swebench/sweb.eval.x86_64.redis_1776_redis-12272:latest
 instance_id: redis__redis-12272

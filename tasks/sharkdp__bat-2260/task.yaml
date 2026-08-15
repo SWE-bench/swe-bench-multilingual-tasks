@@ -1,5 +1,7 @@
 base_commit: c14ce4f7caa36fe524975c51f7aae3d5a852d1f9
 created_at: '2022-08-05 20:31:57'
+datasets:
+- SWE-bench/SWE-bench_Multilingual
 eval_type: pass_and_fail
 image: swebench/sweb.eval.x86_64.sharkdp_1776_bat-2260:latest
 instance_id: sharkdp__bat-2260

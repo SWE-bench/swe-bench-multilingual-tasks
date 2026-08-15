@@ -1,5 +1,7 @@
 base_commit: b1de03f398620eb97e005ae01e1955627475b7c9
 created_at: '2024-03-06 00:16:51'
+datasets:
+- SWE-bench/SWE-bench_Multilingual
 eval_type: pass_and_fail
 image: swebench/sweb.eval.x86_64.gohugoio_1776_hugo-12204:latest
 instance_id: gohugoio__hugo-12204

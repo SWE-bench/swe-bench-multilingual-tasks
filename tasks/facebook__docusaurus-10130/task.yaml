@@ -1,5 +1,7 @@
 base_commit: 02e38d8ccf7811af27a9c15ddbadf4d26cfc0eab
 created_at: '2024-05-10 14:25:15'
+datasets:
+- SWE-bench/SWE-bench_Multilingual
 eval_type: pass_and_fail
 image: swebench/sweb.eval.x86_64.facebook_1776_docusaurus-10130:latest
 instance_id: facebook__docusaurus-10130

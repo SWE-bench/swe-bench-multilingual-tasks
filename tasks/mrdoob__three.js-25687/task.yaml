@@ -1,5 +1,7 @@
 base_commit: 114134e195a451fdbaa8d2e9492d869d5c853814
 created_at: '2023-03-17 09:29:48'
+datasets:
+- SWE-bench/SWE-bench_Multilingual
 eval_type: pass_and_fail
 image: swebench/sweb.eval.x86_64.mrdoob_1776_three.js-25687:latest
 instance_id: mrdoob__three.js-25687

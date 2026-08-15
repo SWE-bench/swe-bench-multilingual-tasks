@@ -1,5 +1,7 @@
 base_commit: 9500c427cf346ba523984d7a692e23a943d57a9f
 created_at: '2025-01-11 22:59:57'
+datasets:
+- SWE-bench/SWE-bench_Multilingual
 eval_type: pass_and_fail
 image: swebench/sweb.eval.x86_64.rubocop_1776_rubocop-13680:latest
 instance_id: rubocop__rubocop-13680

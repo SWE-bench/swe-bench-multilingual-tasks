@@ -1,5 +1,7 @@
 base_commit: 493afba6ec17d9c999dc5a15ac80c71c6bdba1c3
 created_at: '2024-07-22 11:59:35'
+datasets:
+- SWE-bench/SWE-bench_Multilingual
 eval_type: pass_and_fail
 image: swebench/sweb.eval.x86_64.immutable-js_1776_immutable-js-2006:latest
 instance_id: immutable-js__immutable-js-2006

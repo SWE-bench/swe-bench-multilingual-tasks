@@ -1,5 +1,7 @@
 base_commit: 9f26679e7a96f0bb9952c326b2d9f79ef03ea9f5
 created_at: '2023-02-06 15:17:53'
+datasets:
+- SWE-bench/SWE-bench_Multilingual
 eval_type: pass_and_fail
 image: swebench/sweb.eval.x86_64.google_1776_gson-2311:latest
 instance_id: google__gson-2311

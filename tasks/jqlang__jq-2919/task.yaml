@@ -1,5 +1,7 @@
 base_commit: 7f547827e47b5ade563a293329deb4226496d72f
 created_at: '2023-10-03 02:40:07'
+datasets:
+- SWE-bench/SWE-bench_Multilingual
 eval_type: pass_and_fail
 image: swebench/sweb.eval.x86_64.jqlang_1776_jq-2919:latest
 instance_id: jqlang__jq-2919

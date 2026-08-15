@@ -1,5 +1,7 @@
 base_commit: 0c5a67f4e5bf17a2fffbe3cbb54792a6464b3237
 created_at: '2024-05-24 10:29:47'
+datasets:
+- SWE-bench/SWE-bench_Multilingual
 eval_type: pass_and_fail
 image: swebench/sweb.eval.x86_64.nushell_1776_nushell-12950:latest
 instance_id: nushell__nushell-12950

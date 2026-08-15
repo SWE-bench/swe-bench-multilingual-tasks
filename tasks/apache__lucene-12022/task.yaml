@@ -1,5 +1,7 @@
 base_commit: 11f2bc205652f1f2b2f61ba286cbfd2d77fd2d1b
 created_at: '2022-12-15 11:05:42'
+datasets:
+- SWE-bench/SWE-bench_Multilingual
 eval_type: pass_and_fail
 image: swebench/sweb.eval.x86_64.apache_1776_lucene-12022:latest
 instance_id: apache__lucene-12022
